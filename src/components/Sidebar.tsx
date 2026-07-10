@@ -240,6 +240,7 @@ export function Sidebar({
         items: [
           { id: 'competitions', label: 'Competitions & Challenges', icon: Trophy },
           { id: 'internships', label: 'Find Internships', icon: Briefcase },
+          { id: 'scholarships', label: 'Scholarships', icon: Award },
         ]
       },
       {

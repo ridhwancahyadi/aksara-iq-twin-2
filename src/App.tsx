@@ -24,6 +24,7 @@ import { CourseClassDashboard } from './components/CourseClassDashboard';
 import { Competitions } from './components/Competitions';
 import { Internships } from './components/Internships';
 import { CareerAspirations } from './components/CareerAspirations';
+import { Scholarships } from './components/Scholarships';
 import { Bot } from 'lucide-react';
 
 export default function App() {
@@ -242,6 +243,7 @@ export default function App() {
     competitions: { subtitle: "Academic Competitions & Challenges Portal", title: "ScholarDash • Competitions" },
     internships: { subtitle: "AI-Powered Internships and Work Opportunities", title: "CareerFlow AI • Find Internships" },
     career_aspirations: { subtitle: "Career Aspirations & Goal Setting", title: "CareerFlow AI • Career Aspirations" },
+    scholarships: { subtitle: "Elite scholarship recommendations & matching", title: "Aksara IQ • Scholarships Portal" },
     dosen_home: { subtitle: "Ringkasan Akademik & Tri Dharma", title: "Aksara IQ • Beranda Dosen" },
     dosen_classes: { subtitle: "Jadwal & Presensi Perkuliahan", title: "Aksara IQ • Kelas Saya" },
     dosen_grades: { subtitle: "Evaluasi & Input Nilai Mahasiswa", title: "Aksara IQ • Input Nilai" },
@@ -398,6 +400,7 @@ export default function App() {
           {currentView === 'competitions' && <Competitions />}
           {currentView === 'internships' && <Internships />}
           {currentView === 'career_aspirations' && <CareerAspirations />}
+          {currentView === 'scholarships' && <Scholarships />}
           {currentView.startsWith('dosen_') && <LecturerDashboard currentView={currentView} setView={setView} loggedInUser={user} />}
           {currentView.startsWith('admin_') && <AdminDashboard currentView={currentView} setView={setView} loggedInUser={user} />}
         </div>
