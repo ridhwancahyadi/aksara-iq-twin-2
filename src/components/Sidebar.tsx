@@ -244,6 +244,12 @@ export function Sidebar({
         ]
       },
       {
+        title: 'Global Exchange',
+        items: [
+          { id: 'katalog_mitra', label: 'Explore Partners', icon: Compass },
+        ]
+      },
+      {
         title: 'AI Chat',
         items: [
           { id: 'aksara_ai', label: 'Aksara AI', icon: Bot },

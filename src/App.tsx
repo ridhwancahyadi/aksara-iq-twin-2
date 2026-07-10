@@ -25,6 +25,9 @@ import { Competitions } from './components/Competitions';
 import { Internships } from './components/Internships';
 import { CareerAspirations } from './components/CareerAspirations';
 import { Scholarships } from './components/Scholarships';
+import { KatalogMitra } from './components/KatalogMitra';
+import { KatalogUniversitasMitra } from './components/KatalogUniversitasMitra';
+import { DetailPartners } from './components/DetailPartners';
 import { Bot } from 'lucide-react';
 
 export default function App() {
@@ -244,6 +247,9 @@ export default function App() {
     internships: { subtitle: "AI-Powered Internships and Work Opportunities", title: "CareerFlow AI • Find Internships" },
     career_aspirations: { subtitle: "Career Aspirations & Goal Setting", title: "CareerFlow AI • Career Aspirations" },
     scholarships: { subtitle: "Elite scholarship recommendations & matching", title: "Aksara IQ • Scholarships Portal" },
+    katalog_mitra: { subtitle: "Jelajahi kampus mitra dan temukan kompetensi Anda", title: "Aksara IQ • Explore Partners" },
+    kesiapan_saya: { subtitle: "Evaluasi Kesiapan Akademik Personal", title: "Aksara IQ • Kesiapan Saya" },
+    detail_partners: { subtitle: "Informasi Lengkap & Kurikulum Kampus Mitra", title: "Aksara IQ • Detail Partners" },
     dosen_home: { subtitle: "Ringkasan Akademik & Tri Dharma", title: "Aksara IQ • Beranda Dosen" },
     dosen_classes: { subtitle: "Jadwal & Presensi Perkuliahan", title: "Aksara IQ • Kelas Saya" },
     dosen_grades: { subtitle: "Evaluasi & Input Nilai Mahasiswa", title: "Aksara IQ • Input Nilai" },
@@ -401,6 +407,9 @@ export default function App() {
           {currentView === 'internships' && <Internships />}
           {currentView === 'career_aspirations' && <CareerAspirations />}
           {currentView === 'scholarships' && <Scholarships />}
+          {currentView === 'katalog_mitra' && <KatalogUniversitasMitra setView={setView} />}
+          {currentView === 'kesiapan_saya' && <KatalogMitra setView={setView} />}
+          {currentView === 'detail_partners' && <DetailPartners setView={setView} />}
           {currentView.startsWith('dosen_') && <LecturerDashboard currentView={currentView} setView={setView} loggedInUser={user} />}
           {currentView.startsWith('admin_') && <AdminDashboard currentView={currentView} setView={setView} loggedInUser={user} />}
         </div>

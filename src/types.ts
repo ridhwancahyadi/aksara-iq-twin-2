@@ -1,4 +1,4 @@
-export type View = 'home' | 'student_twin' | 'lobby' | 'history' | 'playback' | 'curriculum' | 'dna' | 'fgd_assignment' | 'schedule' | 'courses' | 'settings' | 'comm_labs' | 'aksara_ai' | 'course_class_details' | 'competitions' | 'internships' | 'career_aspirations' | 'scholarships' | 
+export type View = 'home' | 'student_twin' | 'lobby' | 'history' | 'playback' | 'curriculum' | 'dna' | 'fgd_assignment' | 'schedule' | 'courses' | 'settings' | 'comm_labs' | 'aksara_ai' | 'course_class_details' | 'competitions' | 'internships' | 'career_aspirations' | 'scholarships' | 'katalog_mitra' | 'kesiapan_saya' | 'detail_partners' |  
   'dosen_home' | 'dosen_classes' | 'dosen_grades' | 'dosen_fgd_results' | 'dosen_assignments' | 
   'dosen_advised_students' | 'dosen_krs_approval' | 'dosen_advising_notes' | 
   'dosen_research_tracker' | 'dosen_publications' | 'dosen_research_analytics' | 
