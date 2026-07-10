@@ -395,6 +395,54 @@ export function CareerAspirations() {
             {/* Barriers */}
             <section className="flex flex-col gap-6">
               <div className="bg-white border border-slate-200 rounded-xl p-6 h-full flex flex-col">
+                <div className="mb-8 border-b border-slate-100 pb-6">
+                  <div className="flex justify-between items-center mb-6">
+                     <h3 className="font-bold text-sm text-slate-800">Status Kompetensi</h3>
+                     <span className="text-[10px] font-medium text-slate-500">8 Dimensi CPL</span>
+                  </div>
+                  
+                  <div className="flex items-center gap-6">
+                    <div className="relative w-24 h-24 shrink-0">
+                      <svg className="w-full h-full transform -rotate-90 drop-shadow-sm" viewBox="0 0 100 100">
+                        {/* Kritis: Red 38% */}
+                        <circle cx="50" cy="50" r="38" stroke="#e11d48" strokeWidth="12" fill="transparent" strokeDasharray="90.7 238.7" strokeDashoffset="0" />
+                        {/* Perlu Perhatian: Orange 37% */}
+                        <circle cx="50" cy="50" r="38" stroke="#ea580c" strokeWidth="12" fill="transparent" strokeDasharray="88.3 238.7" strokeDashoffset="-90.7" />
+                        {/* Terpenuhi: Green 25% */}
+                        <circle cx="50" cy="50" r="38" stroke="#65a30d" strokeWidth="12" fill="transparent" strokeDasharray="59.7 238.7" strokeDashoffset="-179" />
+                      </svg>
+                      <div className="absolute inset-0 flex flex-col items-center justify-center pt-1">
+                        <span className="text-xl font-black text-slate-800 leading-none mb-0.5">8</span>
+                        <span className="text-[7px] font-bold text-slate-500 uppercase tracking-wider">Dimensi</span>
+                      </div>
+                    </div>
+                    
+                    <div className="space-y-2 flex-1">
+                      <div className="flex items-center justify-between text-[11px] font-semibold bg-slate-50 p-1.5 px-2 rounded-md">
+                        <div className="flex items-center gap-2">
+                           <div className="w-1.5 h-1.5 rounded-full bg-[#65a30d]"></div>
+                           <span className="text-slate-700">Terpenuhi</span>
+                        </div>
+                        <span className="text-[#65a30d] font-bold bg-[#65a30d]/10 px-1.5 py-0.5 rounded">25%</span>
+                      </div>
+                      <div className="flex items-center justify-between text-[11px] font-semibold bg-slate-50 p-1.5 px-2 rounded-md">
+                        <div className="flex items-center gap-2">
+                           <div className="w-1.5 h-1.5 rounded-full bg-[#ea580c]"></div>
+                           <span className="text-slate-700">Perlu Perhatian</span>
+                        </div>
+                        <span className="text-[#ea580c] font-bold bg-[#ea580c]/10 px-1.5 py-0.5 rounded">37%</span>
+                      </div>
+                      <div className="flex items-center justify-between text-[11px] font-semibold bg-slate-50 p-1.5 px-2 rounded-md">
+                        <div className="flex items-center gap-2">
+                           <div className="w-1.5 h-1.5 rounded-full bg-[#e11d48]"></div>
+                           <span className="text-slate-700">Kritis</span>
+                        </div>
+                        <span className="text-[#e11d48] font-bold bg-[#e11d48]/10 px-1.5 py-0.5 rounded">38%</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
                 <h2 className="font-semibold text-xs tracking-wider uppercase text-blue-900 mb-1">HAMBATAN TERIDENTIFIKASI</h2>
                 <p className="text-sm text-slate-600 mb-6">Setiap hambatan adalah peluang tumbuh</p>
                 <div className="space-y-4 flex-1">
@@ -431,6 +479,7 @@ export function CareerAspirations() {
                     </>
                   )}
                 </div>
+
                 <div className="mt-6 p-4 rounded-lg bg-blue-50 border border-blue-100 flex gap-3">
                   <BrainCircuit size={20} className="text-blue-800 shrink-0" />
                   <p className="text-[11px] font-medium text-blue-800 leading-relaxed">AI mengidentifikasi ini dari sesi brainstorming-mu — kamu bisa mengeditnya kapan saja.</p>

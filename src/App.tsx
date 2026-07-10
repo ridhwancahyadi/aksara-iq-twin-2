@@ -29,6 +29,8 @@ import { KatalogMitra } from './components/KatalogMitra';
 import { KatalogUniversitasMitra } from './components/KatalogUniversitasMitra';
 import { DetailPartners } from './components/DetailPartners';
 import { ExchangeSummary } from './components/ExchangeSummary';
+import { SkillSpace } from './components/SkillSpace';
+import { ExploreContent } from './components/ExploreContent';
 import { Bot } from 'lucide-react';
 
 export default function App() {
@@ -251,6 +253,9 @@ export default function App() {
     katalog_mitra: { subtitle: "Jelajahi kampus mitra dan temukan kompetensi Anda", title: "Aksara IQ • Explore Partners" },
     kesiapan_saya: { subtitle: "Evaluasi Kesiapan Akademik Personal", title: "Aksara IQ • Kesiapan Saya" },
     detail_partners: { subtitle: "Informasi Lengkap & Kurikulum Kampus Mitra", title: "Aksara IQ • Detail Partners" },
+    exchange_summary: { subtitle: "Ringkasan Akademik Exchange", title: "Aksara IQ • Exchange Summary" },
+    upskilling_explore: { subtitle: "Eksplorasi Konten Upskilling", title: "Aksara IQ • Explore Content" },
+    skill_space: { subtitle: "Progres Belajar & Simpanan", title: "Aksara IQ • Skill Space" },
     dosen_home: { subtitle: "Ringkasan Akademik & Tri Dharma", title: "Aksara IQ • Beranda Dosen" },
     dosen_classes: { subtitle: "Jadwal & Presensi Perkuliahan", title: "Aksara IQ • Kelas Saya" },
     dosen_grades: { subtitle: "Evaluasi & Input Nilai Mahasiswa", title: "Aksara IQ • Input Nilai" },
@@ -412,6 +417,8 @@ export default function App() {
           {currentView === 'kesiapan_saya' && <KatalogMitra setView={setView} />}
           {currentView === 'detail_partners' && <DetailPartners setView={setView} />}
           {currentView === 'exchange_summary' && <ExchangeSummary setView={setView} />}
+          {currentView === 'skill_space' && <SkillSpace />}
+          {currentView === 'upskilling_explore' && <ExploreContent />}
           {currentView.startsWith('dosen_') && <LecturerDashboard currentView={currentView} setView={setView} loggedInUser={user} />}
           {currentView.startsWith('admin_') && <AdminDashboard currentView={currentView} setView={setView} loggedInUser={user} />}
         </div>

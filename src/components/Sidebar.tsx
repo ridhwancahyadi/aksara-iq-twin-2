@@ -55,9 +55,14 @@ export function Sidebar({
   setStudentTwinTab 
 }: SidebarProps) {
   const [isStudentTwinOpen, setIsStudentTwinOpen] = useState(true);
+  const [expandedMenus, setExpandedMenus] = useState<Record<string, boolean>>({ upskilling: true });
   const [isCollapsed, setIsCollapsed] = useState(() => {
     return localStorage.getItem('sidebar_collapsed') === 'true';
   });
+
+  const toggleMenu = (id: string) => {
+    setExpandedMenus(prev => ({ ...prev, [id]: !prev[id] }));
+  };
 
   const toggleSidebar = () => {
     setIsCollapsed(prev => {
@@ -234,6 +239,15 @@ export function Sidebar({
           { id: 'comm_labs', label: 'Comm. Labs', icon: Video },
           { id: 'schedule', label: 'My Schedule', icon: CalendarRange },
           { id: 'courses', label: 'Courses', icon: GraduationCap },
+          { 
+            id: 'upskilling', 
+            label: 'Upskilling', 
+            icon: Sparkles,
+            subItems: [
+              { id: 'upskilling_explore', label: 'Explore Content' },
+              { id: 'skill_space', label: 'Skill Space' }
+            ]
+          },
         ]
       },
       {
@@ -303,32 +317,67 @@ export function Sidebar({
                   const active = 'subTab' in item
                     ? (currentView === 'student_twin' && studentTwinTab === item.subTab)
                     : (currentView === item.id);
+                  const hasSubItems = 'subItems' in item;
+                  const isExpanded = expandedMenus[item.id];
+                  
                   return (
-                    <button
-                      key={item.id + ('subTab' in item ? `_${item.subTab}` : '')}
-                      onClick={() => {
-                        setView(item.id as any);
-                        if ('subTab' in item && setStudentTwinTab) {
-                          setStudentTwinTab(item.subTab);
-                        }
-                        if (isCollapsed) setIsCollapsed(false);
-                      }}
-                      className={`w-full flex items-center transition-all cursor-pointer text-left group relative ${
-                        isCollapsed ? 'justify-center py-2.5 rounded-xl px-0' : 'gap-3 px-3 py-2 rounded-xl'
-                      } ${
-                        active 
-                          ? 'bg-[#0052CC] text-white font-black shadow-md shadow-blue-500/10' 
-                          : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900 font-bold'
-                      } text-xs`}
-                    >
-                      <Icon size={15} strokeWidth={active ? 2.5 : 2} className="shrink-0" />
-                      {!isCollapsed && <span className="truncate">{item.label}</span>}
-                      {isCollapsed && (
-                        <div className="absolute left-full ml-3 px-3 py-1.5 bg-slate-950 text-white text-xs font-black rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 shadow-md whitespace-nowrap z-50 pointer-events-none">
-                          {item.label}
+                    <div key={item.id + ('subTab' in item ? `_${item.subTab}` : '')} className="flex flex-col">
+                      <button
+                        onClick={() => {
+                          if (hasSubItems) {
+                            toggleMenu(item.id);
+                            if (isCollapsed) setIsCollapsed(false);
+                          } else {
+                            setView(item.id as any);
+                            if ('subTab' in item && setStudentTwinTab) {
+                              setStudentTwinTab(item.subTab);
+                            }
+                            if (isCollapsed) setIsCollapsed(false);
+                          }
+                        }}
+                        className={`w-full flex items-center transition-all cursor-pointer text-left group relative ${
+                          isCollapsed ? 'justify-center py-2.5 rounded-xl px-0' : 'gap-3 px-3 py-2 rounded-xl'
+                        } ${
+                          active && !hasSubItems
+                            ? 'bg-[#0052CC] text-white font-black shadow-md shadow-blue-500/10' 
+                            : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900 font-bold'
+                        } text-xs`}
+                      >
+                        <Icon size={15} strokeWidth={active && !hasSubItems ? 2.5 : 2} className="shrink-0" />
+                        {!isCollapsed && <span className="truncate flex-1">{item.label}</span>}
+                        {!isCollapsed && hasSubItems && (
+                          <div className={`transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`}>
+                            <ChevronDown size={14} className="text-slate-400" />
+                          </div>
+                        )}
+                        {isCollapsed && (
+                          <div className="absolute left-full ml-3 px-3 py-1.5 bg-slate-950 text-white text-xs font-black rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 shadow-md whitespace-nowrap z-50 pointer-events-none">
+                            {item.label}
+                          </div>
+                        )}
+                      </button>
+                      
+                      {!isCollapsed && hasSubItems && isExpanded && (
+                        <div className="mt-1 ml-6 pl-2.5 border-l-2 border-slate-100 space-y-1">
+                          {item.subItems?.map(sub => {
+                            const subActive = currentView === sub.id;
+                            return (
+                              <button
+                                key={sub.id}
+                                onClick={() => setView(sub.id as any)}
+                                className={`w-full text-left px-3 py-2 rounded-lg text-[11px] font-bold transition-all ${
+                                  subActive 
+                                    ? 'bg-blue-50 text-blue-700' 
+                                    : 'text-slate-500 hover:text-slate-800 hover:bg-slate-100'
+                                }`}
+                              >
+                                {sub.label}
+                              </button>
+                            );
+                          })}
                         </div>
                       )}
-                    </button>
+                    </div>
                   );
                 })}
               </div>
