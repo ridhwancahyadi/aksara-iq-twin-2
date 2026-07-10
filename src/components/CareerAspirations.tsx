@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { Compass, CheckCircle2, ChevronRight, Lock, Target, BrainCircuit, Users, Heart, LineChart, MessageSquare, Video, HelpCircle, PenTool, BookOpen, Edit3, ArrowRight, Sparkles, TrendingUp, Lightbulb, Podcast, Clock, Search, Megaphone, PlayCircle, ChevronDown, ChevronUp, ArrowUpRight, MousePointerClick, LayoutDashboard, Briefcase, Globe, Link2, Info, GraduationCap } from 'lucide-react';
+import { Compass, CheckCircle2, ChevronRight, Lock, Target, BrainCircuit, Users, Heart, LineChart, MessageSquare, Video, HelpCircle, PenTool, BookOpen, Edit3, ArrowRight, Sparkles, TrendingUp, Lightbulb, Podcast, Clock, Search, Megaphone, PlayCircle, ChevronDown, ChevronUp, ArrowUpRight, MousePointerClick, LayoutDashboard, Briefcase, Globe, Link2, Info, GraduationCap, Award } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
-export function CareerAspirations() {
+export function CareerAspirations({ setView }: { setView?: (view: any) => void }) {
+  const [isBukti1Open, setIsBukti1Open] = useState(false);
+  const [isBukti2Open, setIsBukti2Open] = useState(false);
   const [phase, setPhase] = useState(1);
   const [selectedInterests, setSelectedInterests] = useState<string[]>([]);
   const [careerGoal, setCareerGoal] = useState('');
@@ -88,14 +90,14 @@ export function CareerAspirations() {
       <div className="h-full w-full bg-[#f8f9ff] text-slate-900 overflow-y-auto font-sans p-4 lg:p-8 relative">
         <div className="w-[80%] mx-auto pb-32">
           {/* Header Section */}
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-5 mb-8">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-5 mb-6">
             <div className="flex items-center gap-4">
-              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=128&h=128&fit=crop" alt="Rania" className="w-14 h-14 rounded-xl object-cover shadow-sm" />
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=128&h=128&fit=crop" alt="Rizky Aditya Pratama" className="w-14 h-14 rounded-xl object-cover shadow-sm" />
               <div>
-                <h1 className="font-bold text-[28px] text-slate-900 leading-tight">Profil Aspirasi Rania</h1>
+                <h1 className="font-bold text-[28px] text-slate-900 leading-tight">Profil Aspirasi Rizky Aditya Pratama</h1>
                 <div className="flex items-center gap-4 mt-1 text-[13px] text-slate-500 font-medium">
                   <span>NIM: 2254100011</span>
-                  <span>Prodi: Manajemen Komunikasi</span>
+                  <span>Prodi: Hubungan Masyarakat (UNESA)</span>
                   <span>Semester 6</span>
                 </div>
               </div>
@@ -118,40 +120,104 @@ export function CareerAspirations() {
             </div>
           </div>
 
+          {/* Top Badges Row */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+            <div className="flex items-center gap-3 px-4 py-3 bg-emerald-50/70 border border-emerald-100/80 rounded-xl shadow-sm">
+              <div className="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
+                <GraduationCap size={16} />
+              </div>
+              <div>
+                <p className="text-[9px] font-black text-emerald-600 uppercase tracking-widest leading-none">Indeks Prestasi Kumulatif</p>
+                <p className="text-[12px] font-bold text-slate-800 mt-1">IPK 3.42</p>
+                <p className="text-[10px] text-slate-500 font-medium">UB Standard</p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-3 px-4 py-3 bg-purple-50/70 border border-purple-100/80 rounded-xl shadow-sm">
+              <div className="w-8 h-8 rounded-lg bg-purple-100 text-purple-700 flex items-center justify-center shrink-0">
+                <BookOpen size={16} />
+              </div>
+              <div>
+                <p className="text-[9px] font-black text-purple-600 uppercase tracking-widest leading-none">SKS Kumulatif</p>
+                <p className="text-[12px] font-bold text-slate-800 mt-1">97 SKS</p>
+                <p className="text-[10px] text-slate-500 font-medium">Diselesaikan</p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-3 px-4 py-3 bg-indigo-50/70 border border-indigo-100/80 rounded-xl shadow-sm">
+              <div className="w-8 h-8 rounded-lg bg-indigo-100 text-indigo-700 flex items-center justify-center shrink-0">
+                <Clock size={16} />
+              </div>
+              <div>
+                <p className="text-[9px] font-black text-indigo-600 uppercase tracking-widest leading-none">Kohort Akademik</p>
+                <p className="text-[12px] font-bold text-slate-800 mt-1">Angkatan 2022</p>
+                <p className="text-[10px] text-slate-500 font-medium">Semester 6</p>
+              </div>
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
             {/* Vision Card */}
-            <section className="lg:col-span-2 bg-gradient-to-r from-white to-sky-50/30 border border-slate-200 p-6 md:p-8 rounded-xl relative overflow-hidden flex flex-col justify-center">
-              <div className="flex gap-5 relative z-10">
-                <div className="w-14 h-14 rounded-[14px] bg-[#54B4F4] flex items-center justify-center flex-shrink-0 shadow-sm">
-                  <Sparkles className="text-white" size={26} />
+            <section className="lg:col-span-2 bg-gradient-to-r from-white to-sky-50/20 border border-slate-200 p-6 rounded-xl relative overflow-hidden flex flex-col justify-between shadow-sm">
+              <div className="flex gap-4 relative z-10 mb-4">
+                <div className="w-10 h-10 rounded-lg bg-sky-100 text-sky-600 flex items-center justify-center flex-shrink-0 shadow-sm">
+                  <Sparkles size={20} />
                 </div>
-                <div className="pt-1">
-                  <p className="font-bold text-xs tracking-widest uppercase text-sky-700 mb-3 font-mono">VISI KARIERMU</p>
-                  <p className="font-bold text-[17px] md:text-lg text-slate-800 italic leading-relaxed">
-                    "{careerGoal || 'Rania ingin menjadi Communication Strategist di lembaga advokasi sosial dalam 5 tahun ke depan, menguasai riset audiens, framing pesan, dan koordinasi media.'}"
+                <div className="pt-0.5">
+                  <p className="font-bold text-[10px] tracking-widest uppercase text-sky-700 mb-1.5 font-mono">VISI KARIERMU</p>
+                  <p className="font-medium text-[12px] text-slate-700 italic leading-relaxed">
+                    "{careerGoal || 'Rizky Aditya Pratama ingin menjadi Corporate Communications / Humas Korporat di PR & Branding Agency terkemuka, menguasai manajemen krisis, media relations, dan strategic messaging.'}"
                   </p>
+                </div>
+              </div>
+
+              {/* AI Insight Section */}
+              <div className="border-t border-slate-100 pt-3 mt-2 bg-purple-50/40 p-4 rounded-xl border border-purple-100/60">
+                <div className="flex items-start gap-3">
+                  <div className="w-7 h-7 rounded-lg bg-purple-100 text-purple-700 flex items-center justify-center shrink-0 shadow-sm">
+                    <BrainCircuit size={14} />
+                  </div>
+                  <div>
+                    <span className="text-[10px] font-black text-purple-700 uppercase tracking-widest block mb-0.5 font-mono">AI INSIGHT</span>
+                    <p className="text-[12px] text-slate-600 leading-relaxed font-medium">
+                      Mahasiswa UNESA Rizky Aditya Pratama berada pada jalur kompetitif menuju Humas Korporat. Rekomendasi 90 hari: selesaikan gap Media Listening (Brand24) dan ikuti sertifikasi kehumasan sebelum program Kampus Merdeka Semester 6.
+                    </p>
+                  </div>
                 </div>
               </div>
             </section>
 
             {/* Readiness Index Meter */}
             <section className="bg-white border border-slate-200 p-6 rounded-xl flex flex-col justify-between relative overflow-hidden">
-               <div className="flex justify-between items-start mb-6">
-                  <div>
-                    <p className="font-bold text-[9px] tracking-widest uppercase text-slate-500 mb-2">KESIAPAN KERJA</p>
-                    <h3 className="font-bold text-slate-900 text-[13px] tracking-tight uppercase">READINESS INDEX</h3>
-                  </div>
-                  
-                  <div className="relative w-16 h-16 shrink-0 mr-2 mt-1">
-                    <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
-                      <circle cx="50" cy="50" r="40" stroke="currentColor" strokeWidth="12" fill="transparent" className="text-slate-100" />
-                      <circle cx="50" cy="50" r="40" stroke="currentColor" strokeWidth="12" fill="transparent" strokeDasharray="251.2" strokeDashoffset={251.2 - (251.2 * 67) / 100} strokeLinecap="round" className="text-[#35b5a6]" />
-                    </svg>
-                    <div className="absolute inset-0 flex flex-col items-center justify-center">
-                      <span className="text-base font-bold text-slate-900 leading-none">67</span>
-                      <span className="text-[7px] font-bold text-slate-500 mt-0.5">/100</span>
+               <div>
+                 <div className="flex justify-between items-start mb-4">
+                    <div>
+                      <p className="font-bold text-[9px] tracking-widest uppercase text-slate-500 mb-2">KESIAPAN KERJA</p>
+                      <h3 className="font-bold text-slate-900 text-[13px] tracking-tight uppercase">READINESS INDEX</h3>
                     </div>
-                  </div>
+                    
+                    <div className="relative w-16 h-16 shrink-0 mr-2 mt-1">
+                      <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="40" stroke="currentColor" strokeWidth="12" fill="transparent" className="text-slate-100" />
+                        <circle cx="50" cy="50" r="40" stroke="currentColor" strokeWidth="12" fill="transparent" strokeDasharray="251.2" strokeDashoffset={251.2 - (251.2 * 67) / 100} strokeLinecap="round" className="text-[#35b5a6]" />
+                      </svg>
+                      <div className="absolute inset-0 flex flex-col items-center justify-center">
+                        <span className="text-base font-bold text-slate-900 leading-none">67</span>
+                        <span className="text-[7px] font-bold text-slate-500 mt-0.5">/100</span>
+                      </div>
+                    </div>
+                 </div>
+
+                 {/* Harapan Karir */}
+                 <div className="bg-amber-50/60 border border-amber-100/80 rounded-xl p-3 flex items-center gap-3 mb-4">
+                   <div className="w-8 h-8 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center shrink-0 shadow-sm">
+                     <Award size={18} />
+                   </div>
+                   <div>
+                     <p className="text-[9px] font-black text-amber-700 uppercase tracking-widest leading-none">Harapan Karir</p>
+                     <p className="text-[13px] font-extrabold text-slate-800 mt-1.5 leading-none">Communication Strategist</p>
+                   </div>
+                 </div>
                </div>
                
                <div className="flex justify-between items-end border-t border-slate-100 pt-4 mt-auto">
@@ -506,16 +572,64 @@ export function CareerAspirations() {
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {/* Card 1 */}
-                <div className="bg-[#f8f9ff] border border-slate-200 rounded-xl p-5 flex flex-col justify-between">
+                <div className="bg-white border border-slate-200 rounded-xl p-5 flex flex-col justify-between shadow-sm">
                   <div>
                     <div className="flex justify-between items-center mb-4">
-                      <span className="bg-purple-100 text-purple-600 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">PASSION AREA #1</span>
-                      <span className="bg-slate-100 text-slate-700 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">SANGAT SELARAS</span>
+                      <span className="bg-purple-50 text-[#7c3aed] text-[10px] font-black px-2.5 py-1 rounded-md uppercase tracking-wider font-mono border border-purple-100/80">PASSION #1</span>
+                      <span className="bg-slate-100 text-slate-700 text-[10px] font-black px-2.5 py-1 rounded-md uppercase tracking-wider font-mono">SANGAT SELARAS</span>
                     </div>
-                    <h4 className="font-bold text-[15px] text-slate-800 mb-4">Komunikasi Krisis & Manajemen Isu Strategis</h4>
+                    <h4 className="font-extrabold text-[17px] text-slate-900 mb-2 leading-tight">Komunikasi Krisis & Manajemen Isu Strategis</h4>
+                    
+                    <p className="text-[12px] text-slate-600 leading-relaxed mb-4">
+                      Mahasiswa memiliki kecenderungan tinggi untuk berfokus pada mitigasi berita buruk, taktik respon pasca krisis, dan penyusunan narasi persuasif dalam situasi darurat organisasi.
+                    </p>
+
+                    <div className="mb-5 border-t border-slate-100 pt-4">
+                      <button 
+                        type="button"
+                        onClick={() => setIsBukti1Open(!isBukti1Open)}
+                        className="flex items-center justify-between w-full text-left focus:outline-none group/btn cursor-pointer"
+                      >
+                        <p className="text-[10px] font-black text-slate-500 group-hover/btn:text-[#7c3aed] transition-colors uppercase tracking-widest flex items-center gap-1.5">
+                          BASIS BUKTI INFERENSI
+                        </p>
+                        {isBukti1Open ? (
+                          <ChevronUp size={14} className="text-slate-400 group-hover/btn:text-[#7c3aed] transition-transform" />
+                        ) : (
+                          <ChevronDown size={14} className="text-slate-400 group-hover/btn:text-[#7c3aed] transition-transform" />
+                        )}
+                      </button>
+                      
+                      <AnimatePresence>
+                        {isBukti1Open && (
+                          <motion.div 
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: 'auto' }}
+                            exit={{ opacity: 0, height: 0 }}
+                            transition={{ duration: 0.2 }}
+                            className="overflow-hidden"
+                          >
+                            <div className="space-y-2 mt-3 p-3 bg-slate-50 rounded-lg border border-slate-100">
+                              <div className="flex items-start gap-2 text-[12px] text-slate-700 font-semibold">
+                                <CheckCircle2 className="text-violet-500 shrink-0 mt-0.5" size={14} />
+                                <span>FGD dominasi teori SCCT PT KAI (Skor Analisis Diskursus: 94%)</span>
+                              </div>
+                              <div className="flex items-start gap-2 text-[12px] text-slate-700 font-semibold">
+                                <CheckCircle2 className="text-violet-500 shrink-0 mt-0.5" size={14} />
+                                <span>Nilai A pada mata kuliah Strategi Komunikasi Persuasif (92)</span>
+                              </div>
+                              <div className="flex items-start gap-2 text-[12px] text-slate-700 font-semibold">
+                                <CheckCircle2 className="text-violet-500 shrink-0 mt-0.5" size={14} />
+                                <span>Nilai A pada mata kuliah Komunikasi Organisasional</span>
+                              </div>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
                     
                     <div className="mb-4">
-                      <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">SUPPORTING COMPETENCIES:</p>
+                      <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">SUPPORTING COMPETENCIES:</p>
                       <div className="flex flex-wrap gap-2">
                         <span className="bg-[#e6f4ea] text-[#1e8e3e] border border-[#d3eadd] px-2 py-1 rounded text-[11px] font-bold">Teori Komunikasi Strategis (91)</span>
                         <span className="bg-[#e6f4ea] text-[#1e8e3e] border border-[#d3eadd] px-2 py-1 rounded text-[11px] font-bold">Critical Thinking (90)</span>
@@ -523,8 +637,8 @@ export function CareerAspirations() {
                       </div>
                     </div>
                     
-                    <div>
-                      <p className="text-[10px] font-bold text-rose-500 uppercase tracking-widest mb-2">GAPS & ROADBLOCK:</p>
+                    <div className="mb-4">
+                      <p className="text-[10px] font-black text-rose-500 uppercase tracking-widest mb-2">GAPS & ROADBLOCK:</p>
                       <div className="flex flex-wrap gap-2">
                         <span className="bg-rose-50 text-rose-600 border border-rose-100 px-2 py-1 rounded text-[11px] font-bold">Research & Data (74)</span>
                       </div>
@@ -538,16 +652,64 @@ export function CareerAspirations() {
                 </div>
 
                 {/* Card 2 */}
-                <div className="bg-[#f8f9ff] border border-slate-200 rounded-xl p-5 flex flex-col justify-between">
+                <div className="bg-white border border-slate-200 rounded-xl p-5 flex flex-col justify-between shadow-sm">
                   <div>
                     <div className="flex justify-between items-center mb-4">
-                      <span className="bg-purple-100 text-purple-600 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">PASSION AREA #2</span>
-                      <span className="bg-slate-100 text-slate-700 text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">SELARAS</span>
+                      <span className="bg-teal-50 text-[#0f766e] text-[10px] font-black px-2.5 py-1 rounded-md uppercase tracking-wider font-mono border border-teal-100/80">PASSION #2</span>
+                      <span className="bg-slate-100 text-slate-700 text-[10px] font-black px-2.5 py-1 rounded-md uppercase tracking-wider font-mono">SELARAS</span>
                     </div>
-                    <h4 className="font-bold text-[15px] text-slate-800 mb-4">Kepemimpinan & Public Speaking / Debat</h4>
+                    <h4 className="font-extrabold text-[17px] text-slate-900 mb-2 leading-tight">Kepemimpinan & Public Speaking / Debat</h4>
+                    
+                    <p className="text-[12px] text-slate-600 leading-relaxed mb-4">
+                      Kekuatan retorika verbal yang sangat mumpuni didukung rasa kompetitif akademis yang sehat. Selalu mengambil porsi struktural atau koordinator dalam aktivitas kelompok kerja.
+                    </p>
+
+                    <div className="mb-5 border-t border-slate-100 pt-4">
+                      <button 
+                        type="button"
+                        onClick={() => setIsBukti2Open(!isBukti2Open)}
+                        className="flex items-center justify-between w-full text-left focus:outline-none group/btn cursor-pointer"
+                      >
+                        <p className="text-[10px] font-black text-slate-500 group-hover/btn:text-[#0f766e] transition-colors uppercase tracking-widest flex items-center gap-1.5">
+                          BASIS BUKTI INFERENSI
+                        </p>
+                        {isBukti2Open ? (
+                          <ChevronUp size={14} className="text-slate-400 group-hover/btn:text-[#0f766e] transition-transform" />
+                        ) : (
+                          <ChevronDown size={14} className="text-slate-400 group-hover/btn:text-[#0f766e] transition-transform" />
+                        )}
+                      </button>
+                      
+                      <AnimatePresence>
+                        {isBukti2Open && (
+                          <motion.div 
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: 'auto' }}
+                            exit={{ opacity: 0, height: 0 }}
+                            transition={{ duration: 0.2 }}
+                            className="overflow-hidden"
+                          >
+                            <div className="space-y-2 mt-3 p-3 bg-slate-50 rounded-lg border border-slate-100">
+                              <div className="flex items-start gap-2 text-[12px] text-slate-700 font-semibold">
+                                <CheckCircle2 className="text-teal-600 shrink-0 mt-0.5" size={14} />
+                                <span>Ketua Divisi Kajian Strategis Himpunan (Evaluasi Sejawat: 4.8/5)</span>
+                              </div>
+                              <div className="flex items-start gap-2 text-[12px] text-slate-700 font-semibold">
+                                <CheckCircle2 className="text-teal-600 shrink-0 mt-0.5" size={14} />
+                                <span>Anggota Inti Unit Debat (12 Jam Sesi Latihan Mingguan)</span>
+                              </div>
+                              <div className="flex items-start gap-2 text-[12px] text-slate-700 font-semibold">
+                                <CheckCircle2 className="text-teal-600 shrink-0 mt-0.5" size={14} />
+                                <span>Juara 2 Debat Komunikasi Nasional (Komfest 2023)</span>
+                              </div>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
                     
                     <div className="mb-4">
-                      <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">SUPPORTING COMPETENCIES:</p>
+                      <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">SUPPORTING COMPETENCIES:</p>
                       <div className="flex flex-wrap gap-2">
                         <span className="bg-[#e6f4ea] text-[#1e8e3e] border border-[#d3eadd] px-2 py-1 rounded text-[11px] font-bold">Leadership (88)</span>
                         <span className="bg-[#e6f4ea] text-[#1e8e3e] border border-[#d3eadd] px-2 py-1 rounded text-[11px] font-bold">Communication Skill (84)</span>
@@ -555,8 +717,8 @@ export function CareerAspirations() {
                       </div>
                     </div>
                     
-                    <div>
-                      <p className="text-[10px] font-bold text-rose-500 uppercase tracking-widest mb-2">GAPS & ROADBLOCK:</p>
+                    <div className="mb-4">
+                      <p className="text-[10px] font-black text-rose-500 uppercase tracking-widest mb-2">GAPS & ROADBLOCK:</p>
                       <div className="flex flex-wrap gap-2">
                         <span className="bg-rose-50 text-rose-600 border border-rose-100 px-2 py-1 rounded text-[11px] font-bold">Keterampilan fasilitasi (mengurangi dominasi floor 47%)</span>
                       </div>
@@ -962,10 +1124,14 @@ export function CareerAspirations() {
                 <h2 className="font-bold text-2xl text-slate-900">Konten Rekomendasi Langsung</h2>
                 <p className="text-sm text-slate-600">Dipilih AI berdasarkan kompetensi prioritasmu</p>
               </div>
-              <a className="flex items-center gap-1 text-blue-900 text-[11px] font-medium hover:underline" href="#top">
+              <button 
+                type="button"
+                onClick={() => setView?.('upskilling_explore')}
+                className="flex items-center gap-1 text-blue-900 text-[11px] font-bold hover:underline cursor-pointer focus:outline-none"
+              >
                 Lihat Semua
                 <ArrowRight size={14} />
-              </a>
+              </button>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {/* Card 1 */}

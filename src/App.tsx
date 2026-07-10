@@ -411,7 +411,7 @@ export default function App() {
           {currentView === 'aksara_ai' && <AksaraAI />}
           {currentView === 'competitions' && <Competitions />}
           {currentView === 'internships' && <Internships />}
-          {currentView === 'career_aspirations' && <CareerAspirations />}
+          {currentView === 'career_aspirations' && <CareerAspirations setView={setView} />}
           {currentView === 'scholarships' && <Scholarships />}
           {currentView === 'katalog_mitra' && <KatalogUniversitasMitra setView={setView} />}
           {currentView === 'kesiapan_saya' && <KatalogMitra setView={setView} />}
