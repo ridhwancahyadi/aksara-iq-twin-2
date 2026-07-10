@@ -1,0 +1,11 @@
+{
+  "name": "Remix: Remix: Aksara IQ",
+  "description": "Enterprise-grade dashboard for managing FGD sessions, AI-driven transcript analysis, and curriculum gap assessments.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
