@@ -8,7 +8,8 @@ import {
   Sparkles, FileText, CheckCircle, AlertCircle, Target, 
   Award, Compass, ClipboardCheck, BookOpen, Clock, ChevronRight,
   TrendingUp, Users, Heart, Briefcase, GraduationCap, ArrowUpRight, HelpCircle, Calendar,
-  Download, ArrowRight, Check, CheckCircle2, Circle, Star, Edit3, User, MapPin, Monitor, Video
+  Download, ArrowRight, Check, CheckCircle2, Circle, Star, Edit3, User, MapPin, Monitor, Video,
+  Trophy, Link2, Plus, Info, ExternalLink, ChevronDown, ChevronUp
 } from 'lucide-react';
 import { learning } from './StudentDnaProfiling';
 import { View } from '../types';
@@ -546,7 +547,7 @@ export function StudentTwin({
   const activeTwinSubMenu = propActiveTwinSubMenu !== undefined ? propActiveTwinSubMenu : internalActiveTwinSubMenu;
   const setActiveTwinSubMenu = propSetActiveTwinSubMenu !== undefined ? propSetActiveTwinSubMenu : setInternalActiveTwinSubMenu;
   const [activeTab, setActiveTab] = useState<string>("overview");
-  const [biodataSubTab, setBiodataSubTab] = useState<'personal_family' | 'registration_billing'>('personal_family');
+  const [biodataSubTab, setBiodataSubTab] = useState<'personal_family' | 'registration_billing' | 'organisasi_portfolio'>('personal_family');
   const [isExportingPdf, setIsExportingPdf] = useState(false);
   const [imgError, setImgError] = useState(false);
   const [isScheduleOpen, setIsScheduleOpen] = useState(false);
@@ -1915,6 +1916,7 @@ export function StudentTwin({
                         {[
                           { id: 'personal_family', label: 'Data Pribadi & Keluarga' },
                           { id: 'registration_billing', label: 'Registrasi & Keuangan' },
+                          { id: 'organisasi_portfolio', label: 'Organisasi & Portfolio' },
                         ].map((sub) => {
                           const isSubActive = biodataSubTab === sub.id;
                           return (
@@ -2149,6 +2151,279 @@ export function StudentTwin({
                                   </tbody>
                                 </table>
                               </div>
+                            </div>
+                          </div>
+                        )}
+
+                        {/* 5. ORGANISASI & PORTFOLIO */}
+                        {biodataSubTab === 'organisasi_portfolio' && (
+                          <div className="space-y-6 animate-fade-in text-slate-800">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                              
+                              {/* BLOCK 1: Riwayat Organisasi & Peran Kepemimpinan */}
+                              <div className="bg-white border border-slate-200 rounded-xl shadow-xs overflow-hidden flex flex-col justify-between">
+                                <div className="p-5 space-y-4">
+                                  {/* Header */}
+                                  <div className="flex items-start gap-3">
+                                    <div className="p-2 bg-indigo-50 rounded-lg text-indigo-600 shrink-0">
+                                      <Users size={18} />
+                                    </div>
+                                    <div>
+                                      <h4 className="text-sm font-black text-slate-800 leading-tight">Riwayat Organisasi &amp; Peran Kepemimpinan</h4>
+                                      <p className="text-[10px] text-slate-400 font-semibold mt-0.5 leading-normal">
+                                        Kontekstualisasi bakat kepemimpinan &amp; kolaborasi
+                                      </p>
+                                    </div>
+                                  </div>
+
+                                  <div className="space-y-4 divide-y divide-slate-100">
+                                    {/* Item 1 */}
+                                    <div className="pt-0 space-y-2">
+                                      <div className="flex justify-between items-start gap-2">
+                                        <div>
+                                          <h5 className="text-[12.5px] font-black text-slate-900 leading-snug">
+                                            Himpunan Mahasiswa Manajemen Komunikasi
+                                          </h5>
+                                          <p className="text-[11.5px] font-bold text-slate-500 mt-0.5">
+                                            Ketua Divisi Kajian Strategis
+                                          </p>
+                                        </div>
+                                        <span className="bg-indigo-50 text-indigo-700 border border-indigo-100 px-2 py-0.5 rounded text-[8.5px] font-black uppercase tracking-wider shrink-0">
+                                          Kepemimpinan Utama
+                                        </span>
+                                      </div>
+                                      <div className="flex items-center gap-3 text-[10px] text-slate-400 font-bold">
+                                        <span className="flex items-center gap-1">
+                                          <Clock size={11} />
+                                          2024–2025
+                                        </span>
+                                        <span className="flex items-center gap-1 text-emerald-600 bg-emerald-50 border border-emerald-100 px-1.5 py-0.2 rounded-xs">
+                                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                                          Aktif
+                                        </span>
+                                      </div>
+                                    </div>
+
+                                    {/* Item 2 */}
+                                    <div className="pt-3 space-y-2">
+                                      <div className="flex justify-between items-start gap-2">
+                                        <div>
+                                          <h5 className="text-[12.5px] font-black text-slate-900 leading-snug">
+                                            Unit Debat &amp; Public Speaking Unpad
+                                          </h5>
+                                          <p className="text-[11.5px] font-bold text-slate-500 mt-0.5">
+                                            Anggota Inti
+                                          </p>
+                                        </div>
+                                        <span className="bg-blue-50 text-blue-700 border border-blue-100 px-2 py-0.5 rounded text-[8.5px] font-black uppercase tracking-wider shrink-0">
+                                          Kontributor Aktif
+                                        </span>
+                                      </div>
+                                      <div className="flex items-center gap-3 text-[10px] text-slate-400 font-bold">
+                                        <span className="flex items-center gap-1">
+                                          <Clock size={11} />
+                                          2023–2025
+                                        </span>
+                                        <span className="flex items-center gap-1 text-emerald-600 bg-emerald-50 border border-emerald-100 px-1.5 py-0.2 rounded-xs">
+                                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                                          Aktif
+                                        </span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                {/* Footer */}
+                                <div className="bg-slate-50 px-5 py-3 border-t border-slate-100 flex items-center gap-1.5 text-[10px] text-slate-400 font-bold">
+                                  <Info size={12} className="text-slate-400" />
+                                  <span>Metode validasi: Verifikasi SK Rektor &amp; Transkrip Aktivitas</span>
+                                </div>
+                              </div>
+
+                              {/* BLOCK 2: Prestasi & Penghargaan */}
+                              <div className="bg-white border border-slate-200 rounded-xl shadow-xs overflow-hidden flex flex-col justify-between">
+                                <div className="p-5 space-y-4">
+                                  {/* Header */}
+                                  <div className="flex items-start gap-3">
+                                    <div className="p-2 bg-amber-50 rounded-lg text-amber-600 shrink-0">
+                                      <Trophy size={18} />
+                                    </div>
+                                    <div>
+                                      <h4 className="text-sm font-black text-slate-800 leading-tight">Prestasi &amp; Penghargaan</h4>
+                                      <p className="text-[10px] text-slate-400 font-semibold mt-0.5 leading-normal">
+                                        Rekor pencapaian kompetitif eksternal dan internal
+                                      </p>
+                                    </div>
+                                  </div>
+
+                                  <div className="space-y-4 divide-y divide-slate-100">
+                                    {/* Item 1 */}
+                                    <div className="pt-0 space-y-1.5">
+                                      <div className="flex justify-between items-start gap-2">
+                                        <h5 className="text-[12.5px] font-black text-slate-900 leading-snug">
+                                          Juara 2 Lomba Debat Komunikasi Nasional
+                                        </h5>
+                                        <span className="bg-amber-100 text-amber-800 border border-amber-200 px-1.5 py-0.5 rounded text-[8.5px] font-black uppercase tracking-wider shrink-0">
+                                          Nasional
+                                        </span>
+                                      </div>
+                                      <p className="text-[11px] font-medium text-slate-600 leading-normal">
+                                        Penghargaan bergengsi tingkat nasional di bidang kajian argumentatif komunikasi publik.
+                                      </p>
+                                      <div className="flex flex-wrap items-center gap-2.5 pt-0.5">
+                                        <span className="bg-slate-100 text-slate-700 text-[9px] font-bold px-2 py-0.5 rounded-full border border-slate-200">
+                                          FISIP Communication Week
+                                        </span>
+                                        <span className="text-[10px] text-slate-400 font-bold flex items-center gap-1">
+                                          <Calendar size={11} />
+                                          2024
+                                        </span>
+                                      </div>
+                                    </div>
+
+                                    {/* Item 2 */}
+                                    <div className="pt-3 space-y-1.5">
+                                      <div className="flex justify-between items-start gap-2">
+                                        <h5 className="text-[12.5px] font-black text-slate-900 leading-snug">
+                                          Best Speaker Crisis Simulation Class
+                                        </h5>
+                                        <span className="bg-slate-100 text-slate-700 border border-slate-200 px-1.5 py-0.5 rounded text-[8.5px] font-black uppercase tracking-wider shrink-0">
+                                          Internal
+                                        </span>
+                                      </div>
+                                      <p className="text-[11px] font-medium text-slate-600 leading-normal">
+                                        Predikat pembicara terbaik dalam simulasi penanganan krisis PR bagi korporasi skala besar.
+                                      </p>
+                                      <div className="flex flex-wrap items-center gap-2.5 pt-0.5">
+                                        <span className="bg-slate-100 text-slate-700 text-[9px] font-bold px-2 py-0.5 rounded-full border border-slate-200">
+                                          Lab Mangkom Unpad
+                                        </span>
+                                        <span className="text-[10px] text-slate-400 font-bold flex items-center gap-1">
+                                          <Calendar size={11} />
+                                          2025
+                                        </span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                {/* Footer */}
+                                <div className="bg-slate-50 px-5 py-3 border-t border-slate-100 flex items-center justify-between text-[10px] text-slate-400 font-bold">
+                                  <span>Nilai Indeks Reputasi Prestasi</span>
+                                  <span className="text-amber-600 font-black text-sm">A+</span>
+                                </div>
+                              </div>
+
+                              {/* BLOCK 3: Sertifikasi & Workshop */}
+                              <div className="bg-white border border-slate-200 rounded-xl shadow-xs overflow-hidden flex flex-col justify-between">
+                                <div className="p-5 space-y-4">
+                                  {/* Header */}
+                                  <div className="flex items-start gap-3">
+                                    <div className="p-2 bg-emerald-50 rounded-lg text-emerald-600 shrink-0">
+                                      <Award size={18} />
+                                    </div>
+                                    <div>
+                                      <h4 className="text-sm font-black text-slate-800 leading-tight">Sertifikasi &amp; Workshop</h4>
+                                      <p className="text-[10px] text-slate-400 font-semibold mt-0.5 leading-normal">
+                                        Validasi kompetensi teknis dari badan tersertifikasi
+                                      </p>
+                                    </div>
+                                  </div>
+
+                                  <div className="space-y-3">
+                                    {/* Item 1 */}
+                                    <div className="flex items-center justify-between p-3 border border-slate-100 rounded-lg hover:border-slate-200 transition-colors bg-white">
+                                      <div className="flex items-center gap-2.5">
+                                        <CheckCircle2 size={16} className="text-emerald-500 shrink-0" />
+                                        <div>
+                                          <h5 className="text-[12px] font-black text-slate-900 leading-none">BNSP Public Relations (Muda)</h5>
+                                          <p className="text-[10px] text-slate-400 font-semibold mt-1">Asosiasi Humas Indonesia • Valid s.d. 2027</p>
+                                        </div>
+                                      </div>
+                                      <span className="bg-emerald-50 text-emerald-700 border border-emerald-100 text-[8.5px] font-black px-2 py-0.5 rounded-sm uppercase tracking-wider">
+                                        Kompeten
+                                      </span>
+                                    </div>
+
+                                    {/* Item 2 */}
+                                    <div className="flex items-center justify-between p-3 border border-slate-100 rounded-lg hover:border-slate-200 transition-colors bg-white">
+                                      <div className="flex items-center gap-2.5">
+                                        <CheckCircle2 size={16} className="text-emerald-500 shrink-0" />
+                                        <div>
+                                          <h5 className="text-[12px] font-black text-slate-900 leading-none">Crisis Communication Workshop</h5>
+                                          <p className="text-[10px] text-slate-400 font-semibold mt-1">Eurasia PR Summit • Issued 2025</p>
+                                        </div>
+                                      </div>
+                                      <span className="bg-blue-50 text-blue-700 border border-blue-100 text-[8.5px] font-black px-2 py-0.5 rounded-sm uppercase tracking-wider">
+                                        Selesai
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                {/* Footer */}
+                                <div className="bg-slate-50 px-5 py-2.5 border-t border-slate-100 flex items-center justify-between text-[10px] font-bold">
+                                  <span className="text-slate-400">Kompetensi Digital ter-link ke LinkedIn</span>
+                                  <button className="text-[#0052CC] hover:text-[#0747A6] flex items-center gap-1 cursor-pointer bg-transparent border-none">
+                                    <Plus size={12} strokeWidth={2.5} />
+                                    <span>Tambah Baru</span>
+                                  </button>
+                                </div>
+                              </div>
+
+                              {/* BLOCK 4: Riwayat Kerja & Magang */}
+                              <div className="bg-white border border-slate-200 rounded-xl shadow-xs overflow-hidden flex flex-col justify-between">
+                                <div className="p-5 space-y-4">
+                                  {/* Header */}
+                                  <div className="flex items-start gap-3">
+                                    <div className="p-2 bg-blue-50 rounded-lg text-blue-600 shrink-0">
+                                      <Briefcase size={18} />
+                                    </div>
+                                    <div>
+                                      <h4 className="text-sm font-black text-slate-800 leading-tight">Riwayat Kerja &amp; Magang</h4>
+                                      <p className="text-[10px] text-slate-400 font-semibold mt-0.5 leading-normal">
+                                        Eksposur industri nyata dan implementasi praktis
+                                      </p>
+                                    </div>
+                                  </div>
+
+                                  <div className="space-y-3">
+                                    <div className="flex items-start justify-between gap-3">
+                                      <div>
+                                        <h5 className="text-[13px] font-black text-slate-900 leading-tight">Agensi PR Nasional</h5>
+                                        <p className="text-[11.5px] font-semibold text-slate-500 mt-0.5">Strategy &amp; Crisis Management Support</p>
+                                      </div>
+                                      <span className="bg-blue-50 text-blue-700 border border-blue-100 px-2 py-0.5 rounded text-[8.5px] font-black uppercase tracking-wider shrink-0">
+                                        Strategy Intern
+                                      </span>
+                                    </div>
+
+                                    {/* Duration and Period Box */}
+                                    <div className="grid grid-cols-2 gap-4 border-y border-slate-100 py-2.5 text-xs">
+                                      <div>
+                                        <span className="text-[8.5px] font-black text-slate-400 uppercase tracking-widest block mb-0.5">Durasi Magang</span>
+                                        <span className="font-bold text-slate-700">4 Bulan Pekerjaan</span>
+                                      </div>
+                                      <div>
+                                        <span className="text-[8.5px] font-black text-slate-400 uppercase tracking-widest block mb-0.5">Periode</span>
+                                        <span className="font-bold text-slate-700">Sep – Des 2024</span>
+                                      </div>
+                                    </div>
+
+                                    {/* Bullet achievement box */}
+                                    <div className="bg-slate-50 border border-slate-200 rounded-lg p-3 text-[11px] font-medium leading-relaxed text-slate-600">
+                                      Berhasil menyusun <strong className="text-slate-800">4 Executive Crisis Dossier</strong> untuk BUMN, terverifikasi oleh Mentor Agensi dengan predikat memuaskan.
+                                    </div>
+                                  </div>
+                                </div>
+
+                                {/* Footer */}
+                                <div className="bg-slate-50 px-5 py-3 border-t border-slate-100 flex items-center justify-between text-[10px] text-slate-400 font-bold">
+                                  <span>SKS Magang Setara:</span>
+                                  <span className="text-slate-700 font-black">4 SKS (MMS-302)</span>
+                                </div>
+                              </div>
+
                             </div>
                           </div>
                         )}

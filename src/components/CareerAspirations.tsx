@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Compass, CheckCircle2, ChevronRight, Lock, Target, BrainCircuit, Users, Heart, LineChart, MessageSquare, Video, HelpCircle, PenTool, BookOpen, Edit3, ArrowRight, Sparkles, TrendingUp, Lightbulb, Podcast, Clock, Search, Megaphone, PlayCircle, ChevronDown, ChevronUp, ArrowUpRight, MousePointerClick, LayoutDashboard, Briefcase, Globe } from 'lucide-react';
+import { Compass, CheckCircle2, ChevronRight, Lock, Target, BrainCircuit, Users, Heart, LineChart, MessageSquare, Video, HelpCircle, PenTool, BookOpen, Edit3, ArrowRight, Sparkles, TrendingUp, Lightbulb, Podcast, Clock, Search, Megaphone, PlayCircle, ChevronDown, ChevronUp, ArrowUpRight, MousePointerClick, LayoutDashboard, Briefcase, Globe, Link2, Info, GraduationCap } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
 
 export function CareerAspirations() {
   const [phase, setPhase] = useState(1);
@@ -12,6 +13,12 @@ export function CareerAspirations() {
   const [isCompleted, setIsCompleted] = useState(true);
   const [expandedGap, setExpandedGap] = useState<number | null>(null);
   const [expandedPath, setExpandedPath] = useState<number | null>(null);
+  const [expandedRoadmap, setExpandedRoadmap] = useState<Record<string, boolean>>({
+    'p1-1': false,
+    'p1-2': false,
+    'p2-1': false,
+    'p3-1': false
+  });
 
   const phases = [
     { id: 1, label: 'Minat & Genre', icon: Heart },
@@ -590,60 +597,311 @@ export function CareerAspirations() {
                 </div>
               </div>
             </div>
-            
-            <div className="p-6">
-              <div className="flex items-center gap-2 mb-4 text-[#3c5df2]">
-                <Compass size={20} strokeWidth={2.5} />
-                <h3 className="font-bold text-[14px] tracking-wider uppercase text-slate-800">PENGEMBANGAN KARIR & ROADMAP</h3>
+                     <div className="p-6">
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center gap-2 text-[#3c5df2]">
+                  <Compass size={20} strokeWidth={2.5} />
+                  <h3 className="font-bold text-[14px] tracking-wider uppercase text-slate-800">PENGEMBANGAN KARIR & ROADMAP</h3>
+                </div>
+                <button
+                  onClick={() => {
+                    const allOpen = Object.values(expandedRoadmap).every(v => v);
+                    setExpandedRoadmap({
+                      'p1-1': !allOpen,
+                      'p1-2': !allOpen,
+                      'p2-1': !allOpen,
+                      'p3-1': !allOpen,
+                    });
+                  }}
+                  className="text-xs font-black text-[#0052CC] hover:text-[#0747A6] uppercase tracking-wider transition-colors cursor-pointer"
+                >
+                  {Object.values(expandedRoadmap).every(v => v) ? 'Collapse All' : 'Expand All'}
+                </button>
               </div>
               
-              <div className="bg-[#f4f7fb] border border-[#e2e8f0] rounded-xl p-5 mb-4">
-                <span className="bg-[#e0e7ff] text-[#4338ca] border border-[#c7d2fe] px-2 py-1 rounded text-[9px] font-bold uppercase tracking-wider mb-3 inline-block">PRIORITY FOCUS</span>
+              <div className="bg-[#f4f7fb] border border-[#e2e8f0] rounded-xl p-5 mb-6">
+                <span className="bg-[#e0e7ff] text-[#4338ca] border border-[#c7d2fe] px-2 py-1 rounded text-[9px] font-bold uppercase tracking-wider mb-2.5 inline-block">PRIORITY FOCUS</span>
                 <p className="text-[#334155] font-bold text-[15px]">"Melengkapi profil strategist dengan literasi data & keterampilan fasilitasi."</p>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                {/* Roadmap 1 */}
-                <div className="bg-white border border-slate-200 rounded-xl p-5">
-                  <span className="bg-slate-100 text-slate-500 px-2 py-1 rounded text-[9px] font-bold uppercase tracking-wider mb-4 inline-block">JANGKA PENDEK (SEMESTER BERJALAN)</span>
+              {/* Vertical Interactive Timeline */}
+              <div className="relative pl-6 sm:pl-8 border-l-2 border-dashed border-slate-200 space-y-8 ml-3 sm:ml-4">
+                
+                {/* PHASE 1 */}
+                <div className="relative">
+                  {/* Timeline Dot */}
+                  <div className="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-rose-500 border-4 border-white shadow-sm ring-2 ring-rose-100" />
+                  
+                  {/* Phase Title */}
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="bg-rose-100 text-rose-800 text-[10px] font-black px-2.5 py-0.5 rounded-sm uppercase tracking-wider">PHASE 1 — JANGKA PENDEK</span>
+                    <span className="text-xs text-slate-400 font-bold">•</span>
+                    <span className="text-xs text-slate-500 font-bold">Semester Berjalan</span>
+                  </div>
+
                   <div className="space-y-4">
-                    <div>
-                      <h4 className="font-bold text-slate-800 text-[13px] uppercase mb-1">ANALITIK DATA</h4>
-                      <p className="text-[13px] text-slate-700 font-semibold mb-1">Optimalkan nilai Statistika/Riset & ikuti kursus data analysis untuk komunikasi.</p>
-                      <p className="text-[11px] text-slate-400 italic font-medium">Rationale: Gap Research & Data (74) menahan kelengkapan profil strategist.</p>
+                    {/* Item 1.1: Analitik Data */}
+                    <div className="bg-white border border-slate-200 rounded-lg shadow-sm overflow-hidden transition-all hover:border-slate-300">
+                      <button
+                        onClick={() => setExpandedRoadmap(prev => ({ ...prev, 'p1-1': !prev['p1-1'] }))}
+                        className="w-full text-left p-4 flex items-center justify-between gap-4 cursor-pointer hover:bg-slate-50/50"
+                      >
+                        <div className="flex items-center gap-3">
+                          {/* Accent block on the left */}
+                          <div className="w-1.5 h-8 bg-rose-500 rounded-full shrink-0" />
+                          <div>
+                            <h4 className="text-sm font-black text-slate-900 uppercase tracking-tight">Analitik Data</h4>
+                            <p className="text-xs text-slate-500 font-semibold mt-0.5">Target: Research & Data ≥ 80</p>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-2 text-slate-400">
+                          <span className="text-[10px] font-black text-[#0052CC] uppercase tracking-wider hidden sm:inline">
+                            {expandedRoadmap['p1-1'] ? 'Tutup Detail' : 'Buka Detail'}
+                          </span>
+                          {expandedRoadmap['p1-1'] ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                        </div>
+                      </button>
+
+                      <AnimatePresence initial={false}>
+                        {expandedRoadmap['p1-1'] && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.2, ease: 'easeInOut' }}
+                          >
+                            <div className="px-5 pb-5 pt-1 border-t border-slate-100 bg-slate-50/30 text-xs space-y-3.5">
+                              <div>
+                                <h5 className="text-[9px] font-black uppercase text-slate-400 tracking-widest mb-1">Target Sasaran</h5>
+                                <p className="text-slate-800 font-bold text-sm flex items-center gap-1.5">
+                                  🎯 Research & Data Score ≥ 80
+                                </p>
+                              </div>
+                              <div>
+                                <h5 className="text-[9px] font-black uppercase text-slate-400 tracking-widest mb-1">Rencana Aksi</h5>
+                                <p className="text-slate-700 font-semibold leading-relaxed">
+                                  Optimalkan nilai Statistika/Riset & ikuti kursus data analysis untuk komunikasi.
+                                </p>
+                              </div>
+                              <div className="bg-rose-50/60 border border-rose-100 rounded p-3 text-[11px] text-slate-700">
+                                <span className="font-bold text-rose-700 uppercase tracking-wider block mb-0.5 text-[9px]">Rasionalisasi AI</span>
+                                Gap Research & Data (74) menahan kelengkapan profil strategist.
+                              </div>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
                     </div>
-                    <div>
-                      <h4 className="font-bold text-slate-800 text-[13px] uppercase mb-1">FASILITASI DISKUSI</h4>
-                      <p className="text-[13px] text-slate-700 font-semibold mb-1">Ambil peran moderator/fasilitator pada diskusi kelas untuk menarik kontribusi rekan.</p>
-                      <p className="text-[11px] text-slate-400 italic font-medium">Rationale: Dominasi floor 47% berisiko menekan partisipasi lain.</p>
+
+                    {/* Item 1.2: Fasilitasi Diskusi */}
+                    <div className="bg-white border border-slate-200 rounded-lg shadow-sm overflow-hidden transition-all hover:border-slate-300">
+                      <button
+                        onClick={() => setExpandedRoadmap(prev => ({ ...prev, 'p1-2': !prev['p1-2'] }))}
+                        className="w-full text-left p-4 flex items-center justify-between gap-4 cursor-pointer hover:bg-slate-50/50"
+                      >
+                        <div className="flex items-center gap-3">
+                          <div className="w-1.5 h-8 bg-rose-500 rounded-full shrink-0" />
+                          <div>
+                            <h4 className="text-sm font-black text-slate-900 uppercase tracking-tight">Fasilitasi Diskusi</h4>
+                            <p className="text-xs text-slate-500 font-semibold mt-0.5">Target: Porsi bicara merata; skor kolaborasi naik</p>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-2 text-slate-400">
+                          <span className="text-[10px] font-black text-[#0052CC] uppercase tracking-wider hidden sm:inline">
+                            {expandedRoadmap['p1-2'] ? 'Tutup Detail' : 'Buka Detail'}
+                          </span>
+                          {expandedRoadmap['p1-2'] ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                        </div>
+                      </button>
+
+                      <AnimatePresence initial={false}>
+                        {expandedRoadmap['p1-2'] && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.2, ease: 'easeInOut' }}
+                          >
+                            <div className="px-5 pb-5 pt-1 border-t border-slate-100 bg-slate-50/30 text-xs space-y-3.5">
+                              <div>
+                                <h5 className="text-[9px] font-black uppercase text-slate-400 tracking-widest mb-1">Target Sasaran</h5>
+                                <p className="text-slate-800 font-bold text-sm flex items-center gap-1.5">
+                                  🎯 Porsi bicara merata; skor kolaborasi naik
+                                </p>
+                              </div>
+                              <div>
+                                <h5 className="text-[9px] font-black uppercase text-slate-400 tracking-widest mb-1">Rencana Aksi</h5>
+                                <p className="text-slate-700 font-semibold leading-relaxed">
+                                  Ambil peran moderator/fasilitator pada diskusi kelas.
+                                </p>
+                              </div>
+                              <div className="bg-rose-50/60 border border-rose-100 rounded p-3 text-[11px] text-slate-700">
+                                <span className="font-bold text-rose-700 uppercase tracking-wider block mb-0.5 text-[9px]">Rasionalisasi AI</span>
+                                Dominasi floor 47% berisiko menekan partisipasi mahasiswa lain dalam tim.
+                              </div>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+
+                  </div>
+                </div>
+
+                {/* PHASE 2 */}
+                <div className="relative">
+                  {/* Timeline Dot */}
+                  <div className="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-blue-600 border-4 border-white shadow-sm ring-2 ring-blue-100" />
+                  
+                  {/* Phase Title */}
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="bg-blue-100 text-blue-800 text-[10px] font-black px-2.5 py-0.5 rounded-sm uppercase tracking-wider">PHASE 2 — JANGKA MENENGAH</span>
+                    <span className="text-xs text-slate-400 font-bold">•</span>
+                    <span className="text-xs text-slate-500 font-bold">1-2 Semester ke Depan</span>
+                  </div>
+
+                  <div className="space-y-4">
+                    {/* Item 2.1: Spesialisasi Krisis & Reputasi */}
+                    <div className="bg-white border border-slate-200 rounded-lg shadow-sm overflow-hidden transition-all hover:border-slate-300">
+                      <button
+                        onClick={() => setExpandedRoadmap(prev => ({ ...prev, 'p2-1': !prev['p2-1'] }))}
+                        className="w-full text-left p-4 flex items-center justify-between gap-4 cursor-pointer hover:bg-slate-50/50"
+                      >
+                        <div className="flex items-center gap-3">
+                          <div className="w-1.5 h-8 bg-blue-600 rounded-full shrink-0" />
+                          <div>
+                            <div className="flex flex-wrap items-center gap-2">
+                              <h4 className="text-sm font-black text-slate-900 uppercase tracking-tight">Spesialisasi Krisis & Reputasi</h4>
+                              <span className="bg-blue-50 text-blue-700 text-[8px] font-black px-1.5 py-0.5 rounded uppercase tracking-wider border border-blue-200">
+                                STRATEGIC SPECIALIZATION
+                              </span>
+                            </div>
+                            <p className="text-xs text-slate-500 font-semibold mt-0.5">Target: 1 sertifikasi profesional + 1 pengalaman magang PR/Crisis comm</p>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-2 text-slate-400">
+                          <span className="text-[10px] font-black text-[#0052CC] uppercase tracking-wider hidden sm:inline">
+                            {expandedRoadmap['p2-1'] ? 'Tutup Detail' : 'Buka Detail'}
+                          </span>
+                          {expandedRoadmap['p2-1'] ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                        </div>
+                      </button>
+
+                      <AnimatePresence initial={false}>
+                        {expandedRoadmap['p2-1'] && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.2, ease: 'easeInOut' }}
+                          >
+                            <div className="px-5 pb-5 pt-1 border-t border-slate-100 bg-slate-50/30 text-xs space-y-4">
+                              <div>
+                                <h5 className="text-[9px] font-black uppercase text-slate-400 tracking-widest mb-1">Target Sasaran</h5>
+                                <p className="text-slate-800 font-bold text-sm flex items-center gap-1.5">
+                                  🎯 1 sertifikasi profesional + 1 pengalaman magang PR/Crisis comm
+                                </p>
+                              </div>
+                              <div>
+                                <h5 className="text-[9px] font-black uppercase text-slate-400 tracking-widest mb-1">Rencana Aksi</h5>
+                                <p className="text-slate-700 font-semibold leading-relaxed">
+                                  Mengikuti sertifikasi crisis communication tingkat lanjut serta melamar program magang intensif di departemen corporate affairs atau agensi PR krisis.
+                                </p>
+                              </div>
+                              <div className="bg-blue-50/60 border border-blue-100 rounded p-3 text-[11px] text-slate-700">
+                                <span className="font-bold text-blue-700 uppercase tracking-wider block mb-0.5 text-[9px]">Rasionalisasi AI</span>
+                                Mengonversi minat metodis yang kuat menjadi sertifikasi kredensial pragmatis yang bernilai tinggi industri.
+                              </div>
+
+                              {/* Box At Bottom */}
+                              <div className="bg-slate-100/80 border border-slate-200 rounded-lg p-3 flex items-start gap-2 text-slate-700 font-semibold">
+                                <Link2 size={14} className="text-blue-600 shrink-0 mt-0.5" />
+                                <span className="text-[11px] leading-normal">
+                                  Acuan: Workshop/sertifikasi crisis comm; program magang bersertifikat Kemenristek (MSIB).
+                                </span>
+                              </div>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
                     </div>
                   </div>
                 </div>
 
-                {/* Roadmap 2 */}
-                <div className="bg-white border border-slate-200 rounded-xl p-5">
-                  <span className="bg-slate-100 text-slate-500 px-2 py-1 rounded text-[9px] font-bold uppercase tracking-wider mb-4 inline-block">JANGKA MENENGAH (1-2 SEMESTER)</span>
+                {/* PHASE 3 */}
+                <div className="relative">
+                  {/* Timeline Dot */}
+                  <div className="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-slate-800 border-4 border-white shadow-sm ring-2 ring-slate-100" />
+                  
+                  {/* Phase Title */}
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="bg-slate-900 text-white text-[10px] font-black px-2.5 py-0.5 rounded-sm uppercase tracking-wider">PHASE 3 — JANGKA PANJANG</span>
+                    <span className="text-xs text-slate-400 font-bold">•</span>
+                    <span className="text-xs text-slate-500 font-bold">Menuju Kelulusan</span>
+                  </div>
+
                   <div className="space-y-4">
-                    <div>
-                      <h4 className="font-bold text-slate-800 text-[13px] uppercase mb-1">SPESIALISASI KRISIS</h4>
-                      <p className="text-[13px] text-slate-700 font-semibold mb-1">Sertifikasi crisis communication lanjutan & magang di tim PR/crisis.</p>
-                      <p className="text-[11px] text-slate-400 italic font-medium">Rationale: Mengonversi minat menjadi kredensial profesional.</p>
+                    {/* Item 3.1: Portofolio Konsultan Strategi */}
+                    <div className="bg-white border border-slate-200 rounded-lg shadow-sm overflow-hidden transition-all hover:border-slate-300">
+                      <button
+                        onClick={() => setExpandedRoadmap(prev => ({ ...prev, 'p3-1': !prev['p3-1'] }))}
+                        className="w-full text-left p-4 flex items-center justify-between gap-4 cursor-pointer hover:bg-slate-50/50"
+                      >
+                        <div className="flex items-center gap-3">
+                          <div className="w-1.5 h-8 bg-slate-900 rounded-full shrink-0" />
+                          <div>
+                            <div className="flex flex-wrap items-center gap-2">
+                              <h4 className="text-sm font-black text-slate-900 uppercase tracking-tight">Portofolio Konsultan Strategi</h4>
+                              <span className="bg-emerald-50 text-emerald-700 text-[8px] font-black px-1.5 py-0.5 rounded uppercase tracking-wider border border-emerald-200">
+                                92% Match Value
+                              </span>
+                            </div>
+                            <p className="text-xs text-slate-500 font-semibold mt-0.5">Target: Portofolio studi kasus strategis siap untuk rekrutmen profesional</p>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-2 text-slate-400">
+                          <span className="text-[10px] font-black text-[#0052CC] uppercase tracking-wider hidden sm:inline">
+                            {expandedRoadmap['p3-1'] ? 'Tutup Detail' : 'Buka Detail'}
+                          </span>
+                          {expandedRoadmap['p3-1'] ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                        </div>
+                      </button>
+
+                      <AnimatePresence initial={false}>
+                        {expandedRoadmap['p3-1'] && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.2, ease: 'easeInOut' }}
+                          >
+                            <div className="px-5 pb-5 pt-1 border-t border-slate-100 bg-slate-50/30 text-xs space-y-3.5">
+                              <div>
+                                <h5 className="text-[9px] font-black uppercase text-slate-400 tracking-widest mb-1">Target Sasaran</h5>
+                                <p className="text-slate-800 font-bold text-sm flex items-center gap-1.5">
+                                  🎯 Portofolio studi kasus strategis siap untuk rekrutmen profesional
+                                </p>
+                              </div>
+                              <div>
+                                <h5 className="text-[9px] font-black uppercase text-slate-400 tracking-widest mb-1">Rencana Aksi</h5>
+                                <p className="text-slate-700 font-semibold leading-relaxed">
+                                  Mulai membangun portofolio komparatif studi kasus strategi komunikasi berskala regional, mengintegrasikan data kualitatif dan kuantitatif (P1 Communication Strategist).
+                                </p>
+                              </div>
+                              <div className="bg-slate-100 border border-slate-200 rounded p-3 text-[11px] text-slate-700">
+                                <span className="font-bold text-slate-800 uppercase tracking-wider block mb-0.5 text-[9px]">Rasionalisasi AI</span>
+                                Drafting studi kasus ini selaras penuh dengan best-fit profile P1 yang mengedepankan analisis sistemis.
+                              </div>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
                     </div>
                   </div>
                 </div>
-                
-                {/* Roadmap 3 */}
-                <div className="bg-white border border-slate-200 rounded-xl p-5">
-                  <span className="bg-slate-100 text-slate-500 px-2 py-1 rounded text-[9px] font-bold uppercase tracking-wider mb-4 inline-block">JANGKA PANJANG (MENUJU KELULUSAN)</span>
-                  <div className="space-y-4">
-                    <div>
-                      <h4 className="font-bold text-slate-800 text-[13px] uppercase mb-1">PORTOFOLIO KONSULTAN STRATEGI</h4>
-                      <p className="text-[13px] text-slate-700 font-semibold mb-1">Bangun portofolio studi kasus strategi komunikasi (P1 Communication Strategist).</p>
-                      <p className="text-[11px] text-slate-400 italic font-medium">Rationale: Selaras dengan best-fit profile P1 (92%).</p>
-                    </div>
-                  </div>
-                </div>
+
               </div>
+
             </div>
           </section>
 
