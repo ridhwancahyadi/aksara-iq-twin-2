@@ -28,6 +28,7 @@ import { Scholarships } from './components/Scholarships';
 import { KatalogMitra } from './components/KatalogMitra';
 import { KatalogUniversitasMitra } from './components/KatalogUniversitasMitra';
 import { DetailPartners } from './components/DetailPartners';
+import { ExchangeSummary } from './components/ExchangeSummary';
 import { Bot } from 'lucide-react';
 
 export default function App() {
@@ -410,6 +411,7 @@ export default function App() {
           {currentView === 'katalog_mitra' && <KatalogUniversitasMitra setView={setView} />}
           {currentView === 'kesiapan_saya' && <KatalogMitra setView={setView} />}
           {currentView === 'detail_partners' && <DetailPartners setView={setView} />}
+          {currentView === 'exchange_summary' && <ExchangeSummary setView={setView} />}
           {currentView.startsWith('dosen_') && <LecturerDashboard currentView={currentView} setView={setView} loggedInUser={user} />}
           {currentView.startsWith('admin_') && <AdminDashboard currentView={currentView} setView={setView} loggedInUser={user} />}
         </div>

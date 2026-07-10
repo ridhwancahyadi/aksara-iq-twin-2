@@ -34,7 +34,8 @@ import {
   ChevronUp,
   Bot,
   Trophy,
-  Briefcase
+  Briefcase,
+  CheckSquare
 } from 'lucide-react';
 import { View } from '../types';
 
@@ -247,6 +248,8 @@ export function Sidebar({
         title: 'Global Exchange',
         items: [
           { id: 'katalog_mitra', label: 'Explore Partners', icon: Compass },
+          { id: 'kesiapan_saya', label: 'Academic Eligibility', icon: CheckSquare },
+          { id: 'exchange_summary', label: 'Exchange Summary', icon: FileText },
         ]
       },
       {
