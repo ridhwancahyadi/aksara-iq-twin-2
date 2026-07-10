@@ -11,6 +11,7 @@ export function CareerAspirations() {
   const [commitment, setCommitment] = useState('');
   const [isCompleted, setIsCompleted] = useState(true);
   const [expandedGap, setExpandedGap] = useState<number | null>(null);
+  const [expandedPath, setExpandedPath] = useState<number | null>(null);
 
   const phases = [
     { id: 1, label: 'Minat & Genre', icon: Heart },
@@ -516,65 +517,76 @@ export function CareerAspirations() {
               <div className="mt-8">
                 <div className="flex justify-between items-center mb-4">
                   <h4 className="font-bold text-[11px] text-slate-500 uppercase tracking-widest">OTHER RECOMMENDED PATHS</h4>
-                  <span className="text-[11px] text-slate-400 italic">Scroll to explore more</span>
+                  <span className="text-[11px] text-slate-400 italic">Klik untuk melihat detail & gap analisis</span>
                 </div>
                 
-                <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide" style={{ msOverflowStyle: 'none', scrollbarWidth: 'none' }}>
-                  {/* Card 1 */}
-                  <div className="min-w-[220px] bg-[#f8f9ff] border border-slate-200 rounded-xl p-4 flex flex-col justify-between">
-                    <div>
-                      <div className="w-8 h-8 rounded-lg bg-[#e2e8f0] flex items-center justify-center mb-4 text-slate-600">
-                        <MousePointerClick size={16} />
-                      </div>
-                      <h5 className="font-bold text-[13px] text-slate-800 mb-6 leading-tight">Digital Marketing Strategist</h5>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-[11px] text-slate-400">Match Score</span>
-                      <span className="text-[13px] font-bold text-[#3b82f6]">78%</span>
-                    </div>
-                  </div>
-                  
-                  {/* Card 2 */}
-                  <div className="min-w-[220px] bg-[#f8f9ff] border border-slate-200 rounded-xl p-4 flex flex-col justify-between">
-                    <div>
-                      <div className="w-8 h-8 rounded-lg bg-[#e2e8f0] flex items-center justify-center mb-4 text-slate-600">
-                        <LayoutDashboard size={16} />
-                      </div>
-                      <h5 className="font-bold text-[13px] text-slate-800 mb-6 leading-tight">Media Auditor</h5>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-[11px] text-slate-400">Match Score</span>
-                      <span className="text-[13px] font-bold text-[#3b82f6]">75%</span>
-                    </div>
-                  </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {[
+                    { id: 1, title: 'Digital Marketing Strategist', score: '78%', icon: MousePointerClick, 
+                      supporting: [{ name: 'Digital Content Creation', score: 85 }, { name: 'Data Analysis', score: 80 }],
+                      gaps: [{ name: 'SEO/SEM Basics', score: 65 }]
+                    },
+                    { id: 2, title: 'Media Auditor', score: '75%', icon: LayoutDashboard,
+                      supporting: [{ name: 'Data Analysis', score: 82 }, { name: 'Critical Thinking', score: 88 }],
+                      gaps: [{ name: 'Media Landscape', score: 70 }]
+                    },
+                    { id: 3, title: 'Corporate PR Specialist', score: '72%', icon: Briefcase,
+                      supporting: [{ name: 'Corporate Communication', score: 85 }, { name: 'Writing Skills', score: 80 }],
+                      gaps: [{ name: 'Crisis Handling', score: 68 }]
+                    }
+                  ].map((path) => {
+                    const isExpanded = expandedPath === path.id;
+                    const Icon = path.icon;
+                    return (
+                      <div key={path.id} className="bg-[#f8f9ff] border border-slate-200 rounded-xl overflow-hidden transition-all">
+                        <button 
+                          onClick={() => setExpandedPath(isExpanded ? null : path.id)}
+                          className="w-full p-4 flex items-center justify-between hover:bg-slate-50 transition-colors"
+                        >
+                          <div className="flex items-center gap-4">
+                            <div className="w-10 h-10 rounded-lg bg-[#e2e8f0] flex items-center justify-center text-[#1e3a8a]">
+                              <Icon size={18} strokeWidth={2.5} />
+                            </div>
+                            <div className="text-left">
+                              <h5 className="font-bold text-[14px] text-slate-900 leading-tight mb-0.5">{path.title}</h5>
+                              <p className="text-[12px] text-slate-500">Match Score: <span className="font-bold text-[#3b82f6]">{path.score}</span></p>
+                            </div>
+                          </div>
+                          <div className="text-slate-400 mr-2">
+                            {isExpanded ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+                          </div>
+                        </button>
 
-                  {/* Card 3 */}
-                  <div className="min-w-[220px] bg-[#f8f9ff] border border-slate-200 rounded-xl p-4 flex flex-col justify-between">
-                    <div>
-                      <div className="w-8 h-8 rounded-lg bg-[#e2e8f0] flex items-center justify-center mb-4 text-slate-600">
-                        <Briefcase size={16} />
+                        {isExpanded && (
+                          <div className="p-5 pt-0 border-t border-slate-100 mt-2">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+                              <div>
+                                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-3">SUPPORTING COMPETENCIES:</p>
+                                <div className="flex flex-wrap gap-2">
+                                  {path.supporting.map((comp, idx) => (
+                                    <span key={idx} className="bg-[#e6f4ea] text-[#1e8e3e] border border-[#d3eadd] px-2 py-1 rounded text-[11px] font-bold">
+                                      {comp.name} ({comp.score})
+                                    </span>
+                                  ))}
+                                </div>
+                              </div>
+                              
+                              <div>
+                                <p className="text-[10px] font-bold text-rose-500 uppercase tracking-widest mb-3">GAPS & ROADBLOCK:</p>
+                                <div className="flex flex-wrap gap-2">
+                                  {path.gaps.map((gap, idx) => (
+                                    <span key={idx} className="bg-rose-50 text-rose-600 border border-rose-100 px-2 py-1 rounded text-[11px] font-bold">
+                                      {gap.name} ({gap.score})
+                                    </span>
+                                  ))}
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        )}
                       </div>
-                      <h5 className="font-bold text-[13px] text-slate-800 mb-6 leading-tight">Corporate PR Specialist</h5>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-[11px] text-slate-400">Match Score</span>
-                      <span className="text-[13px] font-bold text-[#3b82f6]">72%</span>
-                    </div>
-                  </div>
-
-                  {/* Card 4 */}
-                  <div className="min-w-[220px] bg-[#f8f9ff] border border-slate-200 rounded-xl p-4 flex flex-col justify-between">
-                    <div>
-                      <div className="w-8 h-8 rounded-lg bg-[#e2e8f0] flex items-center justify-center mb-4 text-slate-600">
-                        <Globe size={16} />
-                      </div>
-                      <h5 className="font-bold text-[13px] text-slate-800 mb-6 leading-tight">Public Affairs Consultant</h5>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-[11px] text-slate-400">Match Score</span>
-                      <span className="text-[13px] font-bold text-[#3b82f6]">70%</span>
-                    </div>
-                  </div>
+                    );
+                  })}
                 </div>
               </div>
             </div>

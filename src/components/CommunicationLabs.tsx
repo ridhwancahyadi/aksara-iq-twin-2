@@ -343,6 +343,34 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
         learningOutcomes: fgdLOs
       }
     },
+    {
+      id: 'fgd-task-2',
+      moduleId: 'fgd',
+      title: 'Sesi Diskusi Kelompok: Crisis Management Scenario',
+      class: 'Strategic Communication',
+      lecturer: 'Dr. Sari Dewi, M.Kom',
+      deadline: '20 Jun 2026, 23:59',
+      status: 'Sudah Dinilai',
+      score: 88,
+      badgeText: 'DISCUSSION & COLLABORATION / FGD',
+      fileSubmitted: 'FGD_Session_Recorded.mp4',
+      fileSize: '412 MB',
+      fileDate: '18 Juni 2026 pukul 15.30',
+      instruction: 'Sesi diskusi kelompok mengevaluasi langkah awal menangani krisis PR pada perusahaan.',
+      bottomStatus: 'Penilaian selesai',
+      scoreLabel: 'Sangat Baik',
+      scoreStatus: 'Synced ke Student Twin',
+      isGradesLocked: false,
+      details: {
+        overall: 88,
+        pacing: '125 wpm (Baik)',
+        turnsCount: '15 giliran',
+        spokenWords: '450 kata',
+        dimensions: fgdDimensions,
+        timeline: fgdTimeline,
+        learningOutcomes: fgdLOs
+      }
+    },
     // Presentation Tasks
     {
       id: 'pres-task-1',
@@ -377,6 +405,28 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
         ]
       }
     },
+    {
+      id: 'pres-task-2',
+      moduleId: 'presentation',
+      title: 'Midterm Presentation: PR Campaign Pitch',
+      class: 'Strategic Communication',
+      lecturer: 'Dr. Sari Dewi, M.Kom',
+      deadline: '15 Aug 2026, 23:59',
+      status: 'Belum Dikerjakan',
+      score: null,
+      badgeText: 'PRESENTATION & PUBLIC SPEAKING',
+      instruction: 'Siapkan pitch presentasi untuk kampanye PR Anda. Wajib menggunakan deck presentasi 5-7 slide.',
+      retake: '1x retake tersisa',
+      bottomStatus: 'Segera kerjakan',
+      isGradesLocked: true,
+      details: {
+        overall: null,
+        pacing: 'Belum diukur',
+        eyeContact: 'Belum diukur',
+        fillerWords: 'Belum diukur',
+        trajectory: []
+      }
+    },
     // Writing Tasks
     {
       id: 'writ-task-1',
@@ -389,7 +439,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
       score: 82,
       badgeText: 'WRITTEN COMMUNICATION PERFORMANCE',
       fileSubmitted: 'JohnTosh_Esai_KomunikasiKrisis.docx',
-      fileSize: '2.4 MB',
+      fileSize: '2.4 MB',      
       fileDate: '23 Juni 2026 pukul 09.40',
       instruction: 'Esai akademik mengenai analisis manajemen krisis humas perusahaan teknologi besar di Indonesia.',
       bottomStatus: 'Penilaian selesai',
@@ -409,6 +459,28 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
         ]
       }
     },
+    {
+      id: 'writ-task-2',
+      moduleId: 'writing',
+      title: 'Press Release Writing: New Product Launch',
+      class: 'Strategic Communication',
+      lecturer: 'Dr. Sari Dewi, M.Kom',
+      deadline: '20 Sep 2026, 23:59',
+      status: 'Belum Dikerjakan',
+      score: null,
+      badgeText: 'WRITTEN COMMUNICATION PERFORMANCE',
+      instruction: 'Buat siaran pers (press release) yang efektif untuk mengumumkan peluncuran produk baru dengan memenuhi kaidah 5W+1H.',
+      retake: 'Tidak ada retake tersisa',
+      bottomStatus: 'Segera kerjakan',
+      isGradesLocked: true,
+      details: {
+        overall: null,
+        wordCount: 'Belum dihitung',
+        plagiarism: 'Belum diuji',
+        formatting: 'Belum diperiksa',
+        scores: []
+      }
+    },
     // Simulation Tasks
     {
       id: 'sim-task-1',
@@ -417,15 +489,16 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
       class: 'Strategic Communication',
       lecturer: 'Dr. Sari Dewi, M.Kom',
       deadline: '5 Jul 2026, 23:59',
-      status: 'Sudah Dikerjakan',
-      score: null,
+      status: 'Sudah Dinilai',
+      score: 88,
       badgeText: 'PROFESSIONAL COMMUNICATION SIMULATION',
-      fileSubmitted: 'File uploaded',
-      fileSize: '',
+      fileSubmitted: 'Simulasi_Interview_Media.mp4',
+      fileSize: '315 MB',
       fileDate: '23 Juni 2026 pukul 14.30',
       instruction: 'Simulasi wawancara pers krisis. Menjawab pertanyaan kritis dari media massa mengenai isu kegagalan sistem data perusahaan.',
-      retake: '1x retake tersisa',
       bottomStatus: 'Penilaian selesai',
+      scoreLabel: 'Sangat Baik',
+      scoreStatus: 'Synced ke Student Twin',
       isGradesLocked: false,
       details: {
         overall: 88,
@@ -439,9 +512,30 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
           { name: 'Corporate Email Pitch', Score: 92 },
         ]
       }
+    },
+    {
+      id: 'sim-task-2',
+      moduleId: 'simulation',
+      title: 'Simulasi: Conflict Resolution in Teams',
+      class: 'Strategic Communication',
+      lecturer: 'Dr. Sari Dewi, M.Kom',
+      deadline: '30 Oct 2026, 23:59',
+      status: 'Belum Dikerjakan',
+      score: null,
+      badgeText: 'PROFESSIONAL COMMUNICATION SIMULATION',
+      instruction: 'Lakukan simulasi penyelesaian konflik dengan studi kasus pertentangan internal tim selama pengerjaan proyek.',
+      retake: 'Tidak ada retake tersisa',
+      bottomStatus: 'Segera kerjakan',
+      isGradesLocked: true,
+      details: {
+        overall: null,
+        scenario: 'Simulasi: Conflict Resolution in Teams',
+        duration: 'Belum dilakukan',
+        compliance: 'Belum diuji',
+        tracks: []
+      }
     }
   ];
-
   const [assessments, setAssessments] = useState(() => dummyAssessments);
 
   // Interactive Upload and Retake States
@@ -904,27 +998,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                           <button 
                             onClick={() => {
                               setSelectedAssessmentId(task.id);
-                              if (task.moduleId === 'fgd') {
-                                setAssessments(prev => prev.map(a => a.id === task.id ? { 
-                                  ...a, 
-                                  status: 'Sudah Dinilai', 
-                                  score: 87,
-                                  isGradesLocked: false,
-                                  fileSubmitted: 'FGD_Smart_Campus_Group_A.mp4',
-                                  fileSize: '312 MB',
-                                  fileDate: '09 Juli 2026 pukul 09.15',
-                                  details: {
-                                    ...a.details,
-                                    overall: 87,
-                                    pacing: '124 wpm (Sangat Baik)',
-                                    turnsCount: '14 giliran',
-                                    spokenWords: '1,243 kata'
-                                  }
-                                } : a));
-                                setActiveSubTab('playback');
-                              } else {
-                                setActiveSubTab('assignment' as any);
-                              }
+                              setActiveSubTab('assignment' as any);
                             }}
                             className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-black uppercase rounded-sm flex items-center gap-1.5 cursor-pointer shadow-sm transition-colors"
                           >
@@ -999,16 +1073,18 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
               >
                 📋 Detail Tugas
               </button>
-              <button 
-                onClick={() => {
-                  setActiveSubTab(currentAssessment?.moduleId === 'fgd' ? 'playback' : 'overview');
-                }}
-                className={`py-3 px-4 text-xs font-black tracking-tight border-b-2 transition-all cursor-pointer ${
-                  (activeSubTab === 'overview' || activeSubTab === 'grades' || activeSubTab === 'lo' || activeSubTab === 'ai' || activeSubTab === 'playback') ? 'border-blue-600 text-blue-600 bg-blue-50/30' : 'border-transparent text-slate-500 hover:text-slate-800'
-                }`}
-              >
-                📊 Hasil Penilaian
-              </button>
+              {currentAssessment?.status !== 'Belum Dikerjakan' && (
+                <button 
+                  onClick={() => {
+                    setActiveSubTab(currentAssessment?.moduleId === 'fgd' ? 'playback' : 'overview');
+                  }}
+                  className={`py-3 px-4 text-xs font-black tracking-tight border-b-2 transition-all cursor-pointer ${
+                    (activeSubTab === 'overview' || activeSubTab === 'grades' || activeSubTab === 'lo' || activeSubTab === 'ai' || activeSubTab === 'playback') ? 'border-blue-600 text-blue-600 bg-blue-50/30' : 'border-transparent text-slate-500 hover:text-slate-800'
+                  }`}
+                >
+                  📊 Hasil Penilaian
+                </button>
+              )}
               
 
               {currentAssessment?.moduleId !== 'fgd' && (
@@ -1300,7 +1376,42 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                             <button className="flex items-center gap-1.5 text-[13px] font-bold text-slate-500 hover:text-slate-700">
                               <HelpCircle size={16} /> Need help?
                             </button>
-                            <button className="bg-[#245ce0] text-white px-5 py-2.5 rounded-md text-sm font-bold hover:bg-blue-700 transition-colors shadow-sm">
+                            <button 
+                              onClick={() => {
+                                if (currentAssessment) {
+                                  const updatedScore = currentAssessment.moduleId === 'fgd' ? 87 : (currentAssessment.moduleId === 'writing' ? 82 : 85);
+                                  setAssessments(prev => prev.map(a => a.id === currentAssessment.id ? { 
+                                    ...a, 
+                                    status: 'Sudah Dinilai', 
+                                    score: updatedScore,
+                                    isGradesLocked: false,
+                                    fileSubmitted: currentAssessment.moduleId === 'fgd' ? 'FGD_Smart_Campus_Group_A.mp4' : (currentAssessment.moduleId === 'writing' ? 'Press_Release_NewProduct.docx' : 'PR_Campaign_Pitch.mp4'),
+                                    fileSize: '312 MB',
+                                    fileDate: '09 Juli 2026 pukul 23.32',
+                                    details: {
+                                      ...a.details,
+                                      overall: updatedScore,
+                                      pacing: currentAssessment.moduleId === 'fgd' ? '124 wpm (Sangat Baik)' : (currentAssessment.moduleId === 'presentation' ? '130 wpm (Sempurna)' : undefined),
+                                      turnsCount: currentAssessment.moduleId === 'fgd' ? '14 giliran' : undefined,
+                                      spokenWords: currentAssessment.moduleId === 'fgd' ? '1,243 kata' : undefined,
+                                      wordCount: currentAssessment.moduleId === 'writing' ? '2,450 kata' : undefined,
+                                      plagiarism: currentAssessment.moduleId === 'writing' ? '1% (Sempurna - Lolos Turnitin)' : undefined,
+                                      formatting: currentAssessment.moduleId === 'writing' ? 'APA Edisi ke-7 (Sesuai Standar)' : undefined,
+                                      scores: currentAssessment.moduleId === 'writing' ? [
+                                        { name: 'Argumentation Depth', score: 85 },
+                                        { name: 'Evidence & Literature Rigor', score: 88 },
+                                        { name: 'Structural Flow & Logic', score: 80 },
+                                        { name: 'Academic Integrity', score: 99 },
+                                      ] : undefined,
+                                      eyeContact: currentAssessment.moduleId === 'presentation' ? '92% (Sangat Konsisten)' : undefined,
+                                      fillerWords: currentAssessment.moduleId === 'presentation' ? '1.2x / menit (Sangat Minim)' : undefined,
+                                    }
+                                  } : a));
+                                  setActiveSubTab(currentAssessment.moduleId === 'fgd' ? 'playback' : 'overview');
+                                }
+                              }}
+                              className="bg-[#245ce0] text-white px-5 py-2.5 rounded-md text-sm font-bold hover:bg-blue-700 transition-colors shadow-sm cursor-pointer"
+                            >
                               Submit Assignment
                             </button>
                           </div>

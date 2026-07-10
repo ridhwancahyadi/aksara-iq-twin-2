@@ -49,6 +49,40 @@ export function AksaraAI() {
   // Initial list of Indonesian Communication Science sessions
   const [sessions, setSessions] = useState<ChatSession[]>([
     {
+      id: 'exchange_1',
+      title: 'Persiapan Outbound Exchange: Hanyang University',
+      category: 'Terbaru',
+      suggestions: ['Panduan Visa D-2', 'Estimasi Deposit & Kosan', 'Language Survival Kit'],
+      messages: [
+        {
+          id: 'me_1',
+          sender: 'ai',
+          time: '10:15',
+          text: 'Halo John! Selamat atas kelulusan nominasi outbound exchange kamu ke Hanyang University, Seoul, Korea Selatan. Saya siap membantu mempersiapkan seluruh dokumen, visa D-2, pencarian akomodasi (gosiwon), hingga tips adaptasi budaya di sana. Ada hal khusus yang ingin kamu tanyakan terlebih dahulu?'
+        },
+        {
+          id: 'me_2',
+          sender: 'user',
+          time: '10:18',
+          text: 'Bagaimana prosedur sewa kost di Seoul dan berapa deposit awal yang biasanya dibutuhkan?'
+        },
+        {
+          id: 'me_3',
+          sender: 'ai',
+          time: '10:20',
+          text: 'Untuk akomodasi di sekitar kampus Hanyang (seperti area Haengdang-dong atau Wangsimni), pilihan paling populer adalah Gosiwon (고시원) dengan harga sewa 300.000–600.000 KRW (sekitar Rp 3,5–7 juta) per bulan. Mayoritas landlord meminta uang deposit (bojungkeum/보증금) sebesar 1–2 bulan biaya sewa di muka. Jadi, kamu perlu menyiapkan modal awal berkisar Rp 15–27 juta untuk bulan pertama di Seoul guna menutup deposit, sewa pertama, kartu transportasi (T-Money), dan kebutuhan darurat.',
+          richContent: [
+            {
+              type: 'article',
+              title: 'Panduan Akomodasi & Estimasi Finansial di Seoul',
+              description: 'Rincian lengkap mencari gosiwon murah, menghitung uang jaminan deposit, serta tips hemat biaya makan halal di Korea.',
+              durationOrType: 'Modul Persiapan'
+            }
+          ]
+        }
+      ]
+    },
+    {
       id: '1',
       title: 'Relevansi Agenda Setting di Algoritma TikTok',
       category: 'Terbaru',
@@ -123,8 +157,28 @@ export function AksaraAI() {
         {
           id: 'm3_1',
           sender: 'ai',
-          time: '08:30 AM',
-          text: 'Halo! Teori Jarum Hipodermik (Magic Bullet Theory) berasumsi bahwa media memiliki kekuatan absolut untuk langsung menyuntikkan pesan ke dalam pikiran audiens yang pasif. Walaupun sudah banyak didebat karena adanya model Audiens Aktif, dalam kondisi kepanikan sosial atau polarisasi ekstrem, teori ini masih sering terlihat relevan.'
+          time: '08:30',
+          text: 'Halo John! Teori Jarum Hipodermik (Magic Bullet Theory) berasumsi bahwa media memiliki kekuatan absolut untuk langsung menyuntikkan pesan ke dalam pikiran audiens yang pasif. Walaupun sudah banyak didebat karena adanya model Audiens Aktif, dalam kondisi kepanikan sosial atau polarisasi ekstrem, teori ini masih sering terlihat relevan.'
+        },
+        {
+          id: 'm3_2',
+          sender: 'user',
+          time: '08:35',
+          text: 'Berikan contoh nyata di mana teori ini seolah bekerja di media sosial saat ini.'
+        },
+        {
+          id: 'm3_3',
+          sender: 'ai',
+          time: '08:37',
+          text: 'Contoh klasiknya adalah fenomena "Panic Buying" atau penyebaran hoaks kesehatan saat awal pandemi. Begitu pesan ketakutan disuntikkan secara serentak lewat broadcast WhatsApp atau tren video pendek, audiens secara massal langsung bereaksi melakukan pembelian barang tanpa melakukan verifikasi terlebih dahulu.',
+          richContent: [
+            {
+              type: 'article',
+              title: 'Psikologi Massa & Manipulasi Opini di Platform Digital',
+              description: 'Kajian komparatif efek stimulus-respons cepat pada penerima pesan di WhatsApp group.',
+              durationOrType: 'Modul Teori'
+            }
+          ]
         }
       ]
     },
@@ -138,7 +192,19 @@ export function AksaraAI() {
           id: 'm4_1',
           sender: 'ai',
           time: '3 Hari Lalu',
-          text: 'Halo John! Di era post-truth, opini publik lebih banyak dipengaruhi oleh daya tarik emosional dan keyakinan pribadi dibanding fakta objektif. Kampanye politik modern sering kali memanfaatkan bias konfirmasi audiens untuk memenangkan simpati.'
+          text: 'Halo John! Di era post-truth (pasca-kebenaran), opini publik lebih banyak dipengaruhi oleh daya tarik emosional dan keyakinan pribadi dibanding fakta objektif. Kampanye politik modern sering kali memanfaatkan bias konfirmasi audiens untuk memenangkan simpati.'
+        },
+        {
+          id: 'm4_2',
+          sender: 'user',
+          time: '3 Hari Lalu',
+          text: 'Bagaimana peran jurnalisme investigatif dalam menghadapi audiens yang tidak peduli fakta?'
+        },
+        {
+          id: 'm4_3',
+          sender: 'ai',
+          time: '3 Hari Lalu',
+          text: 'Peran jurnalisme bergeser bukan sekadar menyajikan fakta mentah (karena fakta mentah rentan ditolak), melainkan jurnalisme naratif yang mendalam (human-interest storytelling). Dengan membungkus fakta ilmiah/empiris ke dalam narasi emosional yang menyentuh empati manusiawi, jurnalis dapat meruntuhkan tembok bias konfirmasi tersebut.'
         }
       ]
     },
@@ -153,6 +219,104 @@ export function AksaraAI() {
           sender: 'ai',
           time: '4 Hari Lalu',
           text: 'Halo! Metode jurnalisme investigasi dengan penyamaran (undercover) atau kamera tersembunyi diatur secara ketat. Pasal 4 Kode Etik Jurnalistik menyatakan jurnalis tidak boleh menggunakan cara-cara curang, kecuali untuk kepentingan publik yang luar biasa penting dan tidak bisa diungkap dengan cara biasa.'
+        },
+        {
+          id: 'm5_2',
+          sender: 'user',
+          time: '4 Hari Lalu',
+          text: 'Apakah hasil rekaman penyamaran yang melanggar privasi bisa digugat hukum?'
+        },
+        {
+          id: 'm5_3',
+          sender: 'ai',
+          time: '4 Hari Lalu',
+          text: 'Ya, secara perdata bisa digugat atas dasar perbuatan melawan hukum (PMH) atau pelanggaran UU ITE di Indonesia jika menyebarkan informasi privat tanpa izin. Namun dalam dunia pers, Dewan Pers biasanya menjadi penengah utama untuk menguji apakah ada unsur "kepentingan publik mutlak" (public interest defense) yang membenarkan penyamaran tersebut.'
+        }
+      ]
+    },
+    {
+      id: '6',
+      title: 'Semiotika Roland Barthes pada Iklan Komersial',
+      category: 'Sebelumnya',
+      suggestions: ['Denotasi & Konotasi', 'Konsep Mitos Barthes', 'Analisis Visual Iklan'],
+      messages: [
+        {
+          id: 'm6_1',
+          sender: 'ai',
+          time: '5 Hari Lalu',
+          text: 'Halo John! Roland Barthes mengembangkan analisis semiotika dua tahap (Two-Order Signification) yang sangat relevan untuk membedah pesan terselubung dalam iklan. Tahap pertama adalah denotasi (makna harfiah), diikuti tahap kedua konotasi (makna kultural/subjektif), yang akhirnya membentuk "mitos" di masyarakat.'
+        },
+        {
+          id: 'm6_2',
+          sender: 'user',
+          time: '5 Hari Lalu',
+          text: 'Tolong bedah makna mitos pada iklan produk kecantikan menggunakan pisau analisis Barthes.'
+        },
+        {
+          id: 'm6_3',
+          sender: 'ai',
+          time: '5 Hari Lalu',
+          text: 'Tentu! Misal pada iklan krim pemutih:\n1. **Denotasi**: Menampilkan model berkulit putih bersih sedang tersenyum memegang produk.\n2. **Konotasi**: Kulit putih melambangkan kemurnian, status sosial tinggi, dan daya tarik modern.\n3. **Mitos**: Terbentuklah mitos bahwa "Cantik itu harus putih". Mitos ini secara tidak langsung mengonstruksi perasaan insecure pada perempuan yang tidak memiliki warna kulit serupa agar terus mengonsumsi produk tersebut.',
+          richContent: [
+            {
+              type: 'article',
+              title: 'Membedah Semiotika Iklan: Dari Tanda ke Konsumerisme',
+              description: 'Panduan lengkap melakukan dekonstruksi pesan visual pada kampanye brand multinasional.',
+              durationOrType: 'E-Book Kajian Semiotika'
+            }
+          ]
+        }
+      ]
+    },
+    {
+      id: '7',
+      title: 'Hambatan Komunikasi Antarabudaya di Lingkungan Kerja',
+      category: 'Sebelumnya',
+      suggestions: ['High & Low Context', 'Etnosentrisme', 'Negosiasi Lintas Batas'],
+      messages: [
+        {
+          id: 'm7_1',
+          sender: 'ai',
+          time: '1 Minggu Lalu',
+          text: 'Selamat pagi John! Komunikasi antarabudaya sering kali mengalami kendala akibat perbedaan konteks budaya. Edward T. Hall membaginya menjadi Budaya Konteks Tinggi (High-Context) seperti Indonesia, dan Budaya Konteks Rendah (Low-Context) seperti Amerika atau Jerman.'
+        },
+        {
+          id: 'm7_2',
+          sender: 'user',
+          time: '1 Minggu Lalu',
+          text: 'Bagaimana mengatasi gesekan jika atasan ekspatriat Jerman berkomunikasi terlalu blak-blakan dengan staf lokal?'
+        },
+        {
+          id: 'm7_3',
+          sender: 'ai',
+          time: '1 Minggu Lalu',
+          text: 'Gesekan terjadi karena atasan Jerman (Low-Context) mengutamakan pesan verbal langsung (explicit), sedangkan staf lokal (High-Context) sensitif terhadap cara penyampaian dan harmoni hubungan (implicit). Solusinya:\n1. Mengadakan sesi orientasi budaya kerja (Cultural Sensitivity Training) bagi kedua pihak.\n2. Melatih staf lokal untuk melihat kritik langsung sebagai profesionalitas murni, bukan serangan personal.\n3. Menyarankan atasan untuk memberikan umpan balik secara privat dengan apresiasi pembuka.'
+        }
+      ]
+    },
+    {
+      id: '8',
+      title: 'Analisis Framing Pemberitaan Media Online',
+      category: 'Sebelumnya',
+      suggestions: ['Model Robert Entman', 'Framing Zhongdang Pan', 'Seleksi Isu'],
+      messages: [
+        {
+          id: 'm8_1',
+          sender: 'ai',
+          time: '2 Minggu Lalu',
+          text: 'Halo! Analisis framing adalah metode untuk melihat bagaimana media mengonstruksi realitas. Model Robert Entman adalah salah satu yang paling populer, berfokus pada empat elemen: Define Problems, Diagnose Causes, Make Moral Judgments, dan Treatment Recommendation.'
+        },
+        {
+          id: 'm8_2',
+          sender: 'user',
+          time: '2 Minggu Lalu',
+          text: 'Bagaimana membedakan framing dua portal berita yang berbeda pandangan politik?'
+        },
+        {
+          id: 'm8_3',
+          sender: 'ai',
+          time: '2 Minggu Lalu',
+          text: 'Anda dapat menganalisis melalui:\n1. **Kosakata & Label**: Apakah subjek disebut "demonstran", "pejuang keadilan", atau "perusuh"?\n2. **Pemilihan Narasumber**: Siapa yang diberi porsi bicara lebih banyak (pemerintah vs oposisi)?\n3. **Penempatan Berita**: Apakah diletakkan di headline utama dengan gambar dramatis, atau di kolom pojok bawah yang minim visual?'
         }
       ]
     }
