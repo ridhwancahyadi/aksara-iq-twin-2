@@ -1021,8 +1021,8 @@ export function StudentTwin({
                   <div className="flex items-center gap-3 flex-wrap">
                     <h1 className="text-2xl font-bold text-slate-900 leading-none">{currentStudent.name}</h1>
                     <div className="flex items-center gap-2">
-                      <span className="flex items-center gap-1.5 text-[9px] font-bold text-blue-700 bg-blue-50 border border-blue-200 px-2 py-1 rounded tracking-wide uppercase">
-                        <CheckCircle2 size={12} className="text-blue-600" />
+                      <span className="flex items-center gap-1.5 text-[9px] font-bold text-[#993633] bg-blue-50 border border-blue-200 px-2 py-1 rounded tracking-wide uppercase">
+                        <CheckCircle2 size={12} className="text-[#bf4440]" />
                         TOP 5% HIGHEST SCORE
                       </span>
                       <span className="flex items-center gap-1.5 text-[9px] font-bold text-teal-700 bg-teal-50 border border-teal-200 px-2 py-1 rounded tracking-wide uppercase">
@@ -1060,7 +1060,7 @@ export function StudentTwin({
                   href={currentStudent.academic_core.documents.transcript} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 bg-[#003B95] text-white rounded-md text-sm font-semibold hover:bg-blue-800 transition-colors shadow-sm"
+                  className="flex items-center gap-2 px-4 py-2 bg-[#732926] text-white rounded-md text-sm font-semibold hover:bg-[#732926] transition-colors shadow-sm"
                 >
                   <FileText size={16} />
                   Transkrip
@@ -1069,18 +1069,18 @@ export function StudentTwin({
                   href={currentStudent.academic_core.documents.skpi} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 text-blue-700 rounded-md text-sm font-semibold hover:bg-blue-50 transition-colors shadow-sm"
+                  className="flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 text-[#993633] rounded-md text-sm font-semibold hover:bg-blushed-brick-50 transition-colors shadow-sm"
                 >
-                  <CheckCircle2 size={16} className="text-blue-600" />
+                  <CheckCircle2 size={16} className="text-[#bf4440]" />
                   SKPI
                 </a>
                 <a 
                   href={currentStudent.academic_core.documents.attendance} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 text-blue-700 rounded-md text-sm font-semibold hover:bg-blue-50 transition-colors shadow-sm"
+                  className="flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 text-[#993633] rounded-md text-sm font-semibold hover:bg-blushed-brick-50 transition-colors shadow-sm"
                 >
-                  <Calendar size={16} className="text-blue-600" />
+                  <Calendar size={16} className="text-[#bf4440]" />
                   Kehadiran
                 </a>
               </div>
@@ -1088,7 +1088,7 @@ export function StudentTwin({
               {/* DNA Profiling Summary */}
               <div className="flex flex-col gap-2 max-w-4xl mt-2">
                 <div className="flex items-center gap-2">
-                  <Sparkles size={14} className="text-blue-600 shrink-0" />
+                  <Sparkles size={14} className="text-[#bf4440] shrink-0" />
                   <h3 className="text-xs font-black text-slate-800 uppercase tracking-tight">DNA PROFILING SUMMARY</h3>
                 </div>
                 <p className="text-[11px] text-slate-600 font-medium leading-relaxed">
@@ -1105,7 +1105,7 @@ export function StudentTwin({
                     <span className="text-[9px] font-black text-slate-500 uppercase tracking-widest block mb-0.5">IPK Kumulatif</span>
                     <div className="flex items-baseline gap-1">
                       <span className="text-3xl font-black text-slate-900 leading-none tracking-tight">{currentStudent.academic_core.gpa}</span>
-                      <span className="text-[11px] font-bold text-blue-600/80">/ 4.0</span>
+                      <span className="text-[11px] font-bold text-[#bf4440]/80">/ 4.0</span>
                     </div>
                   </div>
                   <div className="relative w-12 h-12 shrink-0 flex items-center justify-center">
@@ -1194,20 +1194,20 @@ export function StudentTwin({
 
                 {/* Item 2: Berlangsung */}
                 <div className="flex items-start gap-3 relative mb-2.5">
-                  <div className="w-8 pt-1.5 text-right text-blue-600 font-black font-sans text-[9px]">
+                  <div className="w-8 pt-1.5 text-right text-[#bf4440] font-black font-sans text-[9px]">
                     13:00
                   </div>
                   <div className="relative pt-2 z-10 flex flex-col items-center justify-center">
                     <div className="w-2.5 h-2.5 rounded-full bg-blue-500 border-[2px] border-white shadow-sm" />
                   </div>
-                  <div className="flex-1 bg-white border border-blue-500 rounded-lg p-2.5 flex justify-between items-start transition-all relative overflow-hidden shadow-[0_2px_10px_rgba(59,130,246,0.1)]">
+                  <div className="flex-1 bg-white border border-[#bf4440] rounded-lg p-2.5 flex justify-between items-start transition-all relative overflow-hidden shadow-[0_2px_10px_rgba(59,130,246,0.1)]">
                     <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-blue-500"></div>
                     <div className="space-y-1 pl-1">
                       <h3 className="text-[11px] font-bold text-slate-800 leading-tight">Strategi Komunikasi Persuasif</h3>
                       <div className="flex items-center gap-3 text-slate-500 text-[9px] font-medium pt-0.5">
-                        <div className="flex items-center gap-1 text-blue-600 font-bold">
+                        <div className="flex items-center gap-1 text-[#bf4440] font-bold">
                           <MapPin size={10} className="text-blue-500 shrink-0" />
-                          <span>Gd. D Lt.3 — R.301</span>
+                          <span>Gd. D Lt.3 - R.301</span>
                         </div>
                       </div>
                     </div>
@@ -1230,7 +1230,7 @@ export function StudentTwin({
                     <div className="space-y-1">
                       <h3 className="text-[11px] font-bold text-slate-700 leading-tight">Riset Audiens</h3>
                       <div className="flex items-center gap-3 text-slate-500 text-[9px] font-medium pt-0.5">
-                        <div className="flex items-center gap-1 text-blue-600 font-bold cursor-pointer hover:underline">
+                        <div className="flex items-center gap-1 text-[#bf4440] font-bold cursor-pointer hover:underline">
                           <Video size={10} className="text-blue-500 shrink-0" />
                           <span>MS Teams</span>
                         </div>
@@ -1268,7 +1268,7 @@ export function StudentTwin({
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-3">
                 <div>
                   <h2 className="text-md font-black text-slate-800 uppercase tracking-wide flex items-center gap-1.5">
-                    <Target size={18} className="text-blue-600" />
+                    <Target size={18} className="text-[#bf4440]" />
                     {headerTitle}
                   </h2>
                   <p className="text-xs text-slate-500 font-semibold mt-0.5 font-sans">
@@ -1346,7 +1346,7 @@ export function StudentTwin({
                                   return (
                                     <div className="bg-white border border-slate-200 rounded-xl p-2 shadow-md text-[10px]">
                                       <p className="font-extrabold text-slate-700">Semester {payload[0].payload.semester}</p>
-                                      <p className="font-bold text-blue-600 font-mono mt-0.5">IPK: {payload[0].value}</p>
+                                      <p className="font-bold text-[#bf4440] font-mono mt-0.5">IPK: {payload[0].value}</p>
                                     </div>
                                   );
                                 }
@@ -1356,7 +1356,7 @@ export function StudentTwin({
                             <Line 
                               type="monotone" 
                               dataKey="gpa" 
-                              stroke="#2563EB" 
+                              stroke="#bf4440" 
                               strokeWidth={2.5} 
                               dot={{ r: 4, strokeWidth: 2, fill: "#FFFFFF" }} 
                               activeDot={{ r: 6 }} 
@@ -1381,7 +1381,7 @@ export function StudentTwin({
                       
                       <div className="mt-4 flex flex-col gap-3">
                         <div className="flex items-center gap-2">
-                          <span className="text-2xl font-black text-blue-600">85</span>
+                          <span className="text-2xl font-black text-[#bf4440]">85</span>
                           <span className="text-xs text-slate-400 font-bold">/ 100</span>
                           <span className="bg-emerald-100 text-emerald-700 border border-emerald-200 text-[10px] font-bold px-2 py-0.5 rounded-full ml-1">Sangat Baik</span>
                         </div>
@@ -1398,7 +1398,7 @@ export function StudentTwin({
                     {/* Card 2: Writing */}
                     <div className="bg-white rounded-xl p-4 border border-slate-200 flex flex-col justify-between min-h-[160px] shadow-sm">
                       <div>
-                        <h4 className="text-[10px] font-black text-blue-600 bg-blue-50 px-2 py-0.5 rounded w-max uppercase tracking-widest mb-2 border border-blue-100">WRITING</h4>
+                        <h4 className="text-[10px] font-black text-[#bf4440] bg-blue-50 px-2 py-0.5 rounded w-max uppercase tracking-widest mb-2 border border-blue-100">WRITING</h4>
                         <h3 className="text-[12.5px] font-bold text-slate-800 mb-2 leading-snug">Policy Brief: Regulasi Konten AI-Generated</h3>
                         <div className="flex gap-2">
                           <span className="bg-slate-50 text-slate-500 font-mono text-[8.5px] font-bold px-2 py-0.5 rounded border border-slate-200">Penulisan Komunikasi Strategis</span>
@@ -1407,15 +1407,15 @@ export function StudentTwin({
                       
                       <div className="mt-4 flex flex-col gap-3">
                         <div className="flex items-center gap-2">
-                          <span className="text-2xl font-black text-blue-600">78</span>
+                          <span className="text-2xl font-black text-[#bf4440]">78</span>
                           <span className="text-xs text-slate-400 font-bold">/ 100</span>
                           <span className="bg-emerald-100 text-emerald-700 border border-emerald-200 text-[10px] font-bold px-2 py-0.5 rounded-full ml-1">Baik</span>
                         </div>
                         <div className="bg-blue-50 border border-blue-100 rounded-lg p-2.5 flex items-center gap-3">
-                          <Edit3 size={14} className="text-blue-600" />
+                          <Edit3 size={14} className="text-[#bf4440]" />
                           <div>
                             <p className="text-[9px] text-slate-500 font-bold">Dimensi Terkuat</p>
-                            <p className="text-[11px] font-bold text-blue-700">Argumentation</p>
+                            <p className="text-[11px] font-bold text-[#993633]">Argumentation</p>
                           </div>
                         </div>
                       </div>
@@ -1433,7 +1433,7 @@ export function StudentTwin({
                       
                       <div className="mt-4 flex flex-col gap-3">
                         <div className="flex items-center gap-2">
-                          <span className="text-2xl font-black text-blue-600">80</span>
+                          <span className="text-2xl font-black text-[#bf4440]">80</span>
                           <span className="text-xs text-slate-400 font-bold">/ 100</span>
                           <span className="bg-emerald-100 text-emerald-700 border border-emerald-200 text-[10px] font-bold px-2 py-0.5 rounded-full ml-1">Baik</span>
                         </div>
@@ -1456,7 +1456,7 @@ export function StudentTwin({
                       
                       <div className="mt-4 flex flex-col gap-3">
                         <div className="flex items-center gap-2">
-                          <span className="text-2xl font-black text-blue-600">92</span>
+                          <span className="text-2xl font-black text-[#bf4440]">92</span>
                           <span className="text-xs text-slate-400 font-bold">/ 100</span>
                           <span className="bg-emerald-100 text-emerald-700 border border-emerald-200 text-[10px] font-bold px-2 py-0.5 rounded-full ml-1">Sangat Baik</span>
                         </div>
@@ -1480,7 +1480,7 @@ export function StudentTwin({
                   <div className="space-y-4">
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between border-b border-slate-100 pb-2 gap-3">
                       <div className="flex items-center gap-2">
-                        <BookOpen size={16} className="text-blue-600" />
+                        <BookOpen size={16} className="text-[#bf4440]" />
                         <h3 className="text-sm font-black text-slate-800 uppercase tracking-wider">IPK &amp; Nilai</h3>
                       </div>
                       
@@ -1495,7 +1495,7 @@ export function StudentTwin({
                         {/* Jadwal Kuliah Button */}
                         <button
                           onClick={() => setIsScheduleOpen(true)}
-                          className="flex items-center gap-1.5 px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white font-bold text-[10px] rounded-lg shadow-sm transition-all cursor-pointer"
+                          className="flex items-center gap-1.5 px-3 py-1.5 bg-[#bf4440] hover:bg-[#993633] text-white font-bold text-[10px] rounded-lg shadow-sm transition-all cursor-pointer"
                         >
                           <Clock size={12} />
                           Jadwal Kuliah
@@ -1534,7 +1534,7 @@ export function StudentTwin({
                                     return (
                                       <div className="bg-white border border-slate-200 rounded-xl p-2 shadow-md text-[10px]">
                                         <p className="font-extrabold text-slate-700">Semester {payload[0].payload.semester}</p>
-                                        <p className="font-bold text-blue-600 font-mono mt-0.5">IPK: {payload[0].value}</p>
+                                        <p className="font-bold text-[#bf4440] font-mono mt-0.5">IPK: {payload[0].value}</p>
                                       </div>
                                     );
                                   }
@@ -1544,7 +1544,7 @@ export function StudentTwin({
                               <Line 
                                 type="monotone" 
                                 dataKey="gpa" 
-                                stroke="#2563EB" 
+                                stroke="#bf4440" 
                                 strokeWidth={2.5} 
                                 dot={{ r: 4, strokeWidth: 2, fill: "#FFFFFF" }} 
                                 activeDot={{ r: 6 }} 
@@ -1553,7 +1553,7 @@ export function StudentTwin({
                           </ResponsiveContainer>
                         </div>
                         <div className="text-[9px] text-slate-400 font-semibold italic text-center mt-2">
-                          IPK Saat Ini: <span className="text-blue-600 font-black">{currentStudent.academic_core.gpa}</span>
+                          IPK Saat Ini: <span className="text-[#bf4440] font-black">{currentStudent.academic_core.gpa}</span>
                         </div>
                       </div>
 
@@ -1619,7 +1619,7 @@ export function StudentTwin({
                   {/* Bagian 2: Radar Kompetensi & CPL */}
                   <div className="space-y-4 pt-4 border-t border-slate-100">
                     <div className="flex items-center gap-2 border-b border-slate-100 pb-2">
-                      <Target size={16} className="text-blue-600" />
+                      <Target size={16} className="text-[#bf4440]" />
                       <h3 className="text-sm font-black text-slate-800 uppercase tracking-wider">Radar Kompetensi &amp; CPL</h3>
                     </div>
 
@@ -1641,8 +1641,8 @@ export function StudentTwin({
                               <Radar 
                                 name={currentStudent.name} 
                                 dataKey="Score" 
-                                stroke="#2563EB" 
-                                fill="#3B82F6" 
+                                stroke="#bf4440" 
+                                fill="#bf4440" 
                                 fillOpacity={0.25} 
                               />
                             </RadarChart>
@@ -1652,7 +1652,7 @@ export function StudentTwin({
 
                       <div className="lg:col-span-7 bg-white border border-slate-200 p-4 rounded-xl flex flex-col justify-between h-[320px]">
                         <div className="space-y-2">
-                          <span className="text-[8px] font-black text-blue-600 bg-blue-50 border border-blue-100 px-2 py-0.5 rounded uppercase tracking-wider font-mono">
+                          <span className="text-[8px] font-black text-[#bf4440] bg-blue-50 border border-blue-100 px-2 py-0.5 rounded uppercase tracking-wider font-mono">
                             CPL Attainment
                           </span>
                           <h3 className="text-xs font-black text-slate-800">Capaian Pembelajaran Lulusan (CPL)</h3>
@@ -1663,9 +1663,9 @@ export function StudentTwin({
                                 <div className="flex justify-between items-center text-[10px] font-bold">
                                   <span className="text-slate-700 font-mono text-[9px] bg-slate-100 px-1 py-0.2 rounded mr-1.5 shrink-0">{cpl.cpl_id}</span>
                                   <span className="text-slate-600 truncate flex-1">{cpl.label}</span>
-                                  <span className="font-mono text-blue-600 mr-2 shrink-0">{cpl.cumulative_pct}%</span>
+                                  <span className="font-mono text-[#bf4440] mr-2 shrink-0">{cpl.cumulative_pct}%</span>
                                   <span className={`text-[8px] px-1.5 py-0.2 rounded font-extrabold uppercase shrink-0 ${
-                                    cpl.level === "Sangat Baik" ? "bg-emerald-50 text-emerald-700 border border-emerald-100" : "bg-blue-50 text-blue-700 border border-blue-100"
+                                    cpl.level === "Sangat Baik" ? "bg-emerald-50 text-emerald-700 border border-emerald-100" : "bg-blue-50 text-[#993633] border border-blue-100"
                                   }`}>{cpl.level}</span>
                                 </div>
                                 <div className="w-full bg-slate-100 h-1 rounded-full overflow-hidden">
@@ -1690,7 +1690,7 @@ export function StudentTwin({
                   {/* Bagian 1: Passion & Karir */}
                   <div className="space-y-4">
                     <div className="flex items-center gap-2 border-b border-slate-100 pb-2">
-                      <Heart size={16} className="text-blue-600" />
+                      <Heart size={16} className="text-[#bf4440]" />
                       <h3 className="text-sm font-black text-slate-800 uppercase tracking-wider">Passion &amp; Karir</h3>
                     </div>
 
@@ -1745,12 +1745,12 @@ export function StudentTwin({
                   {/* Bagian 2: Pengembangan Karir */}
                   <div className="space-y-4 pt-4 border-t border-slate-100">
                     <div className="flex items-center gap-2 border-b border-slate-100 pb-2">
-                      <Compass size={16} className="text-blue-600" />
+                      <Compass size={16} className="text-[#bf4440]" />
                       <h3 className="text-sm font-black text-slate-800 uppercase tracking-wider">Pengembangan Karir &amp; Roadmap</h3>
                     </div>
 
                     <div className="bg-blue-50/40 border border-blue-100/60 p-4 rounded-xl">
-                      <span className="text-[8px] font-black text-blue-700 bg-blue-100/50 border border-blue-200 px-2 py-0.5 rounded uppercase tracking-wider font-mono">
+                      <span className="text-[8px] font-black text-[#993633] bg-blue-100/50 border border-blue-200 px-2 py-0.5 rounded uppercase tracking-wider font-mono">
                         Priority Focus
                       </span>
                       <p className="text-[11px] text-slate-700 font-semibold leading-relaxed mt-1.5">
@@ -1851,7 +1851,7 @@ export function StudentTwin({
                       <h3 className="text-sm font-black text-slate-800 mt-4 leading-tight">
                         {BIODATA_DATA.data_mahasiswa.nama}
                       </h3>
-                      <p className="text-[11px] font-mono font-bold text-blue-600 mt-1">
+                      <p className="text-[11px] font-mono font-bold text-[#bf4440] mt-1">
                         NPM {BIODATA_DATA.data_mahasiswa.npm}
                       </p>
                       
@@ -1896,7 +1896,7 @@ export function StudentTwin({
                       <div className="grid grid-cols-3 gap-2 w-full mt-4 bg-white p-3 rounded-xl border border-slate-200 shadow-sm">
                         <div className="text-center">
                           <span className="text-[8px] font-bold text-slate-400 block uppercase">IPK</span>
-                          <span className="text-xs font-black text-blue-600 font-mono">{BIODATA_DATA.prestasi_akademik.ringkasan_ipk.ipk}</span>
+                          <span className="text-xs font-black text-[#bf4440] font-mono">{BIODATA_DATA.prestasi_akademik.ringkasan_ipk.ipk}</span>
                         </div>
                         <div className="text-center border-x border-slate-100">
                           <span className="text-[8px] font-bold text-slate-400 block uppercase">SKS</span>
@@ -1944,7 +1944,7 @@ export function StudentTwin({
                             {/* Data Pribadi Section */}
                             <div>
                               <h4 className="text-[11px] font-black text-slate-800 uppercase tracking-wider mb-3 pb-1.5 border-b border-slate-100 flex items-center gap-1.5">
-                                <span className="w-1.5 h-3 bg-blue-600 rounded-xs"></span>
+                                <span className="w-1.5 h-3 bg-[#bf4440] rounded-xs"></span>
                                 Data Pribadi
                               </h4>
                               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -1980,7 +1980,7 @@ export function StudentTwin({
                                 </div>
                                 <div className="space-y-1">
                                   <label className="text-[9px] font-black text-slate-400 uppercase tracking-wider block">Email Address</label>
-                                  <div className="text-[11px] font-bold text-blue-600 bg-slate-50 border border-slate-200 px-3 py-2 rounded-lg font-mono">
+                                  <div className="text-[11px] font-bold text-[#bf4440] bg-slate-50 border border-slate-200 px-3 py-2 rounded-lg font-mono">
                                     {BIODATA_DATA.data_pribadi.email}
                                   </div>
                                 </div>
@@ -2141,7 +2141,7 @@ export function StudentTwin({
                                             href={bill.link_download}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="text-blue-600 hover:underline font-bold"
+                                            className="text-[#bf4440] hover:underline font-bold"
                                           >
                                             Download PDF
                                           </a>
@@ -2195,7 +2195,7 @@ export function StudentTwin({
                                       <div className="flex items-center gap-3 text-[10px] text-slate-400 font-bold">
                                         <span className="flex items-center gap-1">
                                           <Clock size={11} />
-                                          2024–2025
+                                          2024 - 2025
                                         </span>
                                         <span className="flex items-center gap-1 text-emerald-600 bg-emerald-50 border border-emerald-100 px-1.5 py-0.2 rounded-xs">
                                           <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
@@ -2215,14 +2215,14 @@ export function StudentTwin({
                                             Anggota Inti
                                           </p>
                                         </div>
-                                        <span className="bg-blue-50 text-blue-700 border border-blue-100 px-2 py-0.5 rounded text-[8.5px] font-black uppercase tracking-wider shrink-0">
+                                        <span className="bg-blue-50 text-[#993633] border border-blue-100 px-2 py-0.5 rounded text-[8.5px] font-black uppercase tracking-wider shrink-0">
                                           Kontributor Aktif
                                         </span>
                                       </div>
                                       <div className="flex items-center gap-3 text-[10px] text-slate-400 font-bold">
                                         <span className="flex items-center gap-1">
                                           <Clock size={11} />
-                                          2023–2025
+                                          2023 - 2025
                                         </span>
                                         <span className="flex items-center gap-1 text-emerald-600 bg-emerald-50 border border-emerald-100 px-1.5 py-0.2 rounded-xs">
                                           <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
@@ -2354,7 +2354,7 @@ export function StudentTwin({
                                           <p className="text-[10px] text-slate-400 font-semibold mt-1">Eurasia PR Summit • Issued 2025</p>
                                         </div>
                                       </div>
-                                      <span className="bg-blue-50 text-blue-700 border border-blue-100 text-[8.5px] font-black px-2 py-0.5 rounded-sm uppercase tracking-wider">
+                                      <span className="bg-blue-50 text-[#993633] border border-blue-100 text-[8.5px] font-black px-2 py-0.5 rounded-sm uppercase tracking-wider">
                                         Selesai
                                       </span>
                                     </div>
@@ -2364,7 +2364,7 @@ export function StudentTwin({
                                 {/* Footer */}
                                 <div className="bg-slate-50 px-5 py-2.5 border-t border-slate-100 flex items-center justify-between text-[10px] font-bold">
                                   <span className="text-slate-400">Kompetensi Digital ter-link ke LinkedIn</span>
-                                  <button className="text-[#0052CC] hover:text-[#0747A6] flex items-center gap-1 cursor-pointer bg-transparent border-none">
+                                  <button className="text-[#bf4440] hover:text-[#993633] flex items-center gap-1 cursor-pointer bg-transparent border-none">
                                     <Plus size={12} strokeWidth={2.5} />
                                     <span>Tambah Baru</span>
                                   </button>
@@ -2376,7 +2376,7 @@ export function StudentTwin({
                                 <div className="p-5 space-y-4">
                                   {/* Header */}
                                   <div className="flex items-start gap-3">
-                                    <div className="p-2 bg-blue-50 rounded-lg text-blue-600 shrink-0">
+                                    <div className="p-2 bg-blue-50 rounded-lg text-[#bf4440] shrink-0">
                                       <Briefcase size={18} />
                                     </div>
                                     <div>
@@ -2393,7 +2393,7 @@ export function StudentTwin({
                                         <h5 className="text-[13px] font-black text-slate-900 leading-tight">Agensi PR Nasional</h5>
                                         <p className="text-[11.5px] font-semibold text-slate-500 mt-0.5">Strategy &amp; Crisis Management Support</p>
                                       </div>
-                                      <span className="bg-blue-50 text-blue-700 border border-blue-100 px-2 py-0.5 rounded text-[8.5px] font-black uppercase tracking-wider shrink-0">
+                                      <span className="bg-blue-50 text-[#993633] border border-blue-100 px-2 py-0.5 rounded text-[8.5px] font-black uppercase tracking-wider shrink-0">
                                         Strategy Intern
                                       </span>
                                     </div>
@@ -2406,7 +2406,7 @@ export function StudentTwin({
                                       </div>
                                       <div>
                                         <span className="text-[8.5px] font-black text-slate-400 uppercase tracking-widest block mb-0.5">Periode</span>
-                                        <span className="font-bold text-slate-700">Sep – Des 2024</span>
+                                        <span className="font-bold text-slate-700">Sep - Des 2024</span>
                                       </div>
                                     </div>
 
@@ -2492,7 +2492,7 @@ export function StudentTwin({
 <div id="tasks-unfinished-checklist-card" className="bg-white border border-slate-200 p-4 rounded-2xl shadow-sm flex flex-col justify-between hover:border-blue-300 transition-all duration-300 min-h-[220px]">
             <div className="flex items-center justify-between pb-2 border-b border-slate-100">
               <div className="flex items-center gap-1.5">
-                <span className="p-1 bg-blue-50 text-blue-600 rounded-lg">
+                <span className="p-1 bg-blue-50 text-[#bf4440] rounded-lg">
                   <FileText size={13} />
                 </span>
                 <span className="text-[9px] font-black uppercase tracking-widest text-slate-400">Tugas Belum Selesai</span>
@@ -2512,7 +2512,7 @@ export function StudentTwin({
                     type="checkbox" 
                     checked={task.completed} 
                     onChange={() => toggleTaskCompleted(task.id)}
-                    className="w-3.5 h-3.5 mt-0.5 rounded border-slate-300 text-blue-600 focus:ring-blue-500 cursor-pointer"
+                    className="w-3.5 h-3.5 mt-0.5 rounded border-slate-300 text-[#bf4440] focus:ring-[#bf4440]/20 cursor-pointer"
                   />
                   <div className="min-w-0 flex-1">
                     <div className="flex items-center justify-between gap-1.5">
@@ -2540,7 +2540,7 @@ export function StudentTwin({
               <span className="text-[8.5px] font-bold text-slate-400">Total Tugas Aktif: {tasks.filter(t=>!t.completed).length}</span>
               <button 
                 onClick={() => setView('courses')} 
-                className="text-[8.5px] font-black text-blue-600 hover:text-blue-800 flex items-center gap-0.5"
+                className="text-[8.5px] font-black text-[#bf4440] hover:text-[#732926] flex items-center gap-0.5"
               >
                 Ke LMS Tugas →
               </button>
@@ -2555,7 +2555,7 @@ export function StudentTwin({
             {/* Header: Icon, Title & View Switcher */}
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-2.5">
-                <div className="w-9 h-9 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 shadow-sm shrink-0">
+                <div className="w-9 h-9 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-[#bf4440] shadow-sm shrink-0">
                   <Calendar size={18} className="stroke-[2.5]" />
                 </div>
                 <h3 className="text-xs font-black text-slate-800 tracking-wider">JADWAL COMM LABS</h3>
@@ -2582,7 +2582,7 @@ export function StudentTwin({
             {/* Subheader: Current month & active day name */}
             <div className="flex items-center justify-between mb-3.5 px-1">
               <span className="text-[11px] font-black text-slate-800 uppercase tracking-wide">JULI 2026</span>
-              <span className="text-[10px] font-black tracking-widest text-blue-600 uppercase">{getDayNameIndo(selectedDay)}</span>
+              <span className="text-[10px] font-black tracking-widest text-[#bf4440] uppercase">{getDayNameIndo(selectedDay)}</span>
             </div>
 
             {/* Views rendering */}
@@ -2615,13 +2615,13 @@ export function StudentTwin({
                         onClick={() => setSelectedDay(day)}
                         className={`py-1.5 rounded-lg flex flex-col items-center justify-center cursor-pointer transition-all ${
                           isSelected
-                            ? 'bg-blue-600 text-white shadow-sm'
+                            ? 'bg-[#bf4440] text-white shadow-sm'
                             : 'text-slate-700 hover:bg-slate-50'
                         }`}
                       >
                         <span className="leading-none">{day}</span>
                         {hasEvent ? (
-                          <span className={`w-1 h-1 rounded-full mt-0.5 ${isSelected ? 'bg-white' : 'bg-blue-600'}`} />
+                          <span className={`w-1 h-1 rounded-full mt-0.5 ${isSelected ? 'bg-white' : 'bg-[#bf4440]'}`} />
                         ) : (
                           <span className="w-1 h-1 mt-0.5 bg-transparent" />
                         )}
@@ -2664,13 +2664,13 @@ export function StudentTwin({
                           onClick={() => setSelectedDay(day)}
                           className={`py-2 rounded-lg flex flex-col items-center justify-center cursor-pointer transition-all ${
                             isSelected
-                              ? 'bg-blue-600 text-white shadow-sm'
+                              ? 'bg-[#bf4440] text-white shadow-sm'
                               : 'text-slate-700 hover:bg-slate-50'
                           }`}
                         >
                           <span className="leading-none">{day}</span>
                           {hasEvent ? (
-                            <span className={`w-1 h-1 rounded-full mt-0.5 ${isSelected ? 'bg-white' : 'bg-blue-600'}`} />
+                            <span className={`w-1 h-1 rounded-full mt-0.5 ${isSelected ? 'bg-white' : 'bg-[#bf4440]'}`} />
                           ) : (
                             <span className="w-1 h-1 mt-0.5 bg-transparent" />
                           )}
@@ -2687,7 +2687,7 @@ export function StudentTwin({
                 {calendarEvents[selectedDay] ? (
                   <div className="p-3 bg-blue-50/50 border border-blue-100 rounded-xl space-y-2">
                     <div className="flex items-center justify-between">
-                      <span className="text-[8px] font-black text-blue-700 bg-blue-100/50 px-2 py-0.5 rounded font-mono uppercase">PRAKTIKUM AKTIF</span>
+                      <span className="text-[8px] font-black text-[#993633] bg-blue-100/50 px-2 py-0.5 rounded font-mono uppercase">PRAKTIKUM AKTIF</span>
                       <span className="text-[8.5px] font-mono font-bold text-slate-500">{calendarEvents[selectedDay].time}</span>
                     </div>
                     <h4 className="text-xs font-black text-slate-800 leading-tight">{calendarEvents[selectedDay].title}</h4>
@@ -2746,7 +2746,7 @@ export function StudentTwin({
                 <h3 className="text-sm font-bold text-slate-900 tracking-tight">Career Match Indexes</h3>
                 <p className="text-[10px] text-slate-500 mt-1 max-w-[85%]">Curated alignment scores based on your major and semester performance.</p>
               </div>
-              <div className="text-blue-600 bg-blue-50 p-1.5 rounded-lg border border-blue-100">
+              <div className="text-[#bf4440] bg-blue-50 p-1.5 rounded-lg border border-blue-100">
                 <Sparkles size={16} />
               </div>
             </div>
@@ -2756,13 +2756,13 @@ export function StudentTwin({
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <span className="text-[10px] font-black bg-blue-600 text-white px-1.5 py-0.5 rounded-sm">#1</span>
+                    <span className="text-[10px] font-black bg-[#bf4440] text-white px-1.5 py-0.5 rounded-sm">#1</span>
                     <span className="text-sm font-bold text-slate-800">Ahli Strategi Komunikasi</span>
                   </div>
-                  <span className="text-lg font-black text-blue-700">92%</span>
+                  <span className="text-lg font-black text-[#993633]">92%</span>
                 </div>
                 <div className="w-full bg-blue-100 h-2 rounded-full overflow-hidden">
-                  <div className="bg-blue-800 h-full rounded-full" style={{ width: '92%' }}></div>
+                  <div className="bg-[#732926] h-full rounded-full" style={{ width: '92%' }}></div>
                 </div>
                 <div className="flex items-center gap-1">
                   <Star size={10} className="text-emerald-600 fill-emerald-600" />
@@ -2782,7 +2782,7 @@ export function StudentTwin({
                     <span className="text-[10px] font-black text-slate-700">78%</span>
                   </div>
                   <div className="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden">
-                    <div className="bg-blue-600 h-full rounded-full" style={{ width: '78%' }}></div>
+                    <div className="bg-[#bf4440] h-full rounded-full" style={{ width: '78%' }}></div>
                   </div>
                 </div>
                 
@@ -2796,7 +2796,7 @@ export function StudentTwin({
                     <span className="text-[10px] font-black text-slate-700">78%</span>
                   </div>
                   <div className="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden">
-                    <div className="bg-blue-600 h-full rounded-full" style={{ width: '78%' }}></div>
+                    <div className="bg-[#bf4440] h-full rounded-full" style={{ width: '78%' }}></div>
                   </div>
                 </div>
 
@@ -2863,7 +2863,7 @@ export function StudentTwin({
                         onClick={() => setSelectedSemesterFilter(sem.id)}
                         className={`px-3.5 py-1.5 rounded-xl border font-bold text-[10.5px] transition-all cursor-pointer whitespace-nowrap ${
                           isSelected
-                            ? "bg-[#003B95] border-[#003B95] text-white shadow-sm"
+                            ? "bg-[#732926] border-[#732926] text-white shadow-sm"
                             : "bg-white hover:bg-slate-50 border-slate-200 text-slate-600"
                         }`}
                       >
@@ -2880,12 +2880,12 @@ export function StudentTwin({
                   <div>
                     <div className="flex items-center justify-between pb-3 border-b border-slate-100 mb-4">
                       <h3 className="text-xs font-black text-slate-800 uppercase tracking-wider flex items-center gap-1.5">
-                        <span className="w-1.5 h-3.5 bg-blue-600 rounded-xs"></span>
+                        <span className="w-1.5 h-3.5 bg-[#bf4440] rounded-xs"></span>
                         Exam Grade Summary (Rekap Nilai)
                       </h3>
                       <button
                         onClick={() => handleExportCSV(selectedSemesterFilter)}
-                        className="flex items-center gap-1 px-3 py-1 bg-white border border-slate-200 text-slate-700 hover:text-blue-600 font-extrabold text-[9px] rounded-lg shadow-xs transition-all cursor-pointer uppercase tracking-wider font-mono"
+                        className="flex items-center gap-1 px-3 py-1 bg-white border border-slate-200 text-slate-700 hover:text-[#bf4440] font-extrabold text-[9px] rounded-lg shadow-xs transition-all cursor-pointer uppercase tracking-wider font-mono"
                       >
                         <Download size={10} />
                         EXPORT CSV
@@ -2938,7 +2938,7 @@ export function StudentTwin({
                                     c.grade.startsWith('A') 
                                       ? "bg-emerald-50 text-emerald-700 border-emerald-200" 
                                       : c.grade.startsWith('B') 
-                                        ? "bg-blue-50 text-blue-700 border-blue-200" 
+                                        ? "bg-blue-50 text-[#993633] border-blue-200" 
                                         : "bg-amber-50 text-amber-700 border-amber-200"
                                   }`}>
                                     {c.grade}
@@ -2958,12 +2958,12 @@ export function StudentTwin({
                   <div>
                     <div className="flex items-center justify-between pb-3 border-b border-slate-100 mb-4">
                       <h3 className="text-xs font-black text-slate-800 uppercase tracking-wider flex items-center gap-1.5">
-                        <span className="w-1.5 h-3.5 bg-blue-600 rounded-xs"></span>
+                        <span className="w-1.5 h-3.5 bg-[#bf4440] rounded-xs"></span>
                         {selectedSemesterFilter === 'all' ? 'Overall Grade Report' : `${SEMESTER_REPORTS[selectedSemesterFilter]?.semesterLabel} Grade Report`}
                       </h3>
                       <button
                         onClick={() => handleExportPDF(selectedSemesterFilter)}
-                        className="flex items-center gap-1 px-3 py-1 bg-white border border-slate-200 text-slate-700 hover:text-blue-600 font-extrabold text-[9px] rounded-lg shadow-xs transition-all cursor-pointer uppercase tracking-wider font-mono"
+                        className="flex items-center gap-1 px-3 py-1 bg-white border border-slate-200 text-slate-700 hover:text-[#bf4440] font-extrabold text-[9px] rounded-lg shadow-xs transition-all cursor-pointer uppercase tracking-wider font-mono"
                       >
                         <Download size={10} />
                         EXPORT PDF
@@ -3013,7 +3013,7 @@ export function StudentTwin({
                                     c.grade.startsWith('A') 
                                       ? "bg-emerald-50 text-emerald-700 border-emerald-200" 
                                       : c.grade.startsWith('B') 
-                                        ? "bg-blue-50 text-blue-700 border-blue-200" 
+                                        ? "bg-blue-50 text-[#993633] border-blue-200" 
                                         : "bg-amber-50 text-amber-700 border-amber-200"
                                   }`}>
                                     {c.grade}
@@ -3037,7 +3037,7 @@ export function StudentTwin({
                             : `${SEMESTER_REPORTS[selectedSemesterFilter]?.totalSks || 0} SKS`
                           }
                         </span>
-                        <span className="text-[#003B95]">
+                        <span className="text-[#732926]">
                           {selectedSemesterFilter === 'all'
                             ? "IPK: 3.67"
                             : `IPS: ${(SEMESTER_REPORTS[selectedSemesterFilter]?.ips || 0).toFixed(2)}`
@@ -3081,7 +3081,7 @@ export function StudentTwin({
               {/* Modal Header */}
               <div className="p-4 border-b border-slate-100 flex items-center justify-between bg-slate-50/50">
                 <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600 shadow-xs animate-pulse">
+                  <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center text-[#bf4440] shadow-xs animate-pulse">
                     <Clock size={16} />
                   </div>
                   <div>

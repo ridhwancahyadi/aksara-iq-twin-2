@@ -103,7 +103,7 @@ const PARTNER_UNIVERSITIES: PartnerUni[] = [
     country: 'Australia',
     city: 'Canberra',
     department: 'School of Creative Industries',
-    logoColor: 'bg-blue-600',
+    logoColor: 'bg-[#bf4440]',
     logoAbbr: 'UC',
     image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=600&q=80',
     matchPercentage: 78,
@@ -274,19 +274,19 @@ export function KatalogUniversitasMitra({ setView }: KatalogUniversitasMitraProp
     const getBannerColors = (id: string) => {
       switch (id) {
         case 'hanyang':
-          return 'from-[#221717] to-[#332222]'; // Dark Red
+          return 'from-blushed-brick-950 to-blushed-brick-900'; // Dark Red -> blushed-brick
         case 'skku':
-          return 'from-[#14231a] to-[#223528]'; // Dark Green
+          return 'from-coffee-bean-950 to-coffee-bean-900'; // Dark Green -> coffee-bean
         case 'canberra':
-          return 'from-[#141f2d] to-[#213045]'; // Dark Blue
+          return 'from-alice-blue-950 to-alice-blue-900'; // Dark Blue -> alice-blue
         case 'lund':
-          return 'from-[#251e13] to-[#362b1c]'; // Dark Amber
+          return 'from-pitch-black-900 to-pitch-black-800'; // Dark Amber -> pitch-black
         case 'myongji':
-          return 'from-[#261616] to-[#382020]'; // Dark Crimson
+          return 'from-blushed-brick-900 to-blushed-brick-800'; // Dark Crimson -> blushed-brick
         case 'woosong':
-          return 'from-[#122124] to-[#1e3236]'; // Dark Teal
+          return 'from-dim-grey-950 to-dim-grey-900'; // Dark Teal -> dim-grey
         default:
-          return 'from-[#1b2b23] to-[#2a3a2e]';
+          return 'from-pitch-black-950 to-pitch-black-900';
       }
     };
 
@@ -310,9 +310,9 @@ export function KatalogUniversitasMitra({ setView }: KatalogUniversitasMitraProp
 
             {/* Three visual vertical bars in the center */}
             <div className="relative z-10 flex items-end gap-1 h-10">
-              <div className="w-2.5 bg-[#c84a4a] rounded-sm opacity-90 h-7" />
-              <div className="w-2.5 bg-[#c84a4a] rounded-sm opacity-90 h-10" />
-              <div className="w-2.5 bg-[#c84a4a] rounded-sm opacity-90 h-8" />
+              <div className="w-2.5 bg-[#bf4440] rounded-sm opacity-90 h-7" />
+              <div className="w-2.5 bg-[#bf4440] rounded-sm opacity-90 h-10" />
+              <div className="w-2.5 bg-[#bf4440] rounded-sm opacity-90 h-8" />
             </div>
 
             {/* Bookmark button on top right */}
@@ -335,7 +335,7 @@ export function KatalogUniversitasMitra({ setView }: KatalogUniversitasMitraProp
               <div className="space-y-0.5">
                 {/* Badges: Country & Status */}
                 <div className="text-[9px] font-black uppercase tracking-wider flex items-center gap-1.5">
-                  <span className="text-[#c84a4a]">{uni.country}</span>
+                  <span className="text-[#bf4440]">{uni.country}</span>
                   <span className="text-slate-300 font-normal">●</span>
                   <span className={statusColor}>{matchLabel}</span>
                 </div>
@@ -457,7 +457,7 @@ export function KatalogUniversitasMitra({ setView }: KatalogUniversitasMitraProp
             href={`https://${uni.website}`} 
             target="_blank" 
             rel="noreferrer" 
-            className="text-[10px] text-[#c84a4a] font-mono hover:underline font-bold transition-colors"
+            className="text-[10px] text-[#bf4440] font-mono hover:underline font-bold transition-colors"
           >
             {uni.website}
           </a>
@@ -466,7 +466,7 @@ export function KatalogUniversitasMitra({ setView }: KatalogUniversitasMitraProp
               localStorage.setItem('selected_partner_id', uni.id);
               setView('detail_partners');
             }}
-            className="bg-[#c84a4a] hover:bg-[#b53f3f] text-white font-black text-[9px] uppercase tracking-wider px-3 py-1.5 rounded-lg flex items-center gap-1 shadow-sm transition-all cursor-pointer"
+            className="bg-[#bf4440] hover:bg-[#993633] text-white font-black text-[9px] uppercase tracking-wider px-3 py-1.5 rounded-lg flex items-center gap-1 shadow-sm transition-all cursor-pointer"
           >
             <span>DETAIL</span>
             <span className="font-mono text-[11px] font-black leading-none ml-0.5">➔</span>
@@ -686,7 +686,7 @@ export function KatalogUniversitasMitra({ setView }: KatalogUniversitasMitraProp
                   <button className="px-4 py-2 border border-[#42312d] text-white text-xs font-bold rounded-lg flex items-center gap-2 hover:bg-[#1f1614] transition-colors">
                     <Share size={14} /> Bagikan ke Dosen
                   </button>
-                  <button className="px-4 py-2 bg-[#c84a4a] hover:bg-[#b53f3f] text-white text-xs font-bold rounded-lg flex items-center gap-2 transition-colors">
+                  <button className="px-4 py-2 bg-[#bf4440] hover:bg-[#993633] text-white text-xs font-bold rounded-lg flex items-center gap-2 transition-colors">
                     <Download size={14} /> Unduh Berkas Resmi (PDF)
                   </button>
                   <button 
@@ -699,7 +699,7 @@ export function KatalogUniversitasMitra({ setView }: KatalogUniversitasMitraProp
               </div>
 
               {/* Main Document */}
-              <div className="bg-[#17100f] border border-[#2d201e] border-t-4 border-t-[#c84a4a] rounded-xl shadow-2xl p-8 sm:p-10 relative overflow-hidden text-slate-200 font-sans h-[70vh] overflow-y-auto custom-scrollbar">
+              <div className="bg-[#17100f] border border-[#2d201e] border-t-4 border-t-[#bf4440] rounded-xl shadow-2xl p-8 sm:p-10 relative overflow-hidden text-slate-200 font-sans h-[70vh] overflow-y-auto custom-scrollbar">
                 
                 {/* Header (Unpad Info) */}
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
@@ -735,7 +735,7 @@ export function KatalogUniversitasMitra({ setView }: KatalogUniversitasMitraProp
                 <div className="mb-10">
                   <div className="flex justify-between items-end border-b border-[#2d201e] pb-2 mb-6">
                     <h3 className="text-[10px] font-mono text-[#a1827e] tracking-widest uppercase">BAGIAN I. MITRA STUDI GLOBAL</h3>
-                    <button className="text-[10px] font-sans text-[#c84a4a] hover:text-red-400 transition-colors flex items-center gap-1" onClick={() => setSelectedUniDetail(null)}>
+                    <button className="text-[10px] font-sans text-[#bf4440] hover:text-red-400 transition-colors flex items-center gap-1" onClick={() => setSelectedUniDetail(null)}>
                       Lihat Katalog ↗
                     </button>
                   </div>
@@ -783,7 +783,7 @@ export function KatalogUniversitasMitra({ setView }: KatalogUniversitasMitraProp
                 <div className="mb-10">
                   <div className="flex justify-between items-end border-b border-[#2d201e] pb-2 mb-6">
                     <h3 className="text-[10px] font-mono text-[#a1827e] tracking-widest uppercase">BAGIAN II. KESETARAAN & TRANSFER KREDIT (CPMK)</h3>
-                    <button className="text-[10px] font-sans text-[#c84a4a] hover:text-red-400 transition-colors flex items-center gap-1">
+                    <button className="text-[10px] font-sans text-[#bf4440] hover:text-red-400 transition-colors flex items-center gap-1">
                       Buka CPMK Checker ↗
                     </button>
                   </div>
@@ -877,7 +877,7 @@ export function KatalogUniversitasMitra({ setView }: KatalogUniversitasMitraProp
                   <div>
                     <div className="flex justify-between items-end border-b border-[#2d201e] pb-2 mb-6">
                       <h3 className="text-[10px] font-mono text-[#a1827e] tracking-widest uppercase">BAGIAN IV. ESTIMASI BIAYA HIDUP (BULANAN)</h3>
-                      <button className="text-[10px] font-sans text-[#c84a4a] hover:text-red-400 transition-colors flex items-center gap-1">Detail Cost ↗</button>
+                      <button className="text-[10px] font-sans text-[#bf4440] hover:text-red-400 transition-colors flex items-center gap-1">Detail Cost ↗</button>
                     </div>
                     <div className="space-y-3 font-mono text-xs">
                       <div className="flex justify-between items-center text-[#a1827e]">
@@ -898,7 +898,7 @@ export function KatalogUniversitasMitra({ setView }: KatalogUniversitasMitraProp
                       </div>
                       <div className="border-t border-[#2d201e] mt-4 pt-4 flex justify-between items-center">
                         <span className="font-sans font-bold text-white text-sm">Total Estimasi</span>
-                        <span className="text-[#c84a4a] font-bold text-sm">₩ 920.000 / bln ≈ Rp 10.820.000</span>
+                        <span className="text-[#bf4440] font-bold text-sm">₩ 920.000 / bln ≈ Rp 10.820.000</span>
                       </div>
                     </div>
                   </div>
@@ -911,7 +911,7 @@ export function KatalogUniversitasMitra({ setView }: KatalogUniversitasMitraProp
                     <h5 className="text-white text-xs font-bold mb-2">Verifikasi Sistem & Keamanan</h5>
                     <p className="text-[#a1827e] font-mono text-[10px] leading-relaxed">
                       Dokumen ini ditandatangani secara digital oleh Universitas Padjadjaran International Office.<br/>
-                      Verifikasi Unik No: <span className="text-[#c84a4a]">SHA-256 / 8f9b9f9z</span>
+                      Verifikasi Unik No: <span className="text-[#bf4440]">SHA-256 / 8f9b9f9z</span>
                     </p>
                   </div>
                   <div className="text-right">
@@ -932,7 +932,7 @@ export function KatalogUniversitasMitra({ setView }: KatalogUniversitasMitraProp
                     <button className="px-5 py-2.5 border border-[#42312d] text-white text-xs font-bold rounded-lg flex items-center gap-2 hover:bg-[#2d201e] transition-colors bg-[#1a1211]">
                       <Share size={14} /> Bagikan ke Dosen
                     </button>
-                    <button className="px-5 py-2.5 bg-[#c84a4a] hover:bg-[#b53f3f] text-white text-xs font-bold rounded-lg flex items-center gap-2 transition-colors">
+                    <button className="px-5 py-2.5 bg-[#bf4440] hover:bg-[#993633] text-white text-xs font-bold rounded-lg flex items-center gap-2 transition-colors">
                       <FileText size={14} /> Unduh Berkas Sekarang
                     </button>
                   </div>

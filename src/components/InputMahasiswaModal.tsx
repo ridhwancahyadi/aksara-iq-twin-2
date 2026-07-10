@@ -92,7 +92,7 @@ export function InputMahasiswaModal({
     pendidikanAyah: 'S1',
     pekerjaanAyah: 'Karyawan Swasta',
     statusAyah: 'Hidup',
-    penghasilanAyah: '3–5jt',
+    penghasilanAyah: '3 - 5jt',
     hpAyah: '+628112233445',
     alamatAyah: '',
 
@@ -394,20 +394,20 @@ export function InputMahasiswaModal({
         const preset = docPresets.find(p => p.id === presetId);
         if (presetId === 'preset_1') {
           setParsedRecords([
-            { nim: '220210450', name: 'Farhan Maulana', email: 'farhan.m@unpad.ac.id', prodi: 'S1 Jurnalisme Digital', batch: 2022, status: 'Valid', issue: '—' },
-            { nim: '220210451', name: 'Siti Aminah', email: 'siti.aminah@unpad.ac.id', prodi: 'S1 Jurnalisme Digital', batch: 2022, status: 'Valid', issue: '—' },
+            { nim: '220210450', name: 'Farhan Maulana', email: 'farhan.m@unpad.ac.id', prodi: 'S1 Jurnalisme Digital', batch: 2022, status: 'Valid', issue: ' - ' },
+            { nim: '220210451', name: 'Siti Aminah', email: 'siti.aminah@unpad.ac.id', prodi: 'S1 Jurnalisme Digital', batch: 2022, status: 'Valid', issue: ' - ' },
             { nim: '220210344', name: 'Anisa Salsabila', email: 'anisa.salsabila@unpad.ac.id', prodi: 'S1 Jurnalisme Digital', batch: 2022, status: 'Warning', issue: 'NIM sudah ada di sistem (Akan di-update)' },
             { nim: '', name: 'Lia Lestari', email: 'lia.l@unpad.ac.id', prodi: 'S1 Jurnalisme Digital', batch: 2022, status: 'Error', issue: 'NIM wajib diisi' },
             { nim: '220210455', name: 'Budi Santoso', email: 'budi.s@gmail.com', prodi: 'S1 Jurnalisme Digital', batch: 2022, status: 'Error', issue: 'Harus menggunakan email kampus unpad.ac.id' }
           ]);
         } else if (presetId === 'preset_2') {
           setParsedRecords([
-            { nim: '220210510', name: 'Aditya Herlambang', email: 'aditya.h@unpad.ac.id', prodi: 'S1 Jurnalisme Digital', batch: 2022, status: 'Valid', issue: '—' },
-            { nim: '220210511', name: 'Kania Dewi', email: 'kania.d@unpad.ac.id', prodi: 'S1 Jurnalisme Digital', batch: 2022, status: 'Valid', issue: '—' }
+            { nim: '220210510', name: 'Aditya Herlambang', email: 'aditya.h@unpad.ac.id', prodi: 'S1 Jurnalisme Digital', batch: 2022, status: 'Valid', issue: ' - ' },
+            { nim: '220210511', name: 'Kania Dewi', email: 'kania.d@unpad.ac.id', prodi: 'S1 Jurnalisme Digital', batch: 2022, status: 'Valid', issue: ' - ' }
           ]);
         } else {
           setParsedRecords([
-            { nim: '210210001', name: 'Rian Hidayat', email: 'rian.h@unpad.ac.id', prodi: 'S1 Jurnalisme Digital', batch: 2021, status: 'Valid', issue: '—' },
+            { nim: '210210001', name: 'Rian Hidayat', email: 'rian.h@unpad.ac.id', prodi: 'S1 Jurnalisme Digital', batch: 2021, status: 'Valid', issue: ' - ' },
             { nim: '210210002', name: 'Yulia Ningsih', email: 'yulia.n@unpad.ac.id', prodi: 'S1 Jurnalisme Digital', batch: 2021, status: 'Warning', issue: 'Status angkatan 2021' },
             { nim: '210210003', name: '', email: 'unknown@unpad.ac.id', prodi: 'S1 Jurnalisme Digital', batch: 2021, status: 'Error', issue: 'Nama lengkap kosong' }
           ]);
@@ -577,10 +577,10 @@ export function InputMahasiswaModal({
               {/* Header */}
               <div className="flex justify-between items-center px-8 py-4 border-b border-slate-100 bg-slate-50/50">
                 <div className="space-y-1">
-                  <span className="text-[10px] uppercase font-black text-blue-600 tracking-wider">AKSARA IQ • Portal BAAK</span>
+                  <span className="text-[10px] uppercase font-black text-[#bf4440] tracking-wider">AKSARA IQ • Portal BAAK</span>
                   <h2 className="text-base font-black text-slate-900 tracking-tight flex items-center gap-2">
                     {pathway === 'selection' && 'Masukkan Data Mahasiswa'}
-                    {pathway === 'manual' && `Form Manual Mahasiswa — Langkah ${activeManualStep}/4`}
+                    {pathway === 'manual' && `Form Manual Mahasiswa - Langkah ${activeManualStep}/4`}
                     {pathway === 'upload' && 'Impor Massal Dokumen Akademik'}
                     {pathway === 'ocr' && 'Ekstraksi AI Scan & Foto Dokumen'}
                   </h2>
@@ -594,7 +594,7 @@ export function InputMahasiswaModal({
                       onClick={() => setPathway('manual')}
                       className={`py-2 px-3 rounded-xl text-[10px] font-black uppercase tracking-wider transition-all duration-200 flex items-center justify-center gap-1.5 ${
                         pathway === 'manual'
-                          ? 'bg-white text-blue-600 shadow-sm border border-slate-200/30'
+                          ? 'bg-white text-[#bf4440] shadow-sm border border-slate-200/30'
                           : 'text-slate-500 hover:text-slate-700'
                       }`}
                     >
@@ -606,7 +606,7 @@ export function InputMahasiswaModal({
                       onClick={() => setPathway('upload')}
                       className={`py-2 px-3 rounded-xl text-[10px] font-black uppercase tracking-wider transition-all duration-200 flex items-center justify-center gap-1.5 ${
                         pathway === 'upload'
-                          ? 'bg-white text-blue-600 shadow-sm border border-slate-200/30'
+                          ? 'bg-white text-[#bf4440] shadow-sm border border-slate-200/30'
                           : 'text-slate-500 hover:text-slate-700'
                       }`}
                     >
@@ -618,7 +618,7 @@ export function InputMahasiswaModal({
                       onClick={() => setPathway('ocr')}
                       className={`py-2 px-3 rounded-xl text-[10px] font-black uppercase tracking-wider transition-all duration-200 flex items-center justify-center gap-1.5 ${
                         pathway === 'ocr'
-                          ? 'bg-white text-blue-600 shadow-sm border border-slate-200/30'
+                          ? 'bg-white text-[#bf4440] shadow-sm border border-slate-200/30'
                           : 'text-slate-500 hover:text-slate-700'
                       }`}
                     >
@@ -653,7 +653,7 @@ export function InputMahasiswaModal({
                         <div key={s.step} className="flex items-center gap-2">
                           <div className={`w-8 h-8 rounded-full flex items-center justify-center font-black text-xs transition-colors ${
                             activeManualStep === s.step 
-                              ? 'bg-blue-600 text-white shadow-md shadow-blue-100' 
+                              ? 'bg-[#bf4440] text-white shadow-md shadow-blue-100' 
                               : activeManualStep > s.step 
                                 ? 'bg-emerald-500 text-white' 
                                 : 'bg-slate-100 text-slate-400'
@@ -674,8 +674,8 @@ export function InputMahasiswaModal({
                       <div className="space-y-6 font-sans text-xs font-bold text-slate-700">
                         {/* Section 1: Identitas Utama */}
                         <div className="space-y-4">
-                          <h3 className="text-xs uppercase font-black tracking-wider text-blue-600 border-b border-slate-100 pb-1.5 flex items-center gap-1.5">
-                            <span className="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
+                          <h3 className="text-xs uppercase font-black tracking-wider text-[#bf4440] border-b border-slate-100 pb-1.5 flex items-center gap-1.5">
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#bf4440]"></span>
                             A. Identitas Diri Utama (Wajib)
                           </h3>
                           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -686,7 +686,7 @@ export function InputMahasiswaModal({
                                 value={manualForm.nim}
                                 onChange={(e) => setManualForm({ ...manualForm, nim: e.target.value })}
                                 placeholder="Contoh: 220210344"
-                                className={`w-full px-3 py-2.5 border rounded-xl font-bold focus:outline-none focus:ring-1 focus:ring-blue-500 ${errors.nim ? 'border-rose-400' : 'border-slate-200'}`}
+                                className={`w-full px-3 py-2.5 border rounded-xl font-bold focus:outline-none focus:ring-1 focus:ring-[#bf4440]/20 ${errors.nim ? 'border-rose-400' : 'border-slate-200'}`}
                               />
                               {errors.nim && <span className="text-[10px] text-rose-500 font-bold block">{errors.nim}</span>}
                             </div>
@@ -698,7 +698,7 @@ export function InputMahasiswaModal({
                                 value={manualForm.name}
                                 onChange={(e) => setManualForm({ ...manualForm, name: e.target.value })}
                                 placeholder="Nama Lengkap sesuai Ijazah"
-                                className={`w-full px-3 py-2.5 border rounded-xl font-bold focus:outline-none focus:ring-1 focus:ring-blue-500 ${errors.name ? 'border-rose-400' : 'border-slate-200'}`}
+                                className={`w-full px-3 py-2.5 border rounded-xl font-bold focus:outline-none focus:ring-1 focus:ring-[#bf4440]/20 ${errors.name ? 'border-rose-400' : 'border-slate-200'}`}
                               />
                               {errors.name && <span className="text-[10px] text-rose-500 font-bold block">{errors.name}</span>}
                             </div>
@@ -710,7 +710,7 @@ export function InputMahasiswaModal({
                                 value={manualForm.email}
                                 onChange={(e) => setManualForm({ ...manualForm, email: e.target.value })}
                                 placeholder="email@unpad.ac.id"
-                                className={`w-full px-3 py-2.5 border rounded-xl font-bold focus:outline-none focus:ring-1 focus:ring-blue-500 ${errors.email ? 'border-rose-400' : 'border-slate-200'}`}
+                                className={`w-full px-3 py-2.5 border rounded-xl font-bold focus:outline-none focus:ring-1 focus:ring-[#bf4440]/20 ${errors.email ? 'border-rose-400' : 'border-slate-200'}`}
                               />
                               {errors.email && <span className="text-[10px] text-rose-500 font-bold block">{errors.email}</span>}
                             </div>
@@ -721,7 +721,7 @@ export function InputMahasiswaModal({
                                 type="text" 
                                 value={manualForm.birthPlace}
                                 onChange={(e) => setManualForm({ ...manualForm, birthPlace: e.target.value })}
-                                className="w-full px-3 py-2.5 border border-slate-200 rounded-xl font-bold focus:outline-none focus:ring-1 focus:ring-blue-500"
+                                className="w-full px-3 py-2.5 border border-slate-200 rounded-xl font-bold focus:outline-none focus:ring-1 focus:ring-[#bf4440]/20"
                               />
                             </div>
 
@@ -731,7 +731,7 @@ export function InputMahasiswaModal({
                                 type="date" 
                                 value={manualForm.birthDate}
                                 onChange={(e) => setManualForm({ ...manualForm, birthDate: e.target.value })}
-                                className="w-full px-3 py-2.5 border border-slate-200 rounded-xl font-bold focus:outline-none focus:ring-1 focus:ring-blue-500"
+                                className="w-full px-3 py-2.5 border border-slate-200 rounded-xl font-bold focus:outline-none focus:ring-1 focus:ring-[#bf4440]/20"
                               />
                             </div>
 
@@ -745,7 +745,7 @@ export function InputMahasiswaModal({
                                     value="L" 
                                     checked={manualForm.gender === 'L'} 
                                     onChange={() => setManualForm({ ...manualForm, gender: 'L' })}
-                                    className="w-4 h-4 text-blue-600"
+                                    className="w-4 h-4 text-[#bf4440]"
                                   />
                                   Laki-laki
                                 </label>
@@ -756,7 +756,7 @@ export function InputMahasiswaModal({
                                     value="P" 
                                     checked={manualForm.gender === 'P'} 
                                     onChange={() => setManualForm({ ...manualForm, gender: 'P' })}
-                                    className="w-4 h-4 text-blue-600"
+                                    className="w-4 h-4 text-[#bf4440]"
                                   />
                                   Perempuan
                                 </label>
@@ -768,7 +768,7 @@ export function InputMahasiswaModal({
                               <select 
                                 value={manualForm.religion}
                                 onChange={(e) => setManualForm({ ...manualForm, religion: e.target.value })}
-                                className="w-full px-3 py-2.5 border border-slate-200 rounded-xl font-bold focus:outline-none focus:ring-1 focus:ring-blue-500"
+                                className="w-full px-3 py-2.5 border border-slate-200 rounded-xl font-bold focus:outline-none focus:ring-1 focus:ring-[#bf4440]/20"
                               >
                                 <option value="Islam">Islam</option>
                                 <option value="Kristen">Kristen</option>
@@ -786,7 +786,7 @@ export function InputMahasiswaModal({
                                 value={manualForm.nationality}
                                 onChange={(e) => setManualForm({ ...manualForm, nationality: e.target.value })}
                                 placeholder="Contoh: WNI atau WNA"
-                                className="w-full px-3 py-2.5 border border-slate-200 rounded-xl font-bold focus:outline-none focus:ring-1 focus:ring-blue-500"
+                                className="w-full px-3 py-2.5 border border-slate-200 rounded-xl font-bold focus:outline-none focus:ring-1 focus:ring-[#bf4440]/20"
                               />
                             </div>
 
@@ -797,7 +797,7 @@ export function InputMahasiswaModal({
                                 value={manualForm.phone}
                                 onChange={(e) => setManualForm({ ...manualForm, phone: e.target.value })}
                                 placeholder="+628xxxxxxxxxx"
-                                className="w-full px-3 py-2.5 border border-slate-200 rounded-xl font-bold focus:outline-none focus:ring-1 focus:ring-blue-500"
+                                className="w-full px-3 py-2.5 border border-slate-200 rounded-xl font-bold focus:outline-none focus:ring-1 focus:ring-[#bf4440]/20"
                               />
                             </div>
                           </div>
@@ -818,7 +818,7 @@ export function InputMahasiswaModal({
                                 value={manualForm.nik}
                                 onChange={(e) => setManualForm({ ...manualForm, nik: e.target.value })}
                                 placeholder="16 Digit NIK"
-                                className={`w-full px-3 py-2.5 border rounded-xl font-bold focus:outline-none focus:ring-1 focus:ring-blue-500 ${errors.nik ? 'border-rose-400' : 'border-slate-200'}`}
+                                className={`w-full px-3 py-2.5 border rounded-xl font-bold focus:outline-none focus:ring-1 focus:ring-[#bf4440]/20 ${errors.nik ? 'border-rose-400' : 'border-slate-200'}`}
                               />
                               {errors.nik && <span className="text-[10px] text-rose-500 font-bold block">{errors.nik}</span>}
                             </div>
@@ -831,7 +831,7 @@ export function InputMahasiswaModal({
                                 value={manualForm.kk}
                                 onChange={(e) => setManualForm({ ...manualForm, kk: e.target.value })}
                                 placeholder="16 Digit No. KK"
-                                className="w-full px-3 py-2.5 border border-slate-200 rounded-xl font-bold focus:outline-none focus:ring-1 focus:ring-blue-500"
+                                className="w-full px-3 py-2.5 border border-slate-200 rounded-xl font-bold focus:outline-none focus:ring-1 focus:ring-[#bf4440]/20"
                               />
                             </div>
 
@@ -843,7 +843,7 @@ export function InputMahasiswaModal({
                                 value={manualForm.nisn}
                                 onChange={(e) => setManualForm({ ...manualForm, nisn: e.target.value })}
                                 placeholder="10 Digit NISN Nasional"
-                                className="w-full px-3 py-2.5 border border-slate-200 rounded-xl font-bold focus:outline-none focus:ring-1 focus:ring-blue-500"
+                                className="w-full px-3 py-2.5 border border-slate-200 rounded-xl font-bold focus:outline-none focus:ring-1 focus:ring-[#bf4440]/20"
                               />
                             </div>
 
@@ -853,7 +853,7 @@ export function InputMahasiswaModal({
                                 value={manualForm.address}
                                 onChange={(e) => setManualForm({ ...manualForm, address: e.target.value })}
                                 rows={2}
-                                className="w-full px-3 py-2.5 border border-slate-200 rounded-xl font-bold focus:outline-none focus:ring-1 focus:ring-blue-500"
+                                className="w-full px-3 py-2.5 border border-slate-200 rounded-xl font-bold focus:outline-none focus:ring-1 focus:ring-[#bf4440]/20"
                                 placeholder="Jl. Merdeka No. 45, Kecamatan Margahayu, Kota Bandung, Jawa Barat"
                               />
                             </div>
@@ -872,7 +872,7 @@ export function InputMahasiswaModal({
                               <select 
                                 value={manualForm.jalurMasuk}
                                 onChange={(e) => setManualForm({ ...manualForm, jalurMasuk: e.target.value })}
-                                className="w-full px-3 py-2.5 border border-slate-200 rounded-xl font-bold focus:outline-none focus:ring-1 focus:ring-blue-500"
+                                className="w-full px-3 py-2.5 border border-slate-200 rounded-xl font-bold focus:outline-none focus:ring-1 focus:ring-[#bf4440]/20"
                               >
                                 <option value="SNBP">SNBP</option>
                                 <option value="SNBT">SNBT</option>
@@ -887,7 +887,7 @@ export function InputMahasiswaModal({
                               <select 
                                 value={manualForm.prodi}
                                 onChange={(e) => setManualForm({ ...manualForm, prodi: e.target.value })}
-                                className="w-full px-3 py-2.5 border border-slate-200 rounded-xl font-bold focus:outline-none focus:ring-1 focus:ring-blue-500"
+                                className="w-full px-3 py-2.5 border border-slate-200 rounded-xl font-bold focus:outline-none focus:ring-1 focus:ring-[#bf4440]/20"
                               >
                                 <option value="S1 Jurnalisme Digital">S1 Jurnalisme Digital</option>
                                 <option value="S1 Manajemen Komunikasi">S1 Manajemen Komunikasi</option>
@@ -901,7 +901,7 @@ export function InputMahasiswaModal({
                                 type="number" 
                                 value={manualForm.batch}
                                 onChange={(e) => setManualForm({ ...manualForm, batch: parseInt(e.target.value) || 2022 })}
-                                className="w-full px-3 py-2.5 border border-slate-200 rounded-xl font-bold focus:outline-none focus:ring-1 focus:ring-blue-500"
+                                className="w-full px-3 py-2.5 border border-slate-200 rounded-xl font-bold focus:outline-none focus:ring-1 focus:ring-[#bf4440]/20"
                               />
                             </div>
 
@@ -910,7 +910,7 @@ export function InputMahasiswaModal({
                               <select 
                                 value={manualForm.status}
                                 onChange={(e) => setManualForm({ ...manualForm, status: e.target.value })}
-                                className="w-full px-3 py-2.5 border border-slate-200 rounded-xl font-bold focus:outline-none focus:ring-1 focus:ring-blue-500"
+                                className="w-full px-3 py-2.5 border border-slate-200 rounded-xl font-bold focus:outline-none focus:ring-1 focus:ring-[#bf4440]/20"
                               >
                                 <option value="Aktif">Aktif</option>
                                 <option value="Cuti">Cuti</option>
@@ -932,7 +932,7 @@ export function InputMahasiswaModal({
                               <Sparkles size={14} className="text-amber-500" />
                               D. Informasi Opsional & Deteksi Profil (% Kelengkapan)
                             </span>
-                            <span className="text-[10px] font-black text-blue-600 bg-white border border-slate-200 py-1 px-3 rounded-full uppercase tracking-wider">
+                            <span className="text-[10px] font-black text-[#bf4440] bg-white border border-slate-200 py-1 px-3 rounded-full uppercase tracking-wider">
                               {showOptionalFields ? 'Sembunyikan Form [-]' : 'Tampilkan Form Opsional [+]'}
                             </span>
                           </button>
@@ -1092,9 +1092,9 @@ export function InputMahasiswaModal({
                                 className="w-full px-3 py-2.5 border border-slate-200 rounded-xl font-bold"
                               >
                                 <option value="< 1jt">&lt; 1 Juta Rupiah</option>
-                                <option value="1–3jt">1–3 Juta Rupiah</option>
-                                <option value="3–5jt">3–5 Juta Rupiah</option>
-                                <option value="5–10jt">5–10 Juta Rupiah</option>
+                                <option value="1 - 3jt">1 - 3 Juta Rupiah</option>
+                                <option value="3 - 5jt">3 - 5 Juta Rupiah</option>
+                                <option value="5 - 10jt">5 - 10 Juta Rupiah</option>
                                 <option value="> 10jt">&gt; 10 Juta Rupiah</option>
                               </select>
                             </div>
@@ -1165,8 +1165,8 @@ export function InputMahasiswaModal({
                                 className="w-full px-3 py-2.5 border border-slate-200 rounded-xl font-bold"
                               >
                                 <option value="< 1jt">&lt; 1 Juta</option>
-                                <option value="1–3jt">1–3 Juta</option>
-                                <option value="3–5jt">3–5 Juta</option>
+                                <option value="1 - 3jt">1 - 3 Juta</option>
+                                <option value="3 - 5jt">3 - 5 Juta</option>
                                 <option value="> 5jt">&gt; 5 Juta</option>
                               </select>
                             </div>
@@ -1193,7 +1193,7 @@ export function InputMahasiswaModal({
                             <button 
                               type="button" 
                               onClick={handleAddKrsRow}
-                              className="text-blue-600 hover:text-blue-800 flex items-center gap-1 hover:bg-blue-50 py-1.5 px-3 rounded-lg transition-all"
+                              className="text-[#bf4440] hover:text-[#732926] flex items-center gap-1 hover:bg-blushed-brick-50 py-1.5 px-3 rounded-lg transition-all"
                             >
                               <Plus size={14} />
                               Tambah Baris KRS
@@ -1371,11 +1371,11 @@ export function InputMahasiswaModal({
                         {/* Repeatable Organisasi */}
                         <div className="space-y-4">
                           <div className="flex justify-between items-center border-b border-slate-100 pb-2">
-                            <h3 className="text-xs uppercase font-black tracking-wider text-slate-900 flex items-center gap-1.5"><Layers size={14} className="text-blue-600"/> Organisasi & Kepemimpinan</h3>
+                            <h3 className="text-xs uppercase font-black tracking-wider text-slate-900 flex items-center gap-1.5"><Layers size={14} className="text-[#bf4440]"/> Organisasi & Kepemimpinan</h3>
                             <button 
                               type="button" 
                               onClick={() => setOrganisasi([...organisasi, { nama: '', jabatan: '', periode: '', status: 'Anggota' }])}
-                              className="text-[11px] text-blue-600 font-black flex items-center gap-1"
+                              className="text-[11px] text-[#bf4440] font-black flex items-center gap-1"
                             >
                               <Plus size={12} /> Tambah Organisasi
                             </button>
@@ -1447,7 +1447,7 @@ export function InputMahasiswaModal({
                             <button 
                               type="button" 
                               onClick={() => setPrestasi([...prestasi, { nama: '', kategori: 'Akademik', tingkat: 'Regional', tahun: '2024', penyelenggara: '' }])}
-                              className="text-[11px] text-blue-600 font-black flex items-center gap-1"
+                              className="text-[11px] text-[#bf4440] font-black flex items-center gap-1"
                             >
                               <Plus size={12} /> Tambah Prestasi
                             </button>
@@ -1509,7 +1509,7 @@ export function InputMahasiswaModal({
                             <button 
                               type="button" 
                               onClick={() => setKerja([...kerja, { instansi: '', peran: 'Magang', durasi: '3', deskripsi: '' }])}
-                              className="text-[11px] text-blue-600 font-black flex items-center gap-1"
+                              className="text-[11px] text-[#bf4440] font-black flex items-center gap-1"
                             >
                               <Plus size={12} /> Tambah Riwayat Kerja
                             </button>
@@ -1606,7 +1606,7 @@ export function InputMahasiswaModal({
                         <button 
                           type="button" 
                           onClick={handleManualNext}
-                          className="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs rounded-xl uppercase tracking-wider transition-all flex items-center gap-1.5 shadow-md shadow-blue-100"
+                          className="px-6 py-2.5 bg-[#bf4440] hover:bg-[#993633] text-white font-bold text-xs rounded-xl uppercase tracking-wider transition-all flex items-center gap-1.5 shadow-md shadow-blue-100"
                         >
                           {activeManualStep === 4 ? 'Selesai & Simpan' : 'Lanjut'} <ChevronRight size={14} />
                         </button>
@@ -1746,7 +1746,7 @@ export function InputMahasiswaModal({
                                 <div className="flex items-center gap-1.5">
                                   <span className="font-mono text-[11px] text-slate-600 font-black">{col.detected}</span>
                                   <span className={`text-[9px] font-extrabold px-1.5 py-0.5 rounded ${
-                                    col.status === 'MAPPED' ? 'bg-blue-50 text-blue-600' : 'bg-amber-50 text-amber-600'
+                                    col.status === 'MAPPED' ? 'bg-blue-50 text-[#bf4440]' : 'bg-amber-50 text-amber-600'
                                   }`}>
                                     Confidence {col.confidence}
                                   </span>
@@ -1814,7 +1814,7 @@ export function InputMahasiswaModal({
                             <tbody className="divide-y divide-slate-100 text-xs text-slate-700 font-bold">
                               {parsedRecords.map((row, idx) => (
                                 <tr key={idx} className="hover:bg-slate-50/50">
-                                  <td className="p-3 font-mono text-blue-600">{row.nim || '[Kosong]'}</td>
+                                  <td className="p-3 font-mono text-[#bf4440]">{row.nim || '[Kosong]'}</td>
                                   <td className="p-3 text-slate-900 font-black">{row.name || '[Kosong]'}</td>
                                   <td className="p-3 text-slate-500">{row.prodi}</td>
                                   <td className="p-3 font-mono text-slate-400">{row.email}</td>
@@ -1854,7 +1854,7 @@ export function InputMahasiswaModal({
                             <button 
                               onClick={() => {
                                 alert('Perbaikan inline disimulasikan. Semua status baris kini menjadi Valid.');
-                                setParsedRecords(parsedRecords.map(r => ({ ...r, status: 'Valid', issue: '—' })));
+                                setParsedRecords(parsedRecords.map(r => ({ ...r, status: 'Valid', issue: ' - ' })));
                               }}
                               className="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs rounded-xl uppercase tracking-wider"
                             >
@@ -2227,7 +2227,7 @@ export function InputMahasiswaModal({
                                   type="text" 
                                   value={ocrExtractedFields.nim}
                                   onChange={(e) => setOcrExtractedFields({ ...ocrExtractedFields, nim: e.target.value })}
-                                  className="w-full px-3 py-1.5 border border-slate-200 rounded-lg text-xs font-mono text-blue-600"
+                                  className="w-full px-3 py-1.5 border border-slate-200 rounded-lg text-xs font-mono text-[#bf4440]"
                                 />
                               </div>
                               <div 
@@ -2279,7 +2279,7 @@ export function InputMahasiswaModal({
                     animate={{ scale: 1, opacity: 1 }}
                     className="bg-white rounded-3xl p-6 max-w-md mx-auto border border-slate-200 shadow-xl space-y-4 text-center font-sans"
                   >
-                    <div className="w-12 h-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mx-auto">
+                    <div className="w-12 h-12 bg-blue-50 text-[#bf4440] rounded-full flex items-center justify-center mx-auto">
                       <Sparkles size={22} className="animate-pulse" />
                     </div>
                     {(pathway === 'upload' || pathway === 'ocr') ? (
@@ -2302,7 +2302,7 @@ export function InputMahasiswaModal({
                           </button>
                           <button 
                             onClick={() => setShowCancelConfirm(false)}
-                            className="flex-1 py-2.5 bg-blue-600 hover:bg-blue-700 font-black text-xs rounded-xl uppercase text-white tracking-wider shadow-md shadow-blue-100 transition-colors"
+                            className="flex-1 py-2.5 bg-[#bf4440] hover:bg-[#993633] font-black text-xs rounded-xl uppercase text-white tracking-wider shadow-md shadow-blue-100 transition-colors"
                           >
                             Kembali Ke Form
                           </button>

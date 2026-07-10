@@ -22,9 +22,9 @@ const getSpeakerMeta = (speaker: string) => {
   if (normalized.includes('john') || normalized.includes('tosh')) {
     return {
       displayName: "John Tosh - 2254100011",
-      color: "border-blue-200/60 bg-blue-50/30 text-blue-700",
+      color: "border-blue-200/60 bg-blue-50/30 text-[#993633]",
       dot: "bg-blue-500",
-      avatarBg: "bg-blue-100 text-blue-700 font-bold border-blue-200"
+      avatarBg: "bg-blue-100 text-[#993633] font-bold border-blue-200"
     };
   }
   if (normalized.includes('fatima')) {
@@ -326,7 +326,7 @@ export function FGDPlaybackAnalysis({ setView, loggedInUser }: FGDPlaybackAnalys
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4 pb-4 border-b border-slate-100">
                     <div 
                       onClick={() => handleMetadataClick('Strategic')}
-                      className="space-y-1 p-2 -m-2 rounded-xl hover:bg-blue-50/40 cursor-pointer transition-all duration-200 group"
+                      className="space-y-1 p-2 -m-2 rounded-xl hover:bg-blushed-brick-50/40 cursor-pointer transition-all duration-200 group"
                       title="Klik untuk menyaring topik komunikasi strategis"
                     >
                       <span className="text-[10px] font-bold text-text-sub uppercase tracking-wider flex items-center gap-1.5">
@@ -364,7 +364,7 @@ export function FGDPlaybackAnalysis({ setView, loggedInUser }: FGDPlaybackAnalys
                           title="Klik untuk menyaring percakapan tentang SCCT"
                         >
                           <span className="text-primary font-bold">1.</span>
-                          <span className="hover:text-primary transition-colors">Situational Crisis Communication Theory (SCCT) – Coombs</span>
+                          <span className="hover:text-primary transition-colors">Situational Crisis Communication Theory (SCCT) - Coombs</span>
                         </li>
                         <li 
                           onClick={() => handleMetadataClick('Image Restoration')}
@@ -372,7 +372,7 @@ export function FGDPlaybackAnalysis({ setView, loggedInUser }: FGDPlaybackAnalys
                           title="Klik untuk menyaring percakapan tentang Image Restoration"
                         >
                           <span className="text-primary font-bold">2.</span>
-                          <span className="hover:text-primary transition-colors">Image Restoration Theory – Benoit</span>
+                          <span className="hover:text-primary transition-colors">Image Restoration Theory - Benoit</span>
                         </li>
                       </ul>
                     </div>
@@ -440,7 +440,7 @@ export function FGDPlaybackAnalysis({ setView, loggedInUser }: FGDPlaybackAnalys
 
                   <div 
                     onClick={() => { setSelectedSpeaker('Semua'); setTranscriptSearch(''); }}
-                    className="bg-slate-50 hover:bg-blue-50/50 cursor-pointer p-2 rounded-lg border border-slate-100 hover:border-blue-200/50 flex flex-col justify-center transition-all duration-200"
+                    className="bg-slate-50 hover:bg-blushed-brick-50/50 cursor-pointer p-2 rounded-lg border border-slate-100 hover:border-blue-200/50 flex flex-col justify-center transition-all duration-200"
                     title="Klik untuk menampilkan semua peserta"
                   >
                     <span className="text-[9px] font-bold text-text-sub uppercase tracking-wider flex items-center gap-1">
@@ -461,7 +461,7 @@ export function FGDPlaybackAnalysis({ setView, loggedInUser }: FGDPlaybackAnalys
                     href="https://www.bbc.com/indonesia/articles/c5yvynj08z7o" 
                     target="_blank" 
                     rel="noreferrer"
-                    className="flex items-center gap-1 text-[9px] font-extrabold text-primary hover:underline hover:text-blue-700 bg-blue-50 px-2.5 py-1 rounded-full border border-blue-100 transition-colors shrink-0"
+                    className="flex items-center gap-1 text-[9px] font-extrabold text-primary hover:underline hover:text-[#993633] bg-blue-50 px-2.5 py-1 rounded-full border border-blue-100 transition-colors shrink-0"
                   >
                     BBC Use Case <ExternalLink size={10} />
                   </a>
@@ -479,7 +479,7 @@ export function FGDPlaybackAnalysis({ setView, loggedInUser }: FGDPlaybackAnalys
                     <div 
                       key={index} 
                       onClick={() => handleMetadataClick(item.kw)}
-                      className="p-3 bg-slate-50/50 hover:bg-blue-50/20 active:scale-[0.99] border border-slate-100 hover:border-blue-100 rounded-xl flex items-start gap-2.5 transition-all duration-200 cursor-pointer"
+                      className="p-3 bg-slate-50/50 hover:bg-blushed-brick-50/20 active:scale-[0.99] border border-slate-100 hover:border-blue-100 rounded-xl flex items-start gap-2.5 transition-all duration-200 cursor-pointer"
                       title={`Klik untuk menyaring transkrip dengan kata kunci "${item.kw}"`}
                     >
                       <span className="w-5 h-5 rounded-full bg-blue-100 text-primary font-bold text-[10px] flex items-center justify-center shrink-0 border border-blue-200 mt-0.5">
@@ -545,7 +545,7 @@ export function FGDPlaybackAnalysis({ setView, loggedInUser }: FGDPlaybackAnalys
                       Dinamika Diskusi
                     </h4>
                     <p className="text-xs text-text-sub leading-relaxed">
-                      Diskusi konsensual, kolaboratif, dan progresif — argumen saling melengkapi dari isu strategis, stakeholder, evaluasi respon, kerangka SCCT, dampak, hingga rekomendasi. Tidak terjadi konflik terbuka, sehingga indikator Conflict Resolution berbukti terbatas untuk semua peserta.
+                      Diskusi konsensual, kolaboratif, dan progresif - argumen saling melengkapi dari isu strategis, stakeholder, evaluasi respon, kerangka SCCT, dampak, hingga rekomendasi. Tidak terjadi konflik terbuka, sehingga indikator Conflict Resolution berbukti terbatas untuk semua peserta.
                     </p>
                   </div>
 
@@ -555,13 +555,13 @@ export function FGDPlaybackAnalysis({ setView, loggedInUser }: FGDPlaybackAnalys
                       Penerapan Teori
                     </h4>
                     <p className="text-xs text-text-sub leading-relaxed">
-                      Kelompok menerapkan SCCT secara kolektif (tipe krisis, instructing/adjusting information) serta Image Restoration Theory (mortification, corrective action, compensation) — dipimpin John Tosh dan dilengkapi rekan.
+                      Kelompok menerapkan SCCT secara kolektif (tipe krisis, instructing/adjusting information) serta Image Restoration Theory (mortification, corrective action, compensation) - dipimpin John Tosh dan dilengkapi rekan.
                     </p>
                   </div>
 
                   <div className="bg-white p-4 rounded-xl border border-slate-100 shadow-xs">
                     <h4 className="text-xs font-bold text-slate-700 flex items-center gap-2 mb-1.5">
-                      <span className="p-1 bg-blue-50 text-blue-600 rounded-md"><User size={12} /></span>
+                      <span className="p-1 bg-blue-50 text-[#bf4440] rounded-md"><User size={12} /></span>
                       Observasi Dominasi
                     </h4>
                     <p className="text-xs text-text-sub leading-relaxed">
@@ -605,8 +605,8 @@ export function FGDPlaybackAnalysis({ setView, loggedInUser }: FGDPlaybackAnalys
 
                 {/* Areas of Improvement */}
                 <div className="bg-blue-50/30 border border-blue-100/50 p-4 rounded-xl">
-                  <h4 className="text-xs font-bold text-blue-800 flex items-center gap-2 mb-2.5">
-                    <span className="p-1 bg-blue-100 text-blue-700 rounded-md"><Lightbulb size={12} /></span>
+                  <h4 className="text-xs font-bold text-[#732926] flex items-center gap-2 mb-2.5">
+                    <span className="p-1 bg-blue-100 text-[#993633] rounded-md"><Lightbulb size={12} /></span>
                     Area Peningkatan
                   </h4>
                   <ul className="space-y-2">
@@ -819,7 +819,7 @@ export function FGDPlaybackAnalysis({ setView, loggedInUser }: FGDPlaybackAnalys
                     <button 
                       key={p.participant_id} 
                       onClick={() => setSelectedParticipant(p)}
-                      className="w-full flex items-center justify-between p-3 bg-slate-50/80 hover:bg-blue-50/40 hover:border-blue-200 hover:shadow-sm border border-slate-200/50 rounded-xl transition-all duration-300 ease-out text-left group transform hover:-translate-y-0.5 active:translate-y-0"
+                      className="w-full flex items-center justify-between p-3 bg-slate-50/80 hover:bg-blushed-brick-50/40 hover:border-blue-200 hover:shadow-sm border border-slate-200/50 rounded-xl transition-all duration-300 ease-out text-left group transform hover:-translate-y-0.5 active:translate-y-0"
                     >
                       <div className="flex items-center gap-3">
                         <div className={`w-10 h-10 rounded-full ${colorClass} border-2 flex items-center justify-center font-bold text-xs shrink-0 shadow-sm transition-transform duration-300 group-hover:scale-105`}>
@@ -872,7 +872,7 @@ export function FGDPlaybackAnalysis({ setView, loggedInUser }: FGDPlaybackAnalys
                 {setView && loggedInUser?.role !== 'mahasiswa' && (
                   <button 
                     onClick={() => setView('curriculum')}
-                    className="flex items-center gap-1.5 text-xs font-bold text-primary hover:text-blue-700 bg-blue-50 hover:bg-blue-100/50 px-3.5 py-1.5 rounded-xl border border-blue-100 transition-all cursor-pointer shadow-xs"
+                    className="flex items-center gap-1.5 text-xs font-bold text-primary hover:text-[#993633] bg-blue-50 hover:bg-blushed-brick-100/50 px-3.5 py-1.5 rounded-xl border border-blue-100 transition-all cursor-pointer shadow-xs"
                   >
                     See Detail Curriculum <ChevronRight size={14} />
                   </button>
@@ -998,7 +998,7 @@ export function FGDPlaybackAnalysis({ setView, loggedInUser }: FGDPlaybackAnalys
             <div className="px-5 pb-5 pt-2 border-t border-slate-100 space-y-4 text-xs text-slate-600 leading-relaxed">
               <div>
                 <span className="font-bold text-slate-800 block mb-0.5">Evidence Principle:</span>
-                <p className="text-slate-500">No Evidence, No Grade — setiap skor indikator dengan confidence 'tinggi'/'sedang' ditautkan ke kutipan transkrip bertimestamp.</p>
+                <p className="text-slate-500">No Evidence, No Grade - setiap skor indikator dengan confidence 'tinggi'/'sedang' ditautkan ke kutipan transkrip bertimestamp.</p>
               </div>
               <div>
                 <span className="font-bold text-slate-800 block mb-0.5">Human in the Loop:</span>
@@ -1007,7 +1007,7 @@ export function FGDPlaybackAnalysis({ setView, loggedInUser }: FGDPlaybackAnalys
               <div>
                 <span className="font-bold text-slate-800 block mb-0.5">Limitations (Batasan):</span>
                 <ul className="list-disc ml-4 mt-1 space-y-1.5 text-slate-500">
-                  <li>Indikator Gesture (GEN-05) & Facial Expression (GEN-06) dinilai dari screenshot frame statis tunggal — confidence rendah, tidak valid sebagai dasar keputusan. John Tosh bermasker sehingga ekspresi tidak terbaca.</li>
+                  <li>Indikator Gesture (GEN-05) & Facial Expression (GEN-06) dinilai dari screenshot frame statis tunggal - confidence rendah, tidak valid sebagai dasar keputusan. John Tosh bermasker sehingga ekspresi tidak terbaca.</li>
                   <li>Indikator Conflict Resolution (GEN-07) berbukti terbatas karena diskusi tidak memunculkan konflik nyata.</li>
                   <li>Transkrip VTT memuat sejumlah artefak speech-to-text (mis. istilah teknis salah eja); penilaian fokus pada substansi makna, bukan ejaan literal.</li>
                   <li>Talk share dihitung dari durasi cue VTT sebagai proksi waktu bicara, bukan dari analisis audio penuh.</li>

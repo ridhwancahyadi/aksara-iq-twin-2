@@ -68,7 +68,7 @@ export function FGDHistory({ setView }: FGDHistoryProps) {
                 <td className="py-4 px-4">
                   <div className="max-w-md lg:max-w-xl">
                     <div className="text-xs font-bold text-text-main line-clamp-2">{m.topic}</div>
-                    <span className="inline-flex items-center gap-1 text-[9px] font-semibold text-blue-600 bg-blue-50 border border-blue-100 px-1.5 py-0.5 rounded-full mt-1.5">
+                    <span className="inline-flex items-center gap-1 text-[9px] font-semibold text-[#bf4440] bg-blue-50 border border-blue-100 px-1.5 py-0.5 rounded-full mt-1.5">
                       <Database size={9} /> AI Index Available
                     </span>
                   </div>
@@ -85,7 +85,7 @@ export function FGDHistory({ setView }: FGDHistoryProps) {
                       e.stopPropagation();
                       setView('playback');
                     }}
-                    className="inline-flex items-center gap-1 text-xs font-bold text-primary hover:text-blue-700 hover:underline transition"
+                    className="inline-flex items-center gap-1 text-xs font-bold text-primary hover:text-[#993633] hover:underline transition"
                   >
                     View Analysis <ChevronRight size={14} />
                   </button>

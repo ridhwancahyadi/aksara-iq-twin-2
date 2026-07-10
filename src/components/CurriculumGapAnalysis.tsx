@@ -24,7 +24,7 @@ const EVALUATION_DATA = {
     document_age_years: 6.6,
     total_courses: 37,
     total_sks: 130,
-    outcome_framework: "KKNI / SN-Dikti — 4 domain capaian: Sikap, Pengetahuan, Keterampilan Khusus, Keterampilan Umum",
+    outcome_framework: "KKNI / SN-Dikti - 4 domain capaian: Sikap, Pengetahuan, Keterampilan Khusus, Keterampilan Umum",
     learning_methods_count: 15,
     learning_methods_highlight: ["Small Group Discussion", "Role-Play & Simulation", "Case Study", "Project Based Learning", "Problem Based Learning / Inquiry", "Collaborative Learning"]
   },
@@ -45,7 +45,7 @@ const EVALUATION_DATA = {
       code: "P3",
       name: "Ahli Pengembangan Komunikasi SDM (HR Communication Development Specialist)",
       description: "Mengelola strategi komunikasi untuk pengembangan sumber daya manusia organisasi.",
-      completeness: "deskripsi profil pada dokumen terpotong/tidak selengkap P1 dan P2 — perlu dilengkapi."
+      completeness: "deskripsi profil pada dokumen terpotong/tidak selengkap P1 dan P2 - perlu dilengkapi."
     }
   ],
   scoring_scale: {
@@ -93,9 +93,9 @@ const EVALUATION_DATA = {
       band: "Baik",
       summary: "Struktur 130 SKS dengan keseimbangan teori-praktik yang sehat dan ragam metode pembelajaran aktif (SCL) yang relevan untuk asesmen otentik.",
       evidence: [
-        "Mayoritas mata kuliah berbobot praktik (pola 2-1 dan 2-2), bukan murni teori — mendukung pembentukan keterampilan.",
+        "Mayoritas mata kuliah berbobot praktik (pola 2-1 dan 2-2), bukan murni teori - mendukung pembentukan keterampilan.",
         "Komponen pemajanan dunia kerja tersedia: Job Training 3 SKS, KKN 3 SKS, Seminar 3 SKS, Skripsi 6 SKS.",
-        "15 metode SCL termasuk Small Group Discussion, Case Study, Role-Play/Simulation, PjBL, PBL/I — selaras dengan asesmen berbasis FGD/wawancara."
+        "15 metode SCL termasuk Small Group Discussion, Case Study, Role-Play/Simulation, PjBL, PBL/I - selaras dengan asesmen berbasis FGD/wawancara."
       ],
       weaknesses: [
         "Penomoran mata kuliah pada dokumen sempat duplikat (No. 30 muncul dua kali), indikasi perlu merapikan tata kelola dokumen.",
@@ -127,7 +127,7 @@ const EVALUATION_DATA = {
       weight: 0.15,
       score: 55,
       band: "Cukup",
-      summary: "Kurikulum disahkan November 2019 (berlaku 2020) dan kini berusia ~6.6 tahun — disusun sebelum gelombang AI generatif (2023+), sehingga sejumlah materi inti berisiko tertinggal.",
+      summary: "Kurikulum disahkan November 2019 (berlaku 2020) dan kini berusia ~6.6 tahun - disusun sebelum gelombang AI generatif (2023+), sehingga sejumlah materi inti berisiko tertinggal.",
       evidence: [
         "Dokumen tertanggal resmi 27 November 2019.",
         "Tidak ditemukan referensi terhadap AI generatif, large language model, atau alat kerja komunikasi berbasis AI yang menjadi standar industri sejak 2023."
@@ -145,7 +145,7 @@ const EVALUATION_DATA = {
       band: "Baik",
       summary: "Metode pembelajaran aktif (FGD, studi kasus, role-play, presentasi) sangat mendukung asesmen otentik berbasis bukti seperti yang dirancang AKSARA IQ; namun keterlacakan CPMK-ke-asesmen-ke-rubrik belum terdokumentasi.",
       evidence: [
-        "Small Group Discussion dan Case Study menjadi metode resmi — selaras langsung dengan modul FGD Assessment Room.",
+        "Small Group Discussion dan Case Study menjadi metode resmi - selaras langsung dengan modul FGD Assessment Room.",
         "CPL Keterampilan Khusus mencakup 'terampil berbicara di depan publik, menyimak efektif' yang dapat dinilai melalui FGD/wawancara."
       ],
       weaknesses: [
@@ -159,7 +159,7 @@ const EVALUATION_DATA = {
     { theme: "Komunikasi Pemasaran & Branding", demand_level: "tinggi", status: "present", score: 85, evidence: ["Komunikasi Pemasaran", "Praktik Komunikasi Pemasaran", "Perilaku Konsumen"] },
     { theme: "Riset & Literasi Data Komunikasi", demand_level: "tinggi", status: "partial", score: 68, evidence: ["Statistika Terapan", "Riset Kuantitatif", "Riset Kualitatif"], gap_note: "Kuat di riset akademik, lemah di analitik data operasional (dashboard, metrik kanal, data-driven campaign)." },
     { theme: "Media Digital & Multimedia", demand_level: "tinggi", status: "partial", score: 72, evidence: ["Manajemen Media Digital", "Manajemen Komunikasi Multimedia", "Digitalisasi Teknologi Komunikasi", "Industri Media"], gap_note: "Ada fondasi digital, namun belum menyentuh operasi kanal sosial modern secara spesifik." },
-    { theme: "Manajemen Krisis & Isu Strategis", demand_level: "tinggi", status: "partial", score: 55, evidence: ["Bahan kajian 'Komunikasi Krisis' di bawah CPL ke-7"], gap_note: "Hanya bahan kajian, belum mata kuliah mandiri — padahal menjadi materi FGD yang dinilai (kasus PT KAI)." },
+    { theme: "Manajemen Krisis & Isu Strategis", demand_level: "tinggi", status: "partial", score: 55, evidence: ["Bahan kajian 'Komunikasi Krisis' di bawah CPL ke-7"], gap_note: "Hanya bahan kajian, belum mata kuliah mandiri - padahal menjadi materi FGD yang dinilai (kasus PT KAI)." },
     { theme: "Komunikasi Korporat & PR", demand_level: "tinggi", status: "present", score: 80, evidence: ["Komunikasi Organisasional dan Keterampilan Manajerial", "Audit komunikasi, budaya organisasi"] },
     { theme: "Produksi Konten & Penulisan Strategis", demand_level: "tinggi", status: "present", score: 78, evidence: ["Strategic Writing", "Public Speaking", "Manajemen Komunikasi Visual"] },
     { theme: "Operasi Media Sosial (Content/Community/Influencer)", demand_level: "sangat tinggi", status: "absent", score: 40, gap_note: "Belum ada mata kuliah/CPL spesifik untuk content strategy, community & influencer management, social media ops." },
@@ -455,9 +455,9 @@ export function CurriculumGapAnalysis() {
                   <Radar 
                     name="Syllabus Outcomes" 
                     dataKey="Curriculum" 
-                    stroke="#4F46E5" 
+                    stroke="#bf4440" 
                     strokeWidth={2}
-                    fill="#4F46E5" 
+                    fill="#bf4440" 
                     fillOpacity={0.12} 
                     dot={({ cx, cy, payload }) => {
                       const isSelected = payload.subject === selectedRadarSubject;
@@ -480,9 +480,9 @@ export function CurriculumGapAnalysis() {
                   <Radar 
                     name="Industry Demand" 
                     dataKey="Market" 
-                    stroke="#10B981" 
+                    stroke="#5c90a3" 
                     strokeWidth={2}
-                    fill="#10B981" 
+                    fill="#5c90a3" 
                     fillOpacity={0.06} 
                     dot={({ cx, cy, payload }) => {
                       const isSelected = payload.subject === selectedRadarSubject;
@@ -596,7 +596,7 @@ export function CurriculumGapAnalysis() {
                 gapLabel = "Kesenjangan Moderat (Perlu Ditambah)";
                 GapIcon = AlertTriangle;
               } else {
-                gapBadge = "bg-blue-50 border-blue-200 text-blue-700";
+                gapBadge = "bg-blue-50 border-blue-200 text-[#993633]";
                 gapLabel = "Kesenjangan Ringan";
                 GapIcon = Info;
               }
@@ -1023,7 +1023,7 @@ export function CurriculumGapAnalysis() {
         <BentoCard title="Rekomendasi Taktis Pembaruan Silabus Kurikulum">
           <div className="space-y-2">
             {EVALUATION_DATA.recommendations.map((rec) => (
-              <div key={rec.priority} className="p-2.5 bg-blue-50/10 hover:bg-blue-50/20 border border-blue-100/20 rounded-xl flex gap-2.5 transition-all">
+              <div key={rec.priority} className="p-2.5 bg-blue-50/10 hover:bg-blushed-brick-50/20 border border-blue-100/20 rounded-xl flex gap-2.5 transition-all">
                 <span className="h-5 w-5 rounded-full bg-primary text-white font-black text-[10px] flex items-center justify-center shrink-0 shadow-2xs font-mono">
                   {rec.priority}
                 </span>

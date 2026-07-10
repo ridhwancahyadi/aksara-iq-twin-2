@@ -87,7 +87,7 @@ export function CareerAspirations({ setView }: { setView?: (view: any) => void }
 
   if (isCompleted) {
     return (
-      <div className="h-full w-full bg-[#f8f9ff] text-slate-900 overflow-y-auto font-sans p-4 lg:p-8 relative">
+      <div className="h-full w-full bg-bg text-text-main overflow-y-auto font-sans p-4 lg:p-8 relative">
         <div className="w-[80%] mx-auto pb-32">
           {/* Header Section */}
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-5 mb-6">
@@ -444,7 +444,7 @@ export function CareerAspirations({ setView }: { setView?: (view: any) => void }
                                   </span>
                                 ))}
                               </p>
-                              <a href="#recommendations" className="inline-flex items-center gap-1 text-sm font-semibold text-blue-900 hover:text-blue-700 transition-colors">
+                              <a href="#recommendations" className="inline-flex items-center gap-1 text-sm font-semibold text-blue-900 hover:text-[#993633] transition-colors">
                                 Lihat Rekomendasi
                                 <ArrowUpRight size={16} />
                               </a>
@@ -471,9 +471,9 @@ export function CareerAspirations({ setView }: { setView?: (view: any) => void }
                     <div className="relative w-24 h-24 shrink-0">
                       <svg className="w-full h-full transform -rotate-90 drop-shadow-sm" viewBox="0 0 100 100">
                         {/* Kritis: Red 38% */}
-                        <circle cx="50" cy="50" r="38" stroke="#e11d48" strokeWidth="12" fill="transparent" strokeDasharray="90.7 238.7" strokeDashoffset="0" />
+                        <circle cx="50" cy="50" r="38" stroke="#bf4440" strokeWidth="12" fill="transparent" strokeDasharray="90.7 238.7" strokeDashoffset="0" />
                         {/* Perlu Perhatian: Orange 37% */}
-                        <circle cx="50" cy="50" r="38" stroke="#ea580c" strokeWidth="12" fill="transparent" strokeDasharray="88.3 238.7" strokeDashoffset="-90.7" />
+                        <circle cx="50" cy="50" r="38" stroke="#aa5622" strokeWidth="12" fill="transparent" strokeDasharray="88.3 238.7" strokeDashoffset="-90.7" />
                         {/* Terpenuhi: Green 25% */}
                         <circle cx="50" cy="50" r="38" stroke="#65a30d" strokeWidth="12" fill="transparent" strokeDasharray="59.7 238.7" strokeDashoffset="-179" />
                       </svg>
@@ -493,17 +493,17 @@ export function CareerAspirations({ setView }: { setView?: (view: any) => void }
                       </div>
                       <div className="flex items-center justify-between text-[11px] font-semibold bg-slate-50 p-1.5 px-2 rounded-md">
                         <div className="flex items-center gap-2">
-                           <div className="w-1.5 h-1.5 rounded-full bg-[#ea580c]"></div>
+                           <div className="w-1.5 h-1.5 rounded-full bg-[#aa5622]"></div>
                            <span className="text-slate-700">Perlu Perhatian</span>
                         </div>
-                        <span className="text-[#ea580c] font-bold bg-[#ea580c]/10 px-1.5 py-0.5 rounded">37%</span>
+                        <span className="text-[#aa5622] font-bold bg-[#aa5622]/10 px-1.5 py-0.5 rounded">37%</span>
                       </div>
                       <div className="flex items-center justify-between text-[11px] font-semibold bg-slate-50 p-1.5 px-2 rounded-md">
                         <div className="flex items-center gap-2">
-                           <div className="w-1.5 h-1.5 rounded-full bg-[#e11d48]"></div>
+                           <div className="w-1.5 h-1.5 rounded-full bg-[#bf4440]"></div>
                            <span className="text-slate-700">Kritis</span>
                         </div>
-                        <span className="text-[#e11d48] font-bold bg-[#e11d48]/10 px-1.5 py-0.5 rounded">38%</span>
+                        <span className="text-[#bf4440] font-bold bg-[#bf4440]/10 px-1.5 py-0.5 rounded">38%</span>
                       </div>
                     </div>
                   </div>
@@ -547,8 +547,8 @@ export function CareerAspirations({ setView }: { setView?: (view: any) => void }
                 </div>
 
                 <div className="mt-6 p-4 rounded-lg bg-blue-50 border border-blue-100 flex gap-3">
-                  <BrainCircuit size={20} className="text-blue-800 shrink-0" />
-                  <p className="text-[11px] font-medium text-blue-800 leading-relaxed">AI mengidentifikasi ini dari sesi brainstorming-mu — kamu bisa mengeditnya kapan saja.</p>
+                  <BrainCircuit size={20} className="text-[#732926] shrink-0" />
+                  <p className="text-[11px] font-medium text-[#732926] leading-relaxed">AI mengidentifikasi ini dari sesi brainstorming-mu - kamu bisa mengeditnya kapan saja.</p>
                 </div>
               </div>
             </section>
@@ -631,9 +631,9 @@ export function CareerAspirations({ setView }: { setView?: (view: any) => void }
                     <div className="mb-4">
                       <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">SUPPORTING COMPETENCIES:</p>
                       <div className="flex flex-wrap gap-2">
-                        <span className="bg-[#e6f4ea] text-[#1e8e3e] border border-[#d3eadd] px-2 py-1 rounded text-[11px] font-bold">Teori Komunikasi Strategis (91)</span>
-                        <span className="bg-[#e6f4ea] text-[#1e8e3e] border border-[#d3eadd] px-2 py-1 rounded text-[11px] font-bold">Critical Thinking (90)</span>
-                        <span className="bg-[#e6f4ea] text-[#1e8e3e] border border-[#d3eadd] px-2 py-1 rounded text-[11px] font-bold">Leadership (88)</span>
+                        <span className="bg-[#FFFDFA] text-[#497383] border border-[#FFFDFA] px-2 py-1 rounded text-[11px] font-bold">Teori Komunikasi Strategis (91)</span>
+                        <span className="bg-[#FFFDFA] text-[#497383] border border-[#FFFDFA] px-2 py-1 rounded text-[11px] font-bold">Critical Thinking (90)</span>
+                        <span className="bg-[#FFFDFA] text-[#497383] border border-[#FFFDFA] px-2 py-1 rounded text-[11px] font-bold">Leadership (88)</span>
                       </div>
                     </div>
                     
@@ -711,9 +711,9 @@ export function CareerAspirations({ setView }: { setView?: (view: any) => void }
                     <div className="mb-4">
                       <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">SUPPORTING COMPETENCIES:</p>
                       <div className="flex flex-wrap gap-2">
-                        <span className="bg-[#e6f4ea] text-[#1e8e3e] border border-[#d3eadd] px-2 py-1 rounded text-[11px] font-bold">Leadership (88)</span>
-                        <span className="bg-[#e6f4ea] text-[#1e8e3e] border border-[#d3eadd] px-2 py-1 rounded text-[11px] font-bold">Communication Skill (84)</span>
-                        <span className="bg-[#e6f4ea] text-[#1e8e3e] border border-[#d3eadd] px-2 py-1 rounded text-[11px] font-bold">Collaboration (85)</span>
+                        <span className="bg-[#FFFDFA] text-[#497383] border border-[#FFFDFA] px-2 py-1 rounded text-[11px] font-bold">Leadership (88)</span>
+                        <span className="bg-[#FFFDFA] text-[#497383] border border-[#FFFDFA] px-2 py-1 rounded text-[11px] font-bold">Communication Skill (84)</span>
+                        <span className="bg-[#FFFDFA] text-[#497383] border border-[#FFFDFA] px-2 py-1 rounded text-[11px] font-bold">Collaboration (85)</span>
                       </div>
                     </div>
                     
@@ -767,7 +767,7 @@ export function CareerAspirations({ setView }: { setView?: (view: any) => void }
                             </div>
                             <div className="text-left">
                               <h5 className="font-bold text-[14px] text-slate-900 leading-tight mb-0.5">{path.title}</h5>
-                              <p className="text-[12px] text-slate-500">Match Score: <span className="font-bold text-[#3b82f6]">{path.score}</span></p>
+                              <p className="text-[12px] text-slate-500">Match Score: <span className="font-bold text-[#bf4440]">{path.score}</span></p>
                             </div>
                           </div>
                           <div className="text-slate-400 mr-2">
@@ -782,7 +782,7 @@ export function CareerAspirations({ setView }: { setView?: (view: any) => void }
                                 <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-3">SUPPORTING COMPETENCIES:</p>
                                 <div className="flex flex-wrap gap-2">
                                   {path.supporting.map((comp, idx) => (
-                                    <span key={idx} className="bg-[#e6f4ea] text-[#1e8e3e] border border-[#d3eadd] px-2 py-1 rounded text-[11px] font-bold">
+                                    <span key={idx} className="bg-[#FFFDFA] text-[#497383] border border-[#FFFDFA] px-2 py-1 rounded text-[11px] font-bold">
                                       {comp.name} ({comp.score})
                                     </span>
                                   ))}
@@ -824,14 +824,14 @@ export function CareerAspirations({ setView }: { setView?: (view: any) => void }
                       'p3-1': !allOpen,
                     });
                   }}
-                  className="text-xs font-black text-[#0052CC] hover:text-[#0747A6] uppercase tracking-wider transition-colors cursor-pointer"
+                  className="text-xs font-black text-[#bf4440] hover:text-[#993633] uppercase tracking-wider transition-colors cursor-pointer"
                 >
                   {Object.values(expandedRoadmap).every(v => v) ? 'Collapse All' : 'Expand All'}
                 </button>
               </div>
               
               <div className="bg-[#f4f7fb] border border-[#e2e8f0] rounded-xl p-5 mb-6">
-                <span className="bg-[#e0e7ff] text-[#4338ca] border border-[#c7d2fe] px-2 py-1 rounded text-[9px] font-bold uppercase tracking-wider mb-2.5 inline-block">PRIORITY FOCUS</span>
+                <span className="bg-[#e0e7ff] text-[#732926] border border-[#c7d2fe] px-2 py-1 rounded text-[9px] font-bold uppercase tracking-wider mb-2.5 inline-block">PRIORITY FOCUS</span>
                 <p className="text-[#334155] font-bold text-[15px]">"Melengkapi profil strategist dengan literasi data & keterampilan fasilitasi."</p>
               </div>
               
@@ -845,7 +845,7 @@ export function CareerAspirations({ setView }: { setView?: (view: any) => void }
                   
                   {/* Phase Title */}
                   <div className="flex items-center gap-2 mb-3">
-                    <span className="bg-rose-100 text-rose-800 text-[10px] font-black px-2.5 py-0.5 rounded-sm uppercase tracking-wider">PHASE 1 — JANGKA PENDEK</span>
+                    <span className="bg-rose-100 text-rose-800 text-[10px] font-black px-2.5 py-0.5 rounded-sm uppercase tracking-wider">PHASE 1 - JANGKA PENDEK</span>
                     <span className="text-xs text-slate-400 font-bold">•</span>
                     <span className="text-xs text-slate-500 font-bold">Semester Berjalan</span>
                   </div>
@@ -866,7 +866,7 @@ export function CareerAspirations({ setView }: { setView?: (view: any) => void }
                           </div>
                         </div>
                         <div className="flex items-center gap-2 text-slate-400">
-                          <span className="text-[10px] font-black text-[#0052CC] uppercase tracking-wider hidden sm:inline">
+                          <span className="text-[10px] font-black text-[#bf4440] uppercase tracking-wider hidden sm:inline">
                             {expandedRoadmap['p1-1'] ? 'Tutup Detail' : 'Buka Detail'}
                           </span>
                           {expandedRoadmap['p1-1'] ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
@@ -918,7 +918,7 @@ export function CareerAspirations({ setView }: { setView?: (view: any) => void }
                           </div>
                         </div>
                         <div className="flex items-center gap-2 text-slate-400">
-                          <span className="text-[10px] font-black text-[#0052CC] uppercase tracking-wider hidden sm:inline">
+                          <span className="text-[10px] font-black text-[#bf4440] uppercase tracking-wider hidden sm:inline">
                             {expandedRoadmap['p1-2'] ? 'Tutup Detail' : 'Buka Detail'}
                           </span>
                           {expandedRoadmap['p1-2'] ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
@@ -962,11 +962,11 @@ export function CareerAspirations({ setView }: { setView?: (view: any) => void }
                 {/* PHASE 2 */}
                 <div className="relative">
                   {/* Timeline Dot */}
-                  <div className="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-blue-600 border-4 border-white shadow-sm ring-2 ring-blue-100" />
+                  <div className="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-[#bf4440] border-4 border-white shadow-sm ring-2 ring-blue-100" />
                   
                   {/* Phase Title */}
                   <div className="flex items-center gap-2 mb-3">
-                    <span className="bg-blue-100 text-blue-800 text-[10px] font-black px-2.5 py-0.5 rounded-sm uppercase tracking-wider">PHASE 2 — JANGKA MENENGAH</span>
+                    <span className="bg-blue-100 text-[#732926] text-[10px] font-black px-2.5 py-0.5 rounded-sm uppercase tracking-wider">PHASE 2 - JANGKA MENENGAH</span>
                     <span className="text-xs text-slate-400 font-bold">•</span>
                     <span className="text-xs text-slate-500 font-bold">1-2 Semester ke Depan</span>
                   </div>
@@ -979,11 +979,11 @@ export function CareerAspirations({ setView }: { setView?: (view: any) => void }
                         className="w-full text-left p-4 flex items-center justify-between gap-4 cursor-pointer hover:bg-slate-50/50"
                       >
                         <div className="flex items-center gap-3">
-                          <div className="w-1.5 h-8 bg-blue-600 rounded-full shrink-0" />
+                          <div className="w-1.5 h-8 bg-[#bf4440] rounded-full shrink-0" />
                           <div>
                             <div className="flex flex-wrap items-center gap-2">
                               <h4 className="text-sm font-black text-slate-900 uppercase tracking-tight">Spesialisasi Krisis & Reputasi</h4>
-                              <span className="bg-blue-50 text-blue-700 text-[8px] font-black px-1.5 py-0.5 rounded uppercase tracking-wider border border-blue-200">
+                              <span className="bg-blue-50 text-[#993633] text-[8px] font-black px-1.5 py-0.5 rounded uppercase tracking-wider border border-blue-200">
                                 STRATEGIC SPECIALIZATION
                               </span>
                             </div>
@@ -991,7 +991,7 @@ export function CareerAspirations({ setView }: { setView?: (view: any) => void }
                           </div>
                         </div>
                         <div className="flex items-center gap-2 text-slate-400">
-                          <span className="text-[10px] font-black text-[#0052CC] uppercase tracking-wider hidden sm:inline">
+                          <span className="text-[10px] font-black text-[#bf4440] uppercase tracking-wider hidden sm:inline">
                             {expandedRoadmap['p2-1'] ? 'Tutup Detail' : 'Buka Detail'}
                           </span>
                           {expandedRoadmap['p2-1'] ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
@@ -1020,13 +1020,13 @@ export function CareerAspirations({ setView }: { setView?: (view: any) => void }
                                 </p>
                               </div>
                               <div className="bg-blue-50/60 border border-blue-100 rounded p-3 text-[11px] text-slate-700">
-                                <span className="font-bold text-blue-700 uppercase tracking-wider block mb-0.5 text-[9px]">Rasionalisasi AI</span>
+                                <span className="font-bold text-[#993633] uppercase tracking-wider block mb-0.5 text-[9px]">Rasionalisasi AI</span>
                                 Mengonversi minat metodis yang kuat menjadi sertifikasi kredensial pragmatis yang bernilai tinggi industri.
                               </div>
 
                               {/* Box At Bottom */}
                               <div className="bg-slate-100/80 border border-slate-200 rounded-lg p-3 flex items-start gap-2 text-slate-700 font-semibold">
-                                <Link2 size={14} className="text-blue-600 shrink-0 mt-0.5" />
+                                <Link2 size={14} className="text-[#bf4440] shrink-0 mt-0.5" />
                                 <span className="text-[11px] leading-normal">
                                   Acuan: Workshop/sertifikasi crisis comm; program magang bersertifikat Kemenristek (MSIB).
                                 </span>
@@ -1046,7 +1046,7 @@ export function CareerAspirations({ setView }: { setView?: (view: any) => void }
                   
                   {/* Phase Title */}
                   <div className="flex items-center gap-2 mb-3">
-                    <span className="bg-slate-900 text-white text-[10px] font-black px-2.5 py-0.5 rounded-sm uppercase tracking-wider">PHASE 3 — JANGKA PANJANG</span>
+                    <span className="bg-slate-900 text-white text-[10px] font-black px-2.5 py-0.5 rounded-sm uppercase tracking-wider">PHASE 3 - JANGKA PANJANG</span>
                     <span className="text-xs text-slate-400 font-bold">•</span>
                     <span className="text-xs text-slate-500 font-bold">Menuju Kelulusan</span>
                   </div>
@@ -1071,7 +1071,7 @@ export function CareerAspirations({ setView }: { setView?: (view: any) => void }
                           </div>
                         </div>
                         <div className="flex items-center gap-2 text-slate-400">
-                          <span className="text-[10px] font-black text-[#0052CC] uppercase tracking-wider hidden sm:inline">
+                          <span className="text-[10px] font-black text-[#bf4440] uppercase tracking-wider hidden sm:inline">
                             {expandedRoadmap['p3-1'] ? 'Tutup Detail' : 'Buka Detail'}
                           </span>
                           {expandedRoadmap['p3-1'] ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
@@ -1136,7 +1136,7 @@ export function CareerAspirations({ setView }: { setView?: (view: any) => void }
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {/* Card 1 */}
               <div className="bg-white border border-slate-200 rounded-xl overflow-hidden group hover:shadow-lg transition-all">
-                <div className="h-32 bg-blue-800 relative flex items-center justify-center">
+                <div className="h-32 bg-[#732926] relative flex items-center justify-center">
                   <Podcast size={40} className="text-white relative z-10" />
                 </div>
                 <div className="p-6">
@@ -1212,14 +1212,14 @@ export function CareerAspirations({ setView }: { setView?: (view: any) => void }
         <div className="bg-white border border-slate-200 rounded-2xl shadow-sm p-6">
           <div className="flex items-center justify-between mb-8 relative">
             <div className="absolute top-1/2 left-0 w-full h-[2px] bg-slate-100 -translate-y-1/2 z-0" />
-            <div className="absolute top-1/2 left-0 h-[2px] bg-blue-600 -translate-y-1/2 z-0 transition-all duration-500" style={{ width: `${((phase - 1) / 4) * 100}%` }} />
+            <div className="absolute top-1/2 left-0 h-[2px] bg-[#bf4440] -translate-y-1/2 z-0 transition-all duration-500" style={{ width: `${((phase - 1) / 4) * 100}%` }} />
             
             {phases.map((p) => {
               const isActive = p.id === phase;
               const isPassed = p.id < phase;
               return (
                 <div key={p.id} className="relative z-10 flex flex-col items-center gap-2">
-                  <div className={`w-10 h-10 rounded-full flex items-center justify-center border-2 transition-colors duration-300 ${isActive ? 'bg-blue-50 border-blue-600 text-blue-600' : isPassed ? 'bg-blue-600 border-blue-600 text-white' : 'bg-white border-slate-200 text-slate-400'}`}>
+                  <div className={`w-10 h-10 rounded-full flex items-center justify-center border-2 transition-colors duration-300 ${isActive ? 'bg-blue-50 border-[#bf4440] text-[#bf4440]' : isPassed ? 'bg-[#bf4440] border-[#bf4440] text-white' : 'bg-white border-slate-200 text-slate-400'}`}>
                     {isPassed ? <CheckCircle2 size={18} strokeWidth={3} /> : <span className="text-sm font-bold">{p.id}</span>}
                   </div>
                   <span className={`text-[11px] font-bold tracking-wider uppercase hidden sm:block ${isActive || isPassed ? 'text-slate-800' : 'text-slate-400'}`}>
@@ -1244,7 +1244,7 @@ export function CareerAspirations({ setView }: { setView?: (view: any) => void }
 
                 <div className="flex items-center justify-between text-xs font-bold text-slate-500 border-b border-slate-100 pb-2 mb-4">
                   <span>PILIH HINGGA 3 BIDANG MINAT:</span>
-                  <span className={selectedInterests.length === 3 ? 'text-blue-600' : ''}>{selectedInterests.length} / 3 dipilih</span>
+                  <span className={selectedInterests.length === 3 ? 'text-[#bf4440]' : ''}>{selectedInterests.length} / 3 dipilih</span>
                 </div>
 
                 <div className="flex flex-wrap gap-3">
@@ -1258,15 +1258,15 @@ export function CareerAspirations({ setView }: { setView?: (view: any) => void }
                         disabled={isDisabled}
                         className={`flex items-center gap-2 px-4 py-2.5 rounded-xl border transition-all duration-200 ${
                           isSelected 
-                            ? 'bg-blue-50 border-blue-300 text-blue-700 shadow-sm' 
+                            ? 'bg-blue-50 border-blue-300 text-[#993633] shadow-sm' 
                             : isDisabled 
                               ? 'bg-slate-50 border-slate-200 text-slate-400 opacity-50 cursor-not-allowed'
                               : 'bg-white border-slate-200 text-slate-600 hover:border-slate-300 hover:bg-slate-50'
                         }`}
                       >
-                        <interest.icon size={16} className={isSelected ? 'text-blue-600' : 'text-slate-400'} />
+                        <interest.icon size={16} className={isSelected ? 'text-[#bf4440]' : 'text-slate-400'} />
                         <span className="text-sm font-semibold">{interest.label}</span>
-                        {isSelected && <CheckCircle2 size={16} className="ml-1 text-blue-600" />}
+                        {isSelected && <CheckCircle2 size={16} className="ml-1 text-[#bf4440]" />}
                       </button>
                     );
                   })}
@@ -1290,7 +1290,7 @@ export function CareerAspirations({ setView }: { setView?: (view: any) => void }
                     value={careerGoal}
                     onChange={(e) => setCareerGoal(e.target.value)}
                     placeholder="Contoh: Saya ingin menjadi Communication Strategist yang merancang kampanye komunikasi berdampak nyata bagi masyarakat Indonesia..."
-                    className="w-full h-40 p-4 bg-slate-50 border border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 resize-none text-sm text-slate-700 font-medium leading-relaxed"
+                    className="w-full h-40 p-4 bg-slate-50 border border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#bf4440]/20/20 focus:border-[#bf4440] resize-none text-sm text-slate-700 font-medium leading-relaxed"
                     maxLength={500}
                   />
                   <div className="absolute bottom-4 right-4 text-[10px] font-mono text-slate-400 font-semibold">
@@ -1331,7 +1331,7 @@ export function CareerAspirations({ setView }: { setView?: (view: any) => void }
 
                 <div className="flex items-center justify-between text-xs font-bold text-slate-500 border-b border-slate-100 pb-2 mb-4">
                   <span>PILIH HINGGA 3 HAMBATAN:</span>
-                  <span className={selectedHurdles.length === 3 ? 'text-blue-600' : ''}>{selectedHurdles.length} / 3 dipilih</span>
+                  <span className={selectedHurdles.length === 3 ? 'text-[#bf4440]' : ''}>{selectedHurdles.length} / 3 dipilih</span>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -1350,7 +1350,7 @@ export function CareerAspirations({ setView }: { setView?: (view: any) => void }
                               : 'bg-white border-slate-200 hover:border-slate-300 hover:bg-slate-50'
                         }`}
                       >
-                        <div className={`mt-1 shrink-0 w-5 h-5 rounded flex items-center justify-center border ${isSelected ? 'bg-blue-600 border-blue-600 text-white' : 'border-slate-300 bg-white'}`}>
+                        <div className={`mt-1 shrink-0 w-5 h-5 rounded flex items-center justify-center border ${isSelected ? 'bg-[#bf4440] border-[#bf4440] text-white' : 'border-slate-300 bg-white'}`}>
                           {isSelected && <CheckCircle2 size={14} strokeWidth={3} />}
                         </div>
                         <div>
@@ -1388,8 +1388,8 @@ export function CareerAspirations({ setView }: { setView?: (view: any) => void }
                             : 'bg-white border-slate-200 hover:border-slate-300 hover:bg-slate-50'
                         }`}
                       >
-                        <div className={`mt-1 shrink-0 w-5 h-5 rounded-full flex items-center justify-center border-2 ${learningStyle === style.id ? 'border-blue-600' : 'border-slate-300'}`}>
-                          {learningStyle === style.id && <div className="w-2.5 h-2.5 rounded-full bg-blue-600" />}
+                        <div className={`mt-1 shrink-0 w-5 h-5 rounded-full flex items-center justify-center border-2 ${learningStyle === style.id ? 'border-[#bf4440]' : 'border-slate-300'}`}>
+                          {learningStyle === style.id && <div className="w-2.5 h-2.5 rounded-full bg-[#bf4440]" />}
                         </div>
                         <div>
                           <h4 className={`text-sm font-bold mb-1 ${learningStyle === style.id ? 'text-blue-900' : 'text-slate-700'}`}>{style.label}</h4>
@@ -1437,7 +1437,7 @@ export function CareerAspirations({ setView }: { setView?: (view: any) => void }
                     value={commitment}
                     onChange={(e) => setCommitment(e.target.value)}
                     placeholder="Contoh: Saya akan menonton 2 video tentang research methodology di YouTube dan mencatat poin pentingnya."
-                    className="w-full h-32 p-4 bg-slate-50 border border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 resize-none text-sm text-slate-700 font-medium leading-relaxed"
+                    className="w-full h-32 p-4 bg-slate-50 border border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#bf4440]/20/20 focus:border-[#bf4440] resize-none text-sm text-slate-700 font-medium leading-relaxed"
                     maxLength={200}
                   />
                   <div className="absolute bottom-4 right-4 text-[10px] font-mono text-slate-400 font-semibold">
@@ -1489,10 +1489,10 @@ export function CareerAspirations({ setView }: { setView?: (view: any) => void }
               className={`flex items-center gap-2 px-6 py-2.5 rounded-xl text-sm font-bold transition-colors ${
                 phase === 5 
                   ? 'bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm'
-                  : 'bg-blue-600 hover:bg-blue-700 text-white shadow-sm'
+                  : 'bg-[#bf4440] hover:bg-[#993633] text-white shadow-sm'
               }`}
             >
-              {phase === 5 ? 'Selesai — Buat Profil Aspirasiku!' : 'Lanjut'}
+              {phase === 5 ? 'Selesai - Buat Profil Aspirasiku!' : 'Lanjut'}
               {phase < 5 && <ChevronRight size={16} />}
             </button>
           </div>

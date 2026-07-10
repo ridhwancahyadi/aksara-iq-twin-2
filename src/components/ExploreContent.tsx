@@ -111,7 +111,7 @@ export function ExploreContent() {
       title: 'Brand Identity & Positioning',
       description: 'Membangun identitas merek yang kuat dan menetapkan positioning yang unik di pasar kompetitif.',
       platform: 'Dicoding',
-      platformBg: 'bg-blue-50 text-blue-700 border border-blue-200',
+      platformBg: 'bg-blue-50 text-[#993633] border border-blue-200',
       type: 'Kursus',
       level: 'Menengah',
       duration: '12 jam',
@@ -205,15 +205,15 @@ export function ExploreContent() {
             placeholder="Cari judul, topik, atau nama instruktur..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-11 pr-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/30 text-sm transition-all shadow-sm"
+            className="w-full pl-11 pr-4 py-3 bg-white border border-slate-200 rounded-xl text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#bf4440]/20/30 text-sm transition-all shadow-sm"
           />
         </div>
         <button 
           onClick={() => setActiveProfileFilter(!activeProfileFilter)}
           className={`flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-bold text-xs transition-all cursor-pointer border ${
             activeProfileFilter 
-              ? 'bg-[#0052cc] border-[#0052cc] text-white shadow-md' 
-              : 'bg-white border-slate-200 text-[#0052cc] hover:text-blue-700 hover:bg-slate-50 shadow-sm'
+              ? 'bg-[#bf4440] border-[#bf4440] text-white shadow-md' 
+              : 'bg-white border-slate-200 text-[#bf4440] hover:text-[#993633] hover:bg-slate-50 shadow-sm'
           }`}
         >
           <Sparkles size={14} />
@@ -231,7 +231,7 @@ export function ExploreContent() {
               onClick={() => setSelectedType(t)}
               className={`px-4 py-2 rounded-full text-xs font-bold transition-all cursor-pointer ${
                 selectedType === t
-                  ? 'bg-[#0052cc] text-white shadow-md'
+                  ? 'bg-[#bf4440] text-white shadow-md'
                   : 'bg-slate-200/70 text-slate-600 hover:bg-slate-300'
               }`}
             >
@@ -248,7 +248,7 @@ export function ExploreContent() {
               onClick={() => setSelectedLevel(l)}
               className={`px-4 py-2 rounded-full text-xs font-bold transition-all cursor-pointer ${
                 selectedLevel === l
-                  ? 'bg-[#0052cc] text-white shadow-md'
+                  ? 'bg-[#bf4440] text-white shadow-md'
                   : 'bg-slate-200/70 text-slate-600 hover:bg-slate-300'
               }`}
             >
@@ -276,7 +276,7 @@ export function ExploreContent() {
               {/* Dotted Abstract Top Section */}
               <div className="relative h-36 bg-slate-50/80 flex items-center justify-center overflow-hidden border-b border-slate-100">
                 <div className="absolute inset-0 opacity-[0.05] bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:16px_16px]"></div>
-                <div className="w-12 h-12 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-[#0052cc] group-hover:scale-110 transition-transform duration-500">
+                <div className="w-12 h-12 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-[#bf4440] group-hover:scale-110 transition-transform duration-500">
                   <IconComponent size={22} />
                 </div>
                 
@@ -305,7 +305,7 @@ export function ExploreContent() {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-[15px] font-bold text-slate-900 leading-snug group-hover:text-[#0052cc] transition-colors">
+                <h3 className="text-[15px] font-bold text-slate-900 leading-snug group-hover:text-[#bf4440] transition-colors">
                   {item.title}
                 </h3>
                 
@@ -341,7 +341,7 @@ export function ExploreContent() {
                 {/* Button Action */}
                 <button 
                   onClick={() => setSelectedItem(item)}
-                  className="mt-auto w-full py-2.5 bg-[#0052cc] hover:bg-blue-700 text-white text-xs font-bold rounded-xl transition-all duration-200 cursor-pointer text-center shadow-sm"
+                  className="mt-auto w-full py-2.5 bg-[#bf4440] hover:bg-[#993633] text-white text-xs font-bold rounded-xl transition-all duration-200 cursor-pointer text-center shadow-sm"
                 >
                   Lihat Detail
                 </button>
@@ -403,7 +403,7 @@ export function ExploreContent() {
                   <div className="space-y-2.5">
                     {selectedItem.syllabus.map((topic, i) => (
                       <div key={i} className="flex gap-3 items-center bg-slate-50 p-2.5 rounded-lg border border-slate-200/60">
-                        <span className="w-5 h-5 rounded-full bg-blue-50 text-[#0052cc] text-xs font-black flex items-center justify-center shrink-0">
+                        <span className="w-5 h-5 rounded-full bg-blue-50 text-[#bf4440] text-xs font-black flex items-center justify-center shrink-0">
                           {i + 1}
                         </span>
                         <span className="text-slate-700 text-xs font-semibold">{topic}</span>
@@ -422,7 +422,7 @@ export function ExploreContent() {
               </div>
               <button 
                 onClick={() => setSelectedItem(null)}
-                className="px-5 py-2.5 bg-[#0052cc] hover:bg-blue-700 text-white text-xs font-bold rounded-xl transition-colors cursor-pointer shadow-md"
+                className="px-5 py-2.5 bg-[#bf4440] hover:bg-[#993633] text-white text-xs font-bold rounded-xl transition-colors cursor-pointer shadow-md"
               >
                 Mulai Belajar
               </button>

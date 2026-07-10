@@ -302,7 +302,7 @@ export function KatalogMitra({ setView }: { setView?: (view: any) => void }) {
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-b border-slate-200 pb-6">
         <div>
           <div className="flex items-center gap-2 mb-2">
-            <span className="bg-blue-100 text-[#0052CC] text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider flex items-center gap-1">
+            <span className="bg-blue-100 text-[#bf4440] text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider flex items-center gap-1">
               <Globe size={11} /> Global Exchange Program
             </span>
             <span className="text-slate-300">•</span>
@@ -336,7 +336,7 @@ export function KatalogMitra({ setView }: { setView?: (view: any) => void }) {
         {/* Block 1: Profil Capaian Belajar Saya */}
         <div className="bg-white border border-slate-200 rounded-2xl shadow-sm p-6 space-y-4">
           <div className="flex items-center gap-2 pb-3 border-b border-slate-100">
-            <div className="p-2 bg-blue-50 text-blue-700 rounded-lg">
+            <div className="p-2 bg-blue-50 text-[#993633] rounded-lg">
               <GraduationCap size={16} />
             </div>
             <h3 className="font-black text-xs uppercase tracking-wider text-slate-400">
@@ -402,7 +402,7 @@ export function KatalogMitra({ setView }: { setView?: (view: any) => void }) {
                   setSelectedUniId(e.target.value);
                   setExpandedReqId(null);
                 }}
-                className="w-full bg-slate-50 border border-slate-200 text-slate-800 font-bold text-sm px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0052CC] focus:border-transparent transition-all appearance-none cursor-pointer pr-10"
+                className="w-full bg-slate-50 border border-slate-200 text-slate-800 font-bold text-sm px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#bf4440] focus:border-transparent transition-all appearance-none cursor-pointer pr-10"
               >
                 {PARTNER_UNIVERSITIES.map(uni => (
                   <option key={uni.id} value={uni.id}>
@@ -451,7 +451,7 @@ export function KatalogMitra({ setView }: { setView?: (view: any) => void }) {
             <div className="flex-1 space-y-1.5">
               <div className="flex justify-between text-[11px] font-black text-slate-500 uppercase tracking-wider">
                 <span>Syarat Terpenuhi</span>
-                <span className="text-[#0052CC]">{fulfilledReqs} dari {totalReqs} Syarat ({progressPct}%)</span>
+                <span className="text-[#bf4440]">{fulfilledReqs} dari {totalReqs} Syarat ({progressPct}%)</span>
               </div>
               <div className="w-full bg-slate-100 rounded-full h-2 overflow-hidden">
                 <div 
@@ -473,7 +473,7 @@ export function KatalogMitra({ setView }: { setView?: (view: any) => void }) {
               terpenuhi: 'bg-emerald-50 border-emerald-200 text-emerald-800 hover:bg-emerald-100/50',
               gap: 'bg-amber-50 border-amber-200 text-amber-800 hover:bg-amber-100/50',
               dikejar: 'bg-rose-50 border-rose-200 text-rose-800 hover:bg-rose-100/50',
-              kontrak: 'bg-blue-50 border-blue-200 text-blue-800 hover:bg-blue-100/50',
+              kontrak: 'bg-blue-50 border-blue-200 text-[#732926] hover:bg-blushed-brick-100/50',
             }[req.status];
 
             const statusDot = {
@@ -524,7 +524,7 @@ export function KatalogMitra({ setView }: { setView?: (view: any) => void }) {
                     <div className="text-slate-400">
                       <ChevronDown 
                         size={16} 
-                        className={`transition-transform duration-200 ${isExpanded ? 'rotate-180 text-blue-600' : ''}`} 
+                        className={`transition-transform duration-200 ${isExpanded ? 'rotate-180 text-[#bf4440]' : ''}`} 
                       />
                     </div>
                   </div>

@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Sidebar } from './components/Sidebar';
 import { View } from './types';
 import { BentoCard } from './components/BentoCard';
-import { Mic, MicOff, Camera, CameraOff, Sparkles, Activity, User, History, AlertCircle, LogOut } from 'lucide-react';
+import { Mic, MicOff, Camera, CameraOff, Sparkles, Activity, User, History, AlertCircle, LogOut, Sun, Moon } from 'lucide-react';
 import { FGDHistory } from './components/FGDHistory';
 import { FGDPlaybackAnalysis } from './components/FGDPlaybackAnalysis';
 import { CurriculumGapAnalysis } from './components/CurriculumGapAnalysis';
@@ -34,6 +34,31 @@ import { ExploreContent } from './components/ExploreContent';
 import { Bot } from 'lucide-react';
 
 export default function App() {
+  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
+    try {
+      const saved = localStorage.getItem('theme');
+      if (saved === 'light' || saved === 'dark') return saved;
+    } catch (e) {
+      console.warn("Failed to read theme from localStorage", e);
+    }
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      return 'dark';
+    }
+    return 'light';
+  });
+
+  useEffect(() => {
+    const root = window.document.documentElement;
+    if (theme === 'dark') {
+      root.classList.add('dark');
+      root.classList.remove('light');
+    } else {
+      root.classList.add('light');
+      root.classList.remove('dark');
+    }
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
   const [user, setUser] = useState<{
     name: string;
     id: string;
@@ -318,8 +343,9 @@ export default function App() {
         studentTwinTab={studentTwinTab}
         setStudentTwinTab={setStudentTwinTab}
       />
-      <main className="flex-1 flex flex-col h-full p-5 gap-5 overflow-hidden">
-        <header className="flex justify-between items-center h-20 bg-transparent px-5 shrink-0">
+      <main className="flex-1 flex flex-col h-full overflow-hidden bg-bg">
+        <div className="w-full max-w-7xl mx-auto px-6 py-4 flex flex-col h-full gap-4 overflow-hidden">
+          <header className="flex justify-between items-center h-16 bg-transparent shrink-0">
           <div>
             <h1 className="text-2xl font-bold text-slate-900 flex items-center gap-2">
               Welcome back, {user.name.split(' ')[0]}! <Sparkles className="text-blue-500 fill-blue-500" size={20} />
@@ -339,6 +365,16 @@ export default function App() {
             </div>
 
             <div className="flex items-center gap-4">
+              {/* Theme Toggle Button */}
+              <button 
+                onClick={() => setTheme(prev => prev === 'light' ? 'dark' : 'light')}
+                className="w-10 h-10 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all cursor-pointer shadow-sm"
+                title={theme === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode'}
+                id="theme-toggle-button"
+              >
+                {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
+              </button>
+
               {/* Notification Bell */}
               <button className="relative w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-slate-50 transition-all cursor-pointer shadow-sm">
                 <Activity size={18} />
@@ -434,7 +470,7 @@ export default function App() {
             
             <button 
               onClick={() => setIsAICoachOpen(!isAICoachOpen)}
-              className="fixed bottom-6 right-6 w-14 h-14 bg-blue-700 text-white rounded-full flex items-center justify-center shadow-2xl hover:bg-blue-800 transition-all hover:scale-105 z-40 border-4 border-white"
+              className="fixed bottom-6 right-6 w-14 h-14 bg-[#993633] text-white rounded-full flex items-center justify-center shadow-2xl hover:bg-[#732926] transition-all hover:scale-105 z-40 border-4 border-white"
             >
               <Bot size={24} />
               {/* Notification dot */}
@@ -442,6 +478,7 @@ export default function App() {
             </button>
           </>
         )}
+        </div>
       </main>
     </div>
   );

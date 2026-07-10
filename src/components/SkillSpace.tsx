@@ -31,7 +31,7 @@ export function SkillSpace() {
               onClick={() => setActiveFilter(filter)}
               className={`px-4 py-2 rounded-full text-xs font-bold transition-all cursor-pointer ${
                 activeFilter === filter 
-                  ? 'bg-[#0052cc] text-white shadow-md' 
+                  ? 'bg-[#bf4440] text-white shadow-md' 
                   : 'bg-slate-200/70 text-slate-600 hover:bg-slate-300'
               }`}
             >
@@ -68,7 +68,7 @@ export function SkillSpace() {
           
           <div className="bg-white border border-slate-200 rounded-xl p-5 flex items-center gap-4 shadow-sm">
             <div className="w-12 h-12 bg-blue-50 border border-blue-100 rounded-xl flex items-center justify-center shrink-0">
-              <Clock size={24} className="text-blue-600" />
+              <Clock size={24} className="text-[#bf4440]" />
             </div>
             <div>
               <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">Total Waktu Belajar</p>
@@ -151,7 +151,7 @@ export function SkillSpace() {
             </button>
           </div>
           <div className="p-5 flex-1 flex flex-col">
-            <span className="text-[9px] font-bold text-[#0052cc] uppercase tracking-widest mb-2 font-mono">MEDIUM</span>
+            <span className="text-[9px] font-bold text-[#bf4440] uppercase tracking-widest mb-2 font-mono">MEDIUM</span>
             <h3 className="font-serif text-lg font-black text-slate-900 leading-tight mb-3">Panduan Riset Audiens Digital</h3>
             <div className="flex flex-wrap gap-2 mb-6">
               <span className="px-2 py-1 bg-cyan-50 text-cyan-700 text-[10px] font-semibold rounded">Teori Komunikasi</span>
@@ -159,7 +159,7 @@ export function SkillSpace() {
             </div>
             <div className="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between">
               <span className="text-[10px] font-semibold text-slate-500">Disimpan: 28 Jun 2026</span>
-              <button className="px-4 py-1.5 bg-[#0052cc] hover:bg-blue-700 text-white text-xs font-bold rounded-lg transition-colors cursor-pointer">Buka</button>
+              <button className="px-4 py-1.5 bg-[#bf4440] hover:bg-[#993633] text-white text-xs font-bold rounded-lg transition-colors cursor-pointer">Buka</button>
             </div>
           </div>
         </div>
@@ -176,11 +176,11 @@ export function SkillSpace() {
               <Bookmark size={14} className="fill-red-600 stroke-red-600" />
             </button>
             <div className="absolute bottom-0 left-0 right-0 h-1 bg-slate-200">
-              <div className="h-full bg-[#0052cc]" style={{ width: '72%' }}></div>
+              <div className="h-full bg-[#bf4440]" style={{ width: '72%' }}></div>
             </div>
           </div>
           <div className="p-5 flex-1 flex flex-col">
-            <span className="text-[9px] font-bold text-[#0052cc] uppercase tracking-widest mb-2 font-mono">UDEMY</span>
+            <span className="text-[9px] font-bold text-[#bf4440] uppercase tracking-widest mb-2 font-mono">UDEMY</span>
             <h3 className="font-serif text-lg font-black text-slate-900 leading-tight mb-3">Public Speaking Masterclass</h3>
             <div className="flex flex-wrap gap-2 mb-6">
               <span className="px-2 py-1 bg-cyan-50 text-cyan-700 text-[10px] font-semibold rounded">Public Speaking</span>
@@ -188,7 +188,7 @@ export function SkillSpace() {
             </div>
             <div className="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between">
               <span className="text-[10px] font-semibold text-slate-500">72% Completed</span>
-              <button className="px-4 py-1.5 bg-[#0052cc] hover:bg-blue-700 text-white text-xs font-bold rounded-lg transition-colors cursor-pointer">Buka</button>
+              <button className="px-4 py-1.5 bg-[#bf4440] hover:bg-[#993633] text-white text-xs font-bold rounded-lg transition-colors cursor-pointer">Buka</button>
             </div>
           </div>
         </div>
@@ -206,14 +206,14 @@ export function SkillSpace() {
             </button>
           </div>
           <div className="p-5 flex-1 flex flex-col">
-            <span className="text-[9px] font-bold text-[#0052cc] uppercase tracking-widest mb-2 font-mono">COURSERA</span>
+            <span className="text-[9px] font-bold text-[#bf4440] uppercase tracking-widest mb-2 font-mono">COURSERA</span>
             <h3 className="font-serif text-lg font-black text-slate-900 leading-tight mb-3">Storytelling untuk Komunikasi Strategis</h3>
             <div className="flex flex-wrap gap-2 mb-6">
               <span className="px-2 py-1 bg-cyan-50 text-cyan-700 text-[10px] font-semibold rounded">Komunikasi Strategis</span>
             </div>
             <div className="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between">
               <span className="text-[10px] font-semibold text-slate-500">Disimpan: 03 Jul 2026</span>
-              <button className="px-4 py-1.5 bg-[#0052cc] hover:bg-blue-700 text-white text-xs font-bold rounded-lg transition-colors cursor-pointer">Buka</button>
+              <button className="px-4 py-1.5 bg-[#bf4440] hover:bg-[#993633] text-white text-xs font-bold rounded-lg transition-colors cursor-pointer">Buka</button>
             </div>
           </div>
         </div>
@@ -223,7 +223,7 @@ export function SkillSpace() {
       {/* Access History */}
       <div className="pt-6">
         <div className="flex items-center gap-3 mb-6">
-          <History size={20} className="text-[#0052cc]" />
+          <History size={20} className="text-[#bf4440]" />
           <h2 className="text-lg font-black text-slate-900 tracking-tight font-serif">Riwayat Akses</h2>
           <span className="px-2.5 py-0.5 bg-slate-200 text-slate-600 text-[10px] font-bold rounded-full">3 Konten</span>
         </div>
@@ -231,15 +231,15 @@ export function SkillSpace() {
         <div className="space-y-4">
           <div className="bg-white border border-slate-100 rounded-xl p-4 flex items-center justify-between group hover:border-slate-300 transition-colors cursor-pointer shadow-sm">
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-blue-50 text-[#0052cc] rounded-lg flex items-center justify-center shrink-0">
+              <div className="w-12 h-12 bg-blue-50 text-[#bf4440] rounded-lg flex items-center justify-center shrink-0">
                 <FileText size={20} />
               </div>
               <div>
-                <h4 className="font-bold text-slate-900 text-sm mb-1 group-hover:text-[#0052cc] transition-colors">Manajemen Krisis Komunikasi</h4>
+                <h4 className="font-bold text-slate-900 text-sm mb-1 group-hover:text-[#bf4440] transition-colors">Manajemen Krisis Komunikasi</h4>
                 <p className="text-[11px] font-semibold text-slate-500">Terakhir akses: 1 Juli &bull; 1x diakses</p>
               </div>
             </div>
-            <button className="text-[#0052cc] flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 bg-transparent hover:bg-blue-50 rounded-lg transition-colors">
+            <button className="text-[#bf4440] flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 bg-transparent hover:bg-blushed-brick-50 rounded-lg transition-colors">
               Buka <ArrowRight size={14} />
             </button>
           </div>
@@ -250,11 +250,11 @@ export function SkillSpace() {
                 <Video size={20} />
               </div>
               <div>
-                <h4 className="font-bold text-slate-900 text-sm mb-1 group-hover:text-[#0052cc] transition-colors">Brand Identity & Positioning</h4>
+                <h4 className="font-bold text-slate-900 text-sm mb-1 group-hover:text-[#bf4440] transition-colors">Brand Identity & Positioning</h4>
                 <p className="text-[11px] font-semibold text-slate-500">Terakhir akses: 25 Juni &bull; 2x diakses</p>
               </div>
             </div>
-            <button className="text-[#0052cc] flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 bg-transparent hover:bg-blue-50 rounded-lg transition-colors">
+            <button className="text-[#bf4440] flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 bg-transparent hover:bg-blushed-brick-50 rounded-lg transition-colors">
               Buka <ArrowRight size={14} />
             </button>
           </div>

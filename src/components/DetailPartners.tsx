@@ -279,7 +279,7 @@ export function DetailPartners({ setView }: DetailPartnersProps) {
           </button>
           <button 
             onClick={() => setView('kesiapan_saya')}
-            className="px-4 py-2.5 bg-[#c84a4a] hover:bg-[#b53f3f] text-white text-xs font-black rounded-xl flex items-center gap-2 shadow-sm transition-all cursor-pointer"
+            className="px-4 py-2.5 bg-[#bf4440] hover:bg-[#993633] text-white text-xs font-black rounded-xl flex items-center gap-2 shadow-sm transition-all cursor-pointer"
           >
             <CheckSquare size={14} />
             <span>Academic Eligibility</span>
@@ -341,7 +341,7 @@ export function DetailPartners({ setView }: DetailPartnersProps) {
               <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest block mb-1">
                 PROGRAM STUDI TERSEDIA
               </span>
-              <strong className="text-[#c84a4a] text-sm font-black block">
+              <strong className="text-[#bf4440] text-sm font-black block">
                 Media & Communication
               </strong>
             </div>
@@ -570,7 +570,7 @@ export function DetailPartners({ setView }: DetailPartnersProps) {
               href={`https://${uni.website}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-5 py-3 bg-[#c84a4a] hover:bg-[#b53f3f] text-white text-xs font-black rounded-xl flex items-center gap-2 shadow-sm transition-all"
+              className="px-5 py-3 bg-[#bf4440] hover:bg-[#993633] text-white text-xs font-black rounded-xl flex items-center gap-2 shadow-sm transition-all"
             >
               <Globe size={14} />
               <span>Kunjungi Website Resmi</span>

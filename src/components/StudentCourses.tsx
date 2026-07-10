@@ -69,7 +69,7 @@ export function StudentCourses({ setView }: StudentCoursesProps) {
       <div className="bg-white border border-slate-200/60 rounded-[28px] p-6 shadow-sm flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
           <h2 className="text-lg font-black text-slate-900 tracking-tight flex items-center gap-2">
-            <BookOpen size={20} className="text-blue-600" /> My Academic Courses
+            <BookOpen size={20} className="text-[#bf4440]" /> My Academic Courses
           </h2>
           <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mt-1">4 Enrolled Classes • 12 SKS Total</p>
         </div>
@@ -98,7 +98,7 @@ export function StudentCourses({ setView }: StudentCoursesProps) {
         {courses.map((course, idx) => {
           
           // Determine circular progress color
-          const progressColor = course.progress >= 80 ? '#10b981' : course.progress >= 60 ? '#f59e0b' : '#ef4444';
+          const progressColor = course.progress >= 80 ? '#5c90a3' : course.progress >= 60 ? '#d56c2a' : '#bf4440';
           const strokeDasharray = `${course.progress} 100`;
           
           return (
@@ -125,7 +125,7 @@ export function StudentCourses({ setView }: StudentCoursesProps) {
               <div className="p-4 flex flex-col gap-3">
                 {/* Title and Grade */}
                 <div className="flex justify-between items-start gap-2">
-                  <h3 className="text-xl font-bold text-blue-600 leading-tight">
+                  <h3 className="text-xl font-bold text-[#bf4440] leading-tight">
                     {course.title}
                   </h3>
                   <span className="bg-amber-100 text-amber-700 px-2 py-1 rounded-sm text-[10px] font-bold whitespace-nowrap shrink-0">
@@ -192,7 +192,7 @@ export function StudentCourses({ setView }: StudentCoursesProps) {
                 <div className="pt-3 border-t border-slate-100 flex items-end justify-between mt-1">
                   <div className="space-y-1">
                     <p className="text-[8px] font-black text-slate-400 uppercase tracking-widest">Next Session</p>
-                    <div className="flex items-center gap-1.5 text-blue-600 text-[9px] font-bold">
+                    <div className="flex items-center gap-1.5 text-[#bf4440] text-[9px] font-bold">
                       <Clock size={10} />
                       {course.nextSession}
                     </div>

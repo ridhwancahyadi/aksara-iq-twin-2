@@ -399,7 +399,7 @@ export const learning = {
               {
                 "area": "Kedalaman Teori",
                 "action": "Tautkan analisis ke kerangka teori (SCCT, tahap respon krisis) secara eksplisit.",
-                "rationale": "Gap Teori (82) — analisis masih kurang berlapis.",
+                "rationale": "Gap Teori (82) - analisis masih kurang berlapis.",
                 "resource": "Teori Komunikasi; literatur PR/crisis",
                 "target_indicator": "Teori Komunikasi Strategis >= 85"
               },
@@ -718,7 +718,7 @@ export const learning = {
           "class_activeness": "sedang"
         },
         "development_recommendations": [
-          "Tingkatkan public speaking & frekuensi bicara — kualitas argumen sudah tinggi namun kontribusi lisan rendah.",
+          "Tingkatkan public speaking & frekuensi bicara - kualitas argumen sudah tinggi namun kontribusi lisan rendah.",
           "Kembangkan argumen kritis menjadi sintesis solusi yang lebih lengkap."
         ]
       },
@@ -775,7 +775,7 @@ export const learning = {
         ],
         "overall_fit_score": 83,
         "fit_band": "Selaras",
-        "summary": "Kompetensi inti (analitis, riset, media) sangat mendukung passion analisis media & jurnalistik. Gap utama bukan pada substansi melainkan pada penyampaian lisan & visibilitas — terlihat dari porsi bicara terendah (13%) pada FGD meski kualitas argumen tinggi."
+        "summary": "Kompetensi inti (analitis, riset, media) sangat mendukung passion analisis media & jurnalistik. Gap utama bukan pada substansi melainkan pada penyampaian lisan & visibilitas - terlihat dari porsi bicara terendah (13%) pada FGD meski kualitas argumen tinggi."
       },
       "self_development_plan": {
         "priority_focus": "Mengubah kekuatan analitis menjadi pengaruh melalui penyampaian lisan & visibilitas.",
@@ -1191,7 +1191,7 @@ export function StudentDnaProfiling({ loggedInUser }: StudentDnaProfilingProps =
                       <Line 
                         type="monotone" 
                         dataKey="gpa" 
-                        stroke="#4F46E5" 
+                        stroke="#bf4440" 
                         strokeWidth={2.5} 
                         dot={{ r: 4, strokeWidth: 2, fill: "#FFFFFF" }} 
                         activeDot={{ r: 6 }} 
@@ -1318,8 +1318,8 @@ export function StudentDnaProfiling({ loggedInUser }: StudentDnaProfilingProps =
                       <Radar 
                         name={currentStudent.name} 
                         dataKey="Score" 
-                        stroke="#4F46E5" 
-                        fill="#4F46E5" 
+                        stroke="#bf4440" 
+                        fill="#bf4440" 
                         fillOpacity={0.15} 
                       />
                       <Tooltip />
@@ -1351,7 +1351,7 @@ export function StudentDnaProfiling({ loggedInUser }: StudentDnaProfilingProps =
                           <span className={`text-[8px] font-black px-1.5 py-0.2 rounded-full uppercase tracking-wider border ${
                             cpl.level === "Sangat Baik" 
                               ? "text-emerald-700 bg-emerald-50 border-emerald-100" 
-                              : "text-blue-700 bg-blue-50 border-blue-100"
+                              : "text-[#993633] bg-blue-50 border-blue-100"
                           }`}>
                             {cpl.level}
                           </span>
@@ -1410,7 +1410,7 @@ export function StudentDnaProfiling({ loggedInUser }: StudentDnaProfilingProps =
                   {currentStudent.passion_competency_fit.alignment.map((align, idx) => {
                     const verdictColor = align.verdict === "Sangat Selaras" 
                       ? "text-emerald-700 bg-emerald-50 border-emerald-100" 
-                      : "text-blue-700 bg-blue-50 border-blue-100";
+                      : "text-[#993633] bg-blue-50 border-blue-100";
 
                     return (
                       <div key={idx} className="p-3 bg-slate-50/30 hover:bg-white/60 border border-slate-200/60 rounded-xl space-y-2.5 shadow-3xs transition-all duration-300">
@@ -1538,7 +1538,7 @@ export function StudentDnaProfiling({ loggedInUser }: StudentDnaProfilingProps =
               {/* Internship Profile */}
               <div className="lg:col-span-12 bg-white border border-slate-100 rounded-2xl p-4 shadow-3xs flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div className="flex items-center gap-3">
-                  <div className="p-2.5 bg-blue-50 text-blue-600 rounded-xl border border-blue-100/60 shrink-0">
+                  <div className="p-2.5 bg-blue-50 text-[#bf4440] rounded-xl border border-blue-100/60 shrink-0">
                     <Briefcase size={16} />
                   </div>
                   <div>

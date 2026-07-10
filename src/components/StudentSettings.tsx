@@ -18,7 +18,7 @@ export function StudentSettings() {
       {/* Header card */}
       <div className="bg-white border border-slate-200/60 rounded-[28px] p-6 shadow-sm">
         <h2 className="text-lg font-black text-slate-900 tracking-tight flex items-center gap-2">
-          <Settings size={20} className="text-blue-600" /> Platform Settings & Preferences
+          <Settings size={20} className="text-[#bf4440]" /> Platform Settings & Preferences
         </h2>
         <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mt-1">Configure your digital twin experience</p>
       </div>
@@ -28,7 +28,7 @@ export function StudentSettings() {
         {/* Profile Card Section */}
         <div className="bg-white border border-slate-200 rounded-[32px] p-6 shadow-sm space-y-4">
           <h3 className="text-sm font-black text-slate-900 tracking-tight flex items-center gap-2">
-            <User size={16} className="text-blue-600" /> Profile Information
+            <User size={16} className="text-[#bf4440]" /> Profile Information
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
             <div className="space-y-1">
@@ -49,7 +49,7 @@ export function StudentSettings() {
         {/* Configurations list */}
         <div className="bg-white border border-slate-200 rounded-[32px] p-6 shadow-sm space-y-6">
           <h3 className="text-sm font-black text-slate-900 tracking-tight flex items-center gap-2">
-            <Sliders size={16} className="text-blue-600" /> System Integration
+            <Sliders size={16} className="text-[#bf4440]" /> System Integration
           </h3>
 
           <div className="space-y-5">
@@ -61,7 +61,7 @@ export function StudentSettings() {
               </div>
               <button 
                 onClick={() => setUnpadSync(!unpadSync)}
-                className={`w-12 h-6 rounded-full p-1 transition-colors cursor-pointer shrink-0 ${unpadSync ? 'bg-blue-600' : 'bg-slate-200'}`}
+                className={`w-12 h-6 rounded-full p-1 transition-colors cursor-pointer shrink-0 ${unpadSync ? 'bg-[#bf4440]' : 'bg-slate-200'}`}
               >
                 <div className={`w-4 h-4 bg-white rounded-full transition-transform ${unpadSync ? 'translate-x-6' : 'translate-x-0'}`} />
               </button>
@@ -75,7 +75,7 @@ export function StudentSettings() {
               </div>
               <button 
                 onClick={() => setAiTracking(!aiTracking)}
-                className={`w-12 h-6 rounded-full p-1 transition-colors cursor-pointer shrink-0 ${aiTracking ? 'bg-blue-600' : 'bg-slate-200'}`}
+                className={`w-12 h-6 rounded-full p-1 transition-colors cursor-pointer shrink-0 ${aiTracking ? 'bg-[#bf4440]' : 'bg-slate-200'}`}
               >
                 <div className={`w-4 h-4 bg-white rounded-full transition-transform ${aiTracking ? 'translate-x-6' : 'translate-x-0'}`} />
               </button>
@@ -89,7 +89,7 @@ export function StudentSettings() {
               </div>
               <button 
                 onClick={() => setNotifSound(!notifSound)}
-                className={`w-12 h-6 rounded-full p-1 transition-colors cursor-pointer shrink-0 ${notifSound ? 'bg-blue-600' : 'bg-slate-200'}`}
+                className={`w-12 h-6 rounded-full p-1 transition-colors cursor-pointer shrink-0 ${notifSound ? 'bg-[#bf4440]' : 'bg-slate-200'}`}
               >
                 <div className={`w-4 h-4 bg-white rounded-full transition-transform ${notifSound ? 'translate-x-6' : 'translate-x-0'}`} />
               </button>

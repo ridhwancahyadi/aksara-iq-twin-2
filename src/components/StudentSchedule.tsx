@@ -166,11 +166,11 @@ const DEFAULT_EVENTS: CalendarEvent[] = [
 
 const colorMap = {
   blue: {
-    bg: 'bg-blue-50/90 text-blue-800 border-blue-200/80',
+    bg: 'bg-blue-50/90 text-[#732926] border-blue-200/80',
     border: 'border-blue-200',
-    text: 'text-blue-800',
+    text: 'text-[#732926]',
     dot: 'bg-blue-500',
-    hover: 'hover:bg-blue-100',
+    hover: 'hover:bg-blushed-brick-100',
     lightBg: 'bg-blue-500/10'
   },
   amber: {
@@ -783,9 +783,9 @@ export function StudentSchedule() {
               className="bg-white border border-slate-200 shadow-xs rounded-[32px] overflow-hidden"
             >
               <div className="p-4 bg-slate-50/50 border-b border-slate-200 flex items-center gap-3">
-                <CalendarDays className="text-blue-600" size={18} />
+                <CalendarDays className="text-[#bf4440]" size={18} />
                 <h3 className="text-xs font-black text-slate-900 uppercase tracking-wider font-mono">
-                  Jadwal Kegiatan Harian — {currentDate.toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'long' })}
+                  Jadwal Kegiatan Harian - {currentDate.toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'long' })}
                 </h3>
               </div>
 
@@ -923,7 +923,7 @@ export function StudentSchedule() {
           {/* Attendance Progression Rate */}
           <div className="bg-white border border-slate-200 rounded-[32px] p-6 shadow-xs space-y-4">
             <h3 className="text-sm font-black text-slate-900 tracking-tight flex items-center gap-2">
-              <BookOpen size={16} className="text-blue-600" /> Presensi Kehadiran
+              <BookOpen size={16} className="text-[#bf4440]" /> Presensi Kehadiran
             </h3>
             <div className="space-y-4">
               {[
@@ -937,7 +937,7 @@ export function StudentSchedule() {
                     <span className="font-mono font-black text-slate-900">{course.pct}%</span>
                   </div>
                   <div className="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
-                    <div className="h-full bg-blue-600 rounded-full transition-all duration-500" style={{ width: `${course.pct}%` }} />
+                    <div className="h-full bg-[#bf4440] rounded-full transition-all duration-500" style={{ width: `${course.pct}%` }} />
                   </div>
                 </div>
               ))}
@@ -1080,7 +1080,7 @@ export function StudentSchedule() {
             >
               <div className="p-6 border-b border-slate-100 flex items-center justify-between bg-slate-50/50">
                 <div className="flex items-center gap-2">
-                  <Calendar className="text-blue-600" size={18} />
+                  <Calendar className="text-[#bf4440]" size={18} />
                   <h3 className="text-sm font-black text-slate-900 uppercase tracking-wider font-mono">
                     Tambah Jadwal / Kegiatan Baru
                   </h3>
@@ -1104,7 +1104,7 @@ export function StudentSchedule() {
                       placeholder="e.g. Riset Komunikasi, Kelompok FGD, dsb."
                       value={newEventTitle}
                       onChange={(e) => setNewEventTitle(e.target.value)}
-                      className="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-xs font-bold focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 bg-slate-50/30"
+                      className="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-xs font-bold focus:outline-none focus:ring-2 focus:ring-[#bf4440]/20/20 focus:border-[#bf4440] bg-slate-50/30"
                     />
                   </div>
 
@@ -1115,7 +1115,7 @@ export function StudentSchedule() {
                       placeholder="e.g. KOM301"
                       value={newEventCode}
                       onChange={(e) => setNewEventCode(e.target.value)}
-                      className="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-xs font-bold focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 bg-slate-50/30"
+                      className="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-xs font-bold focus:outline-none focus:ring-2 focus:ring-[#bf4440]/20/20 focus:border-[#bf4440] bg-slate-50/30"
                     />
                   </div>
 
@@ -1126,7 +1126,7 @@ export function StudentSchedule() {
                       required
                       value={newEventDate}
                       onChange={(e) => setNewEventDate(e.target.value)}
-                      className="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-xs font-bold focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 bg-slate-50/30"
+                      className="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-xs font-bold focus:outline-none focus:ring-2 focus:ring-[#bf4440]/20/20 focus:border-[#bf4440] bg-slate-50/30"
                     />
                   </div>
 
@@ -1137,7 +1137,7 @@ export function StudentSchedule() {
                       required
                       value={newEventStartTime}
                       onChange={(e) => setNewEventStartTime(e.target.value)}
-                      className="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-xs font-bold focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 bg-slate-50/30 font-mono"
+                      className="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-xs font-bold focus:outline-none focus:ring-2 focus:ring-[#bf4440]/20/20 focus:border-[#bf4440] bg-slate-50/30 font-mono"
                     />
                   </div>
 
@@ -1148,7 +1148,7 @@ export function StudentSchedule() {
                       required
                       value={newEventEndTime}
                       onChange={(e) => setNewEventEndTime(e.target.value)}
-                      className="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-xs font-bold focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 bg-slate-50/30 font-mono"
+                      className="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-xs font-bold focus:outline-none focus:ring-2 focus:ring-[#bf4440]/20/20 focus:border-[#bf4440] bg-slate-50/30 font-mono"
                     />
                   </div>
 
@@ -1159,7 +1159,7 @@ export function StudentSchedule() {
                       placeholder="e.g. Lab Komputer, Zoom Link, dsb."
                       value={newEventRoom}
                       onChange={(e) => setNewEventRoom(e.target.value)}
-                      className="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-xs font-bold focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 bg-slate-50/30"
+                      className="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-xs font-bold focus:outline-none focus:ring-2 focus:ring-[#bf4440]/20/20 focus:border-[#bf4440] bg-slate-50/30"
                     />
                   </div>
 
@@ -1170,7 +1170,7 @@ export function StudentSchedule() {
                       placeholder="e.g. Prof. Sari"
                       value={newEventLecturer}
                       onChange={(e) => setNewEventLecturer(e.target.value)}
-                      className="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-xs font-bold focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 bg-slate-50/30"
+                      className="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-xs font-bold focus:outline-none focus:ring-2 focus:ring-[#bf4440]/20/20 focus:border-[#bf4440] bg-slate-50/30"
                     />
                   </div>
 
@@ -1179,7 +1179,7 @@ export function StudentSchedule() {
                     <select
                       value={newEventType}
                       onChange={(e) => setNewEventType(e.target.value as any)}
-                      className="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-xs font-bold focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 bg-slate-50/30"
+                      className="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-xs font-bold focus:outline-none focus:ring-2 focus:ring-[#bf4440]/20/20 focus:border-[#bf4440] bg-slate-50/30"
                     >
                       <option value="Lecture">Kuliah Mandiri / Kelas</option>
                       <option value="Discussion">Diskusi Kelompok / FGD</option>
@@ -1195,7 +1195,7 @@ export function StudentSchedule() {
                       max={6}
                       value={newEventSks}
                       onChange={(e) => setNewEventSks(Number(e.target.value))}
-                      className="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-xs font-bold focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 bg-slate-50/30 font-mono"
+                      className="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-xs font-bold focus:outline-none focus:ring-2 focus:ring-[#bf4440]/20/20 focus:border-[#bf4440] bg-slate-50/30 font-mono"
                     />
                   </div>
 
@@ -1231,7 +1231,7 @@ export function StudentSchedule() {
                   </button>
                   <button
                     type="submit"
-                    className="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-black uppercase tracking-wider rounded-xl shadow-md shadow-blue-100 transition-all cursor-pointer"
+                    className="px-5 py-2.5 bg-[#bf4440] hover:bg-[#993633] text-white text-xs font-black uppercase tracking-wider rounded-xl shadow-md shadow-blue-100 transition-all cursor-pointer"
                   >
                     Simpan Jadwal
                   </button>

@@ -86,8 +86,8 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
   // Styling and label mappings for task module badges
   const moduleBadgeStyles: Record<string, { bg: string; text: string; border: string; label: string; icon: any }> = {
     fgd: {
-      bg: 'bg-blue-50 text-blue-700 border-blue-200',
-      text: 'text-blue-700',
+      bg: 'bg-blue-50 text-[#993633] border-blue-200',
+      text: 'text-[#993633]',
       border: 'border-blue-200',
       label: 'FGD (Group Diskusi)',
       icon: Users
@@ -171,7 +171,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
       score: 87, 
       weight: '20%', 
       status: 'Sangat Baik',
-      color: '#10B981', // green
+      color: '#5c90a3', // green
       bullets: [
         'Frekuensi kontribusi tinggi dalam mengalirkan topik diskusi!',
         'Gagasan orisinil dan relevan dengan studi kasus yang dibahas',
@@ -185,7 +185,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
       score: 85, 
       weight: '20%', 
       status: 'Sangat Baik',
-      color: '#10B981',
+      color: '#5c90a3',
       bullets: [
         'Argumen didukung data empiris dan referensi ilmiah yang valid!',
         'Struktur logika berpikir konsisten dari awal hingga kesimpulan',
@@ -201,7 +201,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
       score: 82, 
       weight: '20%', 
       status: 'Baik',
-      color: '#F59E0B', // amber
+      color: '#d56c2a', // amber
       bullets: [
         'Merespons gagasan anggota kelompok lain secara cepat dan tepat',
         'Mengajukan pertanyaan klarifikasi yang memancing diskusi konstruktif'
@@ -216,7 +216,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
       score: 79, 
       weight: '15%', 
       status: 'Baik',
-      color: '#F59E0B',
+      color: '#d56c2a',
       bullets: [
         'Membantu memfasilitasi giliran berbicara bagi anggota yang pasif',
         'Berhasil merangkum poin-poin penting diskusi secara berkala'
@@ -231,7 +231,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
       score: 84, 
       weight: '15%', 
       status: 'Sangat Baik',
-      color: '#10B981',
+      color: '#5c90a3',
       bullets: [
         'Aktif mencari titik temu di antara beberapa pendapat yang berbeda',
         'Mengintegrasikan perspektif alternatif menjadi satu kesimpulan praktis',
@@ -245,7 +245,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
       score: 88, 
       weight: '10%', 
       status: 'Sangat Baik',
-      color: '#10B981',
+      color: '#5c90a3',
       bullets: [
         'Penggunaan bahasa Indonesia & Inggris yang sangat jelas, baku, dan tepat',
         'Kecepatan bicara (pacing) terukur dengan intonasi yang percaya diri',
@@ -485,7 +485,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
     {
       id: 'sim-task-1',
       moduleId: 'simulation',
-      title: 'Simulasi: Media Interview — PR Officer',
+      title: 'Simulasi: Media Interview - PR Officer',
       class: 'Strategic Communication',
       lecturer: 'Dr. Sari Dewi, M.Kom',
       deadline: '5 Jul 2026, 23:59',
@@ -502,7 +502,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
       isGradesLocked: false,
       details: {
         overall: 88,
-        scenario: 'Simulasi: Media Interview — PR Officer',
+        scenario: 'Simulasi: Media Interview - PR Officer',
         duration: '24m 12d',
         compliance: 'Lolos Uji Kepatuhan Etis & Respons Cepat',
         tracks: [
@@ -670,7 +670,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
         <div className="border-b border-slate-100 p-5 shrink-0 bg-slate-50/50 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
           <div className="space-y-1">
             <div className="flex items-center gap-2 flex-wrap">
-              <span className="text-[10px] uppercase font-black text-blue-700 bg-blue-50 px-2.5 py-0.5 rounded-full border border-blue-100">
+              <span className="text-[10px] uppercase font-black text-[#993633] bg-blue-50 px-2.5 py-0.5 rounded-full border border-blue-100">
                 Aksara IQ Communication Lab
               </span>
               <span className="text-[10px] font-mono font-bold text-slate-400 bg-slate-100 px-2 py-0.5 rounded-sm">
@@ -770,7 +770,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                             setFilterDropdownOpen(false);
                           }}
                           className={`w-full text-left px-3.5 py-2.5 text-xs font-bold flex items-center justify-between gap-2 hover:bg-slate-50 transition-colors cursor-pointer ${
-                            isSelected ? 'bg-slate-50/85 text-blue-700' : 'text-slate-700'
+                            isSelected ? 'bg-slate-50/85 text-[#993633]' : 'text-slate-700'
                           }`}
                         >
                           <div className="flex items-center gap-2 truncate">
@@ -780,7 +780,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                             <span className={isSelected ? 'font-black' : 'font-semibold'}>{item.title}</span>
                           </div>
                           <span className={`text-[9px] font-black font-mono px-1.5 py-0.5 rounded ${
-                            isSelected ? 'bg-blue-600 text-white' : 'bg-slate-100 text-slate-500'
+                            isSelected ? 'bg-[#bf4440] text-white' : 'bg-slate-100 text-slate-500'
                           }`}>
                             {item.score}
                           </span>
@@ -819,7 +819,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                 </div>
               </div>
               <div className="bg-white border border-slate-100 rounded-sm p-4 flex items-center gap-3 shadow-sm">
-                <span className="p-2.5 bg-blue-50 text-blue-600 rounded-sm">
+                <span className="p-2.5 bg-blue-50 text-[#bf4440] rounded-sm">
                   <Award size={16} />
                 </span>
                 <div>
@@ -840,7 +840,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
 
             <div className="space-y-4">
               <h4 className="text-xs font-black uppercase text-slate-500 tracking-wider">
-                Tugas Saya — semua tugas yang diberikan dosen
+                Tugas Saya - semua tugas yang diberikan dosen
               </h4>
 
               {filteredTasks.map((task) => {
@@ -856,7 +856,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                     <div className="flex items-start justify-between gap-3">
                       <div className="flex items-center gap-2.5">
                         <span className={`p-2 rounded-sm border flex items-center justify-center ${
-                          task.moduleId === 'fgd' ? 'bg-blue-50 text-blue-600 border-blue-100' :
+                          task.moduleId === 'fgd' ? 'bg-blue-50 text-[#bf4440] border-blue-100' :
                           task.moduleId === 'presentation' ? 'bg-emerald-50 text-emerald-600 border-emerald-100' :
                           task.moduleId === 'writing' ? 'bg-purple-50 text-purple-600 border-purple-100' :
                           'bg-violet-50 text-violet-600 border-violet-100'
@@ -876,7 +876,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                           ? 'bg-slate-50 text-slate-600 border-slate-200'
                           : task.status === 'Sudah Dinilai'
                           ? 'bg-emerald-50 text-emerald-700 border-emerald-200'
-                          : 'bg-blue-50 text-blue-700 border-blue-200'
+                          : 'bg-blue-50 text-[#993633] border-blue-200'
                       }`}>
                         <span className={`w-1.5 h-1.5 rounded-full ${
                           task.status === 'Belum Dikerjakan' ? 'bg-slate-400' :
@@ -919,7 +919,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                             </span>
                             <div className="flex items-center gap-2">
                               <FileText size={16} className="text-blue-500 shrink-0" />
-                              <span className="font-extrabold text-blue-600 hover:underline cursor-pointer truncate max-w-[200px]">
+                              <span className="font-extrabold text-[#bf4440] hover:underline cursor-pointer truncate max-w-[200px]">
                                 {task.fileSubmitted}
                               </span>
                             </div>
@@ -950,7 +950,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                               <span className="text-lg font-black font-mono text-slate-800">{task.score}</span>
                               <span className="text-[10px] text-slate-400 font-bold">/100</span>
                               <span className={`text-[9.5px] font-black px-2 py-0.5 rounded-sm ml-2 border ${
-                                task.score >= 85 ? 'bg-emerald-50 text-emerald-600 border-emerald-200' : 'bg-blue-50 text-blue-600 border-blue-200'
+                                task.score >= 85 ? 'bg-emerald-50 text-emerald-600 border-emerald-200' : 'bg-blue-50 text-[#bf4440] border-blue-200'
                               }`}>
                                 {task.scoreLabel || (task.score >= 85 ? 'Sangat Baik' : 'Baik')}
                               </span>
@@ -1000,7 +1000,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                               setSelectedAssessmentId(task.id);
                               setActiveSubTab('assignment' as any);
                             }}
-                            className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-black uppercase rounded-sm flex items-center gap-1.5 cursor-pointer shadow-sm transition-colors"
+                            className="px-4 py-2 bg-[#bf4440] hover:bg-[#993633] text-white text-xs font-black uppercase rounded-sm flex items-center gap-1.5 cursor-pointer shadow-sm transition-colors"
                           >
                             Lihat Detail <ArrowRight size={12} />
                           </button>
@@ -1011,7 +1011,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                                 setSelectedAssessmentId(task.id);
                                 setActiveSubTab(task.moduleId === 'fgd' ? 'playback' : 'overview');
                               }}
-                              className="px-4 py-2 bg-blue-50 hover:bg-blue-100 text-blue-700 text-xs font-black uppercase rounded-sm flex items-center gap-1.5 cursor-pointer transition-colors"
+                              className="px-4 py-2 bg-blue-50 hover:bg-blushed-brick-100 text-[#993633] text-xs font-black uppercase rounded-sm flex items-center gap-1.5 cursor-pointer transition-colors"
                             >
                               <TrendingUp size={12} /> Lihat Hasil
                             </button>
@@ -1068,7 +1068,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
               <button 
                 onClick={() => setActiveSubTab('assignment' as any)}
                 className={`py-3 px-4 text-xs font-black tracking-tight border-b-2 transition-all cursor-pointer ${
-                  activeSubTab === 'assignment' ? 'border-blue-600 text-blue-600 bg-blue-50/30' : 'border-transparent text-slate-500 hover:text-slate-800'
+                  activeSubTab === 'assignment' ? 'border-[#bf4440] text-[#bf4440] bg-blue-50/30' : 'border-transparent text-slate-500 hover:text-slate-800'
                 }`}
               >
                 📋 Detail Tugas
@@ -1079,7 +1079,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                     setActiveSubTab(currentAssessment?.moduleId === 'fgd' ? 'playback' : 'overview');
                   }}
                   className={`py-3 px-4 text-xs font-black tracking-tight border-b-2 transition-all cursor-pointer ${
-                    (activeSubTab === 'overview' || activeSubTab === 'grades' || activeSubTab === 'lo' || activeSubTab === 'ai' || activeSubTab === 'playback') ? 'border-blue-600 text-blue-600 bg-blue-50/30' : 'border-transparent text-slate-500 hover:text-slate-800'
+                    (activeSubTab === 'overview' || activeSubTab === 'grades' || activeSubTab === 'lo' || activeSubTab === 'ai' || activeSubTab === 'playback') ? 'border-[#bf4440] text-[#bf4440] bg-blue-50/30' : 'border-transparent text-slate-500 hover:text-slate-800'
                   }`}
                 >
                   📊 Hasil Penilaian
@@ -1090,7 +1090,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
               {currentAssessment?.moduleId !== 'fgd' && (
                 <button 
                   onClick={() => setSandboxRunning(currentAssessment?.moduleId || null)}
-                  className="py-1.5 px-3.5 my-1.5 ml-auto text-[10px] font-black uppercase text-white bg-blue-600 hover:bg-blue-700 rounded-sm flex items-center gap-1.5 cursor-pointer transition-colors shrink-0"
+                  className="py-1.5 px-3.5 my-1.5 ml-auto text-[10px] font-black uppercase text-white bg-[#bf4440] hover:bg-[#993633] rounded-sm flex items-center gap-1.5 cursor-pointer transition-colors shrink-0"
                 >
                   <Play size={10} /> Buka Sandbox Praktikum
                 </button>
@@ -1136,7 +1136,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                               {currentAssessment?.title || 'Advanced UI/UX (CS-402)'}
                             </p>
                           </div>
-                          <div className="bg-blue-50 text-blue-700 font-bold text-xs px-3 py-1.5 rounded-full shrink-0 border border-blue-100">
+                          <div className="bg-blue-50 text-[#993633] font-bold text-xs px-3 py-1.5 rounded-full shrink-0 border border-blue-100">
                             100 pts
                           </div>
                         </div>
@@ -1166,7 +1166,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                       <div className="space-y-4">
                         <div className="bg-white border border-slate-200 rounded-lg p-6 shadow-sm space-y-5">
                           <div className="flex items-center gap-2 text-slate-800 border-b border-slate-100 pb-3">
-                            <FileText size={18} className="text-blue-600 shrink-0" />
+                            <FileText size={18} className="text-[#bf4440] shrink-0" />
                             <h3 className="text-lg font-bold text-slate-800">Instructions</h3>
                           </div>
                             
@@ -1196,8 +1196,8 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                                   <span className="text-[11px] font-black uppercase tracking-wider">Teori Acuan</span>
                                 </div>
                                 <ol className="text-[13px] font-medium text-slate-700 space-y-1 list-decimal pl-4">
-                                  <li className="pl-1">Situational Crisis Communication Theory (SCCT) – Coombs</li>
-                                  <li className="pl-1">Image Restoration Theory – Benoit</li>
+                                  <li className="pl-1">Situational Crisis Communication Theory (SCCT) - Coombs</li>
+                                  <li className="pl-1">Image Restoration Theory - Benoit</li>
                                 </ol>
                               </div>
 
@@ -1264,10 +1264,10 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                           </div>
 
                           {/* Drag and drop area */}
-                          <div className="border-2 border-dashed border-blue-200 bg-[#f4f7fc] rounded-lg p-8 flex flex-col items-center justify-center text-center cursor-pointer hover:bg-blue-50 transition-colors mt-2">
+                          <div className="border-2 border-dashed border-blue-200 bg-[#f4f7fc] rounded-lg p-8 flex flex-col items-center justify-center text-center cursor-pointer hover:bg-blushed-brick-50 transition-colors mt-2">
                             <UploadCloud size={32} className="text-slate-500 mb-3" />
                             <p className="text-[13px] font-bold text-slate-800">Upload assignment file(s)</p>
-                            <p className="text-[12px] font-medium text-slate-500 mt-1">or, <span className="text-blue-600 font-bold hover:underline">click to browse</span> (4 MB max)</p>
+                            <p className="text-[12px] font-medium text-slate-500 mt-1">or, <span className="text-[#bf4440] font-bold hover:underline">click to browse</span> (4 MB max)</p>
                           </div>
 
                           {/* File List */}
@@ -1352,7 +1352,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                                <div className="flex flex-wrap gap-2 pt-2">
                                  {fgdParticipants.map((p, idx) => (
                                     <div key={idx} className="flex items-center gap-1.5 p-1 pr-1.5 bg-slate-50 border border-slate-200 rounded-full hover:border-blue-200 transition-colors group/item">
-                                      <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-[10px] font-black text-blue-600 shrink-0 uppercase" title={p.name}>
+                                      <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-[10px] font-black text-[#bf4440] shrink-0 uppercase" title={p.name}>
                                         {p.name.split(' ').map(n => n[0]).join('').substring(0, 2)}
                                       </div>
                                       <span className="text-[10px] font-semibold text-slate-700">{p.name}</span>
@@ -1362,7 +1362,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                                           e.stopPropagation();
                                           setFgdParticipants(prev => prev.filter(item => item.name !== p.name));
                                         }}
-                                        className="text-slate-400 hover:text-blue-600 hover:bg-slate-100 p-0.5 rounded-full cursor-pointer transition-colors"
+                                        className="text-slate-400 hover:text-[#bf4440] hover:bg-slate-100 p-0.5 rounded-full cursor-pointer transition-colors"
                                       >
                                         <X size={12} strokeWidth={3} />
                                       </button>
@@ -1410,7 +1410,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                                   setActiveSubTab(currentAssessment.moduleId === 'fgd' ? 'playback' : 'overview');
                                 }
                               }}
-                              className="bg-[#245ce0] text-white px-5 py-2.5 rounded-md text-sm font-bold hover:bg-blue-700 transition-colors shadow-sm cursor-pointer"
+                              className="bg-[#245ce0] text-white px-5 py-2.5 rounded-md text-sm font-bold hover:bg-[#993633] transition-colors shadow-sm cursor-pointer"
                             >
                               Submit Assignment
                             </button>
@@ -1558,7 +1558,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                     </div>
                     <button
                       onClick={() => setActiveSubTab('assignment' as any)}
-                      className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-black text-[10px] uppercase tracking-wider rounded-sm shadow-sm cursor-pointer transition-colors"
+                      className="px-4 py-2 bg-[#bf4440] hover:bg-[#993633] text-white font-black text-[10px] uppercase tracking-wider rounded-sm shadow-sm cursor-pointer transition-colors"
                     >
                       Buka Detail Tugas
                     </button>
@@ -1592,7 +1592,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                           <div className="relative w-32 h-32 flex items-center justify-center">
                             <svg className="w-full h-full transform -rotate-90">
                               <circle cx="64" cy="64" r="52" stroke="#f1f5f9" strokeWidth="10" fill="transparent" />
-                              <circle cx="64" cy="64" r="52" stroke="#3b82f6" strokeWidth="10" fill="transparent" strokeDasharray="326.7" strokeDashoffset={326.7 * (1 - (currentAssessment?.score || 87)/100)} strokeLinecap="round" />
+                              <circle cx="64" cy="64" r="52" stroke="#bf4440" strokeWidth="10" fill="transparent" strokeDasharray="326.7" strokeDashoffset={326.7 * (1 - (currentAssessment?.score || 87)/100)} strokeLinecap="round" />
                             </svg>
                             <div className="absolute text-center">
                               <span className="text-3xl font-black text-slate-800 font-mono">{currentAssessment?.score || 87}</span>
@@ -1678,7 +1678,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                             <nav className="flex items-center gap-1.5 text-[9px] font-extrabold text-slate-400 uppercase tracking-widest mb-1">
                               <span>FGD Analysis</span>
                               <ChevronRight size={10} />
-                              <span className="text-blue-600 font-black">Session ID: 4821</span>
+                              <span className="text-[#bf4440] font-black">Session ID: 4821</span>
                             </nav>
                             <h3 className="text-lg font-black text-slate-900 tracking-tight">Analisis Mendalam Diskusi Kelompok</h3>
                           </div>
@@ -1694,7 +1694,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                           <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div className="bg-slate-50/40 border border-slate-100/80 p-4.5 rounded-xl hover:shadow-md hover:border-slate-200 transition-all group">
                               <div className="flex items-center gap-2 mb-3">
-                                <div className="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center">
+                                <div className="w-8 h-8 rounded-lg bg-blue-50 text-[#bf4440] flex items-center justify-center">
                                   <Users size={16} />
                                 </div>
                                 <h4 className="text-[10px] font-black uppercase tracking-wider text-slate-500">Dinamika Diskusi</h4>
@@ -1743,12 +1743,12 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                               <ul className="space-y-3 relative z-10 flex-1">
                                 {[
                                   { rank: 1, label: "Strategi Mitigasi Krisis Perusahaan", priority: "High Priority", color: "bg-rose-50 text-rose-700 border-rose-100" },
-                                  { rank: 2, label: "Analisis SWOT Kompetitor Global", priority: "Essential", color: "bg-blue-50 text-blue-700 border-blue-100" },
+                                  { rank: 2, label: "Analisis SWOT Kompetitor Global", priority: "Essential", color: "bg-blue-50 text-[#993633] border-blue-100" },
                                   { rank: 3, label: "Dampak Transformasi Digital pada SDM", priority: "Secondary", color: "bg-slate-100 text-slate-600 border-slate-200" },
                                   { rank: 4, label: "Etika Penggunaan AI di Lingkungan Kerja", priority: "Contextual", color: "bg-slate-50 text-slate-500 border-slate-100" }
                                 ].map((item) => (
                                   <li key={item.rank} className="flex items-center gap-3">
-                                    <span className="w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center font-black text-[10px] shrink-0 shadow-sm shadow-blue-100">
+                                    <span className="w-6 h-6 rounded-full bg-[#bf4440] text-white flex items-center justify-center font-black text-[10px] shrink-0 shadow-sm shadow-blue-100">
                                       {item.rank}
                                     </span>
                                     <div className="flex-1 flex items-center justify-between gap-2 border-b border-slate-100/60 pb-1.5 min-w-0">
@@ -1814,7 +1814,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                               </div>
                               <div className="flex items-center gap-4">
                                 <div className="space-y-0.5">
-                                  <span className="text-3xl font-black text-blue-600 font-mono">57.83</span>
+                                  <span className="text-3xl font-black text-[#bf4440] font-mono">57.83</span>
                                   <span className="text-[10px] text-slate-400 font-bold"> / 100</span>
                                 </div>
                                 <div className="h-8 w-px bg-slate-200" />
@@ -1828,7 +1828,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                             <div className="relative w-24 h-24 flex items-center justify-center shrink-0">
                               <svg className="w-full h-full transform -rotate-90">
                                 <circle cx="48" cy="48" r="40" stroke="#f1f5f9" strokeWidth="8" fill="transparent" />
-                                <circle cx="48" cy="48" r="40" stroke="#3b82f6" strokeWidth="8" fill="transparent" strokeDasharray="251.2" strokeDashoffset={251.2 * (1 - 57.83/100)} strokeLinecap="round" />
+                                <circle cx="48" cy="48" r="40" stroke="#bf4440" strokeWidth="8" fill="transparent" strokeDasharray="251.2" strokeDashoffset={251.2 * (1 - 57.83/100)} strokeLinecap="round" />
                               </svg>
                               <span className="absolute text-xs font-black text-slate-800 font-mono">57.8%</span>
                             </div>
@@ -1839,34 +1839,34 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                         <div className="space-y-4">
                           <div className="flex items-center justify-between border-b border-slate-100 pb-2">
                             <h4 className="text-xs font-black text-slate-800 uppercase tracking-tight">Performance Ranking</h4>
-                            <span className="text-[10px] font-black text-blue-600 uppercase tracking-wider">Hasil Berdasarkan Kontribusi</span>
+                            <span className="text-[10px] font-black text-[#bf4440] uppercase tracking-wider">Hasil Berdasarkan Kontribusi</span>
                           </div>
 
                           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                             {/* Rank 1: John Tosh */}
                             <div className="bg-white border border-slate-100/80 rounded-xl overflow-hidden flex flex-col h-full shadow-sm">
                               <div className="px-4 py-2 border-b border-slate-100 bg-slate-50/50 flex items-center justify-between">
-                                <span className="bg-blue-600 text-white px-2.5 py-0.5 rounded-full text-[8px] font-black uppercase tracking-wider">RANK 1</span>
-                                <span className="text-sm font-black text-blue-600 font-mono">88.5</span>
+                                <span className="bg-[#bf4440] text-white px-2.5 py-0.5 rounded-full text-[8px] font-black uppercase tracking-wider">RANK 1</span>
+                                <span className="text-sm font-black text-[#bf4440] font-mono">88.5</span>
                               </div>
                               <div className="p-4 flex flex-col items-center flex-1 text-center">
-                                <img className="w-12 h-12 rounded-full object-cover border-2 border-blue-500/10 mb-2" src="https://i.pravatar.cc/100?img=11" alt="John Tosh" />
+                                <img className="w-12 h-12 rounded-full object-cover border-2 border-[#bf4440]/10 mb-2" src="https://i.pravatar.cc/100?img=11" alt="John Tosh" />
                                 <h5 className="text-xs font-black text-slate-800 leading-tight">John Tosh</h5>
                                 <p className="text-[9px] font-bold text-slate-400 uppercase tracking-wider mb-3">Undergraduate</p>
                                 
                                 <div className="w-full space-y-1 mb-4">
                                   <div className="flex justify-between items-center text-[9px] font-bold text-slate-500">
                                     <span>Kontribusi</span>
-                                    <span className="text-blue-600 font-black">Sangat Tinggi</span>
+                                    <span className="text-[#bf4440] font-black">Sangat Tinggi</span>
                                   </div>
                                   <div className="w-full bg-slate-100 h-1 rounded-full overflow-hidden">
-                                    <div className="bg-blue-600 h-full w-[92%]" />
+                                    <div className="bg-[#bf4440] h-full w-[92%]" />
                                   </div>
                                 </div>
 
                                 <div className="bg-slate-50/80 p-3 rounded-lg w-full text-left italic text-[10.5px] font-bold text-slate-500 relative flex-1">
                                   "Menurut saya, kita harus mempertimbangkan efisiensi biaya sebelum melangkah ke integrasi sistem baru..."
-                                  <div className="mt-2 text-right not-italic font-black text-[8px] text-blue-600 font-mono">00:14:22</div>
+                                  <div className="mt-2 text-right not-italic font-black text-[8px] text-[#bf4440] font-mono">00:14:22</div>
                                 </div>
                               </div>
                             </div>
@@ -1962,14 +1962,14 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                           {/* Key Insights Section */}
                           <div className="bg-blue-50/30 border border-blue-100/60 p-5 rounded-xl relative overflow-hidden">
                             <div className="flex items-center gap-2 mb-4">
-                              <span className="p-1.5 bg-blue-100 text-blue-700 rounded-lg shrink-0">
+                              <span className="p-1.5 bg-blue-100 text-[#993633] rounded-lg shrink-0">
                                 <Lightbulb size={16} />
                               </span>
                               <h4 className="text-xs font-black text-slate-800 uppercase tracking-tight">Key Insights</h4>
                             </div>
                             <ul className="space-y-3.5">
                               <li className="flex items-start gap-2.5">
-                                <CheckCircle className="text-blue-600 shrink-0 mt-0.5" size={14} />
+                                <CheckCircle className="text-[#bf4440] shrink-0 mt-0.5" size={14} />
                                 <div className="space-y-0.5">
                                   <h5 className="text-[11.5px] font-black text-slate-800">Dominasi Verbal Mengurangi Kualitas Kolektif</h5>
                                   <p className="text-[10.5px] font-bold text-slate-500 leading-relaxed">
@@ -1978,7 +1978,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                                 </div>
                               </li>
                               <li className="flex items-start gap-2.5">
-                                <CheckCircle className="text-blue-600 shrink-0 mt-0.5" size={14} />
+                                <CheckCircle className="text-[#bf4440] shrink-0 mt-0.5" size={14} />
                                 <div className="space-y-0.5">
                                   <h5 className="text-[11.5px] font-black text-slate-800">Eksplorasi Teori yang Luas</h5>
                                   <p className="text-[10.5px] font-bold text-slate-500 leading-relaxed">
@@ -2008,7 +2008,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                               </div>
                               <div className="p-3 bg-white border border-slate-100 rounded-lg shadow-sm">
                                 <div className="flex items-center justify-between mb-1">
-                                  <span className="text-[9px] font-black text-blue-700 uppercase tracking-wider">Fasilitator / Pengajar</span>
+                                  <span className="text-[9px] font-black text-[#993633] uppercase tracking-wider">Fasilitator / Pengajar</span>
                                 </div>
                                 <p className="text-[10.5px] font-bold text-slate-600 leading-relaxed">
                                   Gunakan teknik 'round-robin' pada sesi berikutnya untuk menjamin setiap peserta memberikan input setidaknya satu kali.
@@ -2273,8 +2273,8 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                           weight: "16.6%",
                           score: 84,
                           status: "SANGAT BAIK",
-                          color: "bg-blue-600",
-                          textColor: "text-blue-600 border-blue-200 bg-blue-50",
+                          color: "bg-[#bf4440]",
+                          textColor: "text-[#bf4440] border-blue-200 bg-blue-50",
                           bullets: [
                             "Opening jelas dan terarah dengan hook yang kuat.",
                             "Alur logika terstruktur mengikuti framework piramida.",
@@ -2406,7 +2406,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                     {/* AI Feedback Card */}
                     <div className="bg-white border border-slate-200/80 rounded-2xl p-6 shadow-xs mt-6">
                       <div className="flex items-center gap-2.5 mb-3.5">
-                        <span className="p-1.5 bg-blue-50 text-blue-600 rounded-lg border border-blue-100 flex items-center justify-center">
+                        <span className="p-1.5 bg-blue-50 text-[#bf4440] rounded-lg border border-blue-100 flex items-center justify-center">
                           <Sparkles size={14} className="stroke-[2.5]" />
                         </span>
                         <h4 className="text-sm font-extrabold text-slate-800">AI Feedback</h4>
@@ -2633,7 +2633,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                             {/* Score Details Text */}
                             <div className="space-y-1">
                               <span className="text-[9.5px] font-black uppercase text-slate-400 tracking-wider">NILAI AKHIR</span>
-                              <h3 className="text-lg font-black text-slate-800 leading-none">Baik — 82/100</h3>
+                              <h3 className="text-lg font-black text-slate-800 leading-none">Baik - 82/100</h3>
                               <div className="flex items-center gap-1.5 text-[10.5px] text-emerald-600 font-extrabold">
                                 <CheckCircle size={12} className="stroke-[3]" />
                                 <span>Assessment telah dikonfirmasi dosen</span>
@@ -2659,10 +2659,10 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                             {[
                               { name: 'Task Fulfillment', score: 88, weight: '10%', ringColor: 'border-emerald-500 text-emerald-600 bg-emerald-50', barColor: 'bg-emerald-500' },
                               { name: 'Organization & Structure', score: 85, weight: '10%', ringColor: 'border-emerald-500 text-emerald-600 bg-emerald-50', barColor: 'bg-emerald-500' },
-                              { name: 'Argumentation', score: 84, weight: '15%', ringColor: 'border-blue-500 text-blue-600 bg-blue-50', barColor: 'bg-blue-500' },
-                              { name: 'Critical Thinking', score: 76, weight: '15%', ringColor: 'border-blue-500 text-blue-600 bg-blue-50', barColor: 'bg-blue-500' },
+                              { name: 'Argumentation', score: 84, weight: '15%', ringColor: 'border-[#bf4440] text-[#bf4440] bg-blue-50', barColor: 'bg-blue-500' },
+                              { name: 'Critical Thinking', score: 76, weight: '15%', ringColor: 'border-[#bf4440] text-[#bf4440] bg-blue-50', barColor: 'bg-blue-500' },
                               { name: 'Evidence & Citation', score: 72, weight: '10%', ringColor: 'border-amber-500 text-amber-600 bg-amber-50', barColor: 'bg-amber-500' },
-                              { name: 'Communication Clarity', score: 80, weight: '10%', ringColor: 'border-blue-500 text-blue-600 bg-blue-50', barColor: 'bg-blue-500' }
+                              { name: 'Communication Clarity', score: 80, weight: '10%', ringColor: 'border-[#bf4440] text-[#bf4440] bg-blue-50', barColor: 'bg-blue-500' }
                             ].map((dim, idx) => (
                               <div key={idx} className="flex items-center gap-4">
                                 {/* Rounded Circular Score Badge */}
@@ -2692,18 +2692,18 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                         {/* 3. Catatan Dosen Card */}
                         <div className="bg-white border border-slate-200/80 rounded-2xl p-6 shadow-xs space-y-4">
                           <div className="flex items-center gap-2">
-                            <span className="p-1 bg-blue-50 text-blue-600 rounded-md border border-blue-100 flex items-center justify-center">
+                            <span className="p-1 bg-blue-50 text-[#bf4440] rounded-md border border-blue-100 flex items-center justify-center">
                               <FileText size={13} className="stroke-[2.5]" />
                             </span>
                             <h4 className="text-xs font-black uppercase text-slate-800 tracking-wider">Catatan Dosen</h4>
                           </div>
 
-                          <div className="border-l-4 border-blue-500 pl-4 py-1.5 bg-slate-50/50 rounded-r-xl">
+                          <div className="border-l-4 border-[#bf4440] pl-4 py-1.5 bg-slate-50/50 rounded-r-xl">
                             <p className="text-xs text-slate-700 italic font-semibold leading-relaxed">
                               "Tulisan Anda menunjukkan pemahaman konsep yang baik dan argumen yang terstruktur. Untuk tugas berikutnya, perkuat penggunaan sumber primer dan konsistensi format sitasi. Pertahankan kekuatan dalam organisasi tulisan."
                             </p>
                             <span className="text-[10.5px] text-slate-500 font-extrabold block mt-3">
-                              — Dr. Sari Dewi, M.Kom • 23 Jun 2026
+                              - Dr. Sari Dewi, M.Kom • 23 Jun 2026
                             </span>
                           </div>
                         </div>
@@ -2712,7 +2712,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                         <div className="bg-white border border-slate-200/80 rounded-2xl p-6 shadow-xs space-y-5">
                           <div className="flex items-center justify-between border-b border-slate-100 pb-3">
                             <div className="flex items-center gap-2">
-                              <span className="p-1.5 bg-blue-50 text-blue-600 rounded-lg border border-blue-100 flex items-center justify-center">
+                              <span className="p-1.5 bg-blue-50 text-[#bf4440] rounded-lg border border-blue-100 flex items-center justify-center">
                                 <Sparkles size={14} className="stroke-[2.5]" />
                               </span>
                               <h4 className="text-sm font-extrabold text-slate-800">AI Writing Coach</h4>
@@ -2723,7 +2723,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                           </div>
 
                           {/* Coach Alert Banner */}
-                          <div className="border-l-4 border-blue-500 bg-blue-50/40 p-4 rounded-r-xl">
+                          <div className="border-l-4 border-[#bf4440] bg-blue-50/40 p-4 rounded-r-xl">
                             <p className="text-xs text-slate-700 font-semibold leading-relaxed">
                               Tulisan Anda memiliki fondasi argumentasi yang kuat dan struktur yang terorganisir dengan baik. Kekuatan utama terletak pada konsistensi klaim dan penggunaan kosakata akademik yang tepat. Area yang perlu diperkuat adalah kedalaman analisis kritis dan konsistensi sitasi.
                             </p>
@@ -2763,7 +2763,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                                   'Tambahkan perspektif pembanding untuk memperkuat analisis kritis'
                                 ].map((item, idx) => (
                                   <li key={idx} className="flex items-start gap-2 text-xs text-slate-600 font-semibold leading-relaxed">
-                                    <span className="p-0.5 bg-blue-50 text-blue-600 rounded-full border border-blue-100 shrink-0 mt-0.5">
+                                    <span className="p-0.5 bg-blue-50 text-[#bf4440] rounded-full border border-blue-100 shrink-0 mt-0.5">
                                       <ChevronRight size={10} className="stroke-[3]" />
                                     </span>
                                     <span>{item}</span>
@@ -2870,7 +2870,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
           <div className="bg-white border border-slate-200 rounded-sm p-5 shadow-sm space-y-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <span className="p-1.5 bg-blue-50 text-blue-600 rounded-sm">
+                <span className="p-1.5 bg-blue-50 text-[#bf4440] rounded-sm">
                   <Calendar size={15} />
                 </span>
                 <h4 className="text-xs font-black uppercase text-slate-800 tracking-tight">Jadwal Praktikum</h4>
@@ -2900,7 +2900,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                     <span className="text-[10px] font-black text-slate-450 uppercase">Selasa, 7 Juli 2026</span>
                     <span className="text-[8px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">Hari Ini</span>
                   </div>
-                  <div className="border-l-3 border-blue-500 pl-2.5 py-0.5">
+                  <div className="border-l-3 border-[#bf4440] pl-2.5 py-0.5">
                     <h5 className="text-[11px] font-black text-slate-800 leading-tight">Ujian Simulasi FGD: Konsensus</h5>
                     <p className="text-[9px] text-slate-400 font-bold mt-0.5">14:00 - 15:30 • Ruang Lab 3</p>
                   </div>
@@ -2930,7 +2930,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                       onClick={() => setSelectedCalendarDay(d.date)}
                       className={`flex flex-col items-center gap-1.5 p-1.5 rounded-sm transition-all cursor-pointer ${
                         selectedCalendarDay === d.date
-                          ? 'bg-blue-600 text-white shadow-sm'
+                          ? 'bg-[#bf4440] text-white shadow-sm'
                           : d.active
                             ? 'bg-slate-100 text-slate-800 ring-1 ring-slate-200'
                             : 'text-slate-500 hover:bg-slate-50'
@@ -3016,7 +3016,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                         key={dayNum}
                         className={`p-1 text-[10px] font-black font-mono rounded-sm relative flex flex-col items-center justify-center ${
                           isToday 
-                            ? 'bg-blue-600 text-white shadow-sm' 
+                            ? 'bg-[#bf4440] text-white shadow-sm' 
                             : 'text-slate-700 hover:bg-slate-50'
                         }`}
                       >
@@ -3055,7 +3055,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                   title: 'Mengunduh Analisis PDF',
                   desc: 'Mengunduh laporan komprehensif FGD: Negosiasi Bisnis.',
                   time: '5 menit yang lalu',
-                  color: 'bg-blue-50 text-blue-600',
+                  color: 'bg-blue-50 text-[#bf4440]',
                   icon: Download
                 },
                 {
@@ -3127,7 +3127,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
             >
               <div className="flex justify-between items-start">
                 <div className="space-y-1">
-                  <span className="text-[9px] font-black uppercase text-blue-600 bg-blue-50 border border-blue-100 px-2 py-0.5 rounded-full">
+                  <span className="text-[9px] font-black uppercase text-[#bf4440] bg-blue-50 border border-blue-100 px-2 py-0.5 rounded-full">
                     Aksara Comm-Lab Sandbox
                   </span>
                   <h4 className="text-sm font-black text-slate-900 tracking-tight">
@@ -3225,7 +3225,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                   <div className="space-y-2">
                     <div className="flex items-center gap-2 px-1">
                       <span className="text-xs font-bold text-slate-400">Recent</span>
-                      <span className="bg-blue-50 text-blue-600 text-[10px] font-black px-1.5 rounded-full">{tempSelectedMembers.length}</span>
+                      <span className="bg-blue-50 text-[#bf4440] text-[10px] font-black px-1.5 rounded-full">{tempSelectedMembers.length}</span>
                     </div>
                     <div className="space-y-1">
                       {tempSelectedMembers.map((p, idx) => {
@@ -3236,9 +3236,9 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                             type="checkbox" 
                             checked={true}
                             onChange={() => setTempSelectedMembers(prev => prev.filter(m => m.nim !== p.nim))}
-                            className="w-4 h-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500 cursor-pointer"
+                            className="w-4 h-4 rounded border-slate-300 text-[#bf4440] focus:ring-[#bf4440]/20 cursor-pointer"
                           />
-                          <div className="w-9 h-9 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-black text-xs uppercase shrink-0">
+                          <div className="w-9 h-9 rounded-full bg-blue-100 flex items-center justify-center text-[#bf4440] font-black text-xs uppercase shrink-0">
                             {p.name.split(' ').map(n => n[0]).join('').substring(0, 2)}
                           </div>
                           <div className="flex flex-col min-w-0">
@@ -3257,7 +3257,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                 <div className="space-y-2">
                   <div className="flex items-center gap-2 px-1">
                     <span className="text-xs font-bold text-slate-400">People</span>
-                    <span className="bg-blue-50 text-blue-600 text-[10px] font-black px-1.5 rounded-full">
+                    <span className="bg-blue-50 text-[#bf4440] text-[10px] font-black px-1.5 rounded-full">
                       {availableStudents.filter(s => 
                         s.name.toLowerCase().includes(memberSearchQuery.toLowerCase()) || 
                         s.nim.toLowerCase().includes(memberSearchQuery.toLowerCase())
@@ -3306,7 +3306,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                     setFgdParticipants(tempSelectedMembers);
                     setShowMemberModal(false);
                   }}
-                  className="px-4 py-2 bg-blue-600 text-white text-xs font-bold rounded-sm hover:bg-blue-700 cursor-pointer transition-colors shadow-sm"
+                  className="px-4 py-2 bg-[#bf4440] text-white text-xs font-bold rounded-sm hover:bg-[#993633] cursor-pointer transition-colors shadow-sm"
                 >
                   Apply
                 </button>
@@ -3340,7 +3340,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
 
                 <div className="space-y-5">
                   <div className="flex gap-4">
-                    <div className="mt-1 p-2 bg-blue-50 text-blue-600 rounded-lg shrink-0">
+                    <div className="mt-1 p-2 bg-blue-50 text-[#bf4440] rounded-lg shrink-0">
                       <Settings size={18} />
                     </div>
                     <div>
@@ -3352,7 +3352,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                   </div>
 
                   <div className="flex gap-4">
-                    <div className="mt-1 p-2 bg-blue-50 text-blue-600 rounded-lg shrink-0">
+                    <div className="mt-1 p-2 bg-blue-50 text-[#bf4440] rounded-lg shrink-0">
                       <Users size={18} />
                     </div>
                     <div>
@@ -3364,7 +3364,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                   </div>
 
                   <div className="flex gap-4">
-                    <div className="mt-1 p-2 bg-blue-50 text-blue-600 rounded-lg shrink-0">
+                    <div className="mt-1 p-2 bg-blue-50 text-[#bf4440] rounded-lg shrink-0">
                       <Clock size={18} />
                     </div>
                     <div>
@@ -3376,7 +3376,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                   </div>
 
                   <div className="flex gap-4">
-                    <div className="mt-1 p-2 bg-blue-50 text-blue-600 rounded-lg shrink-0">
+                    <div className="mt-1 p-2 bg-blue-50 text-[#bf4440] rounded-lg shrink-0">
                       <Activity size={18} />
                     </div>
                     <div>
@@ -3393,7 +3393,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
               <div className="px-6 py-4 bg-slate-50 border-t border-slate-100 flex items-center justify-end gap-3">
                 <button 
                   onClick={() => setShowSimInstructions(false)}
-                  className="px-6 py-2 text-sm font-black text-blue-700 hover:bg-blue-50 rounded-lg transition-colors cursor-pointer"
+                  className="px-6 py-2 text-sm font-black text-[#993633] hover:bg-blushed-brick-50 rounded-lg transition-colors cursor-pointer"
                 >
                   Kembali
                 </button>
@@ -3402,7 +3402,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                     setShowSimInstructions(false);
                     setIsSimulating(true);
                   }}
-                  className="px-6 py-2 bg-blue-800 text-white text-sm font-black rounded-lg shadow-lg hover:bg-blue-900 transition-all active:scale-95 cursor-pointer"
+                  className="px-6 py-2 bg-[#732926] text-white text-sm font-black rounded-lg shadow-lg hover:bg-blue-900 transition-all active:scale-95 cursor-pointer"
                 >
                   Mulai Simulasi Sekarang
                 </button>
@@ -3417,7 +3417,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
             {/* Report Header: Integrated with Metadata and Actions */}
             <div className="bg-white border-b border-slate-200 flex flex-col md:flex-row md:items-center justify-between px-6 py-2.5 shrink-0 shadow-sm gap-4">
               <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 border border-blue-100">
+                <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-[#bf4440] border border-blue-100">
                   <BarChart2 size={20} />
                 </div>
                 <div>
@@ -3454,7 +3454,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                       setShowSimReport(false);
                       setIsSimulating(true);
                     }}
-                    className="px-4 py-2 bg-blue-800 hover:bg-blue-900 text-white text-[10px] font-black uppercase rounded-lg shadow-sm transition-all active:scale-95 cursor-pointer flex items-center gap-2"
+                    className="px-4 py-2 bg-[#732926] hover:bg-blue-900 text-white text-[10px] font-black uppercase rounded-lg shadow-sm transition-all active:scale-95 cursor-pointer flex items-center gap-2"
                   >
                     <RotateCcw size={14} /> Mulai Simulasi Baru
                   </button>
@@ -3474,7 +3474,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
               <div className="max-w-5xl mx-auto space-y-6">
                 
                 {/* 1. Compact Header Banner */}
-                <div className="bg-blue-800 text-white p-6 rounded-2xl shadow-md relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6">
+                <div className="bg-[#732926] text-white p-6 rounded-2xl shadow-md relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6">
                   <div className="relative z-10 space-y-1 text-center md:text-left">
                     <div className="flex items-center justify-center md:justify-start gap-2 mb-1.5">
                       <span className="px-1.5 py-0.5 bg-white/20 rounded text-[8px] font-black uppercase tracking-widest">AI Simulation Agent</span>
@@ -3524,16 +3524,16 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                   </div>
 
                   <div className="bg-white border border-slate-200 p-4 rounded-xl shadow-sm flex items-center gap-4 transition-all hover:border-blue-200">
-                    <div className="w-10 h-10 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center border border-blue-100 shrink-0">
+                    <div className="w-10 h-10 rounded-lg bg-blue-50 text-[#bf4440] flex items-center justify-center border border-blue-100 shrink-0">
                       <Target size={20} />
                     </div>
                     <div>
                       <h4 className="text-[9px] font-black text-slate-400 uppercase tracking-widest leading-none mb-1">Learning Outcome</h4>
                       <p className="text-xs font-black text-slate-800 leading-none">Mostly Achieved</p>
                       <div className="flex items-center gap-2 mt-1">
-                        <span className="text-lg font-black text-blue-600">3/5</span>
+                        <span className="text-lg font-black text-[#bf4440]">3/5</span>
                         <div className="w-12 bg-slate-100 h-1 rounded-full overflow-hidden">
-                          <div className="bg-blue-600 h-full w-[60%]" />
+                          <div className="bg-[#bf4440] h-full w-[60%]" />
                         </div>
                       </div>
                     </div>
@@ -3564,7 +3564,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                               <h4 className="text-xs font-extrabold text-slate-700">{dim.name}</h4>
                               <span className={`text-sm font-black ${
                                 dim.color === 'emerald' ? 'text-emerald-600' : 
-                                dim.color === 'blue' ? 'text-blue-600' : 
+                                dim.color === 'blue' ? 'text-[#bf4440]' : 
                                 dim.color === 'amber' ? 'text-amber-600' : 'text-indigo-600'
                               }`}>{dim.score}%</span>
                             </div>
@@ -3634,7 +3634,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                           </div>
                         </div>
 
-                        <button className="w-full py-2 bg-blue-600 hover:bg-blue-700 text-white text-[9px] font-black uppercase tracking-wider rounded-lg transition-all cursor-pointer shadow-md active:scale-95">
+                        <button className="w-full py-2 bg-[#bf4440] hover:bg-[#993633] text-white text-[9px] font-black uppercase tracking-wider rounded-lg transition-all cursor-pointer shadow-md active:scale-95">
                           View Module
                         </button>
                       </div>
@@ -3696,7 +3696,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
               {/* Left Sidebar: Briefing */}
               <div className="w-80 border-r border-slate-200 bg-white flex flex-col overflow-y-auto">
                 <div className="p-6 space-y-2 border-b border-slate-100">
-                  <h2 className="text-xl font-black text-blue-800 leading-tight">Simulation Briefing</h2>
+                  <h2 className="text-xl font-black text-[#732926] leading-tight">Simulation Briefing</h2>
                   <p className="text-[10px] font-bold text-slate-400">Current Session Details</p>
                 </div>
 
@@ -3705,7 +3705,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                   <div className="bg-slate-50 rounded-xl border border-slate-200 overflow-hidden">
                     <button className="w-full p-4 flex items-center justify-between text-left group">
                       <div className="flex items-center gap-3">
-                        <FileText size={18} className="text-blue-600" />
+                        <FileText size={18} className="text-[#bf4440]" />
                         <span className="text-xs font-black text-slate-800">Scenario Brief</span>
                       </div>
                       <ChevronDown size={16} className="text-slate-400" />
@@ -3741,8 +3741,8 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
               <div className="flex-1 flex flex-col bg-slate-50 overflow-hidden">
                 {/* Header Info */}
                 <div className="px-6 py-2 bg-blue-50/50 border-b border-blue-100 flex items-center gap-2">
-                  <div className="shrink-0"><Info size={12} className="text-blue-600" /></div>
-                  <p className="text-[10px] text-blue-700 font-bold">
+                  <div className="shrink-0"><Info size={12} className="text-[#bf4440]" /></div>
+                  <p className="text-[10px] text-[#993633] font-bold">
                     Skor dan feedback tidak ditampilkan selama simulasi berlangsung. Penilaian diberikan setelah sesi berakhir.
                   </p>
                 </div>
@@ -3752,7 +3752,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                   {/* Journalist Message */}
                   <div className="flex flex-col gap-3">
                     <div className="flex items-center gap-2">
-                      <div className="w-6 h-6 rounded bg-blue-600 flex items-center justify-center text-[10px] font-black text-white uppercase shrink-0">AT</div>
+                      <div className="w-6 h-6 rounded bg-[#bf4440] flex items-center justify-center text-[10px] font-black text-white uppercase shrink-0">AT</div>
                       <span className="text-xs font-black text-slate-800">Alex Turner (Journalist)</span>
                     </div>
                     <div className="max-w-2xl bg-white p-6 rounded-2xl rounded-tl-none shadow-sm border border-slate-200">
@@ -3766,9 +3766,9 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                   <div className="flex flex-col items-end gap-3">
                     <div className="flex items-center gap-2">
                       <span className="text-xs font-black text-slate-800">John Tosh (Anda)</span>
-                      <div className="w-6 h-6 rounded bg-blue-800 flex items-center justify-center text-[10px] font-black text-white uppercase shrink-0">JT</div>
+                      <div className="w-6 h-6 rounded bg-[#732926] flex items-center justify-center text-[10px] font-black text-white uppercase shrink-0">JT</div>
                     </div>
-                    <div className="max-w-2xl bg-blue-800 p-6 rounded-2xl rounded-tr-none shadow-lg text-white">
+                    <div className="max-w-2xl bg-[#732926] p-6 rounded-2xl rounded-tr-none shadow-lg text-white">
                       <p className="text-sm font-medium leading-relaxed">
                         Selamat pagi, Pak Turner. Terima kasih atas kesempatan ini. Kami ingin memastikan bahwa keamanan dan kepercayaan pelanggan adalah prioritas utama kami. Terkait dengan laporan yang beredar, kami sedang melakukan investigasi menyeluruh...
                       </p>
@@ -3778,7 +3778,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                   {/* Journalist Message 2 */}
                   <div className="flex flex-col gap-3">
                     <div className="flex items-center gap-2">
-                      <div className="w-6 h-6 rounded bg-blue-600 flex items-center justify-center text-[10px] font-black text-white uppercase shrink-0">AT</div>
+                      <div className="w-6 h-6 rounded bg-[#bf4440] flex items-center justify-center text-[10px] font-black text-white uppercase shrink-0">AT</div>
                       <span className="text-xs font-black text-slate-800">Alex Turner (Journalist)</span>
                     </div>
                     <div className="max-w-2xl bg-white p-6 rounded-2xl rounded-tl-none shadow-sm border border-slate-200">
@@ -3792,7 +3792,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                 {/* Footer Input */}
                 <div className="p-8 pt-2">
                   <div className="bg-white rounded-2xl shadow-xl border border-slate-200 p-2 flex items-center gap-4">
-                    <button className="w-12 h-12 rounded-xl bg-blue-800 hover:bg-blue-900 text-white flex items-center justify-center transition-all active:scale-95 group relative cursor-pointer">
+                    <button className="w-12 h-12 rounded-xl bg-[#732926] hover:bg-blue-900 text-white flex items-center justify-center transition-all active:scale-95 group relative cursor-pointer">
                       <Mic size={24} />
                       <div className="absolute -top-12 left-1/2 -translate-x-1/2 bg-slate-800 text-white text-[10px] font-black px-3 py-1.5 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
                         Tahan untuk bicara
@@ -3805,7 +3805,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
                       </p>
                     </div>
 
-                    <button className="px-10 py-3 bg-blue-800 hover:bg-blue-900 text-white text-sm font-black rounded-xl shadow-lg transition-all active:scale-95 cursor-pointer">
+                    <button className="px-10 py-3 bg-[#732926] hover:bg-blue-900 text-white text-sm font-black rounded-xl shadow-lg transition-all active:scale-95 cursor-pointer">
                       Kirim
                     </button>
                   </div>

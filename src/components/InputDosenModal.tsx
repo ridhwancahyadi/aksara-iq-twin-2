@@ -252,7 +252,7 @@ export const InputDosenModal: React.FC<InputDosenModalProps> = ({
           {/* Header */}
           <div className="flex justify-between items-center px-8 py-4 border-b border-slate-100 bg-slate-50/50">
             <div className="space-y-1">
-              <span className="text-[10px] uppercase font-black text-blue-600 tracking-wider">AKSARA IQ • Portal SDM &amp; Dosen</span>
+              <span className="text-[10px] uppercase font-black text-[#bf4440] tracking-wider">AKSARA IQ • Portal SDM &amp; Dosen</span>
               <h2 className="text-base font-black text-slate-900 tracking-tight flex items-center gap-2">
                 {pathway === 'selection' && 'Registrasi & Import Data Dosen'}
                 {pathway === 'manual' && 'Form Registrasi Dosen Baru'}
@@ -269,7 +269,7 @@ export const InputDosenModal: React.FC<InputDosenModalProps> = ({
                   onClick={() => setPathway('manual')}
                   className={`py-2 px-3 rounded-xl text-[10px] font-black uppercase tracking-wider transition-all duration-200 flex items-center justify-center gap-1.5 ${
                     pathway === 'manual'
-                      ? 'bg-white text-blue-600 shadow-sm border border-slate-200/30'
+                      ? 'bg-white text-[#bf4440] shadow-sm border border-slate-200/30'
                       : 'text-slate-500 hover:text-slate-700'
                   }`}
                 >
@@ -281,7 +281,7 @@ export const InputDosenModal: React.FC<InputDosenModalProps> = ({
                   onClick={() => setPathway('upload')}
                   className={`py-2 px-3 rounded-xl text-[10px] font-black uppercase tracking-wider transition-all duration-200 flex items-center justify-center gap-1.5 ${
                     pathway === 'upload'
-                      ? 'bg-white text-blue-600 shadow-sm border border-slate-200/30'
+                      ? 'bg-white text-[#bf4440] shadow-sm border border-slate-200/30'
                       : 'text-slate-500 hover:text-slate-700'
                   }`}
                 >
@@ -293,7 +293,7 @@ export const InputDosenModal: React.FC<InputDosenModalProps> = ({
                   onClick={() => setPathway('ocr')}
                   className={`py-2 px-3 rounded-xl text-[10px] font-black uppercase tracking-wider transition-all duration-200 flex items-center justify-center gap-1.5 ${
                     pathway === 'ocr'
-                      ? 'bg-white text-blue-600 shadow-sm border border-slate-200/30'
+                      ? 'bg-white text-[#bf4440] shadow-sm border border-slate-200/30'
                       : 'text-slate-500 hover:text-slate-700'
                   }`}
                 >
@@ -317,8 +317,8 @@ export const InputDosenModal: React.FC<InputDosenModalProps> = ({
             {/* --- 2. PATHWAY A: MANUAL FORM --- */}
             {pathway === 'manual' && (
               <div className="space-y-6 max-w-2xl mx-auto py-2">
-                <div className="bg-blue-50/50 border border-blue-100 p-4 rounded-2xl flex items-start gap-3 text-xs text-blue-800 leading-normal mb-2">
-                  <Info size={16} className="text-blue-600 shrink-0 mt-0.5" />
+                <div className="bg-blue-50/50 border border-blue-100 p-4 rounded-2xl flex items-start gap-3 text-xs text-[#732926] leading-normal mb-2">
+                  <Info size={16} className="text-[#bf4440] shrink-0 mt-0.5" />
                   <div>
                     <span className="font-extrabold block">Pendaftaran Tenaga Pendidik:</span> Selesaikan pengisian master data dosen pada setiap langkah di bawah ini untuk mengintegrasikan data dengan SIPDDIKTI &amp; Beban Mengajar.
                   </div>
@@ -328,7 +328,7 @@ export const InputDosenModal: React.FC<InputDosenModalProps> = ({
                 <div className="flex items-center justify-between max-w-lg mx-auto mb-8 relative">
                   <div className="absolute left-0 right-0 top-1/2 h-0.5 bg-slate-100 -translate-y-1/2 z-0" />
                   <div 
-                    className="absolute left-0 top-1/2 h-0.5 bg-blue-600 -translate-y-1/2 z-0 transition-all duration-300" 
+                    className="absolute left-0 top-1/2 h-0.5 bg-[#bf4440] -translate-y-1/2 z-0 transition-all duration-300" 
                     style={{ width: activeManualStep === 1 ? '0%' : activeManualStep === 2 ? '50%' : '100%' }} 
                   />
                   
@@ -342,12 +342,12 @@ export const InputDosenModal: React.FC<InputDosenModalProps> = ({
                     return (
                       <div key={idx} className="flex flex-col items-center z-10">
                         <div className={`w-9 h-9 rounded-full flex items-center justify-center transition-all border-2 text-xs font-black ${
-                          isCompleted ? 'bg-blue-600 border-blue-600 text-white' : 
-                          isActive ? 'bg-white border-blue-600 text-blue-600 shadow-md' : 'bg-white border-slate-200 text-slate-400'
+                          isCompleted ? 'bg-[#bf4440] border-[#bf4440] text-white' : 
+                          isActive ? 'bg-white border-[#bf4440] text-[#bf4440] shadow-md' : 'bg-white border-slate-200 text-slate-400'
                         }`}>
                           {isCompleted ? <Check size={14} /> : s.step}
                         </div>
-                        <span className={`text-[9px] font-black uppercase tracking-wider mt-2 bg-white px-1.5 ${isActive ? 'text-blue-600' : 'text-slate-400'}`}>{s.label}</span>
+                        <span className={`text-[9px] font-black uppercase tracking-wider mt-2 bg-white px-1.5 ${isActive ? 'text-[#bf4440]' : 'text-slate-400'}`}>{s.label}</span>
                       </div>
                     );
                   })}
@@ -368,7 +368,7 @@ export const InputDosenModal: React.FC<InputDosenModalProps> = ({
                           value={newLecturer.nidn}
                           onChange={e => setNewLecturer({ ...newLecturer, nidn: e.target.value })}
                           placeholder="Contoh: 0414078501"
-                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-blue-500 focus:bg-white"
+                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-[#bf4440] focus:bg-white"
                         />
                         {errors.nidn && <span className="text-[10px] font-bold text-rose-500 block">{errors.nidn}</span>}
                       </div>
@@ -380,7 +380,7 @@ export const InputDosenModal: React.FC<InputDosenModalProps> = ({
                           value={newLecturer.nip}
                           onChange={e => setNewLecturer({ ...newLecturer, nip: e.target.value })}
                           placeholder="Contoh: 198507142010121002"
-                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-blue-500 focus:bg-white"
+                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-[#bf4440] focus:bg-white"
                         />
                       </div>
 
@@ -391,7 +391,7 @@ export const InputDosenModal: React.FC<InputDosenModalProps> = ({
                           value={newLecturer.name}
                           onChange={e => setNewLecturer({ ...newLecturer, name: e.target.value })}
                           placeholder="Contoh: Dr. Agus Rusmana, M.Si"
-                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-blue-500 focus:bg-white"
+                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-[#bf4440] focus:bg-white"
                         />
                         {errors.name && <span className="text-[10px] font-bold text-rose-500 block">{errors.name}</span>}
                       </div>
@@ -404,7 +404,7 @@ export const InputDosenModal: React.FC<InputDosenModalProps> = ({
                           value={newLecturer.code}
                           onChange={e => setNewLecturer({ ...newLecturer, code: e.target.value.toUpperCase() })}
                           placeholder="Contoh: AGR"
-                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-blue-500 focus:bg-white"
+                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-[#bf4440] focus:bg-white"
                         />
                         {errors.code && <span className="text-[10px] font-bold text-rose-500 block">{errors.code}</span>}
                       </div>
@@ -416,7 +416,7 @@ export const InputDosenModal: React.FC<InputDosenModalProps> = ({
                           value={newLecturer.email}
                           onChange={e => setNewLecturer({ ...newLecturer, email: e.target.value })}
                           placeholder="Contoh: agus.rusmana@unpad.ac.id"
-                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-blue-500 focus:bg-white"
+                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-[#bf4440] focus:bg-white"
                         />
                         {errors.email && <span className="text-[10px] font-bold text-rose-500 block">{errors.email}</span>}
                       </div>
@@ -428,7 +428,7 @@ export const InputDosenModal: React.FC<InputDosenModalProps> = ({
                           value={newLecturer.phone}
                           onChange={e => setNewLecturer({ ...newLecturer, phone: e.target.value })}
                           placeholder="Contoh: +62812345678"
-                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-blue-500 focus:bg-white"
+                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-[#bf4440] focus:bg-white"
                         />
                       </div>
 
@@ -437,7 +437,7 @@ export const InputDosenModal: React.FC<InputDosenModalProps> = ({
                         <select
                           value={newLecturer.prodi}
                           onChange={e => setNewLecturer({ ...newLecturer, prodi: e.target.value })}
-                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-blue-500 focus:bg-white"
+                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-[#bf4440] focus:bg-white"
                         >
                           <option value="S1 Jurnalisme Digital">S1 Jurnalisme Digital</option>
                           <option value="S1 Manajemen Komunikasi">S1 Manajemen Komunikasi</option>
@@ -456,7 +456,7 @@ export const InputDosenModal: React.FC<InputDosenModalProps> = ({
                                 name="lecturer_status" 
                                 checked={newLecturer.status === st}
                                 onChange={() => setNewLecturer({ ...newLecturer, status: st })}
-                                className="text-blue-600 focus:ring-blue-500" 
+                                className="text-[#bf4440] focus:ring-[#bf4440]/20" 
                               />
                               <span>{st}</span>
                             </label>
@@ -477,7 +477,7 @@ export const InputDosenModal: React.FC<InputDosenModalProps> = ({
                         <select
                           value={newLecturer.jabfung}
                           onChange={e => setNewLecturer({ ...newLecturer, jabfung: e.target.value })}
-                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-blue-500 focus:bg-white"
+                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-[#bf4440] focus:bg-white"
                         >
                           <option value="Asisten Ahli">Asisten Ahli</option>
                           <option value="Lektor">Lektor</option>
@@ -491,7 +491,7 @@ export const InputDosenModal: React.FC<InputDosenModalProps> = ({
                         <select
                           value={newLecturer.pangkat}
                           onChange={e => setNewLecturer({ ...newLecturer, pangkat: e.target.value })}
-                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-blue-500 focus:bg-white"
+                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-[#bf4440] focus:bg-white"
                         >
                           <option value="Penata Muda - III/a">Penata Muda - III/a</option>
                           <option value="Penata Muda Tk. I - III/b">Penata Muda Tk. I - III/b</option>
@@ -507,7 +507,7 @@ export const InputDosenModal: React.FC<InputDosenModalProps> = ({
                         <select
                           value={newLecturer.pendidikan}
                           onChange={e => setNewLecturer({ ...newLecturer, pendidikan: e.target.value })}
-                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-blue-500 focus:bg-white"
+                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-[#bf4440] focus:bg-white"
                         >
                           <option value="S2">Magister (S2)</option>
                           <option value="S3">Doktor (S3)</option>
@@ -522,7 +522,7 @@ export const InputDosenModal: React.FC<InputDosenModalProps> = ({
                           value={newLecturer.almamater}
                           onChange={e => setNewLecturer({ ...newLecturer, almamater: e.target.value })}
                           placeholder="Contoh: Universitas Padjadjaran"
-                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-blue-500 focus:bg-white"
+                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-[#bf4440] focus:bg-white"
                         />
                         {errors.almamater && <span className="text-[10px] font-bold text-rose-500 block">{errors.almamater}</span>}
                       </div>
@@ -534,7 +534,7 @@ export const InputDosenModal: React.FC<InputDosenModalProps> = ({
                           value={newLecturer.keahlian}
                           onChange={e => setNewLecturer({ ...newLecturer, keahlian: e.target.value })}
                           placeholder="Contoh: Jurnalisme Investigasi, Etika Media Penyiaran, Komunikasi Data"
-                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-blue-500 focus:bg-white"
+                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-[#bf4440] focus:bg-white"
                         />
                         {errors.keahlian && <span className="text-[10px] font-bold text-rose-500 block">{errors.keahlian}</span>}
                       </div>
@@ -552,7 +552,7 @@ export const InputDosenModal: React.FC<InputDosenModalProps> = ({
                         <select
                           value={newLecturer.teachingLoad}
                           onChange={e => setNewLecturer({ ...newLecturer, teachingLoad: e.target.value })}
-                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-blue-500 focus:bg-white"
+                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-[#bf4440] focus:bg-white"
                         >
                           <option value="6 SKS">6 SKS</option>
                           <option value="8 SKS">8 SKS (Minimum)</option>
@@ -568,7 +568,7 @@ export const InputDosenModal: React.FC<InputDosenModalProps> = ({
                         <select
                           value={newLecturer.maxTeachingLoad}
                           onChange={e => setNewLecturer({ ...newLecturer, maxTeachingLoad: e.target.value })}
-                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-blue-500 focus:bg-white"
+                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-[#bf4440] focus:bg-white"
                         >
                           <option value="12 SKS">12 SKS</option>
                           <option value="14 SKS">14 SKS</option>
@@ -583,7 +583,7 @@ export const InputDosenModal: React.FC<InputDosenModalProps> = ({
                         <select
                           value={newLecturer.serdosStatus}
                           onChange={e => setNewLecturer({ ...newLecturer, serdosStatus: e.target.value })}
-                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-blue-500 focus:bg-white"
+                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-[#bf4440] focus:bg-white"
                         >
                           <option value="Sudah Sertifikasi">Sudah Sertifikasi</option>
                           <option value="Belum Sertifikasi">Belum Sertifikasi</option>
@@ -598,7 +598,7 @@ export const InputDosenModal: React.FC<InputDosenModalProps> = ({
                             value={newLecturer.serdosNumber}
                             onChange={e => setNewLecturer({ ...newLecturer, serdosNumber: e.target.value })}
                             placeholder="Contoh: SER-102930491"
-                            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-blue-500 focus:bg-white"
+                            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-[#bf4440] focus:bg-white"
                           />
                           {errors.serdosNumber && <span className="text-[10px] font-bold text-rose-500 block">{errors.serdosNumber}</span>}
                         </div>
@@ -611,7 +611,7 @@ export const InputDosenModal: React.FC<InputDosenModalProps> = ({
                           value={newLecturer.penelitianUtama}
                           onChange={e => setNewLecturer({ ...newLecturer, penelitianUtama: e.target.value })}
                           placeholder="Contoh: Analisis Wacana Kritis Berita Digital, Literasi Media Generasi Z"
-                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-blue-500 focus:bg-white"
+                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-[#bf4440] focus:bg-white"
                         />
                       </div>
                     </motion.div>
@@ -641,14 +641,14 @@ export const InputDosenModal: React.FC<InputDosenModalProps> = ({
                             setActiveManualStep(prev => prev + 1);
                           }
                         }}
-                        className="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-black uppercase tracking-wider rounded-xl shadow-md transition-all cursor-pointer flex items-center gap-1.5"
+                        className="px-6 py-2.5 bg-[#bf4440] hover:bg-[#993633] text-white text-xs font-black uppercase tracking-wider rounded-xl shadow-md transition-all cursor-pointer flex items-center gap-1.5"
                       >
                         Lanjut <ChevronRight size={14} />
                       </button>
                     ) : (
                       <button 
                         type="submit" 
-                        className="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-black uppercase tracking-wider rounded-xl shadow-md transition-all cursor-pointer"
+                        className="px-6 py-2.5 bg-[#bf4440] hover:bg-[#993633] text-white text-xs font-black uppercase tracking-wider rounded-xl shadow-md transition-all cursor-pointer"
                       >
                         Simpan Data Dosen
                       </button>

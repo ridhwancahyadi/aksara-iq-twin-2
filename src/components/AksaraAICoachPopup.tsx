@@ -19,7 +19,7 @@ export function AksaraAICoachPopup({ isOpen, onClose, setView }: AksaraAICoachPo
       <div className="bg-slate-900 p-4 flex items-center justify-between text-white shrink-0">
         <div className="flex items-center gap-3">
           <div className="relative">
-            <div className="w-10 h-10 rounded-full bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-blue-400">
+            <div className="w-10 h-10 rounded-full bg-[#bf4440]/20 border border-[#bf4440]/30 flex items-center justify-center text-blue-400">
               <Bot size={20} />
             </div>
             <div className="absolute bottom-0 right-0 w-3 h-3 bg-emerald-500 border-2 border-slate-900 rounded-full"></div>
@@ -58,7 +58,7 @@ export function AksaraAICoachPopup({ isOpen, onClose, setView }: AksaraAICoachPo
           <button className="flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-xs font-bold text-slate-600 hover:border-amber-300 hover:bg-amber-50 shrink-0 transition-all shadow-sm">
             <span>💡</span> FGD Tips
           </button>
-          <button className="flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-xs font-bold text-slate-600 hover:border-blue-300 hover:bg-blue-50 shrink-0 transition-all shadow-sm">
+          <button className="flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-xs font-bold text-slate-600 hover:border-blue-300 hover:bg-blushed-brick-50 shrink-0 transition-all shadow-sm">
             <span>📈</span> Nilai & IPK
           </button>
           <button className="flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-xs font-bold text-slate-600 hover:border-emerald-300 hover:bg-emerald-50 shrink-0 transition-all shadow-sm">
@@ -75,9 +75,9 @@ export function AksaraAICoachPopup({ isOpen, onClose, setView }: AksaraAICoachPo
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Tanya AI Coach..." 
-            className="flex-1 py-2.5 pl-4 pr-10 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-blue-500 focus:bg-white transition-all shadow-inner"
+            className="flex-1 py-2.5 pl-4 pr-10 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#bf4440] focus:bg-white transition-all shadow-inner"
           />
-          <button className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all shrink-0 ${input.trim() ? 'bg-blue-600 text-white shadow-md hover:bg-blue-700' : 'bg-slate-100 text-slate-400'}`}>
+          <button className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all shrink-0 ${input.trim() ? 'bg-[#bf4440] text-white shadow-md hover:bg-[#993633]' : 'bg-slate-100 text-slate-400'}`}>
             <Send size={16} className={input.trim() ? 'translate-x-0.5' : ''} />
           </button>
         </div>
@@ -88,7 +88,7 @@ export function AksaraAICoachPopup({ isOpen, onClose, setView }: AksaraAICoachPo
                onClose();
                setView('aksara_ai');
              }}
-             className="text-[10px] font-bold text-blue-600 hover:text-blue-800 transition-colors uppercase tracking-wider"
+             className="text-[10px] font-bold text-[#bf4440] hover:text-[#732926] transition-colors uppercase tracking-wider"
            >
              Buka Full Aksara AI
            </button>

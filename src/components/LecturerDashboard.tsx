@@ -206,7 +206,7 @@ export function LecturerDashboard({ currentView, setView, loggedInUser }: Lectur
           <div className="lg:col-span-2 bg-white border border-slate-200 rounded-[32px] p-6 shadow-sm space-y-4">
             <h3 className="text-sm font-black text-slate-900 tracking-tight flex items-center justify-between">
               <span>Agenda Mengajar & Bimbingan Hari Ini</span>
-              <span className="text-[10px] font-black text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full uppercase tracking-wider font-mono">02 Juli 2026</span>
+              <span className="text-[10px] font-black text-[#bf4440] bg-blue-50 px-2.5 py-1 rounded-full uppercase tracking-wider font-mono">02 Juli 2026</span>
             </h3>
             
             <div className="space-y-3">
@@ -249,7 +249,7 @@ export function LecturerDashboard({ currentView, setView, loggedInUser }: Lectur
                     onClick={() => setView(act.target as any)}
                     className="flex flex-col items-center justify-center p-4 bg-slate-50 hover:bg-slate-100/80 border border-slate-200 shadow-sm rounded-2xl text-center cursor-pointer transition-all gap-2"
                   >
-                    <act.icon className="text-blue-600" size={18} />
+                    <act.icon className="text-[#bf4440]" size={18} />
                     <span className="text-[10px] font-black text-slate-700 uppercase tracking-wider">{act.label}</span>
                   </button>
                 ))}
@@ -295,7 +295,7 @@ export function LecturerDashboard({ currentView, setView, loggedInUser }: Lectur
             <div key={idx} className="bg-white border border-slate-200 rounded-[32px] p-6 shadow-sm hover:shadow-md transition-all space-y-5">
               <div className="flex justify-between items-start">
                 <div className="space-y-1">
-                  <span className="text-[10px] font-black text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full uppercase tracking-wider">{cls.code} • {cls.sks} SKS</span>
+                  <span className="text-[10px] font-black text-[#bf4440] bg-blue-50 px-2.5 py-1 rounded-full uppercase tracking-wider">{cls.code} • {cls.sks} SKS</span>
                   <h3 className="text-base font-black text-slate-900 pt-1.5">{cls.title}</h3>
                 </div>
                 <span className="text-xs font-black text-slate-700 bg-slate-100 px-3 py-1.5 rounded-xl font-mono">{cls.students} Mhs</span>
@@ -329,7 +329,7 @@ export function LecturerDashboard({ currentView, setView, loggedInUser }: Lectur
                 </button>
                 <button 
                   onClick={() => setView('dosen_fgd_results')}
-                  className="flex-1 bg-blue-50 hover:bg-blue-100/80 text-blue-700 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all text-center cursor-pointer"
+                  className="flex-1 bg-blue-50 hover:bg-blushed-brick-100/80 text-[#993633] py-2.5 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all text-center cursor-pointer"
                 >
                   Analisis FGD
                 </button>
@@ -359,10 +359,10 @@ export function LecturerDashboard({ currentView, setView, loggedInUser }: Lectur
       <div className="space-y-6">
         {/* Info Box */}
         <div className="bg-blue-50 border border-blue-100 rounded-[28px] p-5 flex items-start gap-4 shadow-sm">
-          <Sparkles className="text-blue-600 mt-1 shrink-0" size={20} />
+          <Sparkles className="text-[#bf4440] mt-1 shrink-0" size={20} />
           <div className="space-y-1">
             <h4 className="text-xs font-black text-blue-900 uppercase tracking-wider">Aksara Audio Intelligence Engine</h4>
-            <p className="text-xs text-blue-700 leading-relaxed font-medium">
+            <p className="text-xs text-[#993633] leading-relaxed font-medium">
               Aksara mendengarkan rekaman diskusi FGD kelompok mahasiswa secara real-time. Engine menghasilkan transkrip otomatis, mendeteksi dominasi komunikasi, menilai landasan teori, dan mengukur ketercapaian Capaian Pembelajaran Lulusan (CPL) secara transparan.
             </p>
           </div>
@@ -444,11 +444,11 @@ export function LecturerDashboard({ currentView, setView, loggedInUser }: Lectur
                         max="100"
                         value={gradingScore[asg.id] ?? ''}
                         onChange={(e) => setGradingScore({ ...gradingScore, [asg.id]: Number(e.target.value) })}
-                        className="w-16 px-2.5 py-1.5 border border-slate-200 rounded-lg text-center font-mono text-xs focus:ring-1 focus:ring-blue-500 focus:outline-none"
+                        className="w-16 px-2.5 py-1.5 border border-slate-200 rounded-lg text-center font-mono text-xs focus:ring-1 focus:ring-[#bf4440]/20 focus:outline-none"
                       />
                       <button
                         onClick={() => handleGradeAssignment(asg.id, gradingScore[asg.id] || 85)}
-                        className="bg-blue-600 hover:bg-blue-700 text-white font-black text-[10px] uppercase tracking-wider py-2 px-4 rounded-lg cursor-pointer transition-all"
+                        className="bg-[#bf4440] hover:bg-[#993633] text-white font-black text-[10px] uppercase tracking-wider py-2 px-4 rounded-lg cursor-pointer transition-all"
                       >
                         Submit
                       </button>
@@ -592,7 +592,7 @@ export function LecturerDashboard({ currentView, setView, loggedInUser }: Lectur
         {/* Create new log form */}
         <div className="lg:col-span-5 bg-white border border-slate-200 rounded-[32px] p-6 shadow-sm h-fit space-y-4">
           <h3 className="text-sm font-black text-slate-900 tracking-tight flex items-center gap-2">
-            <Plus size={16} className="text-blue-600" /> Log Bimbingan Baru
+            <Plus size={16} className="text-[#bf4440]" /> Log Bimbingan Baru
           </h3>
 
           <form onSubmit={handleAddAdvisingLog} className="space-y-4 pt-2">
@@ -604,7 +604,7 @@ export function LecturerDashboard({ currentView, setView, loggedInUser }: Lectur
                 placeholder="cth: Anisa Salsabila"
                 value={newLogName}
                 onChange={(e) => setNewLogName(e.target.value)}
-                className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl text-xs font-bold focus:ring-1 focus:ring-blue-500 focus:outline-none"
+                className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl text-xs font-bold focus:ring-1 focus:ring-[#bf4440]/20 focus:outline-none"
               />
             </div>
             
@@ -616,7 +616,7 @@ export function LecturerDashboard({ currentView, setView, loggedInUser }: Lectur
                 placeholder="cth: Magang / KRS"
                 value={newLogTopic}
                 onChange={(e) => setNewLogTopic(e.target.value)}
-                className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl text-xs font-bold focus:ring-1 focus:ring-blue-500 focus:outline-none"
+                className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl text-xs font-bold focus:ring-1 focus:ring-[#bf4440]/20 focus:outline-none"
               />
             </div>
 
@@ -628,7 +628,7 @@ export function LecturerDashboard({ currentView, setView, loggedInUser }: Lectur
                 placeholder="Tulis hasil bimbingan akademik di sini..."
                 value={newLogText}
                 onChange={(e) => setNewLogText(e.target.value)}
-                className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl text-xs font-bold focus:ring-1 focus:ring-blue-500 focus:outline-none resize-none"
+                className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl text-xs font-bold focus:ring-1 focus:ring-[#bf4440]/20 focus:outline-none resize-none"
               />
             </div>
 
@@ -647,11 +647,11 @@ export function LecturerDashboard({ currentView, setView, loggedInUser }: Lectur
           
           <div className="space-y-4 pt-2">
             {advisingLogs.map((log) => (
-              <div key={log.id} className="border-l-2 border-blue-500 pl-4 py-1 space-y-2">
+              <div key={log.id} className="border-l-2 border-[#bf4440] pl-4 py-1 space-y-2">
                 <div className="flex justify-between items-start">
                   <div>
                     <h4 className="text-xs font-black text-slate-900">{log.studentName}</h4>
-                    <p className="text-[10px] font-black text-blue-600 uppercase tracking-widest pt-0.5">{log.topic}</p>
+                    <p className="text-[10px] font-black text-[#bf4440] uppercase tracking-widest pt-0.5">{log.topic}</p>
                   </div>
                   <span className="text-[9px] font-black text-slate-400 font-mono">{log.date}</span>
                 </div>
@@ -702,7 +702,7 @@ export function LecturerDashboard({ currentView, setView, loggedInUser }: Lectur
                     <p className="text-[11px] font-bold text-slate-500 font-mono">Anggaran: {res.budget}</p>
                   </div>
                   <span className={`text-[9px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full ${
-                    res.status === 'Selesai' ? 'bg-emerald-50 text-emerald-600 border border-emerald-100' : 'bg-blue-50 text-blue-600 border border-blue-100'
+                    res.status === 'Selesai' ? 'bg-emerald-50 text-emerald-600 border border-emerald-100' : 'bg-blue-50 text-[#bf4440] border border-blue-100'
                   }`}>
                     {res.status}
                   </span>
@@ -714,7 +714,7 @@ export function LecturerDashboard({ currentView, setView, loggedInUser }: Lectur
                     <span className="font-mono text-slate-800">{res.progress}%</span>
                   </div>
                   <div className="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden">
-                    <div className="h-full bg-blue-600 rounded-full" style={{ width: `${res.progress}%` }} />
+                    <div className="h-full bg-[#bf4440] rounded-full" style={{ width: `${res.progress}%` }} />
                   </div>
                 </div>
               </div>
@@ -741,7 +741,7 @@ export function LecturerDashboard({ currentView, setView, loggedInUser }: Lectur
               <div key={idx} className="border border-slate-100 p-4 rounded-2xl space-y-2 hover:bg-slate-50/50 transition-all">
                 <div className="flex justify-between items-start flex-wrap gap-2">
                   <h4 className="text-xs font-black text-slate-900 flex-1">{pub.title}</h4>
-                  <span className="text-[9px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full bg-blue-50 text-blue-600 border border-blue-100">
+                  <span className="text-[9px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full bg-blue-50 text-[#bf4440] border border-blue-100">
                     {pub.index}
                   </span>
                 </div>
@@ -779,7 +779,7 @@ export function LecturerDashboard({ currentView, setView, loggedInUser }: Lectur
                 ].map((item, idx) => (
                   <div key={idx} className="flex-1 flex flex-col items-center gap-1.5">
                     <div className="text-[9px] font-bold text-slate-500 font-mono">{item.val}</div>
-                    <div className="w-full bg-blue-600 rounded-t-md hover:bg-blue-700 transition-all" style={{ height: `${(item.val / 110) * 80}px` }} />
+                    <div className="w-full bg-[#bf4440] rounded-t-md hover:bg-[#993633] transition-all" style={{ height: `${(item.val / 110) * 80}px` }} />
                     <span className="text-[9px] font-black text-slate-400 font-mono mt-1">{item.year}</span>
                   </div>
                 ))}
@@ -839,7 +839,7 @@ export function LecturerDashboard({ currentView, setView, loggedInUser }: Lectur
                 </div>
 
                 <div className="flex items-center justify-between gap-4 pt-2 border-t border-slate-100 text-[11px] font-bold text-slate-500">
-                  <span>Progress: <span className="text-blue-600">{ts.currentMilestone}</span></span>
+                  <span>Progress: <span className="text-[#bf4440]">{ts.currentMilestone}</span></span>
                   <span>Bimbingan Terakhir: <span className="text-slate-800 font-mono">{ts.lastMeeting}</span></span>
                 </div>
               </div>
@@ -864,7 +864,7 @@ export function LecturerDashboard({ currentView, setView, loggedInUser }: Lectur
             ].map((sc, idx) => (
               <div key={idx} className="border border-slate-100 p-4 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-slate-50/50 transition-all">
                 <div className="space-y-1.5">
-                  <span className="text-[9px] font-black text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full uppercase tracking-wider">{sc.type}</span>
+                  <span className="text-[9px] font-black text-[#bf4440] bg-blue-50 px-2.5 py-1 rounded-full uppercase tracking-wider">{sc.type}</span>
                   <h4 className="text-xs font-black text-slate-900 pt-1">{sc.student}</h4>
                   <div className="flex gap-4 text-[11px] font-bold text-slate-400">
                     <span>{sc.date} • <span className="font-mono text-slate-600">{sc.time}</span></span>
@@ -917,7 +917,7 @@ export function LecturerDashboard({ currentView, setView, loggedInUser }: Lectur
                     <span>Pencapaian Angkatan: <span className="text-slate-900 font-black font-mono">{item.current}%</span></span>
                   </div>
                   <div className="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden relative">
-                    <div className="h-full bg-blue-600 rounded-full" style={{ width: `${item.current}%` }} />
+                    <div className="h-full bg-[#bf4440] rounded-full" style={{ width: `${item.current}%` }} />
                     <div className="absolute top-0 bottom-0 w-0.5 bg-rose-500" style={{ left: `${item.target}%` }} title="Target Line" />
                   </div>
                 </div>
@@ -964,7 +964,7 @@ export function LecturerDashboard({ currentView, setView, loggedInUser }: Lectur
 
                 <div className="space-y-1 pt-2">
                   <div className="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden">
-                    <div className="h-full bg-blue-600 rounded-full" style={{ width: `${kri.progress}%` }} />
+                    <div className="h-full bg-[#bf4440] rounded-full" style={{ width: `${kri.progress}%` }} />
                   </div>
                 </div>
               </div>

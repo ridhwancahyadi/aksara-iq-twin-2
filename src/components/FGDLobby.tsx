@@ -89,7 +89,7 @@ export function FGDLobby({
         {/* AI Integrity Protocol Panel */}
         <div className="bg-slate-50 border border-slate-100 rounded-[28px] p-6 space-y-4">
           <div className="flex items-center gap-2">
-            <ShieldCheck size={16} className="text-blue-600" />
+            <ShieldCheck size={16} className="text-[#bf4440]" />
             <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">AI Engine Integrity Protocol</span>
           </div>
           
@@ -120,7 +120,7 @@ export function FGDLobby({
       <div className="flex-[1.2] space-y-6">
         <div className="flex items-start justify-between">
           <div className="space-y-1">
-            <span className="inline-block px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-[9px] font-black uppercase tracking-wider">
+            <span className="inline-block px-3 py-1 bg-blue-100 text-[#993633] rounded-full text-[9px] font-black uppercase tracking-wider">
               Pre-Join Lobby
             </span>
             <h1 className="text-2xl font-black text-slate-900 tracking-tight">Aksara IQ Pre-Meet Checklist</h1>
@@ -130,7 +130,7 @@ export function FGDLobby({
           </div>
           <button 
             onClick={() => setView('history')}
-            className="flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 rounded-xl text-xs font-black text-blue-600 hover:bg-slate-50 transition-all shadow-sm"
+            className="flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 rounded-xl text-xs font-black text-[#bf4440] hover:bg-slate-50 transition-all shadow-sm"
           >
             <History size={14} />
             FGD Session Histories
@@ -207,7 +207,7 @@ export function FGDLobby({
 
           <button 
             onClick={() => setView('playback')}
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white py-5 rounded-[24px] font-black text-base uppercase tracking-widest shadow-xl shadow-blue-200 flex items-center justify-center gap-3 transition-all active:scale-[0.98]"
+            className="w-full bg-[#bf4440] hover:bg-[#993633] text-white py-5 rounded-[24px] font-black text-base uppercase tracking-widest shadow-xl shadow-blue-200 flex items-center justify-center gap-3 transition-all active:scale-[0.98]"
           >
             <Play size={20} fill="currentColor" />
             Start FGD Session

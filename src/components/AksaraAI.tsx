@@ -49,6 +49,70 @@ export function AksaraAI() {
   // Initial list of Indonesian Communication Science sessions
   const [sessions, setSessions] = useState<ChatSession[]>([
     {
+      id: 'exchange_emergency',
+      title: 'Darurat: Kehilangan Dompet di Seoul (Adinda)',
+      category: 'Terbaru',
+      suggestions: ['Lapor KBRI Seoul', 'Cek Seoul Metro Lost & Found', 'Wise Money Transfer'],
+      messages: [
+        {
+          id: 'em_1',
+          sender: 'user',
+          time: '14:20',
+          text: 'TOLONG. Dompet aku hilang di subway tadi. Di dalamnya ada kartu debit, kartu mahasiswa, dan uang cash. Aku nggak tahu harus ngapain.'
+        },
+        {
+          id: 'em_2',
+          sender: 'ai',
+          time: '14:21',
+          text: 'Tenang — ini bisa diatasi. Ikuti langkah ini sekarang:\n\nLangkah 1 — Blokir kartu debit SEKARANG:\n• Hubungi bank kamu dari Indonesia via telepon atau aplikasi mobile banking\n• Blokir kartu sebelum ada yang menggunakannya\n• Kalau nggak bisa telepon, minta bantuan teman untuk pinjam hp dan hubungi bank\n\nLangkah 2 — Lapor ke Seoul Metro Lost & Found:\n• Nomor: 1577-1234 (Seoul Metro Customer Service)\n• Atau datang langsung ke kantor Lost & Found di stasiun terdekat atau Stasiun Seoul\n• Banyak dompet yang ditemukan dan dikembalikan di Korea — kejujuran publik Korea sangat tinggi\n• Sebutkan stasiun mana kamu kehilangan dan nomor gerbong jika ingat\n\nLangkah 3 — Lapor ke Polisi (untuk dokumen resmi):\n• Kantor polisi terdekat (파출소 / patchulso)\n• Minta Surat Kehilangan — ini berguna untuk klaim asuransi atau proses dokumen\n\nLangkah 4 — Hubungi International Office Hanyang:\n• Mereka bisa bantu kartu mahasiswa pengganti\n• Nomor International Office Hanyang: cek email penerimaan kamu dari Hanyang\n\nApakah kamu masih di area subway sekarang, atau sudah di tempat aman?\nDan masih ada akses ke uang atau alat bayar lain sementara?'
+        },
+        {
+          id: 'em_3',
+          sender: 'user',
+          time: '14:24',
+          text: 'Aku sudah di luar stasiun. Ada teman yang ada sama aku. Kartu debit udah aku blokir barusan. Tapi aku nggak punya uang sama sekali sekarang.'
+        },
+        {
+          id: 'em_4',
+          sender: 'ai',
+          time: '14:25',
+          text: 'Bagus, kamu sudah melakukan yang benar dengan memblokir kartu. Dan ada teman — itu yang paling penting.\n\nSolusi Darurat untuk Uang:\n\n1. Minta teman bayarkan dulu — itu opsi tercepat. Transfer balik ke dia nanti ketika kartu pengganti sudah aktif\n\n2. Transfer dari Indonesia:\n• Minta orang tua atau keluarga transfer via Wise atau Western Union ke rekening Korea-mu\n• Wise biasanya 1–2 jam prosesnya\n• Kalau belum punya rekening Korea: Western Union memungkinkan pick up cash langsung\n\n3. Minta bantuan komunitas Indonesia:\n• Post di grup WhatsApp/Kakao mahasiswa Indonesia di Seoul — komunitas ini biasanya sangat solid dan bisa bantu pinjam darurat\n\n4. International Office Hanyang:\n• Hubungi mereka — untuk mahasiswa exchange yang kehilangan, mereka punya protokol bantuan darurat\n\nUntuk kartu debit pengganti:\n• Hubungi bank kamu di Indonesia untuk kartu pengganti darurat\n• Beberapa bank bisa kirim kartu ke alamat di luar negeri dalam 5–7 hari kerja\n\nKamu aman sekarang — kamu nggak sendirian. Proses ini akan selesai, satu langkah setiap kali.'
+        }
+      ]
+    },
+    {
+      id: 'exchange_halal',
+      title: 'Kebutuhan Muslim & Halal Food di Seoul (Adinda)',
+      category: 'Terbaru',
+      suggestions: ['Restoran Halal Itaewon', 'Kosakata Halal Korea', 'Masjid Sentral Seoul'],
+      messages: [
+        {
+          id: 'hl_1',
+          sender: 'user',
+          time: '11:05',
+          text: 'Aku Muslim dan ini yang paling aku khawatirin sejujurnya - soal makan. Korea kan banyak babi dan alkohol. Gimana aku bisa survive soal makan di sana? Aku takut susah.'
+        },
+        {
+          id: 'hl_2',
+          sender: 'ai',
+          time: '11:06',
+          text: 'Ini concern yang sangat valid dan wajar banget dirasain - dan aku mau bilang dulu: kamu nggak akan kelaparan di Seoul, dan banyak mahasiswa Muslim Indonesia yang sudah exchange ke Hanyang dan berhasil menjalani kehidupan halal dengan baik.\n\nItu bukan berarti mudah tanpa persiapan - tapi dengan pengetahuan yang tepat, sangat bisa dikelola.\n\nArea Makanan Halal di Sekitar Hanyang:\n• Itaewon (이태원) - area paling terkenal untuk makanan halal di Seoul, sekitar 3-4 stasiun dari Hanyang. Ada berbagai restoran halal bersertifikat: Middle Eastern, Indian, hingga Korean Muslim-friendly\n• Sekitar Masjid Sentral Seoul (이슬람 중앙 사원) di Itaewon - area ini adalah pusat komunitas Muslim di Seoul\n• Area Wangsimni (dekat Hanyang) - ada beberapa restoran yang dikenal halal-friendly, termasuk pilihan yang sering direkomendasikan komunitas mahasiswa Indonesia di Hanyang\n\nMakanan Korea yang Relatif Aman:\n• Bibimbap (비빔밥) - nasi campur sayuran. Minta tanpa daging atau minta tahu/egg saja\n• Kimchi jjigae dengan seafood atau tahu (minta tanpa pork)\n• Japchae (잡채) - mi kaca dengan sayuran (versi vegetarian tersedia)\n• Korean BBQ dengan ayam atau seafood (hindari samgyeopsal/babi)\n• Makanan berbahan seafood umumnya aman\n\nCara Tanya Status Halal dalam Bahasa Korea:\n• \'이거 돼지고기 들어가요? (Igeo dwaeji gogi deureogayo?)\' - \'Ini ada babi-nya?\'\n• \'할랄 인증 있어요? (Halal injung isseoyo?)\' - \'Ada sertifikasi halal?\'\n• \'돼지고기 빼주세요 (Dwaeji gogi bbaejuseyo)\' - \'Tolong tanpa babi\'\n\nPlatform & Komunitas:\n• HalalTrip - aplikasi/website untuk cek restoran halal di Seoul\n• Muslim Pro - untuk jadwal sholat\n• Grup Facebook/Instagram \'Mahasiswa Indonesia di Seoul\' atau \'Muslim Indonesia Korea\' - komunitas ini sangat aktif dan saling bantu soal info halal terkini\n\nLokasi Ibadah:\n• Masjid Sentral Seoul di Itaewon - masjid pertama dan terbesar di Korea\n• Prayer room di Hanyang University - ada di beberapa gedung, hubungi international office untuk lokasi terkini\n• Jadwal sholat di Seoul berubah signifikan per musim - Dzuhur di musim dingin bisa sepagi jam 12-an, di musim panas bisa sampai jam 2-an\n\n⚠ Informasi restoran halal berdasarkan data terkini yang tersedia - status halal dapat berubah sewaktu-waktu (pergantian manajemen, bahan baku). Selalu verifikasi secara mandiri sebelum makan, tanyakan langsung ke pemilik restoran, atau konfirmasi ke komunitas Muslim setempat.'
+        },
+        {
+          id: 'hl_3',
+          sender: 'user',
+          time: '11:10',
+          text: 'Oh berarti ada juga ya. Aku kira susah banget. Satu lagi - kalau ditawarin makan sama teman Korea dan makanannya nggak halal, gimana cara nolaknya yang sopan?'
+        },
+        {
+          id: 'hl_4',
+          sender: 'ai',
+          time: '11:11',
+          text: 'Ini pertanyaan yang bagus dan penting - cara menolak di Korea butuh sedikit seni karena budaya mereka tidak terbiasa dengan penolakan yang terlalu tegas.\n\nCara Menolak dengan Sopan:\n\nOpsi 1 - Penjelasan singkat tanpa drama:\n\'나는 할랄 음식만 먹어요, 미안해요 (Naneun halal eumsik man meogeoyo, mianhaeyo)\' - \'Aku hanya makan makanan halal, maaf ya\'\n\nOpsi 2 - Dalam bahasa Inggris (lebih natural untuk obrolan dengan teman sebaya):\n\'I\'m Muslim, so I don\'t eat pork or non-halal meat. But I\'d love to join you all - is it okay if I order something halal or just have drinks?\'\n\nOpsi 3 - Cara yang paling diterima budaya Korea:\nJangan langsung menolak \'tidak mau makan\' - tapi tampil tetap hadir di situasi sosialnya. Pesan minuman non-alkohol (jus, air, teh) dan makan lebih sedikit dari yang halal, atau makan sebelumnya lalu ikut nongkrong.\n\nTeman Korea yang baik biasanya sangat respect soal ini, terutama yang sudah terbiasa dengan mahasiswa internasional di Hanyang. Jangan ragu untuk menjelaskan - kebanyakan orang Korea penasaran dan terbuka untuk belajar.\n\nSatu hal yang perlu diingat: kamu tidak harus minta maaf berulang kali atau merasa bersalah. Menjelaskan satu kali dengan tenang dan natural biasanya cukup.'
+        }
+      ]
+    },
+    {
       id: 'exchange_1',
       title: 'Persiapan Outbound Exchange: Hanyang University',
       category: 'Terbaru',
@@ -70,7 +134,7 @@ export function AksaraAI() {
           id: 'me_3',
           sender: 'ai',
           time: '10:20',
-          text: 'Untuk akomodasi di sekitar kampus Hanyang (seperti area Haengdang-dong atau Wangsimni), pilihan paling populer adalah Gosiwon (고시원) dengan harga sewa 300.000–600.000 KRW (sekitar Rp 3,5–7 juta) per bulan. Mayoritas landlord meminta uang deposit (bojungkeum/보증금) sebesar 1–2 bulan biaya sewa di muka. Jadi, kamu perlu menyiapkan modal awal berkisar Rp 15–27 juta untuk bulan pertama di Seoul guna menutup deposit, sewa pertama, kartu transportasi (T-Money), dan kebutuhan darurat.',
+          text: 'Untuk akomodasi di sekitar kampus Hanyang (seperti area Haengdang-dong atau Wangsimni), pilihan paling populer adalah Gosiwon (고시원) dengan harga sewa 300.000 - 600.000 KRW (sekitar Rp 3,5 - 7 juta) per bulan. Mayoritas landlord meminta uang deposit (bojungkeum/보증금) sebesar 1 - 2 bulan biaya sewa di muka. Jadi, kamu perlu menyiapkan modal awal berkisar Rp 15 - 27 juta untuk bulan pertama di Seoul guna menutup deposit, sewa pertama, kartu transportasi (T-Money), dan kebutuhan darurat.',
           richContent: [
             {
               type: 'article',
@@ -322,7 +386,7 @@ export function AksaraAI() {
     }
   ]);
 
-  const [activeSessionId, setActiveSessionId] = useState<string>('1');
+  const [activeSessionId, setActiveSessionId] = useState<string>('exchange_halal');
 
   // Find the active session
   const activeSession = sessions.find(s => s.id === activeSessionId) || sessions[0];
@@ -446,7 +510,7 @@ export function AksaraAI() {
         {/* Toggle Button for Desktop when open */}
         <div className="p-4 flex items-center justify-between border-b border-slate-200">
           <div className="flex items-center gap-2">
-            <Sparkles className="text-blue-600" size={18} />
+            <Sparkles className="text-[#bf4440]" size={18} />
             <span className="text-xs font-black tracking-wider uppercase text-slate-700">Aksara AI</span>
           </div>
         </div>
@@ -455,9 +519,9 @@ export function AksaraAI() {
         <div className="p-4">
           <button
             onClick={handleNewSession}
-            className="w-full py-3 px-4 bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-xl flex items-center justify-center gap-3 text-sm font-bold text-slate-700 transition-all duration-300 hover:border-blue-500/50 hover:shadow-[0_0_12px_rgba(59,130,246,0.15)] group cursor-pointer"
+            className="w-full py-3 px-4 bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-xl flex items-center justify-center gap-3 text-sm font-bold text-slate-700 transition-all duration-300 hover:border-[#bf4440]/50 hover:shadow-[0_0_12px_rgba(59,130,246,0.15)] group cursor-pointer"
           >
-            <div className="w-6 h-6 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-all">
+            <div className="w-6 h-6 rounded-lg bg-blue-100 text-[#bf4440] flex items-center justify-center group-hover:bg-[#bf4440] group-hover:text-white transition-all">
               <Plus size={14} className="stroke-[3px]" />
             </div>
             <span>Sesi Diskusi Baru</span>
@@ -487,7 +551,7 @@ export function AksaraAI() {
                     }`}
                   >
                     <div className="flex items-center gap-2.5 min-w-0">
-                      <MessageSquare size={14} className={isActive ? 'text-blue-600' : 'text-slate-400'} />
+                      <MessageSquare size={14} className={isActive ? 'text-[#bf4440]' : 'text-slate-400'} />
                       <span className="truncate leading-tight">{session.title}</span>
                     </div>
                     {sessions.length > 1 && (
@@ -526,7 +590,7 @@ export function AksaraAI() {
                       }`}
                     >
                       <div className="flex items-center gap-2.5 min-w-0">
-                        <MessageSquare size={14} className={isActive ? 'text-blue-600' : 'text-slate-400'} />
+                        <MessageSquare size={14} className={isActive ? 'text-[#bf4440]' : 'text-slate-400'} />
                         <span className="truncate leading-tight">{session.title}</span>
                       </div>
                       {sessions.length > 1 && (
@@ -576,13 +640,13 @@ export function AksaraAI() {
           <div className="flex items-center gap-3">
             {/* Pad left space if sidebar is closed */}
             {!sidebarOpen && <div className="w-10" />}
-            <div className="w-9 h-9 rounded-xl bg-blue-600/10 text-blue-700 flex items-center justify-center">
+            <div className="w-9 h-9 rounded-xl bg-[#bf4440]/10 text-[#993633] flex items-center justify-center">
               <Bot size={18} />
             </div>
             <div>
               <div className="flex items-center gap-1.5">
                 <h2 className="text-sm font-black text-slate-800">Aksara AI</h2>
-                <span className="text-[8px] font-bold text-blue-700 bg-blue-50 px-1 py-0.2 rounded border border-blue-100">PRO MODEL</span>
+                <span className="text-[8px] font-bold text-[#993633] bg-blue-50 px-1 py-0.2 rounded border border-blue-100">PRO MODEL</span>
               </div>
               <p className="text-[10px] text-slate-400 font-bold leading-none mt-0.5">Asisten Pengetahuan Ilmu Komunikasi Anda</p>
             </div>
@@ -606,7 +670,7 @@ export function AksaraAI() {
               >
                 {/* Avatar Icon */}
                 {isAI ? (
-                  <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white shrink-0 shadow-md">
+                  <div className="w-10 h-10 rounded-full bg-[#bf4440] flex items-center justify-center text-white shrink-0 shadow-md">
                     <Bot size={20} />
                   </div>
                 ) : (
@@ -636,7 +700,7 @@ export function AksaraAI() {
                   <div className={`p-4 rounded-2xl shadow-xs border ${
                     isAI 
                       ? 'bg-white border-slate-200/80 rounded-tl-sm text-slate-700' 
-                      : 'bg-blue-700 border-blue-800 text-white rounded-tr-sm'
+                      : 'bg-[#993633] border-blue-800 text-white rounded-tr-sm'
                   }`}>
                     <p className="text-sm leading-relaxed whitespace-pre-line font-medium">
                       {msg.text}
@@ -648,17 +712,17 @@ export function AksaraAI() {
                         {msg.richContent.map((item, idx) => (
                           <div 
                             key={idx} 
-                            className="border border-slate-200 bg-[#F8FAFC] rounded-xl p-3.5 hover:border-blue-300 hover:bg-blue-50/20 transition-all cursor-pointer group"
+                            className="border border-slate-200 bg-[#F8FAFC] rounded-xl p-3.5 hover:border-blue-300 hover:bg-blushed-brick-50/20 transition-all cursor-pointer group"
                           >
                             <div className="flex items-center justify-between mb-2">
-                              <div className="w-8 h-8 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center shrink-0">
+                              <div className="w-8 h-8 rounded-lg bg-blue-100 text-[#993633] flex items-center justify-center shrink-0">
                                 {item.type === 'video' ? <PlayCircle size={16} /> : <FileText size={16} />}
                               </div>
                               <span className="text-[8px] font-black uppercase text-slate-500 bg-white border border-slate-100 px-1.5 py-0.5 rounded">
                                 {item.durationOrType}
                               </span>
                             </div>
-                            <h4 className="text-xs font-black text-slate-800 mb-0.5 group-hover:text-blue-700 transition-colors line-clamp-1">
+                            <h4 className="text-xs font-black text-slate-800 mb-0.5 group-hover:text-[#993633] transition-colors line-clamp-1">
                               {item.title}
                             </h4>
                             <p className="text-[10px] text-slate-500 line-clamp-2 leading-relaxed">
@@ -689,10 +753,10 @@ export function AksaraAI() {
                   <button 
                     key={idx} 
                     onClick={() => handleSuggestionClick(suggestion)}
-                    className="px-3.5 py-1.5 rounded-full border border-slate-200 text-xs font-extrabold text-slate-600 hover:border-blue-600 hover:text-blue-700 transition-all bg-white hover:bg-blue-50/10 shadow-xs cursor-pointer flex items-center gap-1"
+                    className="px-3.5 py-1.5 rounded-full border border-slate-200 text-xs font-extrabold text-slate-600 hover:border-[#bf4440] hover:text-[#993633] transition-all bg-white hover:bg-blushed-brick-50/10 shadow-xs cursor-pointer flex items-center gap-1"
                   >
                     <span>{suggestion}</span>
-                    <ArrowRight size={10} className="text-slate-400 group-hover:text-blue-700" />
+                    <ArrowRight size={10} className="text-slate-400 group-hover:text-[#993633]" />
                   </button>
                 ))}
               </div>
@@ -710,7 +774,7 @@ export function AksaraAI() {
                   }
                 }}
                 placeholder="Tanyakan teori komunikasi, kasus humas, atau panduan jurnalistik..." 
-                className="w-full pl-6 pr-28 py-3.5 bg-white border-2 border-slate-200 rounded-2xl text-sm font-semibold focus:outline-none focus:border-blue-600 focus:ring-4 focus:ring-blue-600/10 transition-all shadow-xs placeholder-slate-400"
+                className="w-full pl-6 pr-28 py-3.5 bg-white border-2 border-slate-200 rounded-2xl text-sm font-semibold focus:outline-none focus:border-[#bf4440] focus:ring-4 focus:ring-[#bf4440]/20/10 transition-all shadow-xs placeholder-slate-400"
               />
               <div className="absolute right-2 flex items-center gap-1">
                 <button className="w-9 h-9 rounded-xl flex items-center justify-center text-slate-400 hover:bg-slate-100 hover:text-slate-600 transition-all cursor-pointer">
@@ -721,7 +785,7 @@ export function AksaraAI() {
                 </button>
                 <button 
                   onClick={() => handleSendMessage()}
-                  className="w-9 h-9 rounded-xl bg-blue-700 text-white flex items-center justify-center shadow-md hover:bg-blue-800 transition-all cursor-pointer"
+                  className="w-9 h-9 rounded-xl bg-[#993633] text-white flex items-center justify-center shadow-md hover:bg-[#732926] transition-all cursor-pointer"
                 >
                   <Send size={14} />
                 </button>

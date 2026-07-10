@@ -104,7 +104,7 @@ export const mockParticipants: Participant[] = [
     profile: {
       discussion_role: "Penggerak diskusi & integrator (de facto lead)",
       communication_style: "Proaktif, terstruktur, berlandaskan teori; sering menjawab pertama dan merangkum pandangan kelompok.",
-      theoretical_grounding: "Tinggi — mengaplikasikan SCCT (tipe krisis accidental vs preventable), Image Restoration Theory (mortification, corrective action, compensation), serta instructing vs adjusting information.",
+      theoretical_grounding: "Tinggi - mengaplikasikan SCCT (tipe krisis accidental vs preventable), Image Restoration Theory (mortification, corrective action, compensation), serta instructing vs adjusting information.",
       summary: "Peserta paling dominan dan paling kuat secara substansi. Menguasai kerangka teori komunikasi krisis dan mampu mengintegrasikan argumen rekan menjadi kesimpulan. Catatan: dominasi floor (47%) berisiko mengurangi ruang bicara rekan lain."
     },
     indicator_scores: [
@@ -191,7 +191,7 @@ export const mockParticipants: Participant[] = [
         band: "Cukup",
         confidence: "rendah",
         evidence: [],
-        note: "Bukti terbatas — diskusi berjalan konsensual, tidak ada konflik nyata untuk diuji. Skor indikatif."
+        note: "Bukti terbatas - diskusi berjalan konsensual, tidak ada konflik nyata untuk diuji. Skor indikatif."
       },
       {
         indicator_id: "GEN-05",
@@ -202,7 +202,7 @@ export const mockParticipants: Participant[] = [
         evidence: [
           { timestamp: "screenshot", quote: "Frame statis; wajah tertutup masker, pencahayaan rendah." }
         ],
-        note: "Estimasi confidence rendah — gesture tidak dapat dinilai valid dari 1 frame statis. Tidak disarankan dipakai sebagai dasar keputusan."
+        note: "Estimasi confidence rendah - gesture tidak dapat dinilai valid dari 1 frame statis. Tidak disarankan dipakai sebagai dasar keputusan."
       },
       {
         indicator_id: "GEN-06",
@@ -211,9 +211,9 @@ export const mockParticipants: Participant[] = [
         band: "Belum Memenuhi",
         confidence: "rendah",
         evidence: [
-          { timestamp: "screenshot", quote: "Wajah tertutup masker — ekspresi tidak terbaca." }
+          { timestamp: "screenshot", quote: "Wajah tertutup masker - ekspresi tidak terbaca." }
         ],
-        note: "Estimasi confidence rendah — masker menutup ekspresi. Tidak disarankan dipakai sebagai dasar keputusan."
+        note: "Estimasi confidence rendah - masker menutup ekspresi. Tidak disarankan dipakai sebagai dasar keputusan."
       }
     ],
     overall: {
@@ -238,7 +238,7 @@ export const mockParticipants: Participant[] = [
         "Inisiatif dan kepemimpinan diskusi tinggi."
       ],
       areas_for_improvement: [
-        "Beri ruang bicara lebih kepada rekan — dominasi floor 47% dapat menekan partisipasi lain.",
+        "Beri ruang bicara lebih kepada rekan - dominasi floor 47% dapat menekan partisipasi lain.",
         "Tingkatkan presisi istilah teknis saat penyampaian lisan."
       ],
       recommendation: "Pertahankan kedalaman analisis; latih peran fasilitator yang menarik kontribusi rekan, bukan hanya merangkum."
@@ -260,7 +260,7 @@ export const mockParticipants: Participant[] = [
     profile: {
       discussion_role: "Penyumbang perspektif kemanusiaan & empati",
       communication_style: "Konsisten, ringkas, reflektif; menambahkan sudut pandang yang melengkapi rekan.",
-      theoretical_grounding: "Sedang-tinggi — menggunakan konsep 'adjusting information' (SCCT) secara tepat dan menautkan ke empati.",
+      theoretical_grounding: "Sedang-tinggi - menggunakan konsep 'adjusting information' (SCCT) secara tepat dan menautkan ke empati.",
       summary: "Kontributor yang stabil dengan lensa kemanusiaan dan kredibilitas organisasi. Argumen jelas dan relevan, namun kedalaman tipologi teori dan peran kepemimpinan lebih rendah dibanding peserta teratas."
     },
     indicator_scores: [
@@ -349,7 +349,7 @@ export const mockParticipants: Participant[] = [
         band: "Cukup",
         confidence: "rendah",
         evidence: [
-          { timestamp: "screenshot", quote: "Frame statis tunggal — dinamika gesture tidak teramati." }
+          { timestamp: "screenshot", quote: "Frame statis tunggal - dinamika gesture tidak teramati." }
         ],
         note: "Estimasi confidence rendah; tidak valid untuk dasar keputusan."
       },
@@ -409,7 +409,7 @@ export const mockParticipants: Participant[] = [
     profile: {
       discussion_role: "Pemberi sudut pandang kritis & sistemik",
       communication_style: "Ringkas, tajam, kritis; konsisten mengangkat dimensi yang terlewat rekan (media, regulator, juru bicara).",
-      theoretical_grounding: "Sedang — menerapkan prinsip penyediaan informasi SCCT dan mengkritisi fokus respon yang terlalu sempit.",
+      theoretical_grounding: "Sedang - menerapkan prinsip penyediaan informasi SCCT dan mengkritisi fokus respon yang terlalu sempit.",
       summary: "Suara kritis yang menambah dimensi sistemik diskusi (peran media, regulator, manajemen juru bicara). Kualitas argumen tinggi meski volume bicara paling rendah (13%)."
     },
     indicator_scores: [
@@ -532,7 +532,7 @@ export const mockParticipants: Participant[] = [
     ],
     feedback: {
       strengths: [
-        "Berpikir kritis dan sistemik — mengangkat peran media, regulator, dan manajemen juru bicara.",
+        "Berpikir kritis dan sistemik - mengangkat peran media, regulator, dan manajemen juru bicara.",
         "Kualitas argumen tinggi meski ringkas.",
         "Mampu mengevaluasi kelemahan respon organisasi."
       ],
@@ -559,7 +559,7 @@ export const mockParticipants: Participant[] = [
     profile: {
       discussion_role: "Penyumbang perspektif kepercayaan publik & jangka panjang",
       communication_style: "Sopan, konsisten, berorientasi ke depan; menekankan keberlanjutan komunikasi dan pemulihan reputasi.",
-      theoretical_grounding: "Sedang — kuat pada dinamika kepercayaan publik dan tahap pemulihan, dengan rujukan teori implisit.",
+      theoretical_grounding: "Sedang - kuat pada dinamika kepercayaan publik dan tahap pemulihan, dengan rujukan teori implisit.",
       summary: "Kontributor konsisten dengan lensa kepercayaan publik dan dampak jangka panjang. Menonjol pada pemikiran berorientasi solusi keberlanjutan (komunikasi berkelanjutan, kampanye pemulihan)."
     },
     indicator_scores: [

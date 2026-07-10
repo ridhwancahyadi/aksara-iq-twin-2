@@ -82,7 +82,7 @@ export function Scholarships() {
       category: 'Research Grant',
       provider: 'Government of Canada',
       badgeText: 'RESEARCH CATEGORY',
-      badgeColor: 'bg-blue-50 text-blue-800 border-blue-200',
+      badgeColor: 'bg-blue-50 text-[#732926] border-blue-200',
       matchScore: 92,
       stipend: '$25,000 Grant Support',
       requirements: 'Research Proposal, Master candidate',
@@ -181,7 +181,7 @@ export function Scholarships() {
       title: 'Global Leadership Fellowship 2025',
       provider: 'World Economic Forum & Oxford',
       status: 'Under Review',
-      statusColor: 'bg-blue-100 text-blue-800',
+      statusColor: 'bg-blue-100 text-[#732926]',
       dateApplied: '12 Jan 2026',
       progressPct: 60
     },
@@ -225,7 +225,7 @@ export function Scholarships() {
   const endingSoonList = filteredScholarships.filter(item => item.isEndingSoon);
 
   return (
-    <div className="flex flex-col h-full bg-white text-[#172B4D] overflow-y-auto custom-scrollbar p-1">
+    <div className="flex flex-col h-full bg-white text-[#2b1608] overflow-y-auto custom-scrollbar p-1">
       
       {/* Upper Navigation Row */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 border-b border-slate-100 pb-4">
@@ -240,7 +240,7 @@ export function Scholarships() {
         
         <button 
           onClick={() => setShowProgressView(true)}
-          className="inline-flex items-center gap-1.5 text-xs font-black text-[#0052CC] hover:text-[#0747A6] transition-colors self-start sm:self-auto uppercase tracking-wider cursor-pointer py-1.5"
+          className="inline-flex items-center gap-1.5 text-xs font-black text-[#bf4440] hover:text-[#993633] transition-colors self-start sm:self-auto uppercase tracking-wider cursor-pointer py-1.5"
         >
           View Application Progress <ArrowRight size={14} />
         </button>
@@ -257,7 +257,7 @@ export function Scholarships() {
                 onClick={() => setActiveCategory(cat)}
                 className={`px-4 py-2 text-xs font-bold rounded-full cursor-pointer transition-all ${
                   active 
-                    ? 'bg-[#0052CC] text-white shadow-sm' 
+                    ? 'bg-[#bf4440] text-white shadow-sm' 
                     : 'bg-slate-100 hover:bg-slate-200 text-slate-600'
                 }`}
               >
@@ -269,7 +269,7 @@ export function Scholarships() {
 
         {/* Custom Search Bar with focus state */}
         <div className="relative w-full md:w-72">
-          <div className={`absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none transition-colors ${searchFocused ? 'text-[#0052CC]' : 'text-slate-400'}`}>
+          <div className={`absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none transition-colors ${searchFocused ? 'text-[#bf4440]' : 'text-slate-400'}`}>
             <Search size={14} />
           </div>
           <input
@@ -279,7 +279,7 @@ export function Scholarships() {
             onChange={(e) => setSearchQuery(e.target.value)}
             onFocus={() => setSearchFocused(true)}
             onBlur={() => setSearchFocused(false)}
-            className="w-full pl-9 pr-4 py-2 text-xs font-medium rounded-lg border border-slate-200 bg-white placeholder-slate-400 focus:outline-none focus:border-[#0052CC] focus:ring-1 focus:ring-[#0052CC] transition-all text-slate-900"
+            className="w-full pl-9 pr-4 py-2 text-xs font-medium rounded-lg border border-slate-200 bg-white placeholder-slate-400 focus:outline-none focus:border-[#bf4440] focus:ring-1 focus:ring-[#bf4440] transition-all text-slate-900"
           />
         </div>
       </div>
@@ -293,7 +293,7 @@ export function Scholarships() {
           {/* Section: Recommended For You */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <Sparkles size={16} className="text-[#0052CC]" />
+              <Sparkles size={16} className="text-[#bf4440]" />
               <h3 className="text-sm font-black text-slate-900 uppercase tracking-widest font-display">
                 Recommended For You
               </h3>
@@ -319,12 +319,12 @@ export function Scholarships() {
                           {item.badgeText}
                         </span>
                         <div className="text-right">
-                          <span className="text-lg font-black text-[#0052CC] block leading-none">{item.matchScore}%</span>
+                          <span className="text-lg font-black text-[#bf4440] block leading-none">{item.matchScore}%</span>
                           <span className="text-[8px] font-black text-slate-400 uppercase tracking-tight block mt-0.5">Match</span>
                         </div>
                       </div>
 
-                      <h4 className="text-base font-black text-slate-950 leading-tight tracking-tight hover:text-[#0052CC] transition-colors cursor-pointer" onClick={() => setSelectedScholarship(item)}>
+                      <h4 className="text-base font-black text-slate-950 leading-tight tracking-tight hover:text-[#bf4440] transition-colors cursor-pointer" onClick={() => setSelectedScholarship(item)}>
                         {item.title}
                       </h4>
                       <p className="text-xs font-bold text-slate-500 mt-1 mb-4">{item.provider}</p>
@@ -344,7 +344,7 @@ export function Scholarships() {
                       {/* Badges / Tags */}
                       <div className="flex flex-wrap gap-1.5 mb-5">
                         {item.tags.map(tag => (
-                          <span key={tag} className="bg-blue-50/50 text-blue-700 text-[10px] font-bold px-2 py-0.5 rounded-sm border border-blue-100">
+                          <span key={tag} className="bg-blue-50/50 text-[#993633] text-[10px] font-bold px-2 py-0.5 rounded-sm border border-blue-100">
                             {tag}
                           </span>
                         ))}
@@ -358,7 +358,7 @@ export function Scholarships() {
                       </div>
                       <button 
                         onClick={() => setSelectedScholarship(item)}
-                        className="inline-flex items-center gap-1 text-[11px] font-bold text-[#0052CC] hover:underline cursor-pointer"
+                        className="inline-flex items-center gap-1 text-[11px] font-bold text-[#bf4440] hover:underline cursor-pointer"
                       >
                         See Details <ExternalLink size={11} />
                       </button>
@@ -409,12 +409,12 @@ export function Scholarships() {
 
                     <div className="flex md:flex-col items-center md:items-end justify-between md:justify-center gap-2 border-t md:border-t-0 border-slate-100 pt-3 md:pt-0 shrink-0">
                       <div className="text-right">
-                        <span className="text-xs font-bold text-slate-500">Match score: <span className="text-[#0052CC] font-black">{item.matchScore}%</span></span>
+                        <span className="text-xs font-bold text-slate-500">Match score: <span className="text-[#bf4440] font-black">{item.matchScore}%</span></span>
                         <div className="text-[10px] text-slate-400 font-medium">Deadline: {item.deadline}</div>
                       </div>
                       <button 
                         onClick={() => setSelectedScholarship(item)}
-                        className="px-4 py-1.5 bg-[#0052CC] hover:bg-[#0747A6] text-white text-xs font-black uppercase rounded-sm transition-colors cursor-pointer"
+                        className="px-4 py-1.5 bg-[#bf4440] hover:bg-[#993633] text-white text-xs font-black uppercase rounded-sm transition-colors cursor-pointer"
                       >
                         Detail
                       </button>
@@ -451,7 +451,7 @@ export function Scholarships() {
                     style={{ boxShadow: '0 1px 1px rgba(9,30,66,0.15), 0 0 0 1px rgba(9,30,66,0.05)' }}
                   >
                     <div className="flex gap-3.5">
-                      <div className="w-10 h-10 rounded bg-blue-50/80 flex items-center justify-center text-[#0052CC] shrink-0 border border-blue-100">
+                      <div className="w-10 h-10 rounded bg-blue-50/80 flex items-center justify-center text-[#bf4440] shrink-0 border border-blue-100">
                         {item.title.includes('Foundation') ? <Building size={18} /> : <Users size={18} />}
                       </div>
                       <div className="flex-1 min-w-0">
@@ -476,7 +476,7 @@ export function Scholarships() {
                             className={`px-3 py-1.5 rounded-sm text-[10px] font-black uppercase tracking-wider transition-all cursor-pointer ${
                               appliedIds.includes(item.id)
                                 ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
-                                : 'bg-[#0052CC] hover:bg-[#0747A6] text-white'
+                                : 'bg-[#bf4440] hover:bg-[#993633] text-white'
                             }`}
                           >
                             {appliedIds.includes(item.id) ? 'Applied ✓' : 'Apply Now'}
@@ -554,7 +554,7 @@ export function Scholarships() {
 
                 {/* Body Content */}
                 <div className="flex-1 overflow-y-auto custom-scrollbar p-5 space-y-5">
-                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 text-xs text-[#0052CC] font-semibold leading-relaxed">
+                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 text-xs text-[#bf4440] font-semibold leading-relaxed">
                     Once submitted, our AI Academic Hub monitors target portal gateways and automatically syncs transcript updates back into your Student Profile.
                   </div>
 
@@ -579,7 +579,7 @@ export function Scholarships() {
                           </div>
                           <div className="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden">
                             <div 
-                              className="h-full bg-[#0052CC] rounded-full transition-all duration-500" 
+                              className="h-full bg-[#bf4440] rounded-full transition-all duration-500" 
                               style={{ width: `${app.progressPct}%` }}
                             />
                           </div>
@@ -630,7 +630,7 @@ export function Scholarships() {
                 {/* Footer panel */}
                 <div className="p-5 border-t border-slate-200 bg-slate-50 text-center">
                   <p className="text-[11px] text-slate-500 font-semibold mb-1">Need help with recommendations?</p>
-                  <button className="text-xs font-black text-[#0052CC] hover:underline cursor-pointer">
+                  <button className="text-xs font-black text-[#bf4440] hover:underline cursor-pointer">
                     Contact Academic Advisor
                   </button>
                 </div>
@@ -669,7 +669,7 @@ export function Scholarships() {
                   <h3 className="text-lg font-black text-slate-950 leading-tight">
                     {selectedScholarship.title}
                   </h3>
-                  <p className="text-xs font-bold text-[#0052CC] mt-1">{selectedScholarship.provider}</p>
+                  <p className="text-xs font-bold text-[#bf4440] mt-1">{selectedScholarship.provider}</p>
                 </div>
                 <button 
                   onClick={() => setSelectedScholarship(null)}
@@ -715,11 +715,11 @@ export function Scholarships() {
                     <span className="text-[8px] font-black text-slate-400 uppercase tracking-wider block">
                       AI Twin Compatibility Rating
                     </span>
-                    <span className="text-sm font-black text-[#0052CC]">
+                    <span className="text-sm font-black text-[#bf4440]">
                       {selectedScholarship.matchScore}% DNA Match Correlation
                     </span>
                   </div>
-                  <TrendingUp size={20} className="text-[#0052CC]" />
+                  <TrendingUp size={20} className="text-[#bf4440]" />
                 </div>
 
                 <div className="flex justify-between text-xs text-slate-500 pt-2 font-bold uppercase tracking-wide">
@@ -745,7 +745,7 @@ export function Scholarships() {
                   className={`px-5 py-2 rounded text-xs font-black uppercase tracking-wider transition-all cursor-pointer ${
                     appliedIds.includes(selectedScholarship.id)
                       ? 'bg-emerald-500 text-white cursor-default'
-                      : 'bg-[#0052CC] hover:bg-[#0747A6] text-white shadow-sm'
+                      : 'bg-[#bf4440] hover:bg-[#993633] text-white shadow-sm'
                   }`}
                 >
                   {appliedIds.includes(selectedScholarship.id) ? 'Applied ✓' : 'Submit Application'}

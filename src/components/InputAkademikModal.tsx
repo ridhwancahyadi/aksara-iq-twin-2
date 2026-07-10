@@ -236,7 +236,7 @@ export const InputAkademikModal: React.FC<InputAkademikModalProps> = ({
           {/* Header */}
           <div className="flex justify-between items-center px-8 py-4 border-b border-slate-100 bg-slate-50/50">
             <div className="space-y-1">
-              <span className="text-[10px] uppercase font-black text-blue-600 tracking-wider">AKSARA IQ • Portal Akademik &amp; Nilai</span>
+              <span className="text-[10px] uppercase font-black text-[#bf4440] tracking-wider">AKSARA IQ • Portal Akademik &amp; Nilai</span>
               <h2 className="text-base font-black text-slate-900 tracking-tight flex items-center gap-2">
                 {pathway === 'selection' && 'Entri & Import Nilai / Presensi'}
                 {pathway === 'manual' && 'Form Manual Rekapitulasi Nilai'}
@@ -253,7 +253,7 @@ export const InputAkademikModal: React.FC<InputAkademikModalProps> = ({
                   onClick={() => setPathway('manual')}
                   className={`py-2 px-3 rounded-xl text-[10px] font-black uppercase tracking-wider transition-all duration-200 flex items-center justify-center gap-1.5 ${
                     pathway === 'manual'
-                      ? 'bg-white text-blue-600 shadow-sm border border-slate-200/30'
+                      ? 'bg-white text-[#bf4440] shadow-sm border border-slate-200/30'
                       : 'text-slate-500 hover:text-slate-700'
                   }`}
                 >
@@ -265,7 +265,7 @@ export const InputAkademikModal: React.FC<InputAkademikModalProps> = ({
                   onClick={() => setPathway('upload')}
                   className={`py-2 px-3 rounded-xl text-[10px] font-black uppercase tracking-wider transition-all duration-200 flex items-center justify-center gap-1.5 ${
                     pathway === 'upload'
-                      ? 'bg-white text-blue-600 shadow-sm border border-slate-200/30'
+                      ? 'bg-white text-[#bf4440] shadow-sm border border-slate-200/30'
                       : 'text-slate-500 hover:text-slate-700'
                   }`}
                 >
@@ -277,7 +277,7 @@ export const InputAkademikModal: React.FC<InputAkademikModalProps> = ({
                   onClick={() => setPathway('ocr')}
                   className={`py-2 px-3 rounded-xl text-[10px] font-black uppercase tracking-wider transition-all duration-200 flex items-center justify-center gap-1.5 ${
                     pathway === 'ocr'
-                      ? 'bg-white text-blue-600 shadow-sm border border-slate-200/30'
+                      ? 'bg-white text-[#bf4440] shadow-sm border border-slate-200/30'
                       : 'text-slate-500 hover:text-slate-700'
                   }`}
                 >
@@ -301,8 +301,8 @@ export const InputAkademikModal: React.FC<InputAkademikModalProps> = ({
             {/* --- 2. PATHWAY A: MANUAL FORM --- */}
             {pathway === 'manual' && (
               <div className="space-y-6 max-w-2xl mx-auto py-2">
-                <div className="bg-blue-50/50 border border-blue-100 p-4 rounded-2xl flex items-start gap-3 text-xs text-blue-800 leading-normal mb-2">
-                  <Info size={16} className="text-blue-600 shrink-0 mt-0.5" />
+                <div className="bg-blue-50/50 border border-blue-100 p-4 rounded-2xl flex items-start gap-3 text-xs text-[#732926] leading-normal mb-2">
+                  <Info size={16} className="text-[#bf4440] shrink-0 mt-0.5" />
                   <div>
                     <span className="font-extrabold block">Pencatatan Akademik &amp; Kemajuan:</span> Setiap penambahan nilai akademik atau aktivitas mahasiswa akan di-parsing oleh downstream Intelligent Profiling untuk memperbarui peta potensi bakat.
                   </div>
@@ -312,7 +312,7 @@ export const InputAkademikModal: React.FC<InputAkademikModalProps> = ({
                 <div className="flex items-center justify-between max-w-lg mx-auto mb-8 relative">
                   <div className="absolute left-0 right-0 top-1/2 h-0.5 bg-slate-100 -translate-y-1/2 z-0" />
                   <div 
-                    className="absolute left-0 top-1/2 h-0.5 bg-blue-600 -translate-y-1/2 z-0 transition-all duration-300" 
+                    className="absolute left-0 top-1/2 h-0.5 bg-[#bf4440] -translate-y-1/2 z-0 transition-all duration-300" 
                     style={{ width: activeManualStep === 1 ? '0%' : activeManualStep === 2 ? '50%' : '100%' }} 
                   />
                   
@@ -326,12 +326,12 @@ export const InputAkademikModal: React.FC<InputAkademikModalProps> = ({
                     return (
                       <div key={idx} className="flex flex-col items-center z-10">
                         <div className={`w-9 h-9 rounded-full flex items-center justify-center transition-all border-2 text-xs font-black ${
-                          isCompleted ? 'bg-blue-600 border-blue-600 text-white' : 
-                          isActive ? 'bg-white border-blue-600 text-blue-600 shadow-md' : 'bg-white border-slate-200 text-slate-400'
+                          isCompleted ? 'bg-[#bf4440] border-[#bf4440] text-white' : 
+                          isActive ? 'bg-white border-[#bf4440] text-[#bf4440] shadow-md' : 'bg-white border-slate-200 text-slate-400'
                         }`}>
                           {isCompleted ? <Check size={14} /> : s.step}
                         </div>
-                        <span className={`text-[9px] font-black uppercase tracking-wider mt-2 bg-white px-1.5 ${isActive ? 'text-blue-600' : 'text-slate-400'}`}>{s.label}</span>
+                        <span className={`text-[9px] font-black uppercase tracking-wider mt-2 bg-white px-1.5 ${isActive ? 'text-[#bf4440]' : 'text-slate-400'}`}>{s.label}</span>
                       </div>
                     );
                   })}
@@ -352,7 +352,7 @@ export const InputAkademikModal: React.FC<InputAkademikModalProps> = ({
                           value={newGrade.nim}
                           onChange={e => setNewGrade({ ...newGrade, nim: e.target.value })}
                           placeholder="Contoh: 210110210043"
-                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-blue-500 focus:bg-white"
+                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-[#bf4440] focus:bg-white"
                         />
                         {errors.nim && <span className="text-[10px] font-bold text-rose-500 block">{errors.nim}</span>}
                       </div>
@@ -364,7 +364,7 @@ export const InputAkademikModal: React.FC<InputAkademikModalProps> = ({
                           value={newGrade.studentName}
                           onChange={e => setNewGrade({ ...newGrade, studentName: e.target.value })}
                           placeholder="Contoh: Andi Hermawan"
-                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-blue-500 focus:bg-white"
+                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-[#bf4440] focus:bg-white"
                         />
                         {errors.studentName && <span className="text-[10px] font-bold text-rose-500 block">{errors.studentName}</span>}
                       </div>
@@ -374,7 +374,7 @@ export const InputAkademikModal: React.FC<InputAkademikModalProps> = ({
                         <select
                           value={newGrade.semester}
                           onChange={e => setNewGrade({ ...newGrade, semester: Number(e.target.value) })}
-                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-blue-500 focus:bg-white"
+                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-[#bf4440] focus:bg-white"
                         >
                           {[1, 2, 3, 4, 5, 6, 7, 8].map(s => (
                             <option key={s} value={s}>Semester {s}</option>
@@ -392,7 +392,7 @@ export const InputAkademikModal: React.FC<InputAkademikModalProps> = ({
                             courseName: e.target.value === 'KOM101' ? 'Pengantar Ilmu Komunikasi' : 
                                         e.target.value === 'KOM201' ? 'Jurnalisme Digital Dasar' : 'Riset Jurnalistik Data'
                           })}
-                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-blue-500 focus:bg-white"
+                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-[#bf4440] focus:bg-white"
                         >
                           <option value="KOM101">KOM101 - Pengantar Ilmu Komunikasi</option>
                           <option value="KOM201">KOM201 - Jurnalisme Digital Dasar</option>
@@ -417,7 +417,7 @@ export const InputAkademikModal: React.FC<InputAkademikModalProps> = ({
                           max={100}
                           value={newGrade.uts}
                           onChange={e => setNewGrade({ ...newGrade, uts: Number(e.target.value) })}
-                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-blue-500 focus:bg-white"
+                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-[#bf4440] focus:bg-white"
                         />
                         {errors.uts && <span className="text-[10px] font-bold text-rose-500 block">{errors.uts}</span>}
                       </div>
@@ -430,7 +430,7 @@ export const InputAkademikModal: React.FC<InputAkademikModalProps> = ({
                           max={100}
                           value={newGrade.uas}
                           onChange={e => setNewGrade({ ...newGrade, uas: Number(e.target.value) })}
-                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-blue-500 focus:bg-white"
+                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-[#bf4440] focus:bg-white"
                         />
                         {errors.uas && <span className="text-[10px] font-bold text-rose-500 block">{errors.uas}</span>}
                       </div>
@@ -443,7 +443,7 @@ export const InputAkademikModal: React.FC<InputAkademikModalProps> = ({
                           max={100}
                           value={newGrade.tugas}
                           onChange={e => setNewGrade({ ...newGrade, tugas: Number(e.target.value) })}
-                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-blue-500 focus:bg-white"
+                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-[#bf4440] focus:bg-white"
                         />
                         {errors.tugas && <span className="text-[10px] font-bold text-rose-500 block">{errors.tugas}</span>}
                       </div>
@@ -456,7 +456,7 @@ export const InputAkademikModal: React.FC<InputAkademikModalProps> = ({
                           max={100}
                           value={newGrade.kehadiran}
                           onChange={e => setNewGrade({ ...newGrade, kehadiran: Number(e.target.value) })}
-                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-blue-500 focus:bg-white"
+                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-[#bf4440] focus:bg-white"
                         />
                         {errors.kehadiran && <span className="text-[10px] font-bold text-rose-500 block">{errors.kehadiran}</span>}
                       </div>
@@ -466,7 +466,7 @@ export const InputAkademikModal: React.FC<InputAkademikModalProps> = ({
                         <select
                           value={newGrade.keaktifan}
                           onChange={e => setNewGrade({ ...newGrade, keaktifan: e.target.value })}
-                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-blue-500 focus:bg-white"
+                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-[#bf4440] focus:bg-white"
                         >
                           <option value="Sangat Aktif">Sangat Aktif (Inisiatif diskusi tinggi, kritis)</option>
                           <option value="Aktif">Aktif (Sering bertanya/menjawab)</option>
@@ -489,7 +489,7 @@ export const InputAkademikModal: React.FC<InputAkademikModalProps> = ({
                           <select
                             value={newGrade.activityType}
                             onChange={e => setNewGrade({ ...newGrade, activityType: e.target.value })}
-                            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-blue-500 focus:bg-white"
+                            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-[#bf4440] focus:bg-white"
                           >
                             <option value="Tidak Ada">Tidak Ada</option>
                             <option value="Magang MBKM">Magang MBKM (Industri)</option>
@@ -507,7 +507,7 @@ export const InputAkademikModal: React.FC<InputAkademikModalProps> = ({
                             max={20}
                             value={newGrade.conversionSks}
                             onChange={e => setNewGrade({ ...newGrade, conversionSks: Number(e.target.value) })}
-                            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-blue-500 focus:bg-white"
+                            className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-[#bf4440] focus:bg-white"
                           />
                         </div>
                       </div>
@@ -519,7 +519,7 @@ export const InputAkademikModal: React.FC<InputAkademikModalProps> = ({
                           value={newGrade.activityName}
                           onChange={e => setNewGrade({ ...newGrade, activityName: e.target.value })}
                           placeholder="Contoh: Magang UI/UX Designer di PT GoTo Gojek Tokopedia"
-                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-blue-500 focus:bg-white"
+                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-[#bf4440] focus:bg-white"
                         />
                       </div>
 
@@ -530,7 +530,7 @@ export const InputAkademikModal: React.FC<InputAkademikModalProps> = ({
                           value={newGrade.waliNote}
                           onChange={e => setNewGrade({ ...newGrade, waliNote: e.target.value })}
                           placeholder="Berikan masukan kualitatif mengenai perkembangan kompetensi mahasiswa..."
-                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-blue-500 focus:bg-white"
+                          className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:border-[#bf4440] focus:bg-white"
                         />
                       </div>
                     </motion.div>
@@ -560,14 +560,14 @@ export const InputAkademikModal: React.FC<InputAkademikModalProps> = ({
                             setActiveManualStep(prev => prev + 1);
                           }
                         }}
-                        className="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-black uppercase tracking-wider rounded-xl shadow-md transition-all cursor-pointer flex items-center gap-1.5"
+                        className="px-6 py-2.5 bg-[#bf4440] hover:bg-[#993633] text-white text-xs font-black uppercase tracking-wider rounded-xl shadow-md transition-all cursor-pointer flex items-center gap-1.5"
                       >
                         Lanjut <ChevronRight size={14} />
                       </button>
                     ) : (
                       <button 
                         type="submit" 
-                        className="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-black uppercase tracking-wider rounded-xl shadow-md transition-all cursor-pointer"
+                        className="px-6 py-2.5 bg-[#bf4440] hover:bg-[#993633] text-white text-xs font-black uppercase tracking-wider rounded-xl shadow-md transition-all cursor-pointer"
                       >
                         Simpan Rekap Nilai
                       </button>

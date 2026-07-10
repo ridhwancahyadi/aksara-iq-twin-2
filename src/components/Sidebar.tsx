@@ -124,11 +124,11 @@ export function Sidebar({
     ] as const;
 
     return (
-      <div className={`bg-white h-screen py-5 flex flex-col border-r border-slate-200 shrink-0 overflow-hidden transition-all duration-300 ${isCollapsed ? 'w-20 px-3' : 'w-64 px-4'}`}>
+      <div className={`bg-white dark:bg-card h-screen py-5 flex flex-col border-r border-slate-200 shrink-0 overflow-hidden transition-all duration-300 ${isCollapsed ? 'w-20 px-3' : 'w-64 px-4'}`}>
         {/* Platform Logo */}
         <div className={`flex ${isCollapsed ? 'flex-col gap-3 items-center' : 'items-center justify-between'} mb-5 shrink-0`}>
           <div className="flex items-center gap-3 px-1">
-            <div className="w-10 h-10 bg-gradient-to-tr from-rose-600 to-amber-600 rounded-xl flex items-center justify-center text-white font-black text-lg shadow-lg font-mono shrink-0">
+            <div className="w-10 h-10 bg-gradient-to-tr from-[#bf4440] to-[#732926] rounded-xl flex items-center justify-center text-white font-black text-lg shadow-sm font-mono shrink-0">
               AD
             </div>
             {!isCollapsed && (
@@ -175,7 +175,7 @@ export function Sidebar({
                         isCollapsed ? 'justify-center py-2.5 rounded-xl px-0' : 'gap-3 px-3 py-2 rounded-xl'
                       } ${
                         active 
-                          ? 'bg-[#0052CC] text-white font-black shadow-md shadow-blue-500/10' 
+                          ? 'bg-[#bf4440] text-white font-black shadow-md shadow-blue-500/10' 
                           : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900 font-bold'
                       } text-xs`}
                     >
@@ -205,7 +205,7 @@ export function Sidebar({
               isCollapsed ? 'justify-center py-2.5 rounded-xl px-0' : 'gap-3 px-3 py-2 rounded-xl'
             } ${
               currentView === 'settings' 
-                ? 'bg-[#0052CC] text-white font-black shadow-md' 
+                ? 'bg-[#bf4440] text-white font-black shadow-md' 
                 : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900 font-bold'
             } text-xs`}
           >
@@ -275,11 +275,11 @@ export function Sidebar({
     ] as const;
 
     return (
-      <div className={`bg-white h-screen py-6 flex flex-col border-r border-slate-200 shrink-0 transition-all duration-300 ${isCollapsed ? 'w-20 px-3' : 'w-64 px-4'}`}>
+      <div className={`bg-white dark:bg-card h-screen py-6 flex flex-col border-r border-slate-200 shrink-0 transition-all duration-300 ${isCollapsed ? 'w-20 px-3' : 'w-64 px-4'}`}>
         {/* Platform Logo */}
         <div className={`flex ${isCollapsed ? 'flex-col gap-3 items-center' : 'items-center justify-between'} mb-8 shrink-0`}>
           <div className="flex items-center gap-3 px-1">
-            <div className="w-10 h-10 bg-[#0052CC] rounded-xl flex items-center justify-center text-white font-black text-lg shadow-lg shadow-blue-500/20 font-mono shrink-0">
+            <div className="w-10 h-10 bg-[#bf4440] rounded-xl flex items-center justify-center text-white font-black text-lg shadow-sm font-mono shrink-0">
               A
             </div>
             {!isCollapsed && (
@@ -339,7 +339,7 @@ export function Sidebar({
                           isCollapsed ? 'justify-center py-2.5 rounded-xl px-0' : 'gap-3 px-3 py-2 rounded-xl'
                         } ${
                           active && !hasSubItems
-                            ? 'bg-[#0052CC] text-white font-black shadow-md shadow-blue-500/10' 
+                            ? 'bg-[#bf4440] text-white font-black shadow-md shadow-blue-500/10' 
                             : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900 font-bold'
                         } text-xs`}
                       >
@@ -358,7 +358,7 @@ export function Sidebar({
                       </button>
                       
                       {!isCollapsed && hasSubItems && isExpanded && (
-                        <div className="mt-1 ml-6 pl-2.5 border-l-2 border-slate-100 space-y-1">
+                        <div className="mt-1 ml-6 pl-2.5 space-y-1">
                           {item.subItems?.map(sub => {
                             const subActive = currentView === sub.id;
                             return (
@@ -367,7 +367,7 @@ export function Sidebar({
                                 onClick={() => setView(sub.id as any)}
                                 className={`w-full text-left px-3 py-2 rounded-lg text-[11px] font-bold transition-all ${
                                   subActive 
-                                    ? 'bg-blue-50 text-blue-700' 
+                                    ? 'bg-blue-50 text-[#993633]' 
                                     : 'text-slate-500 hover:text-slate-800 hover:bg-slate-100'
                                 }`}
                               >
@@ -443,11 +443,11 @@ export function Sidebar({
   ] as const;
 
   return (
-    <div className={`bg-white h-screen py-5 flex flex-col border-r border-slate-200 shrink-0 overflow-hidden transition-all duration-300 ${isCollapsed ? 'w-20 px-3' : 'w-64 px-4'}`}>
+    <div className={`bg-white dark:bg-card h-screen py-5 flex flex-col border-r border-slate-200 shrink-0 overflow-hidden transition-all duration-300 ${isCollapsed ? 'w-20 px-3' : 'w-64 px-4'}`}>
       {/* Platform Logo */}
       <div className={`flex ${isCollapsed ? 'flex-col gap-3 items-center' : 'items-center justify-between'} mb-5 shrink-0`}>
         <div className="flex items-center gap-3 px-1">
-          <div className="w-10 h-10 bg-gradient-to-tr from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center text-white font-black text-lg shadow-lg font-mono shrink-0">
+          <div className="w-10 h-10 bg-gradient-to-tr from-[#bf4440] to-[#993633] rounded-xl flex items-center justify-center text-white font-black text-lg shadow-sm font-mono shrink-0">
             IQ
           </div>
           {!isCollapsed && (
@@ -494,7 +494,7 @@ export function Sidebar({
                       isCollapsed ? 'justify-center py-2.5 rounded-xl px-0' : 'gap-3 px-3 py-2 rounded-xl'
                     } ${
                       active 
-                        ? 'bg-[#0052CC] text-white font-black shadow-md shadow-blue-500/10' 
+                        ? 'bg-[#bf4440] text-white font-black shadow-md shadow-blue-500/10' 
                         : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900 font-bold'
                     } text-xs`}
                   >
@@ -524,7 +524,7 @@ export function Sidebar({
             isCollapsed ? 'justify-center py-2.5 rounded-xl px-0' : 'gap-3 px-3 py-2 rounded-xl'
           } ${
             currentView === 'settings' 
-              ? 'bg-[#0052CC] text-white font-black shadow-md' 
+              ? 'bg-[#bf4440] text-white font-black shadow-md' 
               : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900 font-bold'
           } text-xs`}
         >

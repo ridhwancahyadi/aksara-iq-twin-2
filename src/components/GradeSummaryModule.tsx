@@ -89,7 +89,7 @@ export function GradeSummaryModule() {
               <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest font-mono">Total Mahasiswa</p>
               <p className="text-2xl font-black text-slate-900 mt-1">{allStudents.length}</p>
             </div>
-            <div className="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center">
+            <div className="w-10 h-10 rounded-full bg-blue-100 text-[#bf4440] flex items-center justify-center">
               <TrendingUp size={20} />
             </div>
           </div>
@@ -141,7 +141,7 @@ export function GradeSummaryModule() {
                 placeholder="Cari nama, NIM, atau kelas..." 
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-8 pr-4 py-1.5 border border-slate-200 rounded-xl text-xs font-bold w-64 focus:outline-none focus:ring-1 focus:ring-blue-500 bg-slate-50/50"
+                className="pl-8 pr-4 py-1.5 border border-slate-200 rounded-xl text-xs font-bold w-64 focus:outline-none focus:ring-1 focus:ring-[#bf4440]/20 bg-slate-50/50"
               />
             </div>
             <button className="text-xs border border-slate-200 hover:bg-slate-50 font-black uppercase tracking-wider py-2 px-3.5 rounded-xl transition-colors flex items-center gap-2">
@@ -169,7 +169,7 @@ export function GradeSummaryModule() {
               {filteredStudents.map((student, idx) => (
                 <tr key={`${student.className}-${student.nim}-${idx}`} className="hover:bg-slate-50/50 transition-all">
                   <td className="py-4 px-6">
-                    <span className="text-[10px] font-black bg-blue-50 text-blue-600 px-2.5 py-1 rounded-full uppercase tracking-wider font-mono">
+                    <span className="text-[10px] font-black bg-blue-50 text-[#bf4440] px-2.5 py-1 rounded-full uppercase tracking-wider font-mono">
                       {student.className}
                     </span>
                   </td>
@@ -179,13 +179,13 @@ export function GradeSummaryModule() {
                   <td className="py-4 px-6 text-slate-400 font-mono font-bold">{student.nim}</td>
                   
                   <td className="py-4 px-6 text-center font-mono text-slate-800">
-                    {student.uts ?? '—'}
+                    {student.uts ?? ' - '}
                   </td>
                   <td className="py-4 px-6 text-center font-mono text-slate-800">
-                    {student.uas ?? '—'}
+                    {student.uas ?? ' - '}
                   </td>
                   <td className="py-4 px-6 text-center font-mono text-slate-800">
-                    {student.tugas ?? '—'}
+                    {student.tugas ?? ' - '}
                   </td>
                   <td className="py-4 px-6 text-center font-mono text-slate-800">
                     {student.hadir}%

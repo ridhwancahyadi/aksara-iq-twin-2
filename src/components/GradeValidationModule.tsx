@@ -783,7 +783,7 @@ export function GradeValidationModule({ selectedClass, setSelectedClass, setView
           >
             <div className="max-w-md w-full px-6 text-center space-y-6">
               <div className="relative inline-flex">
-                <div className="w-16 h-16 rounded-full border-4 border-blue-500/20 border-t-blue-500 animate-spin" />
+                <div className="w-16 h-16 rounded-full border-4 border-[#bf4440]/20 border-t-blue-500 animate-spin" />
                 <Sparkles className="absolute inset-0 m-auto text-blue-400 animate-pulse" size={24} />
               </div>
 
@@ -807,7 +807,7 @@ export function GradeValidationModule({ selectedClass, setSelectedClass, setView
       <div className="bg-white border border-slate-200 rounded-[32px] p-6 shadow-sm space-y-5">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
           <div className="space-y-1">
-            <span className="text-[10px] font-black text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full uppercase tracking-wider font-mono">
+            <span className="text-[10px] font-black text-[#bf4440] bg-blue-50 px-2.5 py-1 rounded-full uppercase tracking-wider font-mono">
               {selectedClass} • Semester Ganjil 2026/27
             </span>
             <h2 className="text-xl font-black text-slate-900 tracking-tight">KOM301 · Jurnalisme Digital · Kelas A</h2>
@@ -824,7 +824,7 @@ export function GradeValidationModule({ selectedClass, setSelectedClass, setView
             </button>
             <button
               onClick={() => setActivePathwayModal(true)}
-              className="bg-blue-600 hover:bg-blue-700 text-white font-black text-xs uppercase tracking-wider py-2.5 px-5 rounded-xl shadow-md shadow-blue-100 transition-all flex items-center gap-2 cursor-pointer"
+              className="bg-[#bf4440] hover:bg-[#993633] text-white font-black text-xs uppercase tracking-wider py-2.5 px-5 rounded-xl shadow-md shadow-blue-100 transition-all flex items-center gap-2 cursor-pointer"
             >
               <Plus size={16} /> Input / Upload Nilai
             </button>
@@ -867,7 +867,7 @@ export function GradeValidationModule({ selectedClass, setSelectedClass, setView
                     <span className="text-slate-800">{pct}%</span>
                   </div>
                   <div className="w-full bg-slate-200/60 h-1.5 rounded-full overflow-hidden">
-                    <div className={`h-full rounded-full transition-all duration-300 ${remaining !== null && remaining > 0 ? 'bg-amber-500' : 'bg-blue-600'}`} style={{ width: `${pct}%` }} />
+                    <div className={`h-full rounded-full transition-all duration-300 ${remaining !== null && remaining > 0 ? 'bg-amber-500' : 'bg-[#bf4440]'}`} style={{ width: `${pct}%` }} />
                   </div>
                 </div>
 
@@ -888,7 +888,7 @@ export function GradeValidationModule({ selectedClass, setSelectedClass, setView
         <div className="p-5 border-b border-slate-100 flex flex-col sm:flex-row justify-between sm:items-center gap-3">
           <div className="flex items-center gap-2">
             <h3 className="text-sm font-black text-slate-900 tracking-tight">Lembar Nilai Kelas</h3>
-            <span className="text-[10px] font-mono font-black text-blue-600 bg-blue-50 px-2 py-0.5 rounded">Aktivitas Baru</span>
+            <span className="text-[10px] font-mono font-black text-[#bf4440] bg-blue-50 px-2 py-0.5 rounded">Aktivitas Baru</span>
           </div>
           
           <div className="flex items-center gap-2">
@@ -897,7 +897,7 @@ export function GradeValidationModule({ selectedClass, setSelectedClass, setView
               <input 
                 type="text" 
                 placeholder="Cari NIM atau Nama..." 
-                className="pl-8 pr-4 py-1.5 border border-slate-200 rounded-xl text-xs font-bold w-48 focus:outline-none focus:ring-1 focus:ring-blue-500 bg-slate-50/50"
+                className="pl-8 pr-4 py-1.5 border border-slate-200 rounded-xl text-xs font-bold w-48 focus:outline-none focus:ring-1 focus:ring-[#bf4440]/20 bg-slate-50/50"
               />
             </div>
             <button className="text-xs border border-slate-200 hover:bg-slate-50 font-black uppercase tracking-wider py-2 px-3.5 rounded-xl transition-colors flex items-center gap-2">
@@ -953,18 +953,18 @@ export function GradeValidationModule({ selectedClass, setSelectedClass, setView
                             ? 'bg-rose-100 text-rose-700 border border-rose-200' 
                             : 'text-slate-800'
                       }`}>
-                        {student.uts ?? '—'}
+                        {student.uts ?? ' - '}
                       </span>
                     </td>
 
                     {/* UAS CELL */}
                     <td className="py-4 px-6 text-center font-mono text-slate-400 italic">
-                      {student.uas ?? '—'}
+                      {student.uas ?? ' - '}
                     </td>
 
                     {/* Tugas CELL */}
                     <td className="py-4 px-6 text-center font-mono text-slate-800">
-                      {student.tugas ?? '—'}
+                      {student.tugas ?? ' - '}
                     </td>
 
                     {/* Kehadiran CELL */}
@@ -997,7 +997,7 @@ export function GradeValidationModule({ selectedClass, setSelectedClass, setView
                       <div className="flex items-center justify-end gap-1.5">
                         <span>{student.cplBaseline}%</span>
                         <div className="w-1.5 h-1.5 rounded-full" style={{
-                          backgroundColor: student.cplBaseline >= 80 ? '#10b981' : student.cplBaseline >= 60 ? '#3b82f6' : '#f43f5e'
+                          backgroundColor: student.cplBaseline >= 80 ? '#5c90a3' : student.cplBaseline >= 60 ? '#bf4440' : '#f43f5e'
                         }} />
                       </div>
                     </td>
@@ -1064,7 +1064,7 @@ export function GradeValidationModule({ selectedClass, setSelectedClass, setView
             >
               <div className="flex justify-between items-start">
                 <div className="space-y-1">
-                  <h3 className="text-lg font-black text-slate-900 tracking-tight">Input Nilai — {selectedClass} Kelas A</h3>
+                  <h3 className="text-lg font-black text-slate-900 tracking-tight">Input Nilai - {selectedClass} Kelas A</h3>
                   <p className="text-xs text-slate-500 font-medium">Pilih komponen akademik dan media yang ingin Anda isi nilainya.</p>
                 </div>
                 <button 
@@ -1085,7 +1085,7 @@ export function GradeValidationModule({ selectedClass, setSelectedClass, setView
                       onClick={() => setSelectedComponent(comp as any)}
                       className={`text-xs font-black px-4 py-2.5 rounded-xl transition-all cursor-pointer border ${
                         selectedComponent === comp 
-                          ? 'bg-blue-600 text-white border-blue-600 shadow-sm shadow-blue-100' 
+                          ? 'bg-[#bf4440] text-white border-[#bf4440] shadow-sm shadow-blue-100' 
                           : 'bg-white border-slate-200 hover:border-slate-300 text-slate-600'
                       }`}
                     >
@@ -1102,7 +1102,7 @@ export function GradeValidationModule({ selectedClass, setSelectedClass, setView
                   {/* Pathway 1: Manual */}
                   <div className="border border-slate-200 shadow-sm p-5 rounded-[24px] flex flex-col justify-between gap-4 hover:border-slate-300 transition-colors bg-slate-50/50">
                     <div className="space-y-1">
-                      <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600">
+                      <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center text-[#bf4440]">
                         <Table size={20} />
                       </div>
                       <h4 className="text-xs font-black text-slate-900 pt-1.5 uppercase tracking-wide">Input Manual</h4>
@@ -1155,7 +1155,7 @@ export function GradeValidationModule({ selectedClass, setSelectedClass, setView
               <div className="bg-slate-50 border border-slate-200 shadow-sm p-4 rounded-2xl flex items-start gap-3">
                 <Sparkles className="text-blue-500 mt-0.5 shrink-0" size={16} />
                 <p className="text-[11px] leading-relaxed text-slate-600 font-medium">
-                  Semua nilai yang diinputkan akan divalidasi oleh <span className="font-extrabold text-blue-600 font-mono">Aksara Grade Agent</span> secara multi-dimensi (format check, transposition detection, dan CPL consistency check) sebelum final.
+                  Semua nilai yang diinputkan akan divalidasi oleh <span className="font-extrabold text-[#bf4440] font-mono">Aksara Grade Agent</span> secara multi-dimensi (format check, transposition detection, dan CPL consistency check) sebelum final.
                 </p>
               </div>
             </motion.div>
@@ -1181,12 +1181,12 @@ export function GradeValidationModule({ selectedClass, setSelectedClass, setView
               {/* Header */}
               <div className="flex justify-between items-center border-b border-slate-100 pb-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600">
+                  <div className="w-9 h-9 bg-blue-50 rounded-xl flex items-center justify-center text-[#bf4440]">
                     {selectedPathway === 'manual' ? <Table size={18} /> : selectedPathway === 'upload' ? <Upload size={18} /> : <Camera size={18} />}
                   </div>
                   <div>
                     <h3 className="text-base font-black text-slate-900 tracking-tight">
-                      Input Nilai {selectedComponent} — {selectedPathway === 'manual' ? 'Spreadsheet Inline' : selectedPathway === 'upload' ? 'Upload File Excel' : 'Foto / Scan OCR'}
+                      Input Nilai {selectedComponent} - {selectedPathway === 'manual' ? 'Spreadsheet Inline' : selectedPathway === 'upload' ? 'Upload File Excel' : 'Foto / Scan OCR'}
                     </h3>
                     <p className="text-[11px] text-slate-500 font-medium">KOM301 · Jurnalisme Digital · Kelas A</p>
                   </div>
@@ -1248,8 +1248,8 @@ export function GradeValidationModule({ selectedClass, setSelectedClass, setView
                                     isInvalid 
                                       ? 'bg-rose-50 border-rose-300 text-rose-700 focus:ring-1 focus:ring-rose-500' 
                                       : isEmpty
-                                        ? 'bg-amber-50/50 border-amber-200 text-amber-700 focus:ring-1 focus:ring-blue-500'
-                                        : 'bg-white border-slate-250 text-slate-900 focus:ring-1 focus:ring-blue-500'
+                                        ? 'bg-amber-50/50 border-amber-200 text-amber-700 focus:ring-1 focus:ring-[#bf4440]/20'
+                                        : 'bg-white border-slate-250 text-slate-900 focus:ring-1 focus:ring-[#bf4440]/20'
                                   }`}
                                 />
                               </td>
@@ -1282,7 +1282,7 @@ export function GradeValidationModule({ selectedClass, setSelectedClass, setView
                     </button>
                     <button 
                       onClick={handleSubmitManual}
-                      className="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-black uppercase tracking-wider rounded-xl shadow-md shadow-blue-100 transition-all flex items-center gap-2 cursor-pointer"
+                      className="px-6 py-2.5 bg-[#bf4440] hover:bg-[#993633] text-white text-xs font-black uppercase tracking-wider rounded-xl shadow-md shadow-blue-100 transition-all flex items-center gap-2 cursor-pointer"
                     >
                       <Sparkles size={14} /> Submit & Validasi AI
                     </button>
@@ -1295,18 +1295,18 @@ export function GradeValidationModule({ selectedClass, setSelectedClass, setView
                 <div className="space-y-6">
                   {/* Process Stepper */}
                   <div className="flex items-center justify-center gap-4 text-xs font-black font-mono tracking-wider">
-                    <div className={`flex items-center gap-1.5 ${uploadStep === 1 ? 'text-blue-600' : 'text-slate-400'}`}>
-                      <span className={`w-5 h-5 rounded-full flex items-center justify-center text-[10px] ${uploadStep === 1 ? 'bg-blue-100 text-blue-600' : 'bg-slate-100 text-slate-500'}`}>1</span>
+                    <div className={`flex items-center gap-1.5 ${uploadStep === 1 ? 'text-[#bf4440]' : 'text-slate-400'}`}>
+                      <span className={`w-5 h-5 rounded-full flex items-center justify-center text-[10px] ${uploadStep === 1 ? 'bg-blue-100 text-[#bf4440]' : 'bg-slate-100 text-slate-500'}`}>1</span>
                       UPLOAD FILE
                     </div>
                     <ArrowRight className="text-slate-300" size={14} />
-                    <div className={`flex items-center gap-1.5 ${uploadStep === 2 ? 'text-blue-600' : 'text-slate-400'}`}>
-                      <span className={`w-5 h-5 rounded-full flex items-center justify-center text-[10px] ${uploadStep === 2 ? 'bg-blue-100 text-blue-600' : 'bg-slate-100 text-slate-500'}`}>2</span>
+                    <div className={`flex items-center gap-1.5 ${uploadStep === 2 ? 'text-[#bf4440]' : 'text-slate-400'}`}>
+                      <span className={`w-5 h-5 rounded-full flex items-center justify-center text-[10px] ${uploadStep === 2 ? 'bg-blue-100 text-[#bf4440]' : 'bg-slate-100 text-slate-500'}`}>2</span>
                       COLUMN MAPPING
                     </div>
                     <ArrowRight className="text-slate-300" size={14} />
-                    <div className={`flex items-center gap-1.5 ${uploadStep === 3 ? 'text-blue-600' : 'text-slate-400'}`}>
-                      <span className={`w-5 h-5 rounded-full flex items-center justify-center text-[10px] ${uploadStep === 3 ? 'bg-blue-100 text-blue-600' : 'bg-slate-100 text-slate-500'}`}>3</span>
+                    <div className={`flex items-center gap-1.5 ${uploadStep === 3 ? 'text-[#bf4440]' : 'text-slate-400'}`}>
+                      <span className={`w-5 h-5 rounded-full flex items-center justify-center text-[10px] ${uploadStep === 3 ? 'bg-blue-100 text-[#bf4440]' : 'bg-slate-100 text-slate-500'}`}>3</span>
                       PREVIEW & SUBMIT
                     </div>
                   </div>
@@ -1314,14 +1314,14 @@ export function GradeValidationModule({ selectedClass, setSelectedClass, setView
                   {/* STEP 1: DROPZONE */}
                   {uploadStep === 1 && (
                     <div className="space-y-4">
-                      <div className="border-2 border-dashed border-slate-350 hover:border-blue-500 rounded-3xl p-10 flex flex-col items-center justify-center text-center gap-4 transition-colors bg-slate-50/50 cursor-pointer relative group">
+                      <div className="border-2 border-dashed border-slate-350 hover:border-[#bf4440] rounded-3xl p-10 flex flex-col items-center justify-center text-center gap-4 transition-colors bg-slate-50/50 cursor-pointer relative group">
                         <input 
                           type="file" 
                           accept=".xlsx,.xls,.csv" 
                           onChange={handleFileUpload}
                           className="absolute inset-0 opacity-0 cursor-pointer"
                         />
-                        <div className="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 group-hover:scale-105 transition-transform">
+                        <div className="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-[#bf4440] group-hover:scale-105 transition-transform">
                           <FileSpreadsheet size={28} />
                         </div>
                         <div className="space-y-1">
@@ -1335,7 +1335,7 @@ export function GradeValidationModule({ selectedClass, setSelectedClass, setView
                       </div>
 
                       <div className="flex justify-between items-center pt-2">
-                        <button className="text-xs font-black text-blue-600 hover:underline flex items-center gap-1">
+                        <button className="text-xs font-black text-[#bf4440] hover:underline flex items-center gap-1">
                           <Download size={13} /> Download Template Excel Resmi Unpad
                         </button>
                         <span className="text-[10px] text-slate-400 font-bold uppercase tracking-widest block font-mono">Batas: Maks 500 Baris</span>
@@ -1384,7 +1384,7 @@ export function GradeValidationModule({ selectedClass, setSelectedClass, setView
                             <div className="col-span-5">
                               <select 
                                 defaultValue={m.dbCol}
-                                className="px-3 py-1.5 border border-slate-200 rounded-lg text-xs font-black bg-white focus:outline-none focus:ring-1 focus:ring-blue-500"
+                                className="px-3 py-1.5 border border-slate-200 rounded-lg text-xs font-black bg-white focus:outline-none focus:ring-1 focus:ring-[#bf4440]/20"
                               >
                                 <option value="NIM">NIM</option>
                                 <option value="Nama Mahasiswa">Nama Mahasiswa</option>
@@ -1410,7 +1410,7 @@ export function GradeValidationModule({ selectedClass, setSelectedClass, setView
                         </button>
                         <button 
                           onClick={handleApplyColumnMapping}
-                          className="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-black uppercase tracking-wider rounded-xl shadow-md transition-all flex items-center gap-2 cursor-pointer"
+                          className="px-6 py-2.5 bg-[#bf4440] hover:bg-[#993633] text-white text-xs font-black uppercase tracking-wider rounded-xl shadow-md transition-all flex items-center gap-2 cursor-pointer"
                         >
                           Lanjut Ke Preview <ChevronRight size={14} />
                         </button>
@@ -1481,7 +1481,7 @@ export function GradeValidationModule({ selectedClass, setSelectedClass, setView
                           </button>
                           <button 
                             onClick={handleConfirmUploadSubmit}
-                            className="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-black uppercase tracking-wider rounded-xl shadow-md transition-all flex items-center gap-2 cursor-pointer"
+                            className="px-6 py-2.5 bg-[#bf4440] hover:bg-[#993633] text-white text-xs font-black uppercase tracking-wider rounded-xl shadow-md transition-all flex items-center gap-2 cursor-pointer"
                           >
                             <Sparkles size={14} /> Submit Semua & Validasi AI
                           </button>
@@ -1498,7 +1498,7 @@ export function GradeValidationModule({ selectedClass, setSelectedClass, setView
                   {/* STEP 1: SELECT IMAGE OR WEBCAM */}
                   {ocrStep === 1 && (
                     <div className="space-y-4">
-                      <div className="border-2 border-dashed border-slate-350 hover:border-blue-500 rounded-3xl p-10 flex flex-col items-center justify-center text-center gap-4 transition-colors bg-slate-50/50 cursor-pointer relative group">
+                      <div className="border-2 border-dashed border-slate-350 hover:border-[#bf4440] rounded-3xl p-10 flex flex-col items-center justify-center text-center gap-4 transition-colors bg-slate-50/50 cursor-pointer relative group">
                         <input 
                           type="file" 
                           accept="image/*" 
@@ -1647,7 +1647,7 @@ export function GradeValidationModule({ selectedClass, setSelectedClass, setView
                           </button>
                           <button 
                             onClick={handleConfirmOcrSubmit}
-                            className="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-black uppercase tracking-wider rounded-xl shadow-md transition-all flex items-center gap-2 cursor-pointer"
+                            className="px-6 py-2.5 bg-[#bf4440] hover:bg-[#993633] text-white text-xs font-black uppercase tracking-wider rounded-xl shadow-md transition-all flex items-center gap-2 cursor-pointer"
                           >
                             <Sparkles size={14} /> Submit Hasil & Validasi AI
                           </button>
@@ -1682,11 +1682,11 @@ export function GradeValidationModule({ selectedClass, setSelectedClass, setView
               <div className="flex justify-between items-start border-b border-slate-100 pb-4">
                 <div className="space-y-1">
                   <div className="flex items-center gap-2">
-                    <Sparkles className="text-blue-600 fill-blue-500 animate-pulse" size={18} />
-                    <h3 className="text-base font-black text-slate-900 uppercase tracking-wider font-mono">Hasil Validasi — {validationReport.component} {validationReport.classId}</h3>
+                    <Sparkles className="text-[#bf4440] fill-blue-500 animate-pulse" size={18} />
+                    <h3 className="text-base font-black text-slate-900 uppercase tracking-wider font-mono">Hasil Validasi - {validationReport.component} {validationReport.classId}</h3>
                   </div>
                   <p className="text-xs text-slate-500 font-medium leading-normal">
-                    Laporan evaluasi pedagogis multi-dimensi dari <span className="font-extrabold text-blue-600">Aksara IQ Grade Validation Agent</span>.
+                    Laporan evaluasi pedagogis multi-dimensi dari <span className="font-extrabold text-[#bf4440]">Aksara IQ Grade Validation Agent</span>.
                   </p>
                 </div>
                 <button 
@@ -1770,7 +1770,7 @@ export function GradeValidationModule({ selectedClass, setSelectedClass, setView
                   <div className="border border-amber-150 rounded-2xl overflow-hidden shadow-xs">
                     <div className="bg-amber-50 px-4 py-3 border-b border-amber-100 flex items-center gap-2">
                       <AlertCircle className="text-amber-600" size={16} />
-                      <h4 className="text-xs font-black text-amber-900 uppercase tracking-wider font-mono">✗ CPL Inconsistency — Level Individu</h4>
+                      <h4 className="text-xs font-black text-amber-900 uppercase tracking-wider font-mono">✗ CPL Inconsistency - Level Individu</h4>
                     </div>
 
                     <div className="p-4 divide-y divide-slate-150 space-y-4">
@@ -1802,7 +1802,7 @@ export function GradeValidationModule({ selectedClass, setSelectedClass, setView
                               ))}
                               <button
                                 onClick={() => handleConfirmCorrectOnReport(m.nim, 'Dikonfirmasi bernilai benar tanpa kondisi khusus.')}
-                                className="bg-blue-600 hover:bg-blue-700 text-white text-[9px] font-black uppercase tracking-wider px-3 py-1.5 rounded-lg transition-all"
+                                className="bg-[#bf4440] hover:bg-[#993633] text-white text-[9px] font-black uppercase tracking-wider px-3 py-1.5 rounded-lg transition-all"
                               >
                                 Nilai Sudah Benar
                               </button>
@@ -1818,7 +1818,7 @@ export function GradeValidationModule({ selectedClass, setSelectedClass, setView
                   <div className="border border-slate-250 rounded-2xl overflow-hidden shadow-xs bg-slate-50/50">
                     <div className="bg-slate-100 px-4 py-3 border-b border-slate-200 flex items-center gap-2">
                       <Sparkles className="text-slate-600 fill-slate-400" size={16} />
-                      <h4 className="text-xs font-black text-slate-900 uppercase tracking-wider font-mono">ℹ CPL Inconsistency — Level Kelas (Informational)</h4>
+                      <h4 className="text-xs font-black text-slate-900 uppercase tracking-wider font-mono">ℹ CPL Inconsistency - Level Kelas (Informational)</h4>
                     </div>
 
                     <div className="p-4 space-y-4">
@@ -1837,7 +1837,7 @@ export function GradeValidationModule({ selectedClass, setSelectedClass, setView
                             onClick={() => setClassConsistencyReason(opt.id)}
                             className={`px-3 py-2 border text-[10px] font-black uppercase tracking-wider rounded-xl text-center transition-all ${
                               classConsistencyReason === opt.id 
-                                ? 'bg-blue-50 text-blue-700 border-blue-200 font-extrabold' 
+                                ? 'bg-blue-50 text-[#993633] border-blue-200 font-extrabold' 
                                 : 'bg-white border-slate-200 hover:border-slate-300 text-slate-500'
                             }`}
                           >
@@ -1853,7 +1853,7 @@ export function GradeValidationModule({ selectedClass, setSelectedClass, setView
                           placeholder="cth: UTS dilakukan dengan bobot soal open-ended bertingkat tinggi sesuai standar CPL-4..."
                           value={classConsistencyNote}
                           onChange={(e) => setClassConsistencyNote(e.target.value)}
-                          className="w-full px-3 py-2 border border-slate-250 rounded-xl text-xs font-semibold focus:outline-none focus:ring-1 focus:ring-blue-500"
+                          className="w-full px-3 py-2 border border-slate-250 rounded-xl text-xs font-semibold focus:outline-none focus:ring-1 focus:ring-[#bf4440]/20"
                         />
                       </div>
                     </div>

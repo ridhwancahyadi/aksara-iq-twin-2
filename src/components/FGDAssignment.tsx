@@ -57,7 +57,7 @@ export function FGDAssignment({ setView, selectedCourseTitle = "Jurnalisme Digit
           <ArrowLeft size={20} />
         </button>
         <nav className="flex items-center gap-2 text-[10px] font-black text-slate-400 uppercase tracking-widest">
-          <span className="hover:text-blue-600 cursor-pointer" onClick={() => setView('home')}>Dashboard</span>
+          <span className="hover:text-[#bf4440] cursor-pointer" onClick={() => setView('home')}>Dashboard</span>
           <ChevronRight size={10} />
           <span>Courses</span>
           <ChevronRight size={10} />
@@ -95,7 +95,7 @@ export function FGDAssignment({ setView, selectedCourseTitle = "Jurnalisme Digit
             </div>
           </div>
 
-          <div className="bg-blue-600 rounded-[32px] p-6 text-white shadow-xl shadow-blue-100 space-y-4">
+          <div className="bg-[#bf4440] rounded-[32px] p-6 text-white shadow-xl shadow-blue-100 space-y-4">
             <h3 className="text-sm font-black uppercase tracking-widest flex items-center gap-2">
               <Info size={16} /> Instructions
             </h3>
@@ -133,7 +133,7 @@ export function FGDAssignment({ setView, selectedCourseTitle = "Jurnalisme Digit
 
             {!file ? (
               <div 
-                className="flex-1 min-h-[300px] border-4 border-dashed border-slate-100 rounded-[40px] flex flex-col items-center justify-center gap-6 hover:border-blue-200 hover:bg-blue-50/30 transition-all cursor-pointer group"
+                className="flex-1 min-h-[300px] border-4 border-dashed border-slate-100 rounded-[40px] flex flex-col items-center justify-center gap-6 hover:border-blue-200 hover:bg-blushed-brick-50/30 transition-all cursor-pointer group"
                 onDragOver={handleDragOver}
                 onDrop={handleDrop}
                 onClick={() => document.getElementById('file-upload')?.click()}
@@ -156,7 +156,7 @@ export function FGDAssignment({ setView, selectedCourseTitle = "Jurnalisme Digit
             ) : (
               <div className="flex-1 space-y-6">
                 <div className="p-6 bg-slate-50 border border-slate-100 rounded-[32px] flex items-center gap-4">
-                  <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-blue-600 shadow-sm border border-slate-100">
+                  <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-[#bf4440] shadow-sm border border-slate-100">
                     <FileText size={24} />
                   </div>
                   <div className="flex-1 min-w-0">
@@ -184,7 +184,7 @@ export function FGDAssignment({ setView, selectedCourseTitle = "Jurnalisme Digit
                   </button>
                   <button 
                     onClick={handleSubmit}
-                    className="flex-[2] bg-blue-600 hover:bg-blue-700 text-white py-5 rounded-[24px] font-black text-xs uppercase tracking-widest shadow-xl shadow-blue-200 transition-all flex items-center justify-center gap-3 active:scale-[0.98]"
+                    className="flex-[2] bg-[#bf4440] hover:bg-[#993633] text-white py-5 rounded-[24px] font-black text-xs uppercase tracking-widest shadow-xl shadow-blue-200 transition-all flex items-center justify-center gap-3 active:scale-[0.98]"
                   >
                     <Upload size={16} />
                     Submit Assignment
@@ -217,7 +217,7 @@ export function FGDAssignment({ setView, selectedCourseTitle = "Jurnalisme Digit
                       animate={{ rotate: 360 }}
                       transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
                     >
-                      <Upload className="text-blue-600" size={32} />
+                      <Upload className="text-[#bf4440]" size={32} />
                     </motion.div>
                   </div>
                   <div className="space-y-2">
@@ -227,7 +227,7 @@ export function FGDAssignment({ setView, selectedCourseTitle = "Jurnalisme Digit
                   <div className="space-y-3">
                     <div className="w-full h-3 bg-slate-100 rounded-full overflow-hidden">
                       <motion.div 
-                        className="h-full bg-blue-600 rounded-full"
+                        className="h-full bg-[#bf4440] rounded-full"
                         initial={{ width: 0 }}
                         animate={{ width: `${uploadProgress}%` }}
                       />

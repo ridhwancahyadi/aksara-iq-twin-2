@@ -42,7 +42,7 @@ export function ParticipantDetail({ participant, onBack }: ParticipantDetailProp
   
   // Custom colors based on participant id
   const themeColors: Record<string, { primary: string; lightBg: string; text: string; gradient: string }> = {
-    "2254100011": { primary: "text-blue-600", lightBg: "bg-blue-50/50", text: "text-blue-700", gradient: "from-blue-500 to-indigo-600" },
+    "2254100011": { primary: "text-[#bf4440]", lightBg: "bg-blue-50/50", text: "text-[#993633]", gradient: "from-blue-500 to-indigo-600" },
     "225410016": { primary: "text-emerald-600", lightBg: "bg-emerald-50/50", text: "text-emerald-700", gradient: "from-emerald-500 to-teal-600" },
     "225410028": { primary: "text-amber-600", lightBg: "bg-amber-50/50", text: "text-amber-700", gradient: "from-amber-500 to-orange-600" },
     "225410073": { primary: "text-purple-600", lightBg: "bg-purple-50/50", text: "text-purple-700", gradient: "from-purple-500 to-pink-600" },
@@ -56,7 +56,7 @@ export function ParticipantDetail({ participant, onBack }: ParticipantDetailProp
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 shrink-0">
         <button 
           onClick={onBack} 
-          className="flex items-center gap-2 text-xs font-bold text-primary hover:text-blue-700 bg-white border border-border px-4 py-2 rounded-xl shadow-xs transition"
+          className="flex items-center gap-2 text-xs font-bold text-primary hover:text-[#993633] bg-white border border-border px-4 py-2 rounded-xl shadow-xs transition"
         >
           <ArrowLeft size={14} /> Kembali ke Analisis Utama
         </button>
@@ -176,7 +176,7 @@ export function ParticipantDetail({ participant, onBack }: ParticipantDetailProp
         {/* Style of communication */}
         <div className="bg-white border border-border rounded-2xl p-5 shadow-sm">
           <h3 className="text-xs font-bold text-slate-800 flex items-center gap-2 mb-3">
-            <span className="p-1 bg-blue-50 text-blue-600 rounded-md"><MessageSquare size={14} /></span>
+            <span className="p-1 bg-blue-50 text-[#bf4440] rounded-md"><MessageSquare size={14} /></span>
             Gaya Komunikasi & Cara Penyampaian
           </h3>
           <p className="text-xs text-text-sub leading-relaxed font-medium">
@@ -215,8 +215,8 @@ export function ParticipantDetail({ participant, onBack }: ParticipantDetailProp
                   borderTheme = "border-emerald-100/50 bg-emerald-50/10 hover:bg-emerald-50/25";
                   badgeColor = "text-emerald-700 bg-emerald-50 border-emerald-100/60";
                 } else if (ind.score >= 70) {
-                  borderTheme = "border-blue-100/50 bg-blue-50/10 hover:bg-blue-50/25";
-                  badgeColor = "text-blue-700 bg-blue-50 border-blue-100/60";
+                  borderTheme = "border-blue-100/50 bg-blue-50/10 hover:bg-blushed-brick-50/25";
+                  badgeColor = "text-[#993633] bg-blue-50 border-blue-100/60";
                 } else if (ind.score >= 55) {
                   borderTheme = "border-amber-100/50 bg-amber-50/10 hover:bg-amber-50/25";
                   badgeColor = "text-amber-700 bg-amber-50 border-amber-100/60";

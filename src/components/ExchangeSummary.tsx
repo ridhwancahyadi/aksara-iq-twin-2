@@ -27,7 +27,7 @@ export function ExchangeSummary({ setView }: ExchangeSummaryProps) {
             <Share size={14} />
             <span>Bagikan ke Dosen</span>
           </button>
-          <button className="flex-1 md:flex-none px-4 py-2.5 bg-[#c84a4a] hover:bg-[#b53f3f] text-white text-xs font-black rounded-xl flex items-center justify-center gap-2 shadow-sm transition-all cursor-pointer">
+          <button className="flex-1 md:flex-none px-4 py-2.5 bg-[#bf4440] hover:bg-[#993633] text-white text-xs font-black rounded-xl flex items-center justify-center gap-2 shadow-sm transition-all cursor-pointer">
             <Download size={14} />
             <span>Unduh Berkas Resmi (PDF)</span>
           </button>
@@ -37,7 +37,7 @@ export function ExchangeSummary({ setView }: ExchangeSummaryProps) {
       {/* Main Document Card */}
       <div className="bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm relative">
         {/* Top Red Bar */}
-        <div className="h-2 w-full bg-[#c84a4a]"></div>
+        <div className="h-2 w-full bg-[#bf4440]"></div>
         
         <div className="p-8 sm:p-10 space-y-12">
           
@@ -85,7 +85,7 @@ export function ExchangeSummary({ setView }: ExchangeSummaryProps) {
               <span className="text-[10px] uppercase font-mono font-bold text-slate-500 tracking-wider">BAGIAN I. MITRA STUDI GLOBAL</span>
               <button 
                 onClick={() => setView('katalog_mitra')}
-                className="text-[10px] font-mono text-[#c84a4a] hover:text-[#b53f3f] flex items-center gap-1 cursor-pointer"
+                className="text-[10px] font-mono text-[#bf4440] hover:text-[#993633] flex items-center gap-1 cursor-pointer"
               >
                 Lihat Katalog <ArrowUpRight size={12} />
               </button>
@@ -129,7 +129,7 @@ export function ExchangeSummary({ setView }: ExchangeSummaryProps) {
               <span className="text-[10px] uppercase font-mono font-bold text-slate-500 tracking-wider">BAGIAN II. KESETARAAN & TRANSFER KREDIT (CPMK)</span>
               <button 
                 onClick={() => setView('kesiapan_saya')}
-                className="text-[10px] font-mono text-[#c84a4a] hover:text-[#b53f3f] flex items-center gap-1 cursor-pointer"
+                className="text-[10px] font-mono text-[#bf4440] hover:text-[#993633] flex items-center gap-1 cursor-pointer"
               >
                 Buka CPMK Checker <ArrowUpRight size={12} />
               </button>
@@ -221,7 +221,7 @@ export function ExchangeSummary({ setView }: ExchangeSummaryProps) {
                     localStorage.setItem('selected_partner_id', 'hanyang');
                     setView('detail_partners');
                   }}
-                  className="text-[10px] font-mono text-[#c84a4a] hover:text-[#b53f3f] flex items-center gap-1 cursor-pointer"
+                  className="text-[10px] font-mono text-[#bf4440] hover:text-[#993633] flex items-center gap-1 cursor-pointer"
                 >
                   Detail Cost <ArrowUpRight size={12} />
                 </button>
@@ -246,7 +246,7 @@ export function ExchangeSummary({ setView }: ExchangeSummaryProps) {
                 </div>
                 <div className="flex justify-between items-center pt-1">
                   <span className="font-black text-slate-900">Total Estimasi</span>
-                  <span className="font-bold text-[#c84a4a]">₩ 920.000 / bln ≈ Rp 10.820.000</span>
+                  <span className="font-bold text-[#bf4440]">₩ 920.000 / bln ≈ Rp 10.820.000</span>
                 </div>
               </div>
             </div>
@@ -257,7 +257,7 @@ export function ExchangeSummary({ setView }: ExchangeSummaryProps) {
             <div className="space-y-1">
               <h5 className="text-xs font-bold text-slate-900 flex items-center gap-1.5"><ShieldCheck size={14} className="text-emerald-600" /> Verifikasi Sistem & Keamanan</h5>
               <p className="text-[10px] font-mono text-slate-500 max-w-sm">Dokumen ini ditandatangani secara digital oleh Universitas Padjadjaran International Office.</p>
-              <p className="text-[10px] font-mono text-slate-500">Verifikasi Unik No: <span className="text-[#c84a4a]">SHA-256 / 8f9b9f9z</span></p>
+              <p className="text-[10px] font-mono text-slate-500">Verifikasi Unik No: <span className="text-[#bf4440]">SHA-256 / 8f9b9f9z</span></p>
             </div>
             <div className="text-right space-y-1">
               <span className="text-[9px] font-mono text-slate-400 italic">[QRCode Verified]</span>

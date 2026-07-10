@@ -1,15 +1,354 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
+:root {
+  --theme-bg: #f8fafc;
+  --theme-card: #ffffff;
+  --theme-text-main: #0f172a;
+  --theme-text-sub: #475569;
+  --theme-border: rgba(15, 23, 42, 0.06);
+  --theme-border-element: rgba(15, 23, 42, 0.06);
+  --theme-border-element-subtle: rgba(15, 23, 42, 0.04);
+
+  --theme-slate-50: #f8fafc;
+  --theme-slate-100: #f1f5f9;
+  --theme-slate-200: #e2e8f0;
+  --theme-slate-300: #cbd5e1;
+  --theme-slate-400: #94a3b8;
+  --theme-slate-500: #64748b;
+  --theme-slate-600: #475569;
+  --theme-slate-700: #334155;
+  --theme-slate-800: #1e293b;
+  --theme-slate-900: #0f172a;
+  --theme-slate-950: #020617;
+
+  --theme-blue-50: #f0f9ff;
+  --theme-blue-100: #e0f2fe;
+  --theme-blue-200: #bae6fd;
+  --theme-blue-300: #7dd3fc;
+  --theme-blue-400: #38bdf8;
+  --theme-blue-500: #0ea5e9;
+  --theme-blue-600: #0284c7;
+  --theme-blue-700: #0369a1;
+  --theme-blue-800: #075985;
+  --theme-blue-900: #0c4a6e;
+  --theme-blue-950: #082f49;
+}
+
+.dark {
+  --theme-bg: #0b0f19;
+  --theme-card: #111827;
+  --theme-text-main: #f8fafc;
+  --theme-text-sub: #94a3b8;
+  --theme-border: rgba(255, 255, 255, 0.08);
+  --theme-border-element: rgba(255, 255, 255, 0.08);
+  --theme-border-element-subtle: rgba(255, 255, 255, 0.04);
+
+  --theme-slate-50: #0b0f19;
+  --theme-slate-100: #111827;
+  --theme-slate-200: #1f2937;
+  --theme-slate-300: #374151;
+  --theme-slate-400: #4b5563;
+  --theme-slate-500: #6b7280;
+  --theme-slate-600: #9ca3af;
+  --theme-slate-700: #d1d5db;
+  --theme-slate-800: #e5e7eb;
+  --theme-slate-900: #f3f4f6;
+  --theme-slate-950: #f9fafb;
+
+  --theme-blue-50: #082f49;
+  --theme-blue-100: #0c4a6e;
+  --theme-blue-200: #075985;
+  --theme-blue-300: #0369a1;
+  --theme-blue-400: #0284c7;
+  --theme-blue-500: #0ea5e9;
+  --theme-blue-600: #38bdf8;
+  --theme-blue-700: #7dd3fc;
+  --theme-blue-800: #bae6fd;
+  --theme-blue-900: #e0f2fe;
+  --theme-blue-950: #f0f9ff;
+}
+
 @theme {
   --font-sans: 'Inter', sans-serif;
   --font-display: 'Outfit', sans-serif;
-  --color-primary: #0052CC;
-  --color-bg: #FFFFFF;
-  --color-card: #F4F5F7;
-  --color-text-main: #172B4D;
-  --color-text-sub: #6B778C;
-  --color-border: #DFE1E6;
+
+  /* Enforce consistent Border Radius across all components */
+  --radius-xs: 0.125rem; /* 2px */
+  --radius-sm: 0.25rem;  /* 4px */
+  --radius-md: 0.375rem; /* 6px */
+  --radius-lg: 0.5rem;   /* 8px */
+  --radius-xl: 0.5rem;   /* 8px */
+  --radius-2xl: 0.5rem;  /* 8px */
+  --radius-3xl: 0.5rem;  /* 8px */
+
+  /* Redefine Box Shadows to be extremely light and consistent */
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.015);
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.015);
+  --shadow-md: 0 1px 3px 0 rgba(0, 0, 0, 0.02), 0 1px 2px -1px rgba(0, 0, 0, 0.02);
+  --shadow-lg: 0 1px 3px 0 rgba(0, 0, 0, 0.02), 0 1px 2px -1px rgba(0, 0, 0, 0.02);
+  --shadow-xl: 0 1px 3px 0 rgba(0, 0, 0, 0.02), 0 1px 2px -1px rgba(0, 0, 0, 0.02);
+  --shadow-2xl: 0 1px 3px 0 rgba(0, 0, 0, 0.02), 0 1px 2px -1px rgba(0, 0, 0, 0.02);
+
+  /* Redefine Spacing scale to make the layout more compact */
+  --spacing-5: 1rem;
+  --spacing-6: 1.25rem;
+  --spacing-8: 1.75rem;
+  --spacing-10: 2.25rem;
+  --spacing-12: 2.75rem;
+  --spacing-16: 3.5rem;
+  --spacing-20: 4.5rem;
+  --spacing-24: 5.5rem;
+
+  /* taste-SKILL.md Canonical Color Palette */
+  --color-pitch-black-50:  #fbf0ea;
+  --color-pitch-black-100: #f7e2d4;
+  --color-pitch-black-200: #eec4aa;
+  --color-pitch-black-300: #e6a77f;
+  --color-pitch-black-400: #dd8955;
+  --color-pitch-black-500: #d56c2a;
+  --color-pitch-black-600: #aa5622;
+  --color-pitch-black-700: #804119;
+  --color-pitch-black-800: #552b11;
+  --color-pitch-black-900: #2b1608;
+  --color-pitch-black-950: #1e0f06;
+
+  --color-coffee-bean-50:  #f6f0ef;
+  --color-coffee-bean-100: #ede1de;
+  --color-coffee-bean-200: #dbc2bd;
+  --color-coffee-bean-300: #c9a49c;
+  --color-coffee-bean-400: #b7857b;
+  --color-coffee-bean-500: #a4675b;
+  --color-coffee-bean-600: #845248;
+  --color-coffee-bean-700: #633e36;
+  --color-coffee-bean-800: #422924;
+  --color-coffee-bean-900: #211512;
+  --color-coffee-bean-950: #170e0d;
+
+  --color-blushed-brick-50:  #f9ecec;
+  --color-blushed-brick-100: #f2dad9;
+  --color-blushed-brick-200: #e6b4b3;
+  --color-blushed-brick-300: #d98f8c;
+  --color-blushed-brick-400: #cc6966;
+  --color-blushed-brick-500: #bf4440;
+  --color-blushed-brick-600: #993633;
+  --color-blushed-brick-700: #732926;
+  --color-blushed-brick-800: #4d1b19;
+  --color-blushed-brick-900: #260e0d;
+  --color-blushed-brick-950: #1b0a09;
+
+  --color-dim-grey-50:  #f2f3f3;
+  --color-dim-grey-100: #e4e6e7;
+  --color-dim-grey-200: #cacece;
+  --color-dim-grey-300: #afb5b6;
+  --color-dim-grey-400: #959c9d;
+  --color-dim-grey-500: #7a8485;
+  --color-dim-grey-600: #62696a;
+  --color-dim-grey-700: #494f50;
+  --color-dim-grey-800: #313535;
+  --color-dim-grey-900: #181a1b;
+  --color-dim-grey-950: #111213;
+
+  --color-alice-blue-50:  #FFFDFA;
+  --color-alice-blue-100: #dee9ed;
+  --color-alice-blue-200: #bed3da;
+  --color-alice-blue-300: #9dbcc8;
+  --color-alice-blue-400: #7ca6b6;
+  --color-alice-blue-500: #5c90a3;
+  --color-alice-blue-600: #497383;
+  --color-alice-blue-700: #375662;
+  --color-alice-blue-800: #253a41;
+  --color-alice-blue-900: #121d21;
+  --color-alice-blue-950: #0d1417;
+
+  /* Redefining Core CSS Utility Properties to enforce taste-SKILL alignment */
+  --color-primary: var(--color-blushed-brick-500);
+  --color-bg: var(--theme-bg);
+  --color-card: var(--theme-card);
+  --color-text-main: var(--theme-text-main);
+  --color-text-sub: var(--theme-text-sub);
+  --color-border: var(--theme-border);
+
+  /* Mapping standard Tailwind categories to the 100% compliant custom design scales */
+  --color-slate-50: var(--theme-slate-50);
+  --color-slate-100: var(--theme-slate-100);
+  --color-slate-200: var(--theme-slate-200);
+  --color-slate-300: var(--theme-slate-300);
+  --color-slate-400: var(--theme-slate-400);
+  --color-slate-500: var(--theme-slate-500);
+  --color-slate-600: var(--theme-slate-600);
+  --color-slate-700: var(--theme-slate-700);
+  --color-slate-800: var(--theme-slate-800);
+  --color-slate-900: var(--theme-slate-900);
+  --color-slate-950: var(--theme-slate-950);
+
+  --color-gray-50: var(--theme-slate-50);
+  --color-gray-100: var(--theme-slate-100);
+  --color-gray-200: var(--theme-slate-200);
+  --color-gray-300: var(--theme-slate-300);
+  --color-gray-400: var(--theme-slate-400);
+  --color-gray-500: var(--theme-slate-500);
+  --color-gray-600: var(--theme-slate-600);
+  --color-gray-700: var(--theme-slate-700);
+  --color-gray-800: var(--theme-slate-800);
+  --color-gray-900: var(--theme-slate-900);
+  --color-gray-950: var(--theme-slate-950);
+
+  --color-zinc-50: var(--theme-slate-50);
+  --color-zinc-100: var(--theme-slate-100);
+  --color-zinc-200: var(--theme-slate-200);
+  --color-zinc-300: var(--theme-slate-300);
+  --color-zinc-400: var(--theme-slate-400);
+  --color-zinc-500: var(--theme-slate-500);
+  --color-zinc-600: var(--theme-slate-600);
+  --color-zinc-700: var(--theme-slate-700);
+  --color-zinc-800: var(--theme-slate-800);
+  --color-zinc-900: var(--theme-slate-900);
+  --color-zinc-950: var(--theme-slate-950);
+
+  --color-neutral-50: var(--theme-slate-50);
+  --color-neutral-100: var(--theme-slate-100);
+  --color-neutral-200: var(--theme-slate-200);
+  --color-neutral-300: var(--theme-slate-300);
+  --color-neutral-400: var(--theme-slate-400);
+  --color-neutral-500: var(--theme-slate-500);
+  --color-neutral-600: var(--theme-slate-600);
+  --color-neutral-700: var(--theme-slate-700);
+  --color-neutral-800: var(--theme-slate-800);
+  --color-neutral-900: var(--theme-slate-900);
+  --color-neutral-950: var(--theme-slate-950);
+
+  --color-blue-50: var(--theme-blue-50);
+  --color-blue-100: var(--theme-blue-100);
+  --color-blue-200: var(--theme-blue-200);
+  --color-blue-300: var(--theme-blue-300);
+  --color-blue-400: var(--theme-blue-400);
+  --color-blue-500: var(--theme-blue-500);
+  --color-blue-600: var(--theme-blue-600);
+  --color-blue-700: var(--theme-blue-700);
+  --color-blue-800: var(--theme-blue-800);
+  --color-blue-900: var(--theme-blue-900);
+  --color-blue-950: var(--theme-blue-950);
+
+  --color-indigo-50: var(--color-blushed-brick-50);
+  --color-indigo-100: var(--color-blushed-brick-100);
+  --color-indigo-200: var(--color-blushed-brick-200);
+  --color-indigo-300: var(--color-blushed-brick-300);
+  --color-indigo-400: var(--color-blushed-brick-400);
+  --color-indigo-500: var(--color-blushed-brick-500);
+  --color-indigo-600: var(--color-blushed-brick-600);
+  --color-indigo-700: var(--color-blushed-brick-700);
+  --color-indigo-800: var(--color-blushed-brick-800);
+  --color-indigo-900: var(--color-blushed-brick-900);
+  --color-indigo-950: var(--color-blushed-brick-950);
+
+  --color-purple-50: var(--color-blushed-brick-50);
+  --color-purple-100: var(--color-blushed-brick-100);
+  --color-purple-200: var(--color-blushed-brick-200);
+  --color-purple-300: var(--color-blushed-brick-300);
+  --color-purple-400: var(--color-blushed-brick-400);
+  --color-purple-500: var(--color-blushed-brick-500);
+  --color-purple-600: var(--color-blushed-brick-600);
+  --color-purple-700: var(--color-blushed-brick-700);
+  --color-purple-800: var(--color-blushed-brick-800);
+  --color-purple-900: var(--color-blushed-brick-900);
+  --color-purple-950: var(--color-blushed-brick-950);
+
+  --color-violet-50: var(--color-blushed-brick-50);
+  --color-violet-100: var(--color-blushed-brick-100);
+  --color-violet-200: var(--color-blushed-brick-200);
+  --color-violet-300: var(--color-blushed-brick-300);
+  --color-violet-400: var(--color-blushed-brick-400);
+  --color-violet-500: var(--color-blushed-brick-500);
+  --color-violet-600: var(--color-blushed-brick-600);
+  --color-violet-700: var(--color-blushed-brick-700);
+  --color-violet-800: var(--color-blushed-brick-800);
+  --color-violet-900: var(--color-blushed-brick-900);
+  --color-violet-950: var(--color-blushed-brick-950);
+
+  --color-rose-50: var(--color-blushed-brick-50);
+  --color-rose-100: var(--color-blushed-brick-100);
+  --color-rose-200: var(--color-blushed-brick-200);
+  --color-rose-300: var(--color-blushed-brick-300);
+  --color-rose-400: var(--color-blushed-brick-400);
+  --color-rose-500: var(--color-blushed-brick-500);
+  --color-rose-600: var(--color-blushed-brick-600);
+  --color-rose-700: var(--color-blushed-brick-700);
+  --color-rose-800: var(--color-blushed-brick-800);
+  --color-rose-900: var(--color-blushed-brick-900);
+  --color-rose-950: var(--color-blushed-brick-950);
+
+  --color-emerald-50: var(--theme-blue-50);
+  --color-emerald-100: var(--theme-blue-100);
+  --color-emerald-200: var(--theme-blue-200);
+  --color-emerald-300: var(--theme-blue-300);
+  --color-emerald-400: var(--theme-blue-400);
+  --color-emerald-500: var(--theme-blue-500);
+  --color-emerald-600: var(--theme-blue-600);
+  --color-emerald-700: var(--theme-blue-700);
+  --color-emerald-800: var(--theme-blue-800);
+  --color-emerald-900: var(--theme-blue-900);
+  --color-emerald-950: var(--theme-blue-950);
+
+  --color-green-50: var(--theme-blue-50);
+  --color-green-100: var(--theme-blue-100);
+  --color-green-200: var(--theme-blue-200);
+  --color-green-300: var(--theme-blue-300);
+  --color-green-400: var(--theme-blue-400);
+  --color-green-500: var(--theme-blue-500);
+  --color-green-600: var(--theme-blue-600);
+  --color-green-700: var(--theme-blue-700);
+  --color-green-800: var(--theme-blue-800);
+  --color-green-900: var(--theme-blue-900);
+  --color-green-950: var(--theme-blue-950);
+
+  --color-teal-50: var(--theme-blue-50);
+  --color-teal-100: var(--theme-blue-100);
+  --color-teal-200: var(--theme-blue-200);
+  --color-teal-300: var(--theme-blue-300);
+  --color-teal-400: var(--theme-blue-400);
+  --color-teal-500: var(--theme-blue-500);
+  --color-teal-600: var(--theme-blue-600);
+  --color-teal-700: var(--theme-blue-700);
+  --color-teal-800: var(--theme-blue-800);
+  --color-teal-900: var(--theme-blue-900);
+  --color-teal-950: var(--theme-blue-950);
+
+  --color-cyan-50: var(--theme-blue-50);
+  --color-cyan-100: var(--theme-blue-100);
+  --color-cyan-200: var(--theme-blue-200);
+  --color-cyan-300: var(--theme-blue-300);
+  --color-cyan-400: var(--theme-blue-400);
+  --color-cyan-500: var(--theme-blue-500);
+  --color-cyan-600: var(--theme-blue-600);
+  --color-cyan-700: var(--theme-blue-700);
+  --color-cyan-800: var(--theme-blue-800);
+  --color-cyan-900: var(--theme-blue-900);
+  --color-cyan-950: var(--theme-blue-950);
+
+  --color-amber-50: var(--color-pitch-black-50);
+  --color-amber-100: var(--color-pitch-black-100);
+  --color-amber-200: var(--color-pitch-black-200);
+  --color-amber-300: var(--color-pitch-black-300);
+  --color-amber-400: var(--color-pitch-black-400);
+  --color-amber-500: var(--color-pitch-black-500);
+  --color-amber-600: var(--color-pitch-black-600);
+  --color-amber-700: var(--color-pitch-black-700);
+  --color-amber-800: var(--color-pitch-black-800);
+  --color-amber-900: var(--color-pitch-black-900);
+  --color-amber-950: var(--color-pitch-black-950);
+
+  --color-yellow-50: var(--color-pitch-black-50);
+  --color-yellow-100: var(--color-pitch-black-100);
+  --color-yellow-200: var(--color-pitch-black-200);
+  --color-yellow-300: var(--color-pitch-black-300);
+  --color-yellow-400: var(--color-pitch-black-400);
+  --color-yellow-500: var(--color-pitch-black-500);
+  --color-yellow-600: var(--color-pitch-black-600);
+  --color-yellow-700: var(--color-pitch-black-700);
+  --color-yellow-800: var(--color-pitch-black-800);
+  --color-yellow-900: var(--color-pitch-black-900);
+  --color-yellow-950: var(--color-pitch-black-950);
 }
 
 html {
@@ -40,9 +379,282 @@ html {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display), sans-serif !important;
   letter-spacing: -0.015em;
+  color: var(--color-text-main);
 }
 
 body {
   font-family: var(--font-sans), sans-serif;
-  color: #172B4D; /* Atlassian Navy Ink */
+  color: var(--color-text-main);
+  background-color: var(--color-bg);
+}
+
+/* Global design system overrides for elements to guarantee 100% border/radius/shadow consistency */
+input, select, textarea {
+  border: 1px solid var(--theme-border-element) !important;
+  border-radius: var(--radius-md) !important;
+  background-color: var(--theme-card) !important;
+  color: var(--theme-text-main) !important;
+  transition: all 0.15s ease-in-out;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--color-primary) !important;
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(191, 68, 64, 0.12) !important;
+}
+
+table {
+  border-collapse: collapse !important;
+}
+
+th, td {
+  border-color: var(--theme-border-element-subtle) !important;
+}
+
+/* Add smooth theme transitions to backgrounds and text */
+body, main, header, .bg-bg, .bg-card, .bg-slate-50, .bg-slate-100 {
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+/* ==========================================================================
+   BULLETPROOF GLOBAL THEME OVERRIDES FOR LIGHT/DARK MODE CONSISTENCY
+   ========================================================================== */
+
+/* 1. Dynamic Card/Container Backgrounds in Dark Mode */
+.dark .bg-white {
+  background-color: var(--theme-card) !important;
+}
+
+.dark .bg-slate-50 {
+  background-color: var(--theme-slate-50) !important;
+}
+
+.dark .bg-slate-100 {
+  background-color: var(--theme-slate-100) !important;
+}
+
+.dark .bg-slate-200 {
+  background-color: var(--theme-slate-200) !important;
+}
+
+/* 2. Soft Accent Block Overrides in Dark Mode (no harsh light backgrounds) */
+.dark .bg-blue-50 {
+  background-color: rgba(14, 165, 233, 0.10) !important;
+}
+
+.dark .bg-emerald-50 {
+  background-color: rgba(16, 185, 129, 0.08) !important;
+}
+
+.dark .bg-amber-50 {
+  background-color: rgba(245, 158, 11, 0.08) !important;
+}
+
+.dark .bg-rose-50 {
+  background-color: rgba(191, 68, 64, 0.08) !important;
+}
+
+.dark .bg-indigo-50 {
+  background-color: rgba(191, 68, 64, 0.08) !important;
+}
+
+/* 3. Text Color Contrast Adaptation in Dark Mode */
+.dark .text-slate-900,
+.dark .text-slate-800,
+.dark .text-slate-700,
+.dark .text-gray-900,
+.dark .text-gray-800,
+.dark .text-gray-700 {
+  color: var(--theme-text-main) !important;
+}
+
+.dark .text-slate-600,
+.dark .text-slate-500,
+.dark .text-gray-600,
+.dark .text-gray-500 {
+  color: var(--theme-text-sub) !important;
+}
+
+.dark .text-blue-900,
+.dark .text-blue-800,
+.dark .text-blue-700 {
+  color: var(--theme-blue-300) !important;
+}
+
+.dark .text-emerald-900,
+.dark .text-emerald-800,
+.dark .text-emerald-700,
+.dark .text-emerald-600 {
+  color: #34d399 !important; /* Pastel Green for High Contrast */
+}
+
+.dark .text-rose-600,
+.dark .text-rose-700,
+.dark .text-red-600 {
+  color: #f87171 !important; /* Pastel Rose for High Contrast */
+}
+
+.dark .text-amber-500,
+.dark .text-amber-600,
+.dark .text-amber-700 {
+  color: #fbbf24 !important; /* Pastel Yellow for High Contrast */
+}
+
+/* 4. Thin Cohesive Theme-Conformant Borders in Dark Mode */
+.dark .border-slate-200,
+.dark .border-slate-100,
+.dark .border-gray-200,
+.dark .border-gray-100,
+.dark .border-slate-50,
+.dark .border-blue-100,
+.dark .border-emerald-100,
+.dark .border-amber-100,
+.dark .border-rose-100,
+.dark .border-blue-200,
+.dark .border-emerald-200,
+.dark .border-amber-200 {
+  border-color: var(--theme-border) !important;
+}
+
+/* Ensure absolute border thickness consistency */
+.border-slate-200,
+.border-slate-100,
+.border-gray-200,
+.border-gray-100,
+.border-slate-50,
+.border {
+  border-width: 1px !important;
+}
+
+/* 5. SVG Recharts Visualization Custom Dark Mode Styles */
+.dark .recharts-cartesian-axis-tick-value {
+  fill: var(--theme-text-sub) !important;
+  font-size: 10px !important;
+  font-family: var(--font-sans), sans-serif !important;
+}
+
+.dark .recharts-cartesian-grid-horizontal line,
+.dark .recharts-cartesian-grid-vertical line {
+  stroke: var(--theme-border-element-subtle) !important;
+  stroke-dasharray: 2 2 !important;
+  opacity: 0.5 !important;
+}
+
+.dark .recharts-default-tooltip {
+  background-color: var(--theme-card) !important;
+  border: 1px solid var(--theme-border) !important;
+  border-radius: var(--radius-md) !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+.dark .recharts-tooltip-item {
+  color: var(--theme-text-main) !important;
+}
+
+.dark .recharts-tooltip-label {
+  color: var(--theme-text-main) !important;
+  font-weight: bold !important;
+}
+
+/* 6. Calendar Widget Dark Mode Support */
+.dark .react-calendar,
+.dark .rdp,
+.dark .calendar-container {
+  background-color: var(--theme-card) !important;
+  color: var(--theme-text-main) !important;
+  border-color: var(--theme-border) !important;
+}
+
+.dark .calendar-day-selected {
+  background-color: var(--color-primary) !important;
+  color: #ffffff !important;
+}
+
+.dark .calendar-day-today {
+  border: 1px solid var(--color-primary) !important;
+  color: var(--color-primary) !important;
+}
+
+.dark .calendar-day-hover:hover {
+  background-color: rgba(191, 68, 64, 0.15) !important;
+}
+
+/* 7. Dropdown, Select, Option, Modal, Overlay Dark Mode Overrides */
+.dark select option {
+  background-color: var(--theme-card) !important;
+  color: var(--theme-text-main) !important;
+}
+
+.dark .modal-container,
+.dark .dialog-box {
+  background-color: var(--theme-card) !important;
+  border: 1px solid var(--theme-border) !important;
+  color: var(--theme-text-main) !important;
+}
+
+/* 8. Avatar & User Lists Ring borders */
+.dark .border-white {
+  border-color: var(--theme-card) !important;
+}
+
+.dark .bg-slate-900.text-white {
+  background-color: var(--theme-slate-100) !important;
+  border: 1px solid var(--theme-border) !important;
+}
+
+.dark .bg-slate-900.text-white .border-slate-800 {
+  border-color: var(--theme-border-element) !important;
+}
+
+.dark .bg-slate-950,
+.dark .bg-gray-950,
+.dark .bg-zinc-950 {
+  background-color: var(--theme-slate-50) !important;
+}
+
+.dark .bg-slate-900,
+.dark .bg-gray-900,
+.dark .bg-zinc-900 {
+  background-color: var(--theme-slate-100) !important;
+}
+
+/* ==========================================================================
+   UI REFINEMENT: NESTED BORDER SUPPRESSION & COLOR SYSTEM NORMALIZATION
+   ========================================================================== */
+
+/* Remove unnecessary nested borders to reduce visual noise inside any card or container */
+.bg-white .border:not(input):not(select):not(textarea):not(button):not(th):not(td):not(table):not(.badge):not(.btn):not(.border-b-2),
+.bg-white .border-slate-100:not(input):not(select):not(textarea):not(button):not(th):not(td):not(table):not(.badge):not(.btn),
+.bg-white .border-slate-200:not(input):not(select):not(textarea):not(button):not(th):not(td):not(table):not(.badge):not(.btn),
+.bg-card .border:not(input):not(select):not(textarea):not(button):not(th):not(td):not(table):not(.badge):not(.btn):not(.border-b-2),
+.bg-card .border-slate-100:not(input):not(select):not(textarea):not(button):not(th):not(td):not(table):not(.badge):not(.btn),
+.bg-card .border-slate-200:not(input):not(select):not(textarea):not(button):not(th):not(td):not(table):not(.badge):not(.btn),
+.border .border:not(input):not(select):not(textarea):not(button):not(th):not(td):not(table):not(.badge):not(.btn),
+.border-slate-200 .border-slate-200:not(input):not(select):not(textarea):not(button):not(th):not(td):not(table):not(.badge):not(.btn),
+.border-slate-100 .border-slate-100:not(input):not(select):not(textarea):not(button):not(th):not(td):not(table):not(.badge):not(.btn) {
+  border-color: transparent !important;
+}
+
+/* Eliminate borders from decorative elements (icon wrappers, badge borders, empty state placeholders) */
+.rounded-full.border,
+.rounded-full.border-slate-200,
+.rounded-full.border-slate-100,
+.rounded-lg.border-slate-100,
+.rounded-md.border-slate-100 {
+  border-color: transparent !important;
+}
+
+/* Normalize card borders globally to match the singular design system */
+.border-slate-200, .border-slate-100, .border-gray-200, .border-gray-100 {
+  border-color: var(--theme-border) !important;
+}
+
+/* Enforce consistent hover transition effects */
+.hover\:bg-slate-50:hover, .hover\:bg-gray-50:hover {
+  background-color: var(--theme-slate-100) !important;
+}
+
+/* Make shadow levels uniformly subtle */
+.shadow, .shadow-md, .shadow-lg, .shadow-xl, .shadow-2xl {
+  box-shadow: var(--shadow-sm) !important;
 }

@@ -71,7 +71,7 @@ export function CourseClassDashboard({ setView, loggedInUser }: CourseClassDashb
   const calculatePredictedGrade = () => {
     const weighted = (attendance * 0.1) + (assignmentScore * 0.5) + (participationScore * 0.4);
     if (weighted >= 92) return { grade: "A", gpa: "4.0", color: "text-emerald-600", bg: "bg-emerald-50", comment: "Sangat Luar Biasa! Anda berada dalam jalur kelulusan predikat Summa Cum Laude." };
-    if (weighted >= 85) return { grade: "A-", gpa: "3.7", color: "text-blue-600", bg: "bg-blue-50", comment: "Sangat Baik! Tingkatkan sedikit lagi di nilai tugas untuk meraih nilai A murni." };
+    if (weighted >= 85) return { grade: "A-", gpa: "3.7", color: "text-[#bf4440]", bg: "bg-blue-50", comment: "Sangat Baik! Tingkatkan sedikit lagi di nilai tugas untuk meraih nilai A murni." };
     if (weighted >= 80) return { grade: "B+", gpa: "3.3", color: "text-indigo-600", bg: "bg-indigo-50", comment: "Baik! Performa solid. Fokus pada tugas essay berikutnya agar naik ke A-." };
     if (weighted >= 75) return { grade: "B", gpa: "3.0", color: "text-amber-600", bg: "bg-amber-50", comment: "Cukup Baik. Usahakan mengumpulkan tugas tepat waktu untuk menaikkan nilai." };
     return { grade: "C+", gpa: "2.3", color: "text-rose-600", bg: "bg-rose-50", comment: "Butuh Perhatian. Segera hubungi asisten dosen Aditya Pratama untuk sesi asistensi." };
@@ -293,7 +293,7 @@ export function CourseClassDashboard({ setView, loggedInUser }: CourseClassDashb
             >
               <div className="flex items-center justify-between border-b border-slate-100 pb-4 mb-4">
                 <div className="flex items-center gap-2.5">
-                  <div className="p-2 bg-blue-50 text-blue-600 rounded-xl">
+                  <div className="p-2 bg-blue-50 text-[#bf4440] rounded-xl">
                     <FileText size={18} />
                   </div>
                   <div>
@@ -322,7 +322,7 @@ export function CourseClassDashboard({ setView, loggedInUser }: CourseClassDashb
                     className="border-2 border-dashed border-slate-200 hover:border-blue-400 bg-slate-50/50 hover:bg-slate-50 p-8 rounded-2xl flex flex-col items-center text-center gap-3 transition-all cursor-pointer"
                     onClick={() => document.getElementById('file-input-class')?.click()}
                   >
-                    <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                    <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-[#bf4440]">
                       <Download size={22} className="rotate-180" />
                     </div>
                     <div>
@@ -362,7 +362,7 @@ export function CourseClassDashboard({ setView, loggedInUser }: CourseClassDashb
                         <span>{submittingProgress}%</span>
                       </div>
                       <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
-                        <div className="bg-blue-600 h-full transition-all duration-150" style={{ width: `${submittingProgress}%` }} />
+                        <div className="bg-[#bf4440] h-full transition-all duration-150" style={{ width: `${submittingProgress}%` }} />
                       </div>
                     </div>
                   )}
@@ -370,7 +370,7 @@ export function CourseClassDashboard({ setView, loggedInUser }: CourseClassDashb
                   <button
                     disabled={!submissionFile || submittingProgress > 0}
                     onClick={handleStartSubmission}
-                    className="w-full py-3 bg-blue-800 hover:bg-blue-900 text-white rounded-xl text-xs font-black uppercase tracking-wider shadow-md disabled:bg-slate-200 disabled:text-slate-400 transition-all active:scale-95 flex items-center justify-center gap-1.5 cursor-pointer"
+                    className="w-full py-3 bg-[#732926] hover:bg-blue-900 text-white rounded-xl text-xs font-black uppercase tracking-wider shadow-md disabled:bg-slate-200 disabled:text-slate-400 transition-all active:scale-95 flex items-center justify-center gap-1.5 cursor-pointer"
                   >
                     {submittingProgress > 0 ? (
                       <RefreshCw size={14} className="animate-spin" />
@@ -439,7 +439,7 @@ export function CourseClassDashboard({ setView, loggedInUser }: CourseClassDashb
                       <div className="flex items-center gap-2">
                         <span className="w-1.5 h-6 bg-blue-500 rounded-full animate-bounce [animation-delay:0.1s]" />
                         <span className="w-1.5 h-10 bg-blue-400 rounded-full animate-bounce [animation-delay:0.2s]" />
-                        <span className="w-1.5 h-8 bg-blue-600 rounded-full animate-bounce [animation-delay:0.3s]" />
+                        <span className="w-1.5 h-8 bg-[#bf4440] rounded-full animate-bounce [animation-delay:0.3s]" />
                         <span className="w-1.5 h-12 bg-blue-500 rounded-full animate-bounce [animation-delay:0.4s]" />
                         <span className="w-1.5 h-6 bg-blue-300 rounded-full animate-bounce [animation-delay:0.5s]" />
                       </div>
@@ -448,7 +448,7 @@ export function CourseClassDashboard({ setView, loggedInUser }: CourseClassDashb
                   ) : (
                     <button 
                       onClick={() => setIsPlaying(true)}
-                      className="w-16 h-16 rounded-full bg-blue-600 text-white flex items-center justify-center hover:bg-blue-700 transition-all scale-105 shadow-lg active:scale-95 cursor-pointer"
+                      className="w-16 h-16 rounded-full bg-[#bf4440] text-white flex items-center justify-center hover:bg-[#993633] transition-all scale-105 shadow-lg active:scale-95 cursor-pointer"
                     >
                       <Play size={26} className="fill-white ml-1" />
                     </button>
@@ -516,7 +516,7 @@ export function CourseClassDashboard({ setView, loggedInUser }: CourseClassDashb
                       }`}
                     >
                       <div className="flex items-center justify-between mb-1">
-                        <span className={`text-[9px] font-black px-1.5 py-0.5 rounded ${item.active ? 'bg-blue-600 text-white' : 'bg-slate-100 text-slate-500'}`}>{item.t}</span>
+                        <span className={`text-[9px] font-black px-1.5 py-0.5 rounded ${item.active ? 'bg-[#bf4440] text-white' : 'bg-slate-100 text-slate-500'}`}>{item.t}</span>
                         {item.active && <span className="text-[8px] font-black uppercase text-blue-500 animate-pulse">Now Playing</span>}
                       </div>
                       <p className="text-xs font-extrabold text-slate-800 leading-snug">{item.topic}</p>
@@ -573,7 +573,7 @@ export function CourseClassDashboard({ setView, loggedInUser }: CourseClassDashb
                         key={i} 
                         className={`h-1 flex-1 rounded-full transition-all duration-300 ${
                           i === currentQuizQuestion 
-                            ? 'bg-blue-600' 
+                            ? 'bg-[#bf4440]' 
                             : i < currentQuizQuestion ? 'bg-emerald-500' : 'bg-slate-100'
                         }`} 
                       />
@@ -595,13 +595,13 @@ export function CourseClassDashboard({ setView, loggedInUser }: CourseClassDashb
                             onClick={() => handleSelectQuizAnswer(idx)}
                             className={`w-full p-3.5 text-left text-xs font-bold rounded-xl border transition-all flex items-center justify-between cursor-pointer group ${
                               isSelected 
-                                ? 'bg-blue-50/80 border-blue-500 text-blue-950 shadow-sm' 
+                                ? 'bg-blue-50/80 border-[#bf4440] text-blue-950 shadow-sm' 
                                 : 'bg-white border-slate-200 hover:border-slate-300 text-slate-700'
                             }`}
                           >
                             <span>{option}</span>
                             <div className={`w-4 h-4 rounded-full border shrink-0 flex items-center justify-center ml-4 ${
-                              isSelected ? 'border-blue-600 bg-blue-600 text-white' : 'border-slate-300 bg-white'
+                              isSelected ? 'border-[#bf4440] bg-[#bf4440] text-white' : 'border-slate-300 bg-white'
                             }`}>
                               {isSelected && <Check size={10} className="stroke-[4]" />}
                             </div>
@@ -616,7 +616,7 @@ export function CourseClassDashboard({ setView, loggedInUser }: CourseClassDashb
                     <button
                       disabled={selectedQuizAnswers[currentQuizQuestion] === undefined}
                       onClick={handleNextQuizQuestion}
-                      className="px-6 py-2.5 bg-blue-800 hover:bg-blue-900 disabled:bg-slate-100 disabled:text-slate-400 text-white text-xs font-black uppercase rounded-lg shadow-md transition-all active:scale-95 cursor-pointer"
+                      className="px-6 py-2.5 bg-[#732926] hover:bg-blue-900 disabled:bg-slate-100 disabled:text-slate-400 text-white text-xs font-black uppercase rounded-lg shadow-md transition-all active:scale-95 cursor-pointer"
                     >
                       {currentQuizQuestion === quizQuestions.length - 1 ? "Kirim Hasil Quiz" : "Lanjut Soal"}
                     </button>
@@ -652,7 +652,7 @@ export function CourseClassDashboard({ setView, loggedInUser }: CourseClassDashb
                         setActiveQuizSession(null);
                         handleResetQuiz();
                       }}
-                      className="px-5 py-2 bg-blue-800 hover:bg-blue-900 text-white rounded-xl text-xs font-black uppercase tracking-wider"
+                      className="px-5 py-2 bg-[#732926] hover:bg-blue-900 text-white rounded-xl text-xs font-black uppercase tracking-wider"
                     >
                       Selesai & Tutup
                     </button>
@@ -669,9 +669,9 @@ export function CourseClassDashboard({ setView, loggedInUser }: CourseClassDashb
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="space-y-2.5">
             <nav className="flex items-center gap-2 text-[10px] font-black text-slate-400 uppercase tracking-widest">
-              <span onClick={() => setView('home')} className="hover:text-blue-700 cursor-pointer">Dashboard</span>
+              <span onClick={() => setView('home')} className="hover:text-[#993633] cursor-pointer">Dashboard</span>
               <ChevronRight size={10} />
-              <span onClick={() => setView('courses')} className="hover:text-blue-700 cursor-pointer">My Courses</span>
+              <span onClick={() => setView('courses')} className="hover:text-[#993633] cursor-pointer">My Courses</span>
               <ChevronRight size={10} />
               <span className="text-slate-800">Jurnalisme Digital</span>
             </nav>
@@ -716,7 +716,7 @@ export function CourseClassDashboard({ setView, loggedInUser }: CourseClassDashb
               onClick={() => {
                 alert("Menghubungkan ke Live Classroom Session...");
               }}
-              className="px-5 py-2.5 bg-blue-800 hover:bg-blue-900 text-white text-xs font-black uppercase rounded-xl transition-all shadow-md active:scale-95 flex items-center gap-2 cursor-pointer"
+              className="px-5 py-2.5 bg-[#732926] hover:bg-blue-900 text-white text-xs font-black uppercase rounded-xl transition-all shadow-md active:scale-95 flex items-center gap-2 cursor-pointer"
             >
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping shrink-0" />
               Go to Live Session
@@ -741,7 +741,7 @@ export function CourseClassDashboard({ setView, loggedInUser }: CourseClassDashb
                   <span className="text-[8px] font-black text-slate-400 uppercase tracking-widest block mb-0.5">Overview</span>
                   <h3 className="text-sm font-black text-slate-800">Student Performance</h3>
                 </div>
-                <span className="text-[9px] font-black text-blue-600 bg-blue-50 border border-blue-100 px-2 py-0.5 rounded-full uppercase tracking-wider">Live Grade Metric</span>
+                <span className="text-[9px] font-black text-[#bf4440] bg-blue-50 border border-blue-100 px-2 py-0.5 rounded-full uppercase tracking-wider">Live Grade Metric</span>
               </div>
 
               <div className="flex items-center gap-5">
@@ -753,7 +753,7 @@ export function CourseClassDashboard({ setView, loggedInUser }: CourseClassDashb
                       cx="48" 
                       cy="48" 
                       r="40" 
-                      stroke="#10B981" 
+                      stroke="#5c90a3" 
                       strokeWidth="8" 
                       fill="transparent" 
                       strokeDasharray="251.2" 
@@ -776,7 +776,7 @@ export function CourseClassDashboard({ setView, loggedInUser }: CourseClassDashb
                     </div>
                     <div className="text-right">
                       <span className="text-[8px] font-black text-slate-400 uppercase block leading-none">GPA Weight</span>
-                      <span className="text-xs font-black text-blue-800">{prediction.gpa} / 4.0</span>
+                      <span className="text-xs font-black text-[#732926]">{prediction.gpa} / 4.0</span>
                     </div>
                   </div>
 
@@ -804,7 +804,7 @@ export function CourseClassDashboard({ setView, loggedInUser }: CourseClassDashb
                     <motion.div 
                       initial={{ width: 0 }}
                       animate={{ width: `${assignmentScore}%` }}
-                      className="bg-blue-600 h-full rounded-full" 
+                      className="bg-[#bf4440] h-full rounded-full" 
                     />
                   </div>
                 </div>
@@ -834,7 +834,7 @@ export function CourseClassDashboard({ setView, loggedInUser }: CourseClassDashb
                 <h3 className="text-sm font-black text-slate-800">Visual Kompetensi & Skill Radar</h3>
               </div>
               <div className="flex gap-2 shrink-0">
-                <span className="text-[9px] font-black bg-blue-50 text-blue-700 px-2.5 py-1 rounded-lg">CPL Terpenuhi: 4 / 5</span>
+                <span className="text-[9px] font-black bg-blue-50 text-[#993633] px-2.5 py-1 rounded-lg">CPL Terpenuhi: 4 / 5</span>
                 <span className="text-[9px] font-black bg-emerald-50 text-emerald-700 px-2.5 py-1 rounded-lg">Status: Unggul</span>
               </div>
             </div>
@@ -846,7 +846,7 @@ export function CourseClassDashboard({ setView, loggedInUser }: CourseClassDashb
                   <RadarChart cx="50%" cy="50%" outerRadius="70%" data={competencyData}>
                     <PolarGrid stroke="#E2E8F0" />
                     <PolarAngleAxis dataKey="subject" tick={{ fill: '#64748B', fontSize: 8, fontWeight: 700 }} />
-                    <Radar name="Student A" dataKey="level" stroke="#1E40AF" fill="#3B82F6" fillOpacity={0.25} />
+                    <Radar name="Student A" dataKey="level" stroke="#732926" fill="#bf4440" fillOpacity={0.25} />
                   </RadarChart>
                 </ResponsiveContainer>
               </div>
@@ -863,10 +863,10 @@ export function CourseClassDashboard({ setView, loggedInUser }: CourseClassDashb
                     <div key={index} className="p-2.5 bg-slate-50 rounded-xl border border-slate-200/60 flex flex-col justify-between">
                       <div className="flex justify-between items-center mb-1">
                         <span className="text-[10px] font-extrabold text-slate-700 truncate">{skill.name}</span>
-                        <span className="text-[9px] font-black text-blue-600 font-mono shrink-0">{skill.score}</span>
+                        <span className="text-[9px] font-black text-[#bf4440] font-mono shrink-0">{skill.score}</span>
                       </div>
                       <div className="h-1.5 w-full bg-slate-200 rounded-full overflow-hidden mb-1">
-                        <div className={`h-full bg-blue-800 rounded-full ${skill.barWidth}`} />
+                        <div className={`h-full bg-[#732926] rounded-full ${skill.barWidth}`} />
                       </div>
                       <span className="text-[8px] font-black text-slate-400 uppercase tracking-wide">{skill.status}</span>
                     </div>
@@ -874,7 +874,7 @@ export function CourseClassDashboard({ setView, loggedInUser }: CourseClassDashb
                 </div>
                 <button 
                   onClick={() => alert("Membuka Peta Capaian Pembelajaran Lulusan (CPL)...")}
-                  className="w-full text-center text-blue-700 text-[10px] font-black uppercase tracking-wider hover:underline py-1.5"
+                  className="w-full text-center text-[#993633] text-[10px] font-black uppercase tracking-wider hover:underline py-1.5"
                 >
                   Lihat Detail Deskripsi Kompetensi & Matrix Map
                 </button>
@@ -899,7 +899,7 @@ export function CourseClassDashboard({ setView, loggedInUser }: CourseClassDashb
                     placeholder="Cari materi sesi..." 
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="pl-8 pr-3 py-1.5 bg-white border border-slate-200 rounded-lg text-xs font-bold w-44 outline-none focus:border-blue-500"
+                    className="pl-8 pr-3 py-1.5 bg-white border border-slate-200 rounded-lg text-xs font-bold w-44 outline-none focus:border-[#bf4440]"
                   />
                 </div>
                 <div className="flex bg-white border border-slate-200 rounded-lg p-0.5 shrink-0">
@@ -944,7 +944,7 @@ export function CourseClassDashboard({ setView, loggedInUser }: CourseClassDashb
                         <div className={`md:w-40 p-5 flex flex-col items-center justify-center border-b md:border-b-0 md:border-r text-center shrink-0 ${
                           isCurrent ? 'bg-blue-50/60 border-blue-200' : 'bg-slate-50 border-slate-200'
                         }`}>
-                          <span className={`text-[8px] font-black uppercase tracking-widest ${isCurrent ? 'text-blue-800' : 'text-slate-400'}`}>Session</span>
+                          <span className={`text-[8px] font-black uppercase tracking-widest ${isCurrent ? 'text-[#732926]' : 'text-slate-400'}`}>Session</span>
                           <span className={`text-4xl font-black ${isCurrent ? 'text-blue-900' : 'text-slate-800'}`}>{session.id}</span>
                           <span className="text-[9px] font-bold text-slate-400 mt-1 uppercase whitespace-nowrap">{session.date}</span>
                         </div>
@@ -955,7 +955,7 @@ export function CourseClassDashboard({ setView, loggedInUser }: CourseClassDashb
                             <div>
                               <div className="flex flex-wrap items-center gap-2 mb-1">
                                 {isCurrent ? (
-                                  <span className="px-2 py-0.5 bg-blue-800 text-white text-[8px] font-black uppercase rounded tracking-wider animate-pulse">Live / Ongoing</span>
+                                  <span className="px-2 py-0.5 bg-[#732926] text-white text-[8px] font-black uppercase rounded tracking-wider animate-pulse">Live / Ongoing</span>
                                 ) : (
                                   <span className="px-2 py-0.5 bg-slate-100 text-slate-500 text-[8px] font-black uppercase rounded tracking-wider">Completed</span>
                                 )}
@@ -973,7 +973,7 @@ export function CourseClassDashboard({ setView, loggedInUser }: CourseClassDashb
                             {isCurrent ? (
                               <button 
                                 onClick={() => alert("Menghubungkan ke live meeting room...")}
-                                className="px-4 py-2 bg-blue-800 hover:bg-blue-900 text-white text-[10px] font-black uppercase rounded-lg shadow-sm transition-all active:scale-95 flex items-center gap-1.5 cursor-pointer"
+                                className="px-4 py-2 bg-[#732926] hover:bg-blue-900 text-white text-[10px] font-black uppercase rounded-lg shadow-sm transition-all active:scale-95 flex items-center gap-1.5 cursor-pointer"
                               >
                                 <Play size={12} className="fill-white" /> Join Class Room
                               </button>
@@ -1095,7 +1095,7 @@ export function CourseClassDashboard({ setView, loggedInUser }: CourseClassDashb
                   title: "Interactive e-Book", 
                   desc: "Course Handbook 2024", 
                   icon: BookOpen, 
-                  color: "text-blue-600 bg-blue-50/50 border-blue-100",
+                  color: "text-[#bf4440] bg-blue-50/50 border-blue-100",
                   action: () => alert("Membuka Interactive e-Book Reader...")
                 },
                 { 
@@ -1171,7 +1171,7 @@ export function CourseClassDashboard({ setView, loggedInUser }: CourseClassDashb
                     </div>
                   ))}
                   {isAiReplying && (
-                    <div className="p-2.5 bg-blue-50 border border-blue-100 rounded-xl flex items-center gap-2 text-xs font-bold text-blue-600">
+                    <div className="p-2.5 bg-blue-50 border border-blue-100 rounded-xl flex items-center gap-2 text-xs font-bold text-[#bf4440]">
                       <RefreshCw size={12} className="animate-spin" />
                       <span>Aksara AI sedang merumuskan jawaban...</span>
                     </div>
@@ -1201,7 +1201,7 @@ export function CourseClassDashboard({ setView, loggedInUser }: CourseClassDashb
           <div className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-4">
             <div className="flex justify-between items-center">
               <h3 className="text-xs font-black text-slate-800 uppercase tracking-widest">Active Assignments</h3>
-              <span className="text-[9px] font-black text-blue-600 bg-blue-50 border border-blue-100 px-2.5 py-0.5 rounded-full uppercase tracking-wider">3 Active</span>
+              <span className="text-[9px] font-black text-[#bf4440] bg-blue-50 border border-blue-100 px-2.5 py-0.5 rounded-full uppercase tracking-wider">3 Active</span>
             </div>
 
             <div className="space-y-3">
@@ -1215,7 +1215,7 @@ export function CourseClassDashboard({ setView, loggedInUser }: CourseClassDashb
                   className="p-3 bg-slate-50 border border-slate-200/60 rounded-xl space-y-1.5 hover:border-blue-300 transition-all cursor-pointer group"
                 >
                   <div className="flex items-center justify-between">
-                    <span className="text-xs font-extrabold text-slate-800 truncate max-w-[180px] group-hover:text-blue-700 transition-colors">{ass.name}</span>
+                    <span className="text-xs font-extrabold text-slate-800 truncate max-w-[180px] group-hover:text-[#993633] transition-colors">{ass.name}</span>
                     <span className={`text-[8px] font-black px-1.5 py-0.5 rounded uppercase tracking-wider ${ass.color}`}>{ass.status}</span>
                   </div>
                   <div className="flex items-center gap-1.5 text-[9px] font-bold text-slate-400">
@@ -1228,7 +1228,7 @@ export function CourseClassDashboard({ setView, loggedInUser }: CourseClassDashb
 
             <button 
               onClick={() => alert("Membuka seluruh riwayat penugasan semester 4...")}
-              className="w-full text-center text-blue-800 text-[10px] font-black uppercase tracking-wider hover:underline pt-1"
+              className="w-full text-center text-[#732926] text-[10px] font-black uppercase tracking-wider hover:underline pt-1"
             >
               View All Assignments History
             </button>
@@ -1246,9 +1246,9 @@ export function CourseClassDashboard({ setView, loggedInUser }: CourseClassDashb
                 </div>
                 <div className="min-w-0 flex-1">
                   <p className="text-xs font-extrabold text-slate-800 leading-tight">Dr. Salsabila Putri</p>
-                  <p className="text-[9px] font-black text-blue-600 uppercase tracking-wider mt-0.5">Main Instructor</p>
+                  <p className="text-[9px] font-black text-[#bf4440] uppercase tracking-wider mt-0.5">Main Instructor</p>
                 </div>
-                <a href="mailto:salsabila.p@unpad.ac.id" className="p-2 hover:bg-slate-100 rounded-full text-slate-400 hover:text-blue-600 transition-all">
+                <a href="mailto:salsabila.p@unpad.ac.id" className="p-2 hover:bg-slate-100 rounded-full text-slate-400 hover:text-[#bf4440] transition-all">
                   <Mail size={16} />
                 </a>
               </div>
@@ -1297,14 +1297,14 @@ export function CourseClassDashboard({ setView, loggedInUser }: CourseClassDashb
                 <span className="text-[10px] font-black text-slate-400 uppercase">12 of 16 Sessions Completed</span>
               </div>
               <div className="h-2 w-full bg-slate-200 rounded-full overflow-hidden">
-                <div className="bg-blue-800 h-full rounded-full w-[75%]" />
+                <div className="bg-[#732926] h-full rounded-full w-[75%]" />
               </div>
               <div className="flex gap-1.5">
                 {[1, 2, 3, 4].map((step) => (
                   <div 
                     key={step} 
                     className={`h-1.5 flex-grow rounded-full ${
-                      step <= 3 ? 'bg-blue-800' : 'bg-slate-300'
+                      step <= 3 ? 'bg-[#732926]' : 'bg-slate-300'
                     }`} 
                   />
                 ))}

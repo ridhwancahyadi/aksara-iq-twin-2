@@ -186,7 +186,7 @@ export function Competitions() {
             initial={{ opacity: 0, y: -50, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -20, scale: 0.9 }}
-            className="fixed top-6 left-1/2 -translate-x-1/2 z-50 bg-slate-900 text-white px-5 py-3 rounded-xl shadow-2xl border border-blue-500/30 flex items-center gap-3 text-sm font-bold"
+            className="fixed top-6 left-1/2 -translate-x-1/2 z-50 bg-slate-900 text-white px-5 py-3 rounded-xl shadow-2xl border border-[#bf4440]/30 flex items-center gap-3 text-sm font-bold"
           >
             <div className="w-6 h-6 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center">
               <Check size={14} className="stroke-[3]" />
@@ -201,7 +201,7 @@ export function Competitions() {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
           <div>
             <div className="flex items-center gap-2 mb-1">
-              <span className="px-2 py-0.5 bg-blue-50 text-blue-700 text-[10px] font-black rounded-full uppercase tracking-wider">
+              <span className="px-2 py-0.5 bg-blue-50 text-[#993633] text-[10px] font-black rounded-full uppercase tracking-wider">
                 Opportunity Hub
               </span>
               <span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
@@ -223,7 +223,7 @@ export function Competitions() {
               placeholder="Cari kompetisi, teknologi, tag..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-bold focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none"
+              className="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-bold focus:ring-2 focus:ring-[#bf4440]/20/20 focus:border-[#bf4440] transition-all outline-none"
             />
             {searchQuery && (
               <button 
@@ -246,7 +246,7 @@ export function Competitions() {
                 onClick={() => setActiveCategory(cat)}
                 className={`px-4 py-2 rounded-xl text-xs font-extrabold transition-all cursor-pointer ${
                   active 
-                    ? 'bg-blue-600 text-white shadow-sm shadow-blue-500/20' 
+                    ? 'bg-[#bf4440] text-white shadow-sm shadow-blue-500/20' 
                     : 'bg-slate-50 text-slate-600 hover:bg-slate-100'
                 }`}
               >
@@ -264,7 +264,7 @@ export function Competitions() {
           {/* Data aggregation badges */}
           <div className="bg-slate-50 border border-slate-200/60 rounded-xl p-3 flex flex-wrap items-center justify-between gap-3 text-xs">
             <div className="flex items-center gap-2">
-              <Database size={14} className="text-blue-600" />
+              <Database size={14} className="text-[#bf4440]" />
               <span className="font-bold text-slate-700">Sumber data teragregasi:</span>
             </div>
             <div className="flex items-center gap-4 text-slate-500 font-semibold text-[11px]">
@@ -278,14 +278,14 @@ export function Competitions() {
                 <span className="w-1.5 h-1.5 rounded-full bg-indigo-500"></span> LinkedIn Partner
               </span>
             </div>
-            <span className="text-[10px] bg-blue-50 text-blue-700 font-black px-2 py-0.5 rounded uppercase">Verified</span>
+            <span className="text-[10px] bg-blue-50 text-[#993633] font-black px-2 py-0.5 rounded uppercase">Verified</span>
           </div>
 
           {/* Recommended section */}
           <section className="flex flex-col gap-4">
             <div className="flex justify-between items-center">
               <div className="flex items-center gap-2">
-                <Sparkles size={16} className="text-blue-600 fill-blue-500/20 animate-pulse" />
+                <Sparkles size={16} className="text-[#bf4440] fill-blue-500/20 animate-pulse" />
                 <h2 className="text-sm font-black text-slate-900 tracking-tight uppercase">Recommended For You</h2>
               </div>
               <span className="text-xs font-bold text-slate-400">Berdasarkan Gap Capaian & Minat</span>
@@ -295,13 +295,13 @@ export function Competitions() {
               {filteredComps.filter(c => !c.levelMahir && !c.daysLeft).map((comp) => (
                 <div 
                   key={comp.id}
-                  className="bg-white border border-slate-200/80 rounded-2xl overflow-hidden hover:border-blue-500 hover:shadow-xl transition-all duration-300 flex flex-col h-full group"
+                  className="bg-white border border-slate-200/80 rounded-2xl overflow-hidden hover:border-[#bf4440] hover:shadow-xl transition-all duration-300 flex flex-col h-full group"
                 >
                   <div className="p-5 flex-grow flex flex-col">
                     <div className="flex justify-between items-start mb-4">
                       <span className={`px-2 py-0.5 rounded text-[9px] font-black uppercase tracking-wider ${
                         comp.category === 'Hackathon' ? 'bg-orange-50 text-orange-700 border border-orange-100' :
-                        comp.category === 'Sertifikasi' ? 'bg-blue-50 text-blue-700 border border-blue-100' :
+                        comp.category === 'Sertifikasi' ? 'bg-blue-50 text-[#993633] border border-blue-100' :
                         'bg-purple-50 text-purple-700 border border-purple-100'
                       }`}>
                         {comp.category}
@@ -312,7 +312,7 @@ export function Competitions() {
                       </div>
                     </div>
 
-                    <h3 className="font-bold text-slate-900 tracking-tight text-[15px] group-hover:text-blue-600 transition-colors mb-1">
+                    <h3 className="font-bold text-slate-900 tracking-tight text-[15px] group-hover:text-[#bf4440] transition-colors mb-1">
                       {comp.title}
                     </h3>
                     <p className="text-xs text-slate-500 font-medium mb-4">{comp.organizer}</p>
@@ -327,7 +327,7 @@ export function Competitions() {
                     </div>
 
                     <div className="flex justify-between items-center text-[11px] text-slate-400 font-bold pt-4 border-t border-slate-100 mt-auto">
-                      <span>Impact: <span className="text-blue-600">{comp.impact} ({comp.impactScore}/10)</span></span>
+                      <span>Impact: <span className="text-[#bf4440]">{comp.impact} ({comp.impactScore}/10)</span></span>
                       <span className="flex items-center gap-1"><Calendar size={11} /> {comp.deadline}</span>
                     </div>
                   </div>
@@ -336,7 +336,7 @@ export function Competitions() {
                     {comp.roleNeeded ? (
                       <button 
                         onClick={() => setTeamFinderComp(comp)}
-                        className="w-full py-3.5 bg-slate-50 hover:bg-blue-600 hover:text-white text-blue-700 text-xs font-extrabold flex items-center justify-center gap-1.5 transition-all cursor-pointer"
+                        className="w-full py-3.5 bg-slate-50 hover:bg-[#bf4440] hover:text-white text-[#993633] text-xs font-extrabold flex items-center justify-center gap-1.5 transition-all cursor-pointer"
                       >
                         <Users size={13} />
                         Cari Anggota Tim (Butuh {comp.spotsNeeded} Orang)
@@ -344,7 +344,7 @@ export function Competitions() {
                     ) : (
                       <button 
                         onClick={() => setSelectedComp(comp)}
-                        className="w-full py-3.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-extrabold flex items-center justify-center gap-1.5 transition-all cursor-pointer"
+                        className="w-full py-3.5 bg-[#bf4440] hover:bg-[#993633] text-white text-xs font-extrabold flex items-center justify-center gap-1.5 transition-all cursor-pointer"
                       >
                         Lihat Detail Kegiatan
                       </button>
@@ -369,7 +369,7 @@ export function Competitions() {
               {filteredComps.filter(c => c.daysLeft).map((comp) => (
                 <div 
                   key={comp.id}
-                  className="bg-white border border-slate-200/80 rounded-2xl p-5 relative overflow-hidden flex flex-col justify-between hover:border-blue-500 hover:shadow-xl transition-all duration-300 group"
+                  className="bg-white border border-slate-200/80 rounded-2xl p-5 relative overflow-hidden flex flex-col justify-between hover:border-[#bf4440] hover:shadow-xl transition-all duration-300 group"
                 >
                   <div className="absolute top-0 right-0 px-3 py-1 bg-rose-600 text-white text-[10px] font-extrabold rounded-bl-xl shadow-sm">
                     Sisa {comp.daysLeft} Hari!
@@ -382,7 +382,7 @@ export function Competitions() {
                       {comp.category}
                     </span>
 
-                    <h3 className="font-bold text-slate-900 tracking-tight text-[15px] group-hover:text-blue-600 transition-colors mb-1">
+                    <h3 className="font-bold text-slate-900 tracking-tight text-[15px] group-hover:text-[#bf4440] transition-colors mb-1">
                       {comp.title}
                     </h3>
                     <p className="text-xs text-slate-500 font-medium mb-4">{comp.organizer}</p>
@@ -402,7 +402,7 @@ export function Competitions() {
                   <div className="flex gap-2 pt-4 border-t border-slate-100">
                     <button 
                       onClick={() => setRegisterComp(comp)}
-                      className="flex-1 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-extrabold rounded-xl transition-all cursor-pointer flex items-center justify-center"
+                      className="flex-1 py-2.5 bg-[#bf4440] hover:bg-[#993633] text-white text-xs font-extrabold rounded-xl transition-all cursor-pointer flex items-center justify-center"
                     >
                       Daftar Sekarang
                     </button>
@@ -425,7 +425,7 @@ export function Competitions() {
           <section className="bg-gradient-to-br from-indigo-50/40 to-blue-50/20 p-6 rounded-2xl border border-blue-100">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-blue-600/10 text-blue-600 flex items-center justify-center shadow-sm">
+                <div className="w-10 h-10 rounded-xl bg-[#bf4440]/10 text-[#bf4440] flex items-center justify-center shadow-sm">
                   <Award size={20} className="stroke-[2.5]" />
                 </div>
                 <div>
@@ -442,7 +442,7 @@ export function Competitions() {
                 <span className="text-[10px] font-extrabold text-slate-500 uppercase">Tampilkan Level Mahir</span>
                 <button 
                   onClick={() => setShowLevelMahir(!showLevelMahir)}
-                  className={`w-10 h-5.5 rounded-full relative p-0.5 transition-all flex items-center cursor-pointer ${showLevelMahir ? 'bg-blue-600' : 'bg-slate-300'}`}
+                  className={`w-10 h-5.5 rounded-full relative p-0.5 transition-all flex items-center cursor-pointer ${showLevelMahir ? 'bg-[#bf4440]' : 'bg-slate-300'}`}
                 >
                   <div className={`w-4 h-4 rounded-full bg-white shadow-md transition-all transform ${showLevelMahir ? 'translate-x-4.5' : 'translate-x-0'}`} />
                 </button>
@@ -454,7 +454,7 @@ export function Competitions() {
                 {filteredComps.filter(c => c.levelMahir).map((comp) => (
                   <div 
                     key={comp.id}
-                    className="bg-white border border-slate-200/80 rounded-2xl p-5 hover:border-blue-500 hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+                    className="bg-white border border-slate-200/80 rounded-2xl p-5 hover:border-[#bf4440] hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
                   >
                     <div>
                       <div className="flex justify-between items-start mb-3">
@@ -480,7 +480,7 @@ export function Competitions() {
                       </div>
 
                       <div className="flex justify-between items-center text-[11px] text-slate-400 font-bold mb-4">
-                        <span>Impact: <span className="text-blue-600">{comp.impactScore}/10 (Perfect)</span></span>
+                        <span>Impact: <span className="text-[#bf4440]">{comp.impactScore}/10 (Perfect)</span></span>
                         <span>{comp.deadline}</span>
                       </div>
                     </div>
@@ -511,7 +511,7 @@ export function Competitions() {
           <section className="bg-white border border-slate-200/80 rounded-2xl p-5 shadow-sm flex flex-col gap-4">
             <div className="flex justify-between items-center">
               <div className="flex items-center gap-2">
-                <Calendar size={16} className="text-blue-600" />
+                <Calendar size={16} className="text-[#bf4440]" />
                 <h3 className="font-black text-slate-900 text-sm uppercase tracking-tight">Agenda Deadline</h3>
               </div>
               <span className="px-2 py-0.5 bg-orange-50 text-orange-700 text-[10px] font-black rounded-lg border border-orange-100">
@@ -551,7 +551,7 @@ export function Competitions() {
                 
                 <span className="text-slate-400">02</span>
                 <span className="text-slate-400">03</span>
-                <span className="bg-blue-600 text-white rounded-full w-5 h-5 flex items-center justify-center mx-auto font-black shadow-sm relative group cursor-pointer">
+                <span className="bg-[#bf4440] text-white rounded-full w-5 h-5 flex items-center justify-center mx-auto font-black shadow-sm relative group cursor-pointer">
                   04
                   <div className="absolute bottom-full mb-1 bg-slate-950 text-white text-[9px] font-black rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-all shadow-md pointer-events-none whitespace-nowrap z-30">
                     Web3 Hackfest Deadline
@@ -582,12 +582,12 @@ export function Competitions() {
                 <span className="text-[10px] font-black text-orange-600 bg-white border border-orange-200 px-2 py-0.5 rounded-md">H-3</span>
               </div>
 
-              <div className="p-3 border-l-4 border-blue-500 bg-blue-50/50 rounded-xl flex justify-between items-center border border-slate-100">
+              <div className="p-3 border-l-4 border-[#bf4440] bg-blue-50/50 rounded-xl flex justify-between items-center border border-slate-100">
                 <div>
                   <h4 className="text-[11px] font-black text-blue-950">Web3 Cyber Sec Hackfest</h4>
-                  <p className="text-[9px] text-blue-700 font-bold mt-0.5">Deadline: 04 Mar 2025, 17:00</p>
+                  <p className="text-[9px] text-[#993633] font-bold mt-0.5">Deadline: 04 Mar 2025, 17:00</p>
                 </div>
-                <span className="text-[10px] font-black text-blue-600 bg-white border border-blue-200 px-2 py-0.5 rounded-md">H-8</span>
+                <span className="text-[10px] font-black text-[#bf4440] bg-white border border-blue-200 px-2 py-0.5 rounded-md">H-8</span>
               </div>
             </div>
 
@@ -620,7 +620,7 @@ export function Competitions() {
                   cy="72" 
                   fill="transparent" 
                   r="60" 
-                  stroke="#2563eb" 
+                  stroke="#bf4440" 
                   strokeWidth="10" 
                   strokeDasharray="376.8" 
                   strokeDashoffset="56.52" // 85% computed
@@ -651,12 +651,12 @@ export function Competitions() {
             </div>
 
             <p className="text-[11px] text-slate-600 font-medium leading-relaxed">
-              Beberapa lomba & kegiatan ditandai badge <span className="font-extrabold text-blue-700">Kegiatan Prodi</span>. Ini merupakan program kemitraan resmi Jurusan Teknik Informatika untuk konversi SKS mata kuliah kerja praktek atau portofolio mandiri.
+              Beberapa lomba & kegiatan ditandai badge <span className="font-extrabold text-[#993633]">Kegiatan Prodi</span>. Ini merupakan program kemitraan resmi Jurusan Teknik Informatika untuk konversi SKS mata kuliah kerja praktek atau portofolio mandiri.
             </p>
 
             <button 
               onClick={() => setShowSksModal(true)}
-              className="text-[11px] font-black text-blue-700 hover:text-blue-800 flex items-center gap-1 mt-1 cursor-pointer hover:underline self-start"
+              className="text-[11px] font-black text-[#993633] hover:text-[#732926] flex items-center gap-1 mt-1 cursor-pointer hover:underline self-start"
             >
               Pelajari Matriks Konversi SKS
               <ChevronRight size={12} />
@@ -701,17 +701,17 @@ export function Competitions() {
                   <div className="divide-y divide-slate-100">
                     <div className="grid grid-cols-3 p-2.5">
                       <span className="font-bold text-slate-950">Juara 1-3 Internasional</span>
-                      <span className="text-blue-700 font-extrabold">4 SKS (A)</span>
+                      <span className="text-[#993633] font-extrabold">4 SKS (A)</span>
                       <span>Mata Kuliah Tugas Akhir / Skripsi</span>
                     </div>
                     <div className="grid grid-cols-3 p-2.5">
                       <span className="font-bold text-slate-950">Juara 1-3 Nasional / Finalis Int</span>
-                      <span className="text-blue-700 font-extrabold">3 SKS (A)</span>
+                      <span className="text-[#993633] font-extrabold">3 SKS (A)</span>
                       <span>KP / Magang Mandiri</span>
                     </div>
                     <div className="grid grid-cols-3 p-2.5">
                       <span className="font-bold text-slate-950">Finalis Nasional / Juara Regional</span>
-                      <span className="text-blue-700 font-extrabold">2 SKS (A)</span>
+                      <span className="text-[#993633] font-extrabold">2 SKS (A)</span>
                       <span>Pilihan Portofolio Bebas</span>
                     </div>
                     <div className="grid grid-cols-3 p-2.5">
@@ -753,7 +753,7 @@ export function Competitions() {
             >
               <div className="p-5 border-b border-slate-100 flex justify-between items-center bg-blue-50/10">
                 <div className="flex items-center gap-2">
-                  <Trophy size={16} className="text-blue-600" />
+                  <Trophy size={16} className="text-[#bf4440]" />
                   <span className="text-xs font-black text-slate-400 uppercase tracking-wider">{selectedComp.category} Details</span>
                 </div>
                 <button onClick={() => setSelectedComp(null)} className="p-1 hover:bg-slate-100 rounded-lg cursor-pointer">
@@ -770,7 +770,7 @@ export function Competitions() {
                 <div className="grid grid-cols-2 gap-3 text-xs">
                   <div className="bg-slate-50 p-3 rounded-xl border border-slate-100">
                     <span className="block text-[10px] text-slate-400 font-black uppercase">Skor Kecocokan</span>
-                    <span className="text-sm font-black text-blue-700">{selectedComp.matchScore}% Match Rate</span>
+                    <span className="text-sm font-black text-[#993633]">{selectedComp.matchScore}% Match Rate</span>
                   </div>
                   <div className="bg-slate-50 p-3 rounded-xl border border-slate-100">
                     <span className="block text-[10px] text-slate-400 font-black uppercase">Tenggat Pendaftaran</span>
@@ -796,7 +796,7 @@ export function Competitions() {
                   <h4 className="text-xs font-black uppercase text-slate-400 font-mono">Tags & Skillsets</h4>
                   <div className="flex flex-wrap gap-1">
                     {selectedComp.tags.map((tag, idx) => (
-                      <span key={idx} className="text-[10px] font-bold text-blue-700 bg-blue-50 px-2.5 py-1 rounded-full">
+                      <span key={idx} className="text-[10px] font-bold text-[#993633] bg-blue-50 px-2.5 py-1 rounded-full">
                         #{tag}
                       </span>
                     ))}
@@ -816,7 +816,7 @@ export function Competitions() {
                     setRegisterComp(selectedComp);
                     setSelectedComp(null);
                   }}
-                  className="px-4 py-2 bg-blue-600 text-white text-xs font-extrabold rounded-xl hover:bg-blue-700 cursor-pointer"
+                  className="px-4 py-2 bg-[#bf4440] text-white text-xs font-extrabold rounded-xl hover:bg-[#993633] cursor-pointer"
                 >
                   Daftar Kegiatan
                 </button>
@@ -834,12 +834,12 @@ export function Competitions() {
               exit={{ scale: 0.95, opacity: 0 }}
               className="bg-white rounded-2xl border border-slate-100 shadow-2xl w-full max-w-md overflow-hidden flex flex-col"
             >
-              <div className="p-5 border-b border-slate-100 flex justify-between items-center bg-blue-600 text-white">
+              <div className="p-5 border-b border-slate-100 flex justify-between items-center bg-[#bf4440] text-white">
                 <div className="flex items-center gap-2">
                   <Trophy size={16} />
                   <h3 className="font-black text-sm uppercase">Pendaftaran Kompetisi</h3>
                 </div>
-                <button onClick={() => setRegisterComp(null)} className="p-1 hover:bg-blue-700 rounded-lg cursor-pointer text-white">
+                <button onClick={() => setRegisterComp(null)} className="p-1 hover:bg-[#993633] rounded-lg cursor-pointer text-white">
                   <X size={16} />
                 </button>
               </div>
@@ -858,7 +858,7 @@ export function Competitions() {
                       required
                       value={regForm.name}
                       onChange={(e) => setRegForm({...regForm, name: e.target.value})}
-                      className="w-full px-3 py-2 border border-slate-200 rounded-lg outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 text-xs font-bold"
+                      className="w-full px-3 py-2 border border-slate-200 rounded-lg outline-none focus:ring-2 focus:ring-[#bf4440]/20/20 focus:border-[#bf4440] text-xs font-bold"
                     />
                   </div>
 
@@ -870,7 +870,7 @@ export function Competitions() {
                         required
                         value={regForm.nim}
                         onChange={(e) => setRegForm({...regForm, nim: e.target.value})}
-                        className="w-full px-3 py-2 border border-slate-200 rounded-lg outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 text-xs font-bold"
+                        className="w-full px-3 py-2 border border-slate-200 rounded-lg outline-none focus:ring-2 focus:ring-[#bf4440]/20/20 focus:border-[#bf4440] text-xs font-bold"
                       />
                     </div>
                     <div>
@@ -880,7 +880,7 @@ export function Competitions() {
                         required
                         value={regForm.role}
                         onChange={(e) => setRegForm({...regForm, role: e.target.value})}
-                        className="w-full px-3 py-2 border border-slate-200 rounded-lg outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 text-xs font-bold"
+                        className="w-full px-3 py-2 border border-slate-200 rounded-lg outline-none focus:ring-2 focus:ring-[#bf4440]/20/20 focus:border-[#bf4440] text-xs font-bold"
                       />
                     </div>
                   </div>
@@ -892,13 +892,13 @@ export function Competitions() {
                       placeholder="Contoh: Aksara Pioneers"
                       value={regForm.teamName}
                       onChange={(e) => setRegForm({...regForm, teamName: e.target.value})}
-                      className="w-full px-3 py-2 border border-slate-200 rounded-lg outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 text-xs font-bold"
+                      className="w-full px-3 py-2 border border-slate-200 rounded-lg outline-none focus:ring-2 focus:ring-[#bf4440]/20/20 focus:border-[#bf4440] text-xs font-bold"
                     />
                   </div>
                 </div>
 
-                <div className="bg-blue-50 text-blue-800 p-3 rounded-xl flex gap-2">
-                  <ShieldCheck size={16} className="text-blue-600 shrink-0 mt-0.5" />
+                <div className="bg-blue-50 text-[#732926] p-3 rounded-xl flex gap-2">
+                  <ShieldCheck size={16} className="text-[#bf4440] shrink-0 mt-0.5" />
                   <p className="text-[10px] leading-relaxed">
                     Pendaftaran akan divalidasi secara otomatis menggunakan data KRS Anda. Aksara AI akan memantau progress keikutsertaan Anda demi kelayakan konversi SKS.
                   </p>
@@ -914,7 +914,7 @@ export function Competitions() {
                   </button>
                   <button 
                     type="submit"
-                    className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-extrabold rounded-xl cursor-pointer"
+                    className="px-4 py-2 bg-[#bf4440] hover:bg-[#993633] text-white text-xs font-extrabold rounded-xl cursor-pointer"
                   >
                     Kirim Pendaftaran
                   </button>
@@ -956,7 +956,7 @@ export function Competitions() {
                       required
                       value={teamFinderForm.teamName}
                       onChange={(e) => setTeamFinderForm({...teamFinderForm, teamName: e.target.value})}
-                      className="w-full px-3 py-2 border border-slate-200 rounded-lg outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 text-xs font-bold"
+                      className="w-full px-3 py-2 border border-slate-200 rounded-lg outline-none focus:ring-2 focus:ring-[#bf4440]/20/20 focus:border-[#bf4440] text-xs font-bold"
                     />
                   </div>
 
@@ -967,7 +967,7 @@ export function Competitions() {
                       required
                       value={teamFinderForm.roleNeeded}
                       onChange={(e) => setTeamFinderForm({...teamFinderForm, roleNeeded: e.target.value})}
-                      className="w-full px-3 py-2 border border-slate-200 rounded-lg outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 text-xs font-bold"
+                      className="w-full px-3 py-2 border border-slate-200 rounded-lg outline-none focus:ring-2 focus:ring-[#bf4440]/20/20 focus:border-[#bf4440] text-xs font-bold"
                     />
                   </div>
 
@@ -978,7 +978,7 @@ export function Competitions() {
                       required
                       value={teamFinderForm.contact}
                       onChange={(e) => setTeamFinderForm({...teamFinderForm, contact: e.target.value})}
-                      className="w-full px-3 py-2 border border-slate-200 rounded-lg outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 text-xs font-bold"
+                      className="w-full px-3 py-2 border border-slate-200 rounded-lg outline-none focus:ring-2 focus:ring-[#bf4440]/20/20 focus:border-[#bf4440] text-xs font-bold"
                     />
                   </div>
                 </div>
@@ -993,7 +993,7 @@ export function Competitions() {
                   </button>
                   <button 
                     type="submit"
-                    className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-extrabold rounded-xl cursor-pointer"
+                    className="px-4 py-2 bg-[#bf4440] hover:bg-[#993633] text-white text-xs font-extrabold rounded-xl cursor-pointer"
                   >
                     Publikasi Pencarian
                   </button>

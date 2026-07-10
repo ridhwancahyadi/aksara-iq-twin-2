@@ -78,7 +78,7 @@ export function StudentHome({ loggedInUser, setView }: StudentHomeProps) {
       if (lowerText.includes('fgd') || lowerText.includes('diskusi') || lowerText.includes('latih')) {
         aiText = `**Tips Menguasai Sesi FGD Aksara IQ:**\n\n1. **Kaitkan dengan Teori**: Di mata kuliah *Analysis of Strategic Communication Issues*, pastikan argumen Anda menyitir **SCCT (Coombs)** atau **Image Restoration (Benoit)**.\n2. **Kualitas Retorika**: Jangan sekadar setuju atau tidak setuju. Gunakan frasa jembatan seperti *"Saya mengapresiasi poin rekan A, namun mari kita lihat dari sudut pandang pemulihan citra PT KAI..."*\n3. **Ambil Inisiatif**: Ajukan alternatif solusi taktis terkait krisis tabrakan Bekasi Timur untuk memicu dinamika kelompok yang sehat.\n\nApakah Anda ingin berlatih simulasi pembukaan FGD sekarang?`;
       } else if (lowerText.includes('nilai') || lowerText.includes('ipk') || lowerText.includes('cgpa') || lowerText.includes('performa') || lowerText.includes('rapor')) {
-        aiText = `**Analisis Rapor Akademik Anda:**\n\n* **Indeks Prestasi Kumulatif**: **8.6/10 (A-)** — Ini performa luar biasa, menempatkan Anda di **Peringkat 3 dari 35** mahasiswa (Top 10%).\n* **Rasio Tugas (76%)**: Anda memiliki 8 tugas tertunda dan 3 terlambat. Menyelesaikan sisa tugas ini adalah kunci tercepat untuk mengunci nilai **A murni**.\n* **Kehadiran (92%)**: Sudah sangat solid dan melampaui batas minimum kelulusan.\n\n*Rekomendasi*: Prioritaskan pengumpulan tugas *Jurnalisme Digital* yang tenggat waktunya besok malam!`;
+        aiText = `**Analisis Rapor Akademik Anda:**\n\n* **Indeks Prestasi Kumulatif**: **8.6/10 (A-)** - Ini performa luar biasa, menempatkan Anda di **Peringkat 3 dari 35** mahasiswa (Top 10%).\n* **Rasio Tugas (76%)**: Anda memiliki 8 tugas tertunda dan 3 terlambat. Menyelesaikan sisa tugas ini adalah kunci tercepat untuk mengunci nilai **A murni**.\n* **Kehadiran (92%)**: Sudah sangat solid dan melampaui batas minimum kelulusan.\n\n*Rekomendasi*: Prioritaskan pengumpulan tugas *Jurnalisme Digital* yang tenggat waktunya besok malam!`;
       } else if (lowerText.includes('teori') || lowerText.includes('scct') || lowerText.includes('benoit')) {
         aiText = `Berikut ringkasan cepat teori utama untuk kasus PT KAI:\n\n1. **Situational Crisis Communication Theory (SCCT) - Coombs**:\n   * Berfokus pada bagaimana organisasi merespons krisis berdasarkan tingkat atribusi tanggung jawab publik. Untuk tabrakan Bekasi Timur, PT KAI harus menerapkan strategi **Rebuild** (Kompensasi & Permintaan Maaf penuh) karena keselamatan publik adalah prioritas utama.\n\n2. **Image Restoration Theory - Benoit**:\n   * Berfokus pada memulihkan reputasi organisasi. Strategi yang relevan:\n     * *Corrective Action*: Memperbaiki sistem persinyalan dan SOP operasi.\n     * *Compensation*: Ganti rugi cepat untuk semua pihak terdampak.\n\nIngin saya bantu menyusun poin draf analisis teori untuk tugas Anda?`;
       } else if (lowerText.includes('jadwal') || lowerText.includes('hari ini') || lowerText.includes('kelas')) {
@@ -120,7 +120,7 @@ export function StudentHome({ loggedInUser, setView }: StudentHomeProps) {
       lecturer: 'Dr. Rina',
       progress: 72,
       grade: 'B+',
-      color: '#F59E0B', // Amber progress
+      color: '#d56c2a', // Amber progress
       icon: <Monitor size={20} className="text-amber-500" />
     },
     {
@@ -131,7 +131,7 @@ export function StudentHome({ loggedInUser, setView }: StudentHomeProps) {
       lecturer: 'Dr. Hendra',
       progress: 88,
       grade: 'A',
-      color: '#10B981', // Emerald progress
+      color: '#5c90a3', // Emerald progress
       icon: <MessageSquare size={20} className="text-emerald-500" />
     },
     {
@@ -142,7 +142,7 @@ export function StudentHome({ loggedInUser, setView }: StudentHomeProps) {
       lecturer: 'Prof. Sari',
       progress: 61,
       grade: 'B',
-      color: '#3B82F6', // Blue progress
+      color: '#bf4440', // Blue progress
       icon: <Search size={20} className="text-blue-500" />
     },
     {
@@ -153,7 +153,7 @@ export function StudentHome({ loggedInUser, setView }: StudentHomeProps) {
       lecturer: 'Dr. Mega',
       progress: 91,
       grade: 'A',
-      color: '#10B981', // Emerald progress
+      color: '#5c90a3', // Emerald progress
       icon: <Layout size={20} className="text-emerald-500" />
     }
   ];
@@ -176,12 +176,12 @@ export function StudentHome({ loggedInUser, setView }: StudentHomeProps) {
     },
     {
       time: '13.00',
-      title: 'FGD — Komunikasi Kritis',
+      title: 'FGD - Komunikasi Kritis',
       room: 'Ruang Diskusi C-01 · Dr. Rina',
       status: 'Join Room',
       isFgd: true,
       isStreaming: true,
-      badgeStyle: 'bg-blue-600 hover:bg-blue-700 text-white shadow-sm transition-all font-bold cursor-pointer'
+      badgeStyle: 'bg-[#bf4440] hover:bg-[#993633] text-white shadow-sm transition-all font-bold cursor-pointer'
     },
     {
       time: '15.00',
@@ -358,7 +358,7 @@ export function StudentHome({ loggedInUser, setView }: StudentHomeProps) {
                           <Clock size={10} /> {fgd.date}
                         </p>
                       </div>
-                      <span className="text-[9px] font-black bg-blue-600 text-white px-2 py-0.5 rounded-full uppercase tracking-wider">Assignment</span>
+                      <span className="text-[9px] font-black bg-[#bf4440] text-white px-2 py-0.5 rounded-full uppercase tracking-wider">Assignment</span>
                     </div>
                   ))}
                 </div>
@@ -391,13 +391,13 @@ export function StudentHome({ loggedInUser, setView }: StudentHomeProps) {
         
         {/* Left Column: AI Coach executive insight (Spacious, modern, readable, with beautiful interactive details) */}
         <div className="lg:col-span-8 bg-slate-900 text-white p-6 rounded-sm shadow-sm flex flex-col justify-between relative overflow-hidden group min-h-[300px]">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl group-hover:bg-blue-500/10 transition-all duration-500" />
+          <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl group-hover:bg-blushed-brick-500/10 transition-all duration-500" />
           <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-emerald-500/5 rounded-full blur-2xl" />
           
           <div className="space-y-5 relative z-10">
             <div className="flex items-center justify-between border-b border-slate-800 pb-3">
               <div className="flex items-center gap-2.5">
-                <span className="p-2 bg-blue-500/10 border border-blue-500/20 text-blue-400 rounded-sm">
+                <span className="p-2 bg-blue-500/10 border border-[#bf4440]/20 text-blue-400 rounded-sm">
                   <Sparkles size={16} className="animate-pulse" />
                 </span>
                 <div>
@@ -495,7 +495,7 @@ export function StudentHome({ loggedInUser, setView }: StudentHomeProps) {
           <div className="bg-white border border-slate-200 p-5 rounded-sm shadow-sm flex flex-col justify-between hover:border-blue-300 transition-all duration-300">
             <div className="flex items-center justify-between pb-2 border-b border-slate-100">
               <div className="flex items-center gap-2">
-                <span className="p-1.5 bg-blue-50 text-blue-600 rounded-sm">
+                <span className="p-1.5 bg-blue-50 text-[#bf4440] rounded-sm">
                   <FileText size={14} />
                 </span>
                 <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">Ringkasan Tugas</span>
@@ -526,10 +526,10 @@ export function StudentHome({ loggedInUser, setView }: StudentHomeProps) {
             <div className="pt-2 border-t border-slate-100 flex flex-col gap-1 text-[9px] font-bold text-slate-500 w-full">
               <div className="flex justify-between items-center text-[10px]">
                 <span>Progress Pengumpulan</span>
-                <span className="text-blue-600 font-extrabold">26 / 34</span>
+                <span className="text-[#bf4440] font-extrabold">26 / 34</span>
               </div>
               <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden">
-                <div className="h-full bg-blue-600" style={{ width: '76%' }} />
+                <div className="h-full bg-[#bf4440]" style={{ width: '76%' }} />
               </div>
             </div>
           </div>
@@ -565,7 +565,7 @@ export function StudentHome({ loggedInUser, setView }: StudentHomeProps) {
                 >
                   <div className="flex justify-between items-start">
                     <div className={`w-9 h-9 flex items-center justify-center rounded-sm border transition-colors ${
-                      item.isStreaming ? 'bg-blue-600 text-white border-blue-500' : 'bg-slate-50 text-blue-600 border-slate-100 group-hover:bg-blue-50'
+                      item.isStreaming ? 'bg-[#bf4440] text-white border-[#bf4440]' : 'bg-slate-50 text-[#bf4440] border-slate-100 group-hover:bg-blushed-brick-50'
                     }`}>
                       {idx === 0 ? <BookOpen size={18} /> : idx === 1 ? <Database size={18} /> : item.isStreaming ? <Video size={18} /> : <Monitor size={18} />}
                     </div>
@@ -573,7 +573,7 @@ export function StudentHome({ loggedInUser, setView }: StudentHomeProps) {
                   </div>
                   
                   <div className="space-y-1 mt-0.5">
-                    <h3 className="text-[13px] font-black text-slate-900 leading-tight group-hover:text-blue-600 transition-colors line-clamp-2 min-h-[32px]">{item.title}</h3>
+                    <h3 className="text-[13px] font-black text-slate-900 leading-tight group-hover:text-[#bf4440] transition-colors line-clamp-2 min-h-[32px]">{item.title}</h3>
                     <p className="text-[9px] text-slate-500 font-bold flex items-center gap-1.5 line-clamp-1">
                       {item.room}
                     </p>
@@ -588,7 +588,7 @@ export function StudentHome({ loggedInUser, setView }: StudentHomeProps) {
                     <button 
                       onClick={() => item.isStreaming ? setView('lobby') : null}
                       className={`text-[9px] font-black px-2.5 py-1.5 rounded-sm transition-all ${
-                        item.isStreaming ? 'bg-blue-600 text-white hover:bg-blue-700 cursor-pointer shadow-sm active:scale-95 flex items-center justify-center gap-1' : 
+                        item.isStreaming ? 'bg-[#bf4440] text-white hover:bg-[#993633] cursor-pointer shadow-sm active:scale-95 flex items-center justify-center gap-1' : 
                         item.status === 'Berlangsung' ? 'bg-emerald-100 text-emerald-700' : 'bg-slate-100 text-slate-600'
                       }`}
                     >
@@ -604,12 +604,12 @@ export function StudentHome({ loggedInUser, setView }: StudentHomeProps) {
             <div>
               <h2 className="text-xl font-black text-slate-900 tracking-tight">Semester Course Resume</h2>
               <div className="flex items-center gap-3 mt-1.5">
-                <span className="bg-blue-100 text-blue-700 text-[10px] font-black px-2 py-0.5 rounded-sm uppercase tracking-wider">Active Enrollment</span>
+                <span className="bg-blue-100 text-[#993633] text-[10px] font-black px-2 py-0.5 rounded-sm uppercase tracking-wider">Active Enrollment</span>
                 <div className="flex items-center gap-2 text-xs text-slate-400 font-bold">
                   <div className="flex items-center gap-1 bg-white border border-slate-200 px-2 py-1 rounded-sm">
                     <span className="w-1.5 h-1.5 rounded-full bg-blue-500" /> Filter: Fall 2024
                   </div>
-                  <button className="text-blue-600 hover:underline">Reset</button>
+                  <button className="text-[#bf4440] hover:underline">Reset</button>
                 </div>
               </div>
             </div>
@@ -641,7 +641,7 @@ export function StudentHome({ loggedInUser, setView }: StudentHomeProps) {
 
                 {/* Card Body */}
                 <div className="p-6 flex flex-col gap-5">
-                  <h3 className="text-base font-black text-slate-900 leading-tight group-hover:text-blue-600 transition-colors line-clamp-2 min-h-[40px]">
+                  <h3 className="text-base font-black text-slate-900 leading-tight group-hover:text-[#bf4440] transition-colors line-clamp-2 min-h-[40px]">
                     {course.title}
                   </h3>
 
@@ -673,7 +673,7 @@ export function StudentHome({ loggedInUser, setView }: StudentHomeProps) {
                     
                     <button 
                       onClick={() => setView('course_class_details')}
-                      className="bg-[#FFB800] hover:bg-[#E6A600] text-slate-900 px-5 py-2.5 rounded-sm text-xs font-black transition-all active:scale-95 shadow-sm hover:shadow-sm cursor-pointer"
+                      className="bg-[#d56c2a] hover:bg-[#aa5622] text-slate-900 px-5 py-2.5 rounded-sm text-xs font-black transition-all active:scale-95 shadow-sm hover:shadow-sm cursor-pointer"
                     >
                       See Class
                     </button>
@@ -709,7 +709,7 @@ export function StudentHome({ loggedInUser, setView }: StudentHomeProps) {
         <div className="xl:col-span-3 flex flex-col gap-6">
           <div className="flex justify-between items-center px-1">
             <h2 className="text-xl font-black text-slate-900 tracking-tight">Upcoming Assignments</h2>
-            <button className="p-2 bg-white border border-slate-200 hover:bg-slate-50 rounded-sm text-blue-600 transition-all cursor-pointer shadow-sm">
+            <button className="p-2 bg-white border border-slate-200 hover:bg-slate-50 rounded-sm text-[#bf4440] transition-all cursor-pointer shadow-sm">
               <ArrowUpRight size={18} />
             </button>
           </div>
@@ -723,7 +723,7 @@ export function StudentHome({ loggedInUser, setView }: StudentHomeProps) {
               >
                 <div className="flex justify-between items-start">
                   <div className="space-y-1">
-                    <h4 className="text-[15px] font-black text-slate-900 group-hover:text-blue-600 transition-colors leading-tight">{item.title}</h4>
+                    <h4 className="text-[15px] font-black text-slate-900 group-hover:text-[#bf4440] transition-colors leading-tight">{item.title}</h4>
                     <p className="text-xs text-slate-400 font-bold">{item.course}</p>
                   </div>
                   <div className={`p-2 ${item.isFgd ? 'bg-blue-50' : 'bg-amber-50'} rounded-sm`}>
@@ -741,7 +741,7 @@ export function StudentHome({ loggedInUser, setView }: StudentHomeProps) {
                     <span className="text-[10px] font-bold text-slate-400">• {item.timeLeft}</span>
                   </div>
                   {item.isFgd && (
-                    <span className="text-[9px] font-black text-blue-600 flex items-center gap-1.5 uppercase tracking-wider">
+                    <span className="text-[9px] font-black text-[#bf4440] flex items-center gap-1.5 uppercase tracking-wider">
                       <Sparkles size={11} className="animate-pulse" /> Submit
                     </span>
                   )}
@@ -764,12 +764,12 @@ export function StudentHome({ loggedInUser, setView }: StudentHomeProps) {
                     <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-wider">
                       <span className="text-slate-400">{ann.date}</span>
                       <span className="w-1 h-1 rounded-full bg-slate-300" />
-                      <span className="text-blue-600">{ann.type}</span>
+                      <span className="text-[#bf4440]">{ann.type}</span>
                     </div>
                     <h5 className="text-[13px] font-black text-slate-900 leading-tight">{ann.title}</h5>
                     <p className="text-[11px] text-slate-400 font-bold">{ann.time}</p>
                   </div>
-                  <button className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 rounded-sm text-[10px] font-black shrink-0 transition-all">
+                  <button className="bg-[#bf4440] hover:bg-[#993633] text-white px-3 py-1.5 rounded-sm text-[10px] font-black shrink-0 transition-all">
                     {ann.btn}
                   </button>
                 </div>
@@ -845,7 +845,7 @@ export function StudentHome({ loggedInUser, setView }: StudentHomeProps) {
             {/* Header */}
             <div className="bg-slate-900 text-white p-4 flex items-center justify-between border-b border-slate-800 shrink-0">
               <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-full bg-blue-900/40 border border-blue-500/30 flex items-center justify-center relative">
+                <div className="w-8 h-8 rounded-full bg-blue-900/40 border border-[#bf4440]/30 flex items-center justify-center relative">
                   <Bot size={16} className="text-blue-400 animate-pulse" />
                   <span className="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-emerald-500 border border-slate-900" />
                 </div>
@@ -893,7 +893,7 @@ export function StudentHome({ loggedInUser, setView }: StudentHomeProps) {
                   <div 
                     className={`p-3 rounded-sm text-[11.5px] shadow-xs ${
                       msg.sender === 'user' 
-                        ? 'bg-blue-600 text-white rounded-tr-none' 
+                        ? 'bg-[#bf4440] text-white rounded-tr-none' 
                         : 'bg-white border border-slate-200 text-slate-800 rounded-tl-none'
                     }`}
                   >
@@ -969,7 +969,7 @@ export function StudentHome({ loggedInUser, setView }: StudentHomeProps) {
                 <button
                   key={idx}
                   onClick={() => handleSendMessage(chip.text)}
-                  className="bg-white border border-slate-200 hover:border-blue-300 hover:text-blue-600 text-[10px] font-bold px-2 py-1 rounded-sm cursor-pointer whitespace-nowrap transition-colors shrink-0 shadow-3xs"
+                  className="bg-white border border-slate-200 hover:border-blue-300 hover:text-[#bf4440] text-[10px] font-bold px-2 py-1 rounded-sm cursor-pointer whitespace-nowrap transition-colors shrink-0 shadow-3xs"
                 >
                   {chip.label}
                 </button>
@@ -989,12 +989,12 @@ export function StudentHome({ loggedInUser, setView }: StudentHomeProps) {
                 value={userInputValue}
                 onChange={(e) => setUserInputValue(e.target.value)}
                 placeholder="Tanya AI Coach..."
-                className="flex-1 bg-slate-50 border border-slate-200 rounded-sm px-3 py-2 text-xs font-medium focus:outline-none focus:border-blue-500 focus:bg-white transition-colors"
+                className="flex-1 bg-slate-50 border border-slate-200 rounded-sm px-3 py-2 text-xs font-medium focus:outline-none focus:border-[#bf4440] focus:bg-white transition-colors"
               />
               <button 
                 type="submit"
                 disabled={!userInputValue.trim()}
-                className="p-2 bg-blue-600 disabled:bg-slate-200 text-white disabled:text-slate-400 rounded-sm hover:bg-blue-700 transition-colors cursor-pointer shrink-0 animate-none flex items-center justify-center"
+                className="p-2 bg-[#bf4440] disabled:bg-slate-200 text-white disabled:text-slate-400 rounded-sm hover:bg-[#993633] transition-colors cursor-pointer shrink-0 animate-none flex items-center justify-center"
               >
                 <Send size={14} />
               </button>

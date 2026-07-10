@@ -581,7 +581,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
             return (
               <div key={idx} className="bg-white border border-slate-200/80 p-4.5 rounded-2xl shadow-sm flex items-center gap-3.5 hover:shadow-md transition-all">
                 <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${
-                  kpi.color === 'blue' ? 'bg-blue-50 text-blue-600' :
+                  kpi.color === 'blue' ? 'bg-blue-50 text-[#bf4440]' :
                   kpi.color === 'rose' ? 'bg-rose-50 text-rose-600' :
                   'bg-amber-50 text-amber-600'
                 }`}>
@@ -608,7 +608,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
           <div className="relative shrink-0">
             <button
               onClick={() => setUploadDropdownOpen(!uploadDropdownOpen)}
-              className="bg-blue-600 hover:bg-blue-700 text-white font-extrabold text-xs uppercase tracking-widest py-3.5 px-6 rounded-2xl transition-all flex items-center gap-2 shadow-lg shadow-blue-900/10 cursor-pointer active:scale-95"
+              className="bg-[#bf4440] hover:bg-[#993633] text-white font-extrabold text-xs uppercase tracking-widest py-3.5 px-6 rounded-2xl transition-all flex items-center gap-2 shadow-lg shadow-blue-900/10 cursor-pointer active:scale-95"
             >
               <Plus size={15} className="stroke-[3]" />
               <span>Upload Data</span>
@@ -643,7 +643,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                         }}
                         className="w-full text-left p-2.5 rounded-xl hover:bg-slate-50 transition-all flex items-start gap-3 text-xs cursor-pointer group"
                       >
-                        <div className="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 group-hover:bg-blue-100 transition-all">
+                        <div className="w-8 h-8 rounded-lg bg-blue-50 text-[#bf4440] flex items-center justify-center shrink-0 group-hover:bg-blushed-brick-100 transition-all">
                           <Users size={15} />
                         </div>
                         <div>
@@ -787,7 +787,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                     setDashboardSearch(e.target.value);
                     setDashboardPage(1);
                   }}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-xl py-2 pl-9 pr-4 text-xs font-bold text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl py-2 pl-9 pr-4 text-xs font-bold text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#bf4440]/20 focus:border-[#bf4440] transition-all"
                 />
               </div>
 
@@ -801,7 +801,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                     setDashboardFilterUrgency(e.target.value);
                     setDashboardPage(1);
                   }}
-                  className="bg-slate-50 border border-slate-200 rounded-xl px-3 py-1.5 text-xs font-black text-slate-700 focus:outline-none focus:ring-1 focus:ring-blue-500 cursor-pointer"
+                  className="bg-slate-50 border border-slate-200 rounded-xl px-3 py-1.5 text-xs font-black text-slate-700 focus:outline-none focus:ring-1 focus:ring-[#bf4440]/20 cursor-pointer"
                 >
                   <option value="Semua">Semua Urgensi</option>
                   {dashboardTab === 'tasks' ? (
@@ -948,7 +948,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                               task.module === 'PDDIKTI' ? 'bg-rose-50 text-rose-700 border border-rose-100' :
                               task.module === 'AUTHENTICATION' ? 'bg-slate-900 text-white' :
                               task.module === 'VALIDASI' ? 'bg-amber-50 text-amber-700 border border-amber-100' :
-                              'bg-blue-50 text-blue-700 border border-blue-100'
+                              'bg-blue-50 text-[#993633] border border-blue-100'
                             }`}>
                               {task.module}
                             </span>
@@ -963,7 +963,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                             <span className={`inline-block px-2.5 py-1 rounded-full text-[10px] font-black ${
                               task.urgency.includes('Kritis') ? 'bg-rose-50 text-rose-700 border border-rose-100 animate-pulse' :
                               task.urgency.includes('Perhatian') ? 'bg-amber-50 text-amber-700 border border-amber-100' :
-                              task.urgency.includes('Informasi') ? 'bg-blue-50 text-blue-700 border border-blue-100' :
+                              task.urgency.includes('Informasi') ? 'bg-blue-50 text-[#993633] border border-blue-100' :
                               'bg-emerald-50 text-emerald-700 border border-emerald-100'
                             }`}>
                               {task.urgency}
@@ -1074,7 +1074,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                           </td>
                           <td className="py-4 px-6">
                             <span className={`inline-block text-[9px] font-black uppercase px-2 py-0.5 rounded ${
-                              u.type.includes('CSV') ? 'bg-blue-50 text-blue-700 border border-blue-100' :
+                              u.type.includes('CSV') ? 'bg-blue-50 text-[#993633] border border-blue-100' :
                               u.type.includes('Excel') ? 'bg-emerald-50 text-emerald-700 border border-emerald-100' :
                               'bg-purple-50 text-purple-700 border border-purple-100'
                             }`}>
@@ -1088,7 +1088,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                           <td className="py-4 px-6 text-center">
                             <span className={`inline-block px-2.5 py-1 rounded-full text-[10px] font-black ${
                               u.status === 'Selesai Ekstraksi' ? 'bg-amber-50 text-amber-700 border border-amber-100' :
-                              u.status === 'Sedang Diekstrak' ? 'bg-blue-50 text-blue-700 border border-blue-100 animate-pulse' :
+                              u.status === 'Sedang Diekstrak' ? 'bg-blue-50 text-[#993633] border border-blue-100 animate-pulse' :
                               'bg-emerald-50 text-emerald-700 border border-emerald-100'
                             }`}>
                               {u.status === 'Selesai Ekstraksi' ? '⚠ Siap Review' : 
@@ -1099,7 +1099,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                             {u.status === 'Selesai Ekstraksi' ? (
                               <button
                                 onClick={() => setReviewingUpload(u)}
-                                className="w-full bg-blue-600 hover:bg-blue-700 text-white text-[10px] font-black uppercase tracking-wider py-1.5 px-2.5 rounded-lg transition-all shadow-sm"
+                                className="w-full bg-[#bf4440] hover:bg-[#993633] text-white text-[10px] font-black uppercase tracking-wider py-1.5 px-2.5 rounded-lg transition-all shadow-sm"
                               >
                                 Review & Impor
                               </button>
@@ -1137,7 +1137,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                   setDashboardRowsPerPage(Number(e.target.value));
                   setDashboardPage(1);
                 }}
-                className="bg-white border border-slate-200 rounded-lg px-2.5 py-1 text-xs font-black text-slate-700 focus:outline-none focus:ring-1 focus:ring-blue-500 cursor-pointer shadow-sm"
+                className="bg-white border border-slate-200 rounded-lg px-2.5 py-1 text-xs font-black text-slate-700 focus:outline-none focus:ring-1 focus:ring-[#bf4440]/20 cursor-pointer shadow-sm"
               >
                 <option value={5}>5 Baris</option>
                 <option value={10}>10 Baris</option>
@@ -1174,7 +1174,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                         onClick={() => setDashboardPage(pageNo)}
                         className={`w-8 h-8 rounded-lg font-mono font-black border transition-all cursor-pointer ${
                           dashboardPage === pageNo
-                            ? 'bg-blue-600 border-blue-600 text-white shadow-sm shadow-blue-200'
+                            ? 'bg-[#bf4440] border-[#bf4440] text-white shadow-sm shadow-blue-200'
                             : 'bg-white border-slate-200 text-slate-600 hover:bg-slate-50'
                         }`}
                       >
@@ -1222,9 +1222,9 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                 <button
                   key={idx}
                   onClick={() => setView(act.view as View)}
-                  className="p-4 border border-slate-200 shadow-sm rounded-2xl text-center flex flex-col items-center justify-center gap-2 hover:border-blue-500 hover:shadow-md transition-all cursor-pointer bg-slate-50/30 group"
+                  className="p-4 border border-slate-200 shadow-sm rounded-2xl text-center flex flex-col items-center justify-center gap-2 hover:border-[#bf4440] hover:shadow-md transition-all cursor-pointer bg-slate-50/30 group"
                 >
-                  <div className="w-9 h-9 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center group-hover:bg-blue-50 group-hover:text-blue-600 transition-all shrink-0">
+                  <div className="w-9 h-9 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center group-hover:bg-blushed-brick-50 group-hover:text-[#bf4440] transition-all shrink-0">
                     <Icon size={16} />
                   </div>
                   <span className="text-[11px] font-black text-slate-800 tracking-tight block">
@@ -1263,7 +1263,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                     <span className={`text-[9px] font-black uppercase px-2 py-0.5 rounded shrink-0 ${
                       usr.role === 'Admin' ? 'bg-rose-50 text-rose-700 border border-rose-100' :
                       usr.role === 'Dosen' ? 'bg-indigo-50 text-indigo-700 border border-indigo-100' :
-                      'bg-blue-50 text-blue-700 border border-blue-100'
+                      'bg-blue-50 text-[#993633] border border-blue-100'
                     }`}>
                       {usr.role}
                     </span>
@@ -1274,7 +1274,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
 
             <button
               onClick={() => setView('admin_all_users')}
-              className="w-full text-center text-[10px] font-black text-blue-600 hover:text-blue-700 transition-all uppercase tracking-wider hover:underline pt-2 border-t border-slate-100 cursor-pointer"
+              className="w-full text-center text-[10px] font-black text-[#bf4440] hover:text-[#993633] transition-all uppercase tracking-wider hover:underline pt-2 border-t border-slate-100 cursor-pointer"
             >
               Kelola Semua Pengguna →
             </button>
@@ -1304,7 +1304,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
 
             <button
               onClick={() => setView('admin_audit_trail')}
-              className="w-full text-center text-[10px] font-black text-blue-600 hover:text-blue-700 transition-all uppercase tracking-wider hover:underline pt-2 border-t border-slate-100 cursor-pointer"
+              className="w-full text-center text-[10px] font-black text-[#bf4440] hover:text-[#993633] transition-all uppercase tracking-wider hover:underline pt-2 border-t border-slate-100 cursor-pointer"
             >
               Lihat Audit Trail Lengkap →
             </button>
@@ -1321,11 +1321,11 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
               {/* CPU Meter */}
               <div className="space-y-1">
                 <div className="flex justify-between text-xs font-bold text-slate-600">
-                  <span className="flex items-center gap-1"><Cpu size={12} className="text-blue-600" /> Beban CPU</span>
+                  <span className="flex items-center gap-1"><Cpu size={12} className="text-[#bf4440]" /> Beban CPU</span>
                   <span className="font-mono text-slate-900 font-extrabold">{cpuUsage}%</span>
                 </div>
                 <div className="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden">
-                  <div className="h-full bg-blue-600 rounded-full" style={{ width: `${cpuUsage}%` }} />
+                  <div className="h-full bg-[#bf4440] rounded-full" style={{ width: `${cpuUsage}%` }} />
                 </div>
               </div>
 
@@ -1354,7 +1354,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
 
             <button
               onClick={() => setView('admin_system_health')}
-              className="w-full text-center text-[10px] font-black text-blue-600 hover:text-blue-700 transition-all uppercase tracking-wider hover:underline pt-2 border-t border-slate-100 cursor-pointer"
+              className="w-full text-center text-[10px] font-black text-[#bf4440] hover:text-[#993633] transition-all uppercase tracking-wider hover:underline pt-2 border-t border-slate-100 cursor-pointer"
             >
               Monitor Observabilitas →
             </button>
@@ -1392,7 +1392,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                   type="text" 
                   value={campusInfo.name} 
                   onChange={(e) => setCampusInfo({ ...campusInfo, name: e.target.value })} 
-                  className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl text-xs font-bold focus:ring-1 focus:ring-blue-500 focus:outline-none"
+                  className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl text-xs font-bold focus:ring-1 focus:ring-[#bf4440]/20 focus:outline-none"
                 />
               </div>
               <div className="space-y-1">
@@ -1401,7 +1401,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                   type="text" 
                   value={campusInfo.rector} 
                   onChange={(e) => setCampusInfo({ ...campusInfo, rector: e.target.value })} 
-                  className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl text-xs font-bold focus:ring-1 focus:ring-blue-500 focus:outline-none"
+                  className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl text-xs font-bold focus:ring-1 focus:ring-[#bf4440]/20 focus:outline-none"
                 />
               </div>
               <div className="space-y-1">
@@ -1410,7 +1410,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                   type="text" 
                   value={campusInfo.address} 
                   onChange={(e) => setCampusInfo({ ...campusInfo, address: e.target.value })} 
-                  className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl text-xs font-bold focus:ring-1 focus:ring-blue-500 focus:outline-none"
+                  className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl text-xs font-bold focus:ring-1 focus:ring-[#bf4440]/20 focus:outline-none"
                 />
               </div>
               <div className="space-y-1">
@@ -1419,7 +1419,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                   type="text" 
                   value={campusInfo.phone} 
                   onChange={(e) => setCampusInfo({ ...campusInfo, phone: e.target.value })} 
-                  className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl text-xs font-bold focus:ring-1 focus:ring-blue-500 focus:outline-none"
+                  className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl text-xs font-bold focus:ring-1 focus:ring-[#bf4440]/20 focus:outline-none"
                 />
               </div>
               <div className="md:col-span-2 pt-2">
@@ -1515,7 +1515,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                       value={newProdi.name}
                       onChange={(e) => setNewProdi({ ...newProdi, name: e.target.value })}
                       placeholder="cth: S1 Ilmu Komunikasi"
-                      className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl text-xs font-bold focus:ring-1 focus:ring-blue-500 focus:outline-none"
+                      className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl text-xs font-bold focus:ring-1 focus:ring-[#bf4440]/20 focus:outline-none"
                     />
                   </div>
                   <div className="space-y-1">
@@ -1526,7 +1526,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                       value={newProdi.code}
                       onChange={(e) => setNewProdi({ ...newProdi, code: e.target.value.toUpperCase() })}
                       placeholder="cth: KOM-ILMU"
-                      className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl text-xs font-bold focus:ring-1 focus:ring-blue-500 focus:outline-none"
+                      className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl text-xs font-bold focus:ring-1 focus:ring-[#bf4440]/20 focus:outline-none"
                     />
                   </div>
                   <div className="space-y-1">
@@ -1537,7 +1537,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                       value={newProdi.kaprodi}
                       onChange={(e) => setNewProdi({ ...newProdi, kaprodi: e.target.value })}
                       placeholder="Nama lengkap & gelar"
-                      className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl text-xs font-bold focus:ring-1 focus:ring-blue-500 focus:outline-none"
+                      className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl text-xs font-bold focus:ring-1 focus:ring-[#bf4440]/20 focus:outline-none"
                     />
                   </div>
                   <div className="grid grid-cols-2 gap-3">
@@ -1546,7 +1546,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                       <select 
                         value={newProdi.acacreditation} 
                         onChange={(e) => setNewProdi({ ...newProdi, accreditation: e.target.value })}
-                        className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl text-xs font-bold focus:ring-1 focus:ring-blue-500 focus:outline-none"
+                        className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl text-xs font-bold focus:ring-1 focus:ring-[#bf4440]/20 focus:outline-none"
                       >
                         <option value="Unggul">Unggul</option>
                         <option value="A">A</option>
@@ -1560,7 +1560,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                         type="number" 
                         value={newProdi.students}
                         onChange={(e) => setNewProdi({ ...newProdi, students: Number(e.target.value) })}
-                        className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl text-xs font-bold focus:ring-1 focus:ring-blue-500 focus:outline-none"
+                        className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl text-xs font-bold focus:ring-1 focus:ring-[#bf4440]/20 focus:outline-none"
                       />
                     </div>
                   </div>
@@ -1595,7 +1595,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                     <td className="py-4 px-6 font-mono text-slate-400">{prodi.code}</td>
                     <td className="py-4 px-6 text-slate-600">{prodi.kaprodi}</td>
                     <td className="py-4 px-6 text-center">
-                      <span className="inline-block px-3 py-1 rounded-full text-[10px] font-black bg-blue-50 text-blue-700 font-mono">
+                      <span className="inline-block px-3 py-1 rounded-full text-[10px] font-black bg-blue-50 text-[#993633] font-mono">
                         {prodi.accreditation}
                       </span>
                     </td>
@@ -1638,7 +1638,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                 placeholder="cth: Batas Akhir Entry Nilai"
                 value={newEvent.title}
                 onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })}
-                className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl font-bold text-xs focus:ring-1 focus:ring-blue-500 focus:outline-none"
+                className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl font-bold text-xs focus:ring-1 focus:ring-[#bf4440]/20 focus:outline-none"
               />
             </div>
             <div className="space-y-1">
@@ -1646,7 +1646,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
               <select 
                 value={newEvent.category}
                 onChange={(e) => setNewEvent({ ...newEvent, category: e.target.value })}
-                className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl font-bold text-xs focus:ring-1 focus:ring-blue-500 focus:outline-none"
+                className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl font-bold text-xs focus:ring-1 focus:ring-[#bf4440]/20 focus:outline-none"
               >
                 <option value="Registrasi">Registrasi</option>
                 <option value="Perkuliahan">Perkuliahan</option>
@@ -1662,7 +1662,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                   required 
                   value={newEvent.start}
                   onChange={(e) => setNewEvent({ ...newEvent, start: e.target.value })}
-                  className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl font-bold text-xs focus:ring-1 focus:ring-blue-500"
+                  className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl font-bold text-xs focus:ring-1 focus:ring-[#bf4440]/20"
                 />
               </div>
               <div className="space-y-1">
@@ -1671,7 +1671,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                   type="date" 
                   value={newEvent.end}
                   onChange={(e) => setNewEvent({ ...newEvent, end: e.target.value })}
-                  className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl font-bold text-xs focus:ring-1 focus:ring-blue-500"
+                  className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl font-bold text-xs focus:ring-1 focus:ring-[#bf4440]/20"
                 />
               </div>
             </div>
@@ -1693,7 +1693,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                   <h4 className="text-xs font-black text-slate-900 leading-tight">{evt.title}</h4>
                   <span className={`text-[8px] font-black uppercase tracking-widest px-2.5 py-1 rounded-full ${
                     evt.category === 'Registrasi' ? 'bg-indigo-50 text-indigo-700' :
-                    evt.category === 'Perkuliahan' ? 'bg-blue-50 text-blue-700' :
+                    evt.category === 'Perkuliahan' ? 'bg-blue-50 text-[#993633]' :
                     'bg-amber-50 text-amber-700'
                   }`}>
                     {evt.category}
@@ -1836,7 +1836,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                 </div>
                 <div className="flex flex-wrap gap-1.5 pt-1">
                   {r.permissions.map((p, pi) => (
-                    <span key={pi} className="text-[9px] font-black text-blue-700 bg-blue-50 px-2.5 py-1 rounded-full uppercase tracking-wider">
+                    <span key={pi} className="text-[9px] font-black text-[#993633] bg-blue-50 px-2.5 py-1 rounded-full uppercase tracking-wider">
                       ✓ {p}
                     </span>
                   ))}
@@ -1868,7 +1868,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                 placeholder="cth: nama@unpad.ac.id"
                 value={newInviteEmail}
                 onChange={(e) => setNewInviteEmail(e.target.value)}
-                className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl font-bold text-xs focus:ring-1 focus:ring-blue-500 focus:outline-none"
+                className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl font-bold text-xs focus:ring-1 focus:ring-[#bf4440]/20 focus:outline-none"
               />
             </div>
             
@@ -1877,7 +1877,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
               <select 
                 value={newInviteRole}
                 onChange={(e) => setNewInviteRole(e.target.value)}
-                className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl font-bold text-xs focus:ring-1 focus:ring-blue-500"
+                className="w-full px-3.5 py-2.5 border border-slate-200 rounded-xl font-bold text-xs focus:ring-1 focus:ring-[#bf4440]/20"
               >
                 <option value="Dosen">Dosen</option>
                 <option value="Mahasiswa">Mahasiswa</option>
@@ -1987,13 +1987,13 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
           <div className="space-y-1">
             <h3 className="text-sm font-black text-slate-900 tracking-tight">Biodata Mahasiswa</h3>
             <p className="text-[11px] text-slate-400 font-bold">
-              Universitas Padjadjaran · <span className="text-blue-600">{students.length} mahasiswa</span> terdaftar
+              Universitas Padjadjaran · <span className="text-[#bf4440]">{students.length} mahasiswa</span> terdaftar
             </p>
           </div>
           <div className="flex items-center gap-2">
             <button 
               onClick={() => setIsInputModalOpen(true)}
-              className="bg-blue-600 hover:bg-blue-700 text-white font-black text-xs uppercase tracking-wider py-3 px-5 rounded-xl transition-all flex items-center gap-2 shadow-sm cursor-pointer"
+              className="bg-[#bf4440] hover:bg-[#993633] text-white font-black text-xs uppercase tracking-wider py-3 px-5 rounded-xl transition-all flex items-center gap-2 shadow-sm cursor-pointer"
             >
               <Plus size={14} />
               Masukkan Data ▼
@@ -2013,7 +2013,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
             onClick={() => setActiveStudentTab('list')}
             className={`py-3 px-6 font-black text-xs uppercase tracking-wider border-b-2 transition-all cursor-pointer ${
               activeStudentTab === 'list' 
-                ? 'border-blue-600 text-blue-600' 
+                ? 'border-[#bf4440] text-[#bf4440]' 
                 : 'border-transparent text-slate-400 hover:text-slate-600'
             }`}
           >
@@ -2023,7 +2023,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
             onClick={() => setActiveStudentTab('history')}
             className={`py-3 px-6 font-black text-xs uppercase tracking-wider border-b-2 transition-all cursor-pointer ${
               activeStudentTab === 'history' 
-                ? 'border-blue-600 text-blue-600' 
+                ? 'border-[#bf4440] text-[#bf4440]' 
                 : 'border-transparent text-slate-400 hover:text-slate-600'
             }`}
           >
@@ -2034,7 +2034,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
             onClick={() => setActiveStudentTab('uploads')}
             className={`py-3 px-6 font-black text-xs uppercase tracking-wider border-b-2 transition-all cursor-pointer flex items-center gap-2 ${
               activeStudentTab === 'uploads' 
-                ? 'border-blue-600 text-blue-600' 
+                ? 'border-[#bf4440] text-[#bf4440]' 
                 : 'border-transparent text-slate-400 hover:text-slate-600'
             }`}
           >
@@ -2047,7 +2047,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
             onClick={() => setActiveStudentTab('pipeline')}
             className={`py-3 px-6 font-black text-xs uppercase tracking-wider border-b-2 transition-all cursor-pointer flex items-center gap-2 ${
               activeStudentTab === 'pipeline' 
-                ? 'border-blue-600 text-blue-600' 
+                ? 'border-[#bf4440] text-[#bf4440]' 
                 : 'border-transparent text-slate-400 hover:text-slate-600'
             }`}
           >
@@ -2155,7 +2155,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                             <td className="py-4 px-6 text-center">
                               <input type="checkbox" className="rounded border-slate-300" />
                             </td>
-                            <td className="py-4 px-6 font-mono text-blue-600">{st.nim}</td>
+                            <td className="py-4 px-6 font-mono text-[#bf4440]">{st.nim}</td>
                             <td className="py-4 px-6 font-black text-slate-900">{st.name}</td>
                             <td className="py-4 px-6 text-slate-600">{st.prodi}</td>
                             <td className="py-4 px-6 text-center text-slate-500">{st.batch}</td>
@@ -2178,7 +2178,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                                   onClick={() => {
                                     alert(`Membuka modal detail dan sunting untuk mahasiswa "${st.name}" (${st.nim})`);
                                   }}
-                                  className="text-blue-600 hover:text-blue-800 p-1.5 rounded hover:bg-blue-50 transition-all cursor-pointer"
+                                  className="text-[#bf4440] hover:text-[#732926] p-1.5 rounded hover:bg-blushed-brick-50 transition-all cursor-pointer"
                                   title="Lihat Detail / Sunting"
                                 >
                                   <Edit size={13} />
@@ -2242,7 +2242,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                         <div className="flex justify-center gap-2">
                           <button 
                             onClick={() => alert(`Membuka berkas detil transaksi impor pada ${item.timestamp}`)}
-                            className="text-[10px] text-blue-600 hover:text-blue-800 uppercase tracking-wider"
+                            className="text-[10px] text-[#bf4440] hover:text-[#732926] uppercase tracking-wider"
                           >
                             Lihat Detail
                           </button>
@@ -2269,13 +2269,13 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
             <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100 p-5 rounded-[24px] flex flex-col md:flex-row md:items-center justify-between gap-4 font-sans">
               <div className="space-y-1">
                 <h4 className="text-xs font-black text-blue-900 uppercase tracking-wide">Pusat Antrean Ekstraksi & Review Data</h4>
-                <p className="text-[11px] text-blue-700 font-medium leading-relaxed max-w-2xl">
+                <p className="text-[11px] text-[#993633] font-medium leading-relaxed max-w-2xl">
                   Gunakan menu ini untuk memantau hasil ekstraksi kecerdasan buatan terhadap berkas yang diunggah di latar belakang. Anda dapat melakukan review dan verifikasi data terlebih dahulu sebelum melakukan impor permanen ke basis data master.
                 </p>
               </div>
               <button 
                 onClick={() => setIsInputModalOpen(true)}
-                className="bg-blue-600 hover:bg-blue-700 text-white font-black text-[10px] uppercase tracking-wider py-2.5 px-4 rounded-xl transition-all self-start md:self-center"
+                className="bg-[#bf4440] hover:bg-[#993633] text-white font-black text-[10px] uppercase tracking-wider py-2.5 px-4 rounded-xl transition-all self-start md:self-center"
               >
                 Unggah Berkas Baru
               </button>
@@ -2327,7 +2327,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                               </span>
                             )}
                             {item.status === 'Selesai Ekstraksi' && (
-                              <span className="text-[10px] font-black uppercase tracking-wide bg-blue-50 text-blue-600 border border-blue-100 px-3 py-1 rounded-full inline-flex items-center gap-1.5">
+                              <span className="text-[10px] font-black uppercase tracking-wide bg-blue-50 text-[#bf4440] border border-blue-100 px-3 py-1 rounded-full inline-flex items-center gap-1.5">
                                 <Sparkles size={11} className="text-blue-500" />
                                 Ready Review
                               </span>
@@ -2354,7 +2354,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                             {item.status === 'Selesai Ekstraksi' && (
                               <button 
                                 onClick={() => setReviewingUpload(item)}
-                                className="bg-blue-600 hover:bg-blue-700 text-white py-1.5 px-3.5 rounded-lg text-[10px] font-black uppercase tracking-wider shadow-sm transition-all cursor-pointer"
+                                className="bg-[#bf4440] hover:bg-[#993633] text-white py-1.5 px-3.5 rounded-lg text-[10px] font-black uppercase tracking-wider shadow-sm transition-all cursor-pointer"
                               >
                                 Review & Impor
                               </button>
@@ -2388,7 +2388,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                   <h4 className="text-xs font-black text-slate-400 uppercase tracking-wider">Twin Arsitektur & Arus Kerja</h4>
                   <h3 className="text-sm font-black text-slate-900 tracking-tight">Modul Input Data - Student (Learning Twin)</h3>
                 </div>
-                <span className="text-[10px] font-black uppercase bg-blue-50 text-blue-600 border border-blue-100 px-3 py-1 rounded-full">
+                <span className="text-[10px] font-black uppercase bg-blue-50 text-[#bf4440] border border-blue-100 px-3 py-1 rounded-full">
                   Status: Active / Ready
                 </span>
               </div>
@@ -2412,12 +2412,12 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
 
                 {/* Node 2 - Active Modul */}
                 <div className="bg-blue-50 border-2 border-blue-200 p-4 rounded-2xl space-y-1.5 text-center shadow-xs relative">
-                  <div className="absolute -top-2.5 left-1/2 -translate-x-1/2 text-[9px] font-black uppercase tracking-wider bg-blue-600 text-white px-2 py-0.5 rounded-full shadow-sm">
+                  <div className="absolute -top-2.5 left-1/2 -translate-x-1/2 text-[9px] font-black uppercase tracking-wider bg-[#bf4440] text-white px-2 py-0.5 rounded-full shadow-sm">
                     Modul Ini
                   </div>
-                  <div className="mx-auto w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-xs">02</div>
-                  <h5 className="text-[11px] font-black text-blue-800 uppercase tracking-wide">Input Data Student</h5>
-                  <p className="text-[10px] text-blue-600 font-bold">Ingest, Validasi, Normalisasi, Deduplikasi</p>
+                  <div className="mx-auto w-8 h-8 rounded-full bg-[#bf4440] text-white flex items-center justify-center font-bold text-xs">02</div>
+                  <h5 className="text-[11px] font-black text-[#732926] uppercase tracking-wide">Input Data Student</h5>
+                  <p className="text-[10px] text-[#bf4440] font-bold">Ingest, Validasi, Normalisasi, Deduplikasi</p>
                 </div>
 
                 <div className="hidden lg:flex justify-center text-slate-300">
@@ -2448,7 +2448,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                 <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest block">Data Freshness</span>
                 <div className="flex items-baseline gap-2">
                   <span className="text-2xl font-black text-slate-900 font-mono">2.1m</span>
-                  <span className="text-[10px] font-bold text-blue-600 font-mono">Real-time Webhook</span>
+                  <span className="text-[10px] font-bold text-[#bf4440] font-mono">Real-time Webhook</span>
                 </div>
                 <p className="text-[10px] text-slate-400 font-bold">Kecepatan sinkronisasi data dari sistem sumber</p>
               </div>
@@ -2511,7 +2511,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                           <span className="text-slate-900 block">{row.name}</span>
                         </td>
                         <td className="py-3 px-6">
-                          <span className="text-blue-600 bg-blue-50 px-2 py-0.5 rounded border border-blue-100 font-mono text-[10px] inline-block">{row.src}</span>
+                          <span className="text-[#bf4440] bg-blue-50 px-2 py-0.5 rounded border border-blue-100 font-mono text-[10px] inline-block">{row.src}</span>
                         </td>
                         <td className="py-3 px-6 text-slate-500 font-medium">{row.freq}</td>
                         <td className="py-3 px-6 text-slate-600">{row.auth}</td>
@@ -2529,7 +2529,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                                 ? 'bg-amber-100 text-amber-700 animate-pulse animate-duration-1000' 
                                 : isSyncingSource !== null
                                 ? 'bg-slate-100 text-slate-400 cursor-not-allowed'
-                                : 'bg-blue-600 hover:bg-blue-700 text-white shadow-xs'
+                                : 'bg-[#bf4440] hover:bg-[#993633] text-white shadow-xs'
                             }`}
                           >
                             {isSyncingSource === row.id ? 'Syncing...' : 'Sync Now'}
@@ -2683,7 +2683,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
               {/* Modal Header */}
               <div className="p-6 border-b border-slate-100 flex justify-between items-center bg-slate-50/50">
                 <div className="space-y-1">
-                  <span className="text-[10px] uppercase font-black text-blue-600 bg-blue-50 px-2.5 py-1 rounded border border-blue-100">Review Ekstraksi Dokumen</span>
+                  <span className="text-[10px] uppercase font-black text-[#bf4440] bg-blue-50 px-2.5 py-1 rounded border border-blue-100">Review Ekstraksi Dokumen</span>
                   <h4 className="text-sm font-black text-slate-900 uppercase tracking-tight flex items-center gap-2">
                     <FileText size={18} className="text-slate-500" />
                     {reviewingUpload.name}
@@ -2733,7 +2733,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                                   updatedRecords[idx].nim = e.target.value;
                                   setReviewingUpload({ ...reviewingUpload, records: updatedRecords });
                                 }}
-                                className="px-2 py-1 border border-slate-200 rounded font-mono text-blue-600 font-bold w-full bg-transparent focus:bg-white text-xs"
+                                className="px-2 py-1 border border-slate-200 rounded font-mono text-[#bf4440] font-bold w-full bg-transparent focus:bg-white text-xs"
                               />
                             </td>
                             <td className="py-3 px-4">
@@ -2870,7 +2870,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                     setActiveStudentTab('list');
                     setReviewingUpload(null);
                   }}
-                  className="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-black text-xs rounded-xl uppercase tracking-wider shadow-md shadow-blue-100 flex items-center gap-1.5 cursor-pointer"
+                  className="px-6 py-2.5 bg-[#bf4440] hover:bg-[#993633] text-white font-black text-xs rounded-xl uppercase tracking-wider shadow-md shadow-blue-100 flex items-center gap-1.5 cursor-pointer"
                 >
                   <Check size={14} /> Konfirmasi & Simpan ke Database
                 </button>
@@ -2925,7 +2925,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                 setDefaultDosenPathway('manual');
                 setIsDosenModalOpen(true);
               }}
-              className="bg-blue-600 hover:bg-blue-700 text-white font-black text-xs uppercase tracking-widest py-3 px-5 rounded-xl transition-all flex items-center gap-2 shadow-sm cursor-pointer"
+              className="bg-[#bf4440] hover:bg-[#993633] text-white font-black text-xs uppercase tracking-widest py-3 px-5 rounded-xl transition-all flex items-center gap-2 shadow-sm cursor-pointer"
             >
               <Plus size={14} />
               Input Dosen
@@ -2961,7 +2961,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                   placeholder="Contoh: 0420058801"
                   value={newLecturer.nidn}
                   onChange={(e) => setNewLecturer({ ...newLecturer, nidn: e.target.value })}
-                  className="w-full px-3 py-2.5 border border-slate-200 rounded-xl font-bold focus:ring-1 focus:ring-blue-500 focus:outline-none"
+                  className="w-full px-3 py-2.5 border border-slate-200 rounded-xl font-bold focus:ring-1 focus:ring-[#bf4440]/20 focus:outline-none"
                 />
               </div>
               <div className="space-y-1">
@@ -2971,7 +2971,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                   placeholder="Prof. Dr. ..."
                   value={newLecturer.name}
                   onChange={(e) => setNewLecturer({ ...newLecturer, name: e.target.value })}
-                  className="w-full px-3 py-2.5 border border-slate-200 rounded-xl font-bold focus:ring-1 focus:ring-blue-500 focus:outline-none"
+                  className="w-full px-3 py-2.5 border border-slate-200 rounded-xl font-bold focus:ring-1 focus:ring-[#bf4440]/20 focus:outline-none"
                 />
               </div>
               <div className="space-y-1">
@@ -2982,7 +2982,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                   maxLength={3}
                   value={newLecturer.code}
                   onChange={(e) => setNewLecturer({ ...newLecturer, code: e.target.value.toUpperCase() })}
-                  className="w-full px-3 py-2.5 border border-slate-200 rounded-xl font-bold focus:ring-1 focus:ring-blue-500 focus:outline-none"
+                  className="w-full px-3 py-2.5 border border-slate-200 rounded-xl font-bold focus:ring-1 focus:ring-[#bf4440]/20 focus:outline-none"
                 />
               </div>
               <div className="space-y-1">
@@ -2990,7 +2990,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                 <select 
                   value={newLecturer.jabfung}
                   onChange={(e) => setNewLecturer({ ...newLecturer, jabfung: e.target.value })}
-                  className="w-full px-3 py-2.5 border border-slate-200 rounded-xl font-bold focus:ring-1 focus:ring-blue-500"
+                  className="w-full px-3 py-2.5 border border-slate-200 rounded-xl font-bold focus:ring-1 focus:ring-[#bf4440]/20"
                 >
                   <option value="Asisten Ahli">Asisten Ahli</option>
                   <option value="Lektor">Lektor</option>
@@ -3003,7 +3003,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                 <select 
                   value={newLecturer.status}
                   onChange={(e) => setNewLecturer({ ...newLecturer, status: e.target.value })}
-                  className="w-full px-3 py-2.5 border border-slate-200 rounded-xl font-bold focus:ring-1 focus:ring-blue-500"
+                  className="w-full px-3 py-2.5 border border-slate-200 rounded-xl font-bold focus:ring-1 focus:ring-[#bf4440]/20"
                 >
                   <option value="PNS">PNS (Aparatur Sipil Negara)</option>
                   <option value="Tetap Non-PNS">Tetap Non-PNS</option>
@@ -3017,7 +3017,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                   placeholder="Contoh: 12 SKS"
                   value={newLecturer.teachingLoad}
                   onChange={(e) => setNewLecturer({ ...newLecturer, teachingLoad: e.target.value })}
-                  className="w-full px-3 py-2.5 border border-slate-200 rounded-xl font-bold focus:ring-1 focus:ring-blue-500 focus:outline-none"
+                  className="w-full px-3 py-2.5 border border-slate-200 rounded-xl font-bold focus:ring-1 focus:ring-[#bf4440]/20 focus:outline-none"
                 />
               </div>
               <div className="md:col-span-3 pt-2">
@@ -3037,9 +3037,9 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
               setDefaultDosenPathway('upload');
               setIsDosenModalOpen(true);
             }}
-            className="border-2 border-dashed border-slate-200 hover:border-blue-500 rounded-2xl p-6 text-center cursor-pointer transition-all space-y-2 bg-slate-50/50"
+            className="border-2 border-dashed border-slate-200 hover:border-[#bf4440] rounded-2xl p-6 text-center cursor-pointer transition-all space-y-2 bg-slate-50/50"
           >
-            <div className="w-10 h-10 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mx-auto">
+            <div className="w-10 h-10 bg-blue-50 text-[#bf4440] rounded-xl flex items-center justify-center mx-auto">
               <Database size={18} />
             </div>
             <div className="space-y-0.5">
@@ -3069,7 +3069,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                   <tr key={lec.nidn} className="hover:bg-slate-50/50 transition-colors">
                     <td className="py-4 px-6 font-mono text-slate-400">{lec.nidn}</td>
                     <td className="py-4 px-6 font-black text-slate-900">{lec.name}</td>
-                    <td className="py-4 px-6 text-center font-mono text-blue-600">{lec.code}</td>
+                    <td className="py-4 px-6 text-center font-mono text-[#bf4440]">{lec.code}</td>
                     <td className="py-4 px-6 text-slate-600">{lec.jabfung}</td>
                     <td className="py-4 px-6 text-center font-mono">{lec.status}</td>
                     <td className="py-4 px-6 text-center font-mono text-emerald-600 font-extrabold">{lec.teachingLoad}</td>
@@ -3134,7 +3134,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                 setDefaultKurikulumPathway('manual');
                 setIsKurikulumModalOpen(true);
               }}
-              className="bg-blue-600 hover:bg-blue-700 text-white font-black text-xs uppercase tracking-widest py-3 px-5 rounded-xl transition-all flex items-center gap-2 shadow-sm cursor-pointer"
+              className="bg-[#bf4440] hover:bg-[#993633] text-white font-black text-xs uppercase tracking-widest py-3 px-5 rounded-xl transition-all flex items-center gap-2 shadow-sm cursor-pointer"
             >
               <Plus size={14} />
               Input Mata Kuliah
@@ -3170,7 +3170,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                   placeholder="Contoh: KOM401"
                   value={newCurriculum.code}
                   onChange={(e) => setNewCurriculum({ ...newCurriculum, code: e.target.value.toUpperCase() })}
-                  className="w-full px-3 py-2.5 border border-slate-200 rounded-xl font-bold focus:ring-1 focus:ring-blue-500 focus:outline-none"
+                  className="w-full px-3 py-2.5 border border-slate-200 rounded-xl font-bold focus:ring-1 focus:ring-[#bf4440]/20 focus:outline-none"
                 />
               </div>
               <div className="space-y-1">
@@ -3180,7 +3180,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                   placeholder="Nama Mata Kuliah"
                   value={newCurriculum.name}
                   onChange={(e) => setNewCurriculum({ ...newCurriculum, name: e.target.value })}
-                  className="w-full px-3 py-2.5 border border-slate-200 rounded-xl font-bold focus:ring-1 focus:ring-blue-500 focus:outline-none"
+                  className="w-full px-3 py-2.5 border border-slate-200 rounded-xl font-bold focus:ring-1 focus:ring-[#bf4440]/20 focus:outline-none"
                 />
               </div>
               <div className="space-y-1">
@@ -3191,7 +3191,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                   max={6}
                   value={newCurriculum.sks}
                   onChange={(e) => setNewCurriculum({ ...newCurriculum, sks: parseInt(e.target.value) || 3 })}
-                  className="w-full px-3 py-2.5 border border-slate-200 rounded-xl font-bold focus:ring-1 focus:ring-blue-500"
+                  className="w-full px-3 py-2.5 border border-slate-200 rounded-xl font-bold focus:ring-1 focus:ring-[#bf4440]/20"
                 />
               </div>
               <div className="space-y-1">
@@ -3202,7 +3202,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                   max={8}
                   value={newCurriculum.semester}
                   onChange={(e) => setNewCurriculum({ ...newCurriculum, semester: parseInt(e.target.value) || 1 })}
-                  className="w-full px-3 py-2.5 border border-slate-200 rounded-xl font-bold focus:ring-1 focus:ring-blue-500"
+                  className="w-full px-3 py-2.5 border border-slate-200 rounded-xl font-bold focus:ring-1 focus:ring-[#bf4440]/20"
                 />
               </div>
               <div className="space-y-1">
@@ -3210,7 +3210,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                 <select 
                   value={newCurriculum.type}
                   onChange={(e) => setNewCurriculum({ ...newCurriculum, type: e.target.value })}
-                  className="w-full px-3 py-2.5 border border-slate-200 rounded-xl font-bold focus:ring-1 focus:ring-blue-500"
+                  className="w-full px-3 py-2.5 border border-slate-200 rounded-xl font-bold focus:ring-1 focus:ring-[#bf4440]/20"
                 >
                   <option value="Wajib">Wajib</option>
                   <option value="Pilihan">Pilihan</option>
@@ -3221,7 +3221,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
                 <select 
                   value={newCurriculum.prodi}
                   onChange={(e) => setNewCurriculum({ ...newCurriculum, prodi: e.target.value })}
-                  className="w-full px-3 py-2.5 border border-slate-200 rounded-xl font-bold focus:ring-1 focus:ring-blue-500"
+                  className="w-full px-3 py-2.5 border border-slate-200 rounded-xl font-bold focus:ring-1 focus:ring-[#bf4440]/20"
                 >
                   <option value="S1 Jurnalisme Digital">S1 Jurnalisme Digital</option>
                   <option value="S1 Manajemen Komunikasi">S1 Manajemen Komunikasi</option>
@@ -3245,9 +3245,9 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
               setDefaultKurikulumPathway('upload');
               setIsKurikulumModalOpen(true);
             }}
-            className="border-2 border-dashed border-slate-200 hover:border-blue-500 rounded-2xl p-6 text-center cursor-pointer transition-all space-y-2 bg-slate-50/50"
+            className="border-2 border-dashed border-slate-200 hover:border-[#bf4440] rounded-2xl p-6 text-center cursor-pointer transition-all space-y-2 bg-slate-50/50"
           >
-            <div className="w-10 h-10 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mx-auto">
+            <div className="w-10 h-10 bg-blue-50 text-[#bf4440] rounded-xl flex items-center justify-center mx-auto">
               <Database size={18} />
             </div>
             <div className="space-y-0.5">
@@ -3275,7 +3275,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
               <tbody className="divide-y divide-slate-100 text-xs font-bold text-slate-800">
                 {curriculums.map((c) => (
                   <tr key={c.code} className="hover:bg-slate-50/50 transition-colors">
-                    <td className="py-4 px-6 font-mono text-blue-600">{c.code}</td>
+                    <td className="py-4 px-6 font-mono text-[#bf4440]">{c.code}</td>
                     <td className="py-4 px-6 font-black text-slate-900">{c.name}</td>
                     <td className="py-4 px-6 text-center font-mono">{c.sks} SKS</td>
                     <td className="py-4 px-6 text-center font-mono">Semester {c.semester}</td>
@@ -3360,7 +3360,7 @@ export function AdminDashboard({ currentView, setView, loggedInUser }: AdminDash
         <div className="bg-white border border-slate-200 rounded-[32px] p-6 shadow-sm space-y-5">
           <div className="flex justify-between items-center border-b border-slate-100 pb-4">
             <div className="space-y-1">
-              <span className="text-[10px] font-black text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full uppercase tracking-wider">Kementerian Pendidikan Feeder</span>
+              <span className="text-[10px] font-black text-[#bf4440] bg-blue-50 px-2.5 py-1 rounded-full uppercase tracking-wider">Kementerian Pendidikan Feeder</span>
               <h3 className="text-base font-black text-slate-900 pt-2">Layanan Feeder PDDikti Kemdikbud</h3>
             </div>
             <button
