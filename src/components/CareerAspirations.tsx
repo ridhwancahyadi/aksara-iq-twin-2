@@ -122,8 +122,8 @@ export function CareerAspirations({ setView }: { setView?: (view: any) => void }
 
           {/* Top Badges Row */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-            <div className="flex items-center gap-3 px-4 py-3 bg-emerald-50/70 border border-emerald-100/80 rounded-xl shadow-sm">
-              <div className="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
+            <div className="flex items-center gap-3 px-4 py-3 bg-white border border-slate-200 rounded-xl shadow-sm">
+              <div className="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center shrink-0">
                 <GraduationCap size={16} />
               </div>
               <div>
@@ -133,8 +133,8 @@ export function CareerAspirations({ setView }: { setView?: (view: any) => void }
               </div>
             </div>
 
-            <div className="flex items-center gap-3 px-4 py-3 bg-purple-50/70 border border-purple-100/80 rounded-xl shadow-sm">
-              <div className="w-8 h-8 rounded-lg bg-purple-100 text-purple-700 flex items-center justify-center shrink-0">
+            <div className="flex items-center gap-3 px-4 py-3 bg-white border border-slate-200 rounded-xl shadow-sm">
+              <div className="w-8 h-8 rounded-lg bg-purple-50 text-purple-700 flex items-center justify-center shrink-0">
                 <BookOpen size={16} />
               </div>
               <div>
@@ -144,8 +144,8 @@ export function CareerAspirations({ setView }: { setView?: (view: any) => void }
               </div>
             </div>
 
-            <div className="flex items-center gap-3 px-4 py-3 bg-indigo-50/70 border border-indigo-100/80 rounded-xl shadow-sm">
-              <div className="w-8 h-8 rounded-lg bg-indigo-100 text-indigo-700 flex items-center justify-center shrink-0">
+            <div className="flex items-center gap-3 px-4 py-3 bg-white border border-slate-200 rounded-xl shadow-sm">
+              <div className="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-700 flex items-center justify-center shrink-0">
                 <Clock size={16} />
               </div>
               <div>
@@ -158,9 +158,9 @@ export function CareerAspirations({ setView }: { setView?: (view: any) => void }
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
             {/* Vision Card */}
-            <section className="lg:col-span-2 bg-gradient-to-r from-white to-sky-50/20 border border-slate-200 p-6 rounded-xl relative overflow-hidden flex flex-col justify-between shadow-sm">
+            <section className="lg:col-span-2 bg-white border border-slate-200 p-6 rounded-xl relative overflow-hidden flex flex-col justify-between shadow-sm">
               <div className="flex gap-4 relative z-10 mb-4">
-                <div className="w-10 h-10 rounded-lg bg-sky-100 text-sky-600 flex items-center justify-center flex-shrink-0 shadow-sm">
+                <div className="w-10 h-10 rounded-lg bg-sky-50 text-sky-600 flex items-center justify-center flex-shrink-0">
                   <Sparkles size={20} />
                 </div>
                 <div className="pt-0.5">
@@ -172,9 +172,9 @@ export function CareerAspirations({ setView }: { setView?: (view: any) => void }
               </div>
 
               {/* AI Insight Section */}
-              <div className="border-t border-slate-100 pt-3 mt-2 bg-purple-50/40 p-4 rounded-xl border border-purple-100/60">
+              <div className="border-t border-slate-100 pt-3 mt-2 bg-slate-50 p-4 rounded-xl border border-slate-100">
                 <div className="flex items-start gap-3">
-                  <div className="w-7 h-7 rounded-lg bg-purple-100 text-purple-700 flex items-center justify-center shrink-0 shadow-sm">
+                  <div className="w-7 h-7 rounded-lg bg-purple-50 text-purple-700 flex items-center justify-center shrink-0">
                     <BrainCircuit size={14} />
                   </div>
                   <div>
@@ -199,7 +199,7 @@ export function CareerAspirations({ setView }: { setView?: (view: any) => void }
                     <div className="relative w-16 h-16 shrink-0 mr-2 mt-1">
                       <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
                         <circle cx="50" cy="50" r="40" stroke="currentColor" strokeWidth="12" fill="transparent" className="text-slate-100" />
-                        <circle cx="50" cy="50" r="40" stroke="currentColor" strokeWidth="12" fill="transparent" strokeDasharray="251.2" strokeDashoffset={251.2 - (251.2 * 67) / 100} strokeLinecap="round" className="text-[#35b5a6]" />
+                        <circle cx="50" cy="50" r="40" stroke="currentColor" strokeWidth="12" fill="transparent" strokeDasharray="251.2" strokeDashoffset={251.2 - (251.2 * 67) / 100} strokeLinecap="round" className="text-emerald-500" />
                       </svg>
                       <div className="absolute inset-0 flex flex-col items-center justify-center">
                         <span className="text-base font-bold text-slate-900 leading-none">67</span>
@@ -209,8 +209,8 @@ export function CareerAspirations({ setView }: { setView?: (view: any) => void }
                  </div>
 
                  {/* Harapan Karir */}
-                 <div className="bg-amber-50/60 border border-amber-100/80 rounded-xl p-3 flex items-center gap-3 mb-4">
-                   <div className="w-8 h-8 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center shrink-0 shadow-sm">
+                 <div className="bg-slate-50 border border-slate-100 rounded-xl p-3 flex items-center gap-3 mb-4">
+                   <div className="w-8 h-8 rounded-lg bg-amber-50 text-amber-700 flex items-center justify-center shrink-0">
                      <Award size={18} />
                    </div>
                    <div>
@@ -319,9 +319,9 @@ export function CareerAspirations({ setView }: { setView?: (view: any) => void }
               </div>
               
               {/* Actionable Insights */}
-              <div className="bg-blue-50/50 p-4 rounded-xl border border-blue-100">
-                <div className="flex items-center gap-2 mb-3 text-blue-900">
-                  <Lightbulb size={20} />
+              <div className="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                <div className="flex items-center gap-2 mb-3 text-slate-800">
+                  <Lightbulb size={20} className="text-amber-500" />
                   <h3 className="font-semibold text-lg">Actionable Insights</h3>
                 </div>
                 <p className="text-sm text-slate-600 leading-relaxed">

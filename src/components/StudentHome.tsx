@@ -505,20 +505,20 @@ export function StudentHome({ loggedInUser, setView }: StudentHomeProps) {
 
             {/* Structured Compact Task Metric Grid */}
             <div className="grid grid-cols-2 gap-3 py-3 text-xs font-bold text-slate-500">
-              <div className="flex flex-col bg-slate-50/50 p-2 rounded-sm border border-slate-100">
+              <div className="flex flex-col bg-slate-50 p-2.5 rounded-sm">
                 <span className="text-[8px] font-black uppercase tracking-wider text-slate-400">Total Tugas</span>
                 <span className="text-base font-black text-slate-900 mt-0.5">34</span>
               </div>
-              <div className="flex flex-col bg-emerald-50/20 p-2 rounded-sm border border-emerald-100/50">
-                <span className="text-[8px] font-black uppercase tracking-wider text-emerald-500">Selesai</span>
+              <div className="flex flex-col bg-slate-50 p-2.5 rounded-sm">
+                <span className="text-[8px] font-black uppercase tracking-wider text-emerald-600">Selesai</span>
                 <span className="text-base font-black text-emerald-600 mt-0.5">26</span>
               </div>
-              <div className="flex flex-col bg-amber-50/20 p-2 rounded-sm border border-amber-100/50">
-                <span className="text-[8px] font-black uppercase tracking-wider text-amber-500">Tertunda</span>
-                <span className="text-base font-black text-amber-500 mt-0.5">8</span>
+              <div className="flex flex-col bg-slate-50 p-2.5 rounded-sm">
+                <span className="text-[8px] font-black uppercase tracking-wider text-amber-600">Tertunda</span>
+                <span className="text-base font-black text-amber-600 mt-0.5">8</span>
               </div>
-              <div className="flex flex-col bg-rose-50/20 p-2 rounded-sm border border-rose-100/50">
-                <span className="text-[8px] font-black uppercase tracking-wider text-rose-500">Terlambat</span>
+              <div className="flex flex-col bg-slate-50 p-2.5 rounded-sm">
+                <span className="text-[8px] font-black uppercase tracking-wider text-rose-600">Terlambat</span>
                 <span className="text-base font-black text-rose-600 mt-0.5">3</span>
               </div>
             </div>
