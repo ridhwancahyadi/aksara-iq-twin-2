@@ -44,7 +44,7 @@ export function StudentHome({ loggedInUser, setView }: StudentHomeProps) {
     {
       id: 'msg-1',
       sender: 'ai' as const,
-      text: `Halo, ${studentName}! Saya **Aksara IQ Coach**, asisten akademik digital Anda. 🚀\n\nSaya memantau seluruh performa Anda di kelas **Manajemen Komunikasi**. Ada yang ingin Anda tanyakan atau diskusikan hari ini?`,
+      text: `Halo, ${studentName}! Saya **Asisten Pembelajaran Aksara IQ**, asisten akademik digital Anda. 🚀\n\nSaya memantau seluruh performa Anda di kelas **Manajemen Komunikasi**. Ada yang ingin Anda tanyakan atau diskusikan hari ini?`,
       timestamp: new Date().toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' })
     }
   ]);
@@ -373,13 +373,13 @@ export function StudentHome({ loggedInUser, setView }: StudentHomeProps) {
                 }}
                 className="bg-amber-500 hover:bg-amber-600 text-slate-900 px-6 py-3 rounded-sm text-xs font-black transition-all cursor-pointer"
               >
-                See Class
+                Lihat Kelas
               </button>
               <button 
                 onClick={() => setSelectedCourse(null)}
                 className="bg-slate-950 text-white px-6 py-3 rounded-sm text-xs font-black hover:bg-slate-900 transition-all cursor-pointer"
               >
-                Tutup Detail Course
+                Tutup Detail Kelas
               </button>
             </div>
           </motion.div>
@@ -401,7 +401,7 @@ export function StudentHome({ loggedInUser, setView }: StudentHomeProps) {
                   <Sparkles size={16} className="animate-pulse" />
                 </span>
                 <div>
-                  <span className="text-[10px] font-black uppercase tracking-widest text-blue-400 block">AI Executive Recommendation</span>
+                  <span className="text-[10px] font-black uppercase tracking-widest text-blue-400 block">Rekomendasi Utama Pembelajaran</span>
                   <h3 className="text-sm font-black text-white">Rencana Sukses Belajar Aksara</h3>
                 </div>
               </div>
@@ -546,7 +546,7 @@ export function StudentHome({ loggedInUser, setView }: StudentHomeProps) {
           {/* Today's Academic Path (Moved here to match Semester Course width) */}
           <div className="flex flex-col gap-4">
             <div className="flex justify-between items-center px-1">
-              <h2 className="text-xl font-black text-slate-900 tracking-tight">Today's Academic Path</h2>
+              <h2 className="text-xl font-black text-slate-900 tracking-tight">Jalur Belajar Hari Ini</h2>
               <div className="flex gap-2">
                 <button className="p-2 bg-white border border-slate-200 hover:bg-slate-50 rounded-sm text-slate-400 hover:text-slate-600 transition-all cursor-pointer shadow-sm">
                   <ChevronDown className="rotate-90" size={16} />
@@ -602,9 +602,9 @@ export function StudentHome({ loggedInUser, setView }: StudentHomeProps) {
           </div>
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 px-1">
             <div>
-              <h2 className="text-xl font-black text-slate-900 tracking-tight">Semester Course Resume</h2>
+              <h2 className="text-xl font-black text-slate-900 tracking-tight">Ringkasan Kelas Semester</h2>
               <div className="flex items-center gap-3 mt-1.5">
-                <span className="bg-blue-100 text-[#993633] text-[10px] font-black px-2 py-0.5 rounded-sm uppercase tracking-wider">Active Enrollment</span>
+                <span className="bg-blue-100 text-[#993633] text-[10px] font-black px-2 py-0.5 rounded-sm uppercase tracking-wider">Pendaftaran Aktif</span>
                 <div className="flex items-center gap-2 text-xs text-slate-400 font-bold">
                   <div className="flex items-center gap-1 bg-white border border-slate-200 px-2 py-1 rounded-sm">
                     <span className="w-1.5 h-1.5 rounded-full bg-blue-500" /> Filter: Fall 2024
@@ -616,7 +616,7 @@ export function StudentHome({ loggedInUser, setView }: StudentHomeProps) {
             
             <div className="flex items-center gap-3">
               <div className="flex items-center gap-2 bg-white border border-slate-200 px-3 py-1.5 rounded-sm text-xs font-bold text-slate-600">
-                <TrendingUp size={14} className="text-slate-400" /> Date Created <ChevronDown size={14} />
+                <TrendingUp size={14} className="text-slate-400" /> Tanggal Dibuat <ChevronDown size={14} />
               </div>
             </div>
           </div>
@@ -666,8 +666,8 @@ export function StudentHome({ loggedInUser, setView }: StudentHomeProps) {
                         <span className="absolute text-[10px] font-black text-slate-900">{course.progress}%</span>
                       </div>
                       <div className="flex flex-col">
-                        <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest leading-none">Completion Rate</span>
-                        <span className="text-xs font-bold text-slate-900 mt-1">Course Progress</span>
+                        <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest leading-none">Tingkat Penyelesaian</span>
+                        <span className="text-xs font-bold text-slate-900 mt-1">Progres Pembelajaran</span>
                       </div>
                     </div>
                     
@@ -675,16 +675,16 @@ export function StudentHome({ loggedInUser, setView }: StudentHomeProps) {
                       onClick={() => setView('course_class_details')}
                       className="bg-[#d56c2a] hover:bg-[#aa5622] text-slate-900 px-5 py-2.5 rounded-sm text-xs font-black transition-all active:scale-95 shadow-sm hover:shadow-sm cursor-pointer"
                     >
-                      See Class
+                      Lihat Kelas
                     </button>
                   </div>
 
                   {/* Footer */}
                   <div className="flex justify-between items-center pt-5 border-t border-slate-100 mt-1">
                     <div className="flex flex-col">
-                      <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Next Session</span>
+                      <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Sesi Berikutnya</span>
                       <div className="flex items-center gap-1.5 mt-0.5 text-[10px] font-black text-slate-700">
-                        <Clock size={12} className="text-blue-500" /> Tomorrow at 08:00 AM
+                        <Clock size={12} className="text-blue-500" /> Besok pukul 08:00 WIB
                       </div>
                     </div>
                     <div className="flex -space-x-2">
@@ -708,7 +708,7 @@ export function StudentHome({ loggedInUser, setView }: StudentHomeProps) {
         {/* RIGHT: UPCOMING ASSIGNMENTS (25% width) */}
         <div className="xl:col-span-3 flex flex-col gap-6">
           <div className="flex justify-between items-center px-1">
-            <h2 className="text-xl font-black text-slate-900 tracking-tight">Upcoming Assignments</h2>
+            <h2 className="text-xl font-black text-slate-900 tracking-tight">Tugas Mendatang</h2>
             <button className="p-2 bg-white border border-slate-200 hover:bg-slate-50 rounded-sm text-[#bf4440] transition-all cursor-pointer shadow-sm">
               <ArrowUpRight size={18} />
             </button>
@@ -752,7 +752,7 @@ export function StudentHome({ loggedInUser, setView }: StudentHomeProps) {
 
           {/* Additional Event List */}
           <div className="bg-slate-50 border border-slate-100 rounded-[32px] p-6 space-y-5">
-            <h3 className="text-xs font-black text-slate-400 uppercase tracking-widest">Campus Announcements</h3>
+            <h3 className="text-xs font-black text-slate-400 uppercase tracking-widest">Pengumuman Kampus</h3>
             <div className="space-y-4">
               {[
                 { title: "BWRC Breakfast Talk with Sam Schwartz", date: "May 6, 2016", time: "8:30am - 10:00am", type: "Register Today!", btn: "RSVP" },
@@ -792,7 +792,7 @@ export function StudentHome({ loggedInUser, setView }: StudentHomeProps) {
           >
             <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse shrink-0" />
             <p className="leading-tight">
-              Butuh tips FGD atau info tugas? Tanya AI Coach Anda di sini!
+              Butuh tips kelompok atau info tugas? Tanya Asisten Pembelajaran di sini!
             </p>
             <button 
               onClick={(e) => {
@@ -850,8 +850,8 @@ export function StudentHome({ loggedInUser, setView }: StudentHomeProps) {
                   <span className="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-emerald-500 border border-slate-900" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-black tracking-wide text-white leading-none">Aksara IQ Coach</h4>
-                  <span className="text-[9px] font-bold text-slate-400">Personal AI Academic Advisor</span>
+                  <h4 className="text-xs font-black tracking-wide text-white leading-none">Asisten Pembelajaran Aksara IQ</h4>
+                  <span className="text-[9px] font-bold text-slate-400">Bantuan & Tanya Jawab Akademik</span>
                 </div>
               </div>
               <div className="flex items-center gap-2">
@@ -861,7 +861,7 @@ export function StudentHome({ loggedInUser, setView }: StudentHomeProps) {
                       {
                         id: 'msg-1',
                         sender: 'ai',
-                        text: `Halo, ${studentName}! Saya **Aksara IQ Coach**, asisten akademik digital Anda. 🚀\n\nSaya memantau seluruh performa Anda di kelas **Manajemen Komunikasi**. Ada yang ingin Anda tanyakan atau diskusikan hari ini?`,
+                        text: `Halo, ${studentName}! Saya **Asisten Pembelajaran Aksara IQ**, asisten akademik digital Anda. 🚀\n\nSaya memantau seluruh performa Anda di kelas **Manajemen Komunikasi**. Ada yang ingin Anda tanyakan atau diskusikan hari ini?`,
                         timestamp: new Date().toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' })
                       }
                     ]);
@@ -988,7 +988,7 @@ export function StudentHome({ loggedInUser, setView }: StudentHomeProps) {
                 type="text" 
                 value={userInputValue}
                 onChange={(e) => setUserInputValue(e.target.value)}
-                placeholder="Tanya AI Coach..."
+                placeholder="Tanya asisten pembelajaran..."
                 className="flex-1 bg-slate-50 border border-slate-200 rounded-sm px-3 py-2 text-xs font-medium focus:outline-none focus:border-[#bf4440] focus:bg-white transition-colors"
               />
               <button 

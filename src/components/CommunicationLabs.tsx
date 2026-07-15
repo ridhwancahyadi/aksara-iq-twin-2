@@ -6,7 +6,7 @@ import {
   MessageSquare, Video, FileText, Play, Award, TrendingUp, 
   AlertCircle, Clock, CheckCircle, Brain, Calendar, Info, 
   Sparkles, Send, Mic, Download, ChevronRight, Check, Shield, Users, User, ArrowRight, Activity, RotateCcw, Upload, Search, X, Plus, BookOpen, Lightbulb, ChevronDown, UploadCloud, Image, Trash2, HelpCircle,
-  Pause, Volume2, VolumeX, Maximize2, Settings, BarChart2, AlertTriangle, Target
+  Pause, Volume2, VolumeX, Maximize2, Settings, BarChart2, AlertTriangle, Target, SlidersHorizontal, Lock, ChevronUp, Bold, Italic, List, Link
 } from 'lucide-react';
 import { 
   ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, 
@@ -29,8 +29,85 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
   const studentName = loggedInUser?.name || "John Tosh";
   const studentNim = loggedInUser?.nim || "2022045";
 
+  // Toggle between Student (Mahasiswa) and Lecturer (Dosen) perspective
+  const [userRole, setUserRole] = useState<'mahasiswa' | 'dosen'>(loggedInUser?.role === 'dosen' ? 'dosen' : 'mahasiswa');
+
+  // Lecturer States
+  const [selectedDosenCourseId, setSelectedDosenCourseId] = useState<string | null>(null); // null means showing course grid
+  const [isCreatingTask, setIsCreatingTask] = useState<boolean>(false);
+  const [createStep, setCreateStep] = useState<1 | 2 | 3>(1);
+  
+  // Dosen courses state (so we can update counts dynamically when a task is created)
+  const [dosenCourses, setDosenCourses] = useState([
+    {
+      id: 'KOM301',
+      code: 'KOM301 • 3 SKS',
+      courseName: 'Jurnalisme Digital',
+      studentsCount: 45,
+      schedule: 'Kamis • 08:00 - 10:30',
+      room: 'Aula FIKOM 101',
+      sessionsCompleted: 14,
+      totalSessions: 16,
+      attendanceRate: 92,
+      taskCount: 1,
+    },
+    {
+      id: 'KOM321',
+      code: 'KOM321 • 3 SKS',
+      courseName: 'Riset Komunikasi',
+      studentsCount: 38,
+      schedule: 'Kamis • 10:45 - 13:15',
+      room: 'Lab Komputasi Sosial',
+      sessionsCompleted: 12,
+      totalSessions: 16,
+      attendanceRate: 88,
+      taskCount: 1,
+    },
+    {
+      id: 'KOM312',
+      code: 'KOM312 • 3 SKS',
+      courseName: 'Komunikasi Massa',
+      studentsCount: 41,
+      schedule: 'Jumat • 08:00 - 10:30',
+      room: 'Ruang Seminar 204',
+      sessionsCompleted: 14,
+      totalSessions: 16,
+      attendanceRate: 95,
+      taskCount: 4,
+    },
+    {
+      id: 'KOM305',
+      code: 'KOM305 • 3 SKS',
+      courseName: 'PR dan Branding',
+      studentsCount: 40,
+      schedule: 'Selasa • 13:00 - 15:30',
+      room: 'Gedung Utama Lt. 2',
+      sessionsCompleted: 11,
+      totalSessions: 16,
+      attendanceRate: 91,
+      taskCount: 1,
+    },
+  ]);
+
+  // Create Task form states
+  const [newTaskName, setNewTaskName] = useState<string>("Analisis Strategi Komunikasi Krisis");
+  const [newTaskCourse, setNewTaskCourse] = useState<string>("Strategic Communication (SK301)");
+  const [newTaskMeeting, setNewTaskMeeting] = useState<string>("Pertemuan 1");
+  const [newTaskType, setNewTaskType] = useState<string>("General");
+  const [newTaskDeadline, setNewTaskDeadline] = useState<string>("2026-06-30");
+  const [newTaskInstructions, setNewTaskInstructions] = useState<string>("Mahasiswa diminta untuk menganalisis satu studi kasus krisis komunikasi yang terjadi pada korporasi global dalam 2 tahun terakhir. Hasil analisis harus mencakup:\n\n• Identifikasi jenis krisis dan stakeholder terdampak.\n• Evaluasi respon perusahaan (kecepatan, transparansi, dan empati).\n• Rekomendasi strategi alternatif yang seharusnya dilakukan.\n• Format dokumen: PDF, maksimal 1500 kata, font Inter 11pt.");
+
+  // Step 2 Indicators state
+  const [rubricIndicators, setRubricIndicators] = useState([
+    { id: 1, title: 'Active Participation', weight: 25, description: 'Frekuensi & kualitas kontribusi diskusi', observable: '', characteristics: '', isExpanded: true },
+    { id: 2, title: 'Collaboration & Listening', weight: 25, description: 'Membangun ide rekan, mendengarkan aktif', observable: '', characteristics: '', isExpanded: false },
+    { id: 3, title: 'Argument Quality', weight: 25, description: 'Kekuatan argumen & relevansi topik', observable: '', characteristics: '', isExpanded: false },
+    { id: 4, title: 'Group Leadership & Facilitation', weight: 25, description: 'Inisiasi memandu arah diskusi', observable: '', characteristics: '', isExpanded: false },
+  ]);
+
   // Selected parent category/module
   const [activeModule, setActiveModule] = useState<'all' | 'fgd' | 'presentation' | 'writing' | 'simulation'>('all');
+  const [selectedCourseFilter, setSelectedCourseFilter] = useState<string>('all');
 
   // Selected specific assessment task (null means we show the list of tasks for activeModule)
   const [selectedAssessmentId, setSelectedAssessmentId] = useState<string | null>(null);
@@ -347,7 +424,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
       id: 'fgd-task-2',
       moduleId: 'fgd',
       title: 'Sesi Diskusi Kelompok: Crisis Management Scenario',
-      class: 'Strategic Communication',
+      class: 'Manajemen Komunikasi',
       lecturer: 'Dr. Sari Dewi, M.Kom',
       deadline: '20 Jun 2026, 23:59',
       status: 'Sudah Dinilai',
@@ -409,7 +486,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
       id: 'pres-task-2',
       moduleId: 'presentation',
       title: 'Midterm Presentation: PR Campaign Pitch',
-      class: 'Strategic Communication',
+      class: 'Jurnalisme Digital',
       lecturer: 'Dr. Sari Dewi, M.Kom',
       deadline: '15 Aug 2026, 23:59',
       status: 'Belum Dikerjakan',
@@ -432,7 +509,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
       id: 'writ-task-1',
       moduleId: 'writing',
       title: 'Esai Analisis: Strategi Komunikasi Krisis',
-      class: 'Strategic Communication',
+      class: 'Manajemen Komunikasi',
       lecturer: 'Dr. Sari Dewi, M.Kom',
       deadline: '25 Jun 2026, 23:59',
       status: 'Sudah Dinilai',
@@ -486,7 +563,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
       id: 'sim-task-1',
       moduleId: 'simulation',
       title: 'Simulasi: Media Interview - PR Officer',
-      class: 'Strategic Communication',
+      class: 'Teori Komunikasi',
       lecturer: 'Dr. Sari Dewi, M.Kom',
       deadline: '5 Jul 2026, 23:59',
       status: 'Sudah Dinilai',
@@ -517,7 +594,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
       id: 'sim-task-2',
       moduleId: 'simulation',
       title: 'Simulasi: Conflict Resolution in Teams',
-      class: 'Strategic Communication',
+      class: 'Manajemen Komunikasi',
       lecturer: 'Dr. Sari Dewi, M.Kom',
       deadline: '30 Oct 2026, 23:59',
       status: 'Belum Dikerjakan',
@@ -653,149 +730,909 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
   
   const currentUploadTab = uploadState.activeTab || (uploadTabs.length > 0 ? uploadTabs[0] : '');
 
-  // Filter tasks for active category tab
-  const filteredTasks = activeModule === 'all' 
-    ? assessments 
-    : assessments.filter(t => t.moduleId === activeModule);
+  // Filter tasks for active category tab and selected course
+  const filteredTasks = assessments.filter(t => {
+    const matchesType = activeModule === 'all' || t.moduleId === activeModule;
+    const matchesCourse = selectedCourseFilter === 'all' || t.class === selectedCourseFilter;
+    return matchesType && matchesCourse;
+  });
 
   return (
     <div className="h-full flex flex-col lg:flex-row gap-5 overflow-hidden select-none max-w-7xl mx-auto w-full">
       
       {/* Main active assessment area */}
       <div className={`bg-white border border-slate-200 rounded-sm shadow-sm flex flex-col min-h-0 overflow-hidden transition-all ${
-        selectedAssessmentId ? 'flex-1 w-full' : 'flex-1 lg:w-[70%]'
+        selectedAssessmentId || userRole === 'dosen' ? 'flex-1 w-full' : 'flex-1 lg:w-[70%]'
       }`}>
         
         {/* Header of the section */}
-        <div className="border-b border-slate-100 p-5 shrink-0 bg-slate-50/50 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
+        <div className="border-b border-slate-100 p-5 shrink-0 bg-slate-50/50 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <div className="space-y-1">
             <div className="flex items-center gap-2 flex-wrap">
               <span className="text-[10px] uppercase font-black text-[#993633] bg-blue-50 px-2.5 py-0.5 rounded-full border border-blue-100">
                 Aksara IQ Communication Lab
               </span>
               <span className="text-[10px] font-mono font-bold text-slate-400 bg-slate-100 px-2 py-0.5 rounded-sm">
-                Laboratorium Praktikum
+                {userRole === 'dosen' ? 'Portal Dosen / Pengampu' : 'Laboratorium Praktikum'}
               </span>
             </div>
             <h3 className="text-base font-black text-slate-900 tracking-tight flex items-center gap-2">
-              {selectedAssessmentId && currentAssessment 
-                ? currentAssessment.title 
-                : (activeModule === 'all' ? 'Semua Tugas Praktikum' : modules.find(m => m.id === activeModule)?.title)}
+              {userRole === 'dosen' ? (
+                isCreatingTask ? `Buat Tugas Praktikum Baru (Step ${createStep} dari 3)` : 'Dashboard Kelola Kelas & Praktikum'
+              ) : selectedAssessmentId && currentAssessment ? (
+                currentAssessment.title
+              ) : (
+                activeModule === 'all' ? 'Semua Tugas Praktikum' : modules.find(m => m.id === activeModule)?.title
+              )}
             </h3>
             <p className="text-[11px] text-slate-400 font-bold">
-              {selectedAssessmentId && currentAssessment 
-                ? `${studentName} (${studentNim}) • Hasil Analisis Detail & Evaluasi AI.`
-                : `${studentName} (${studentNim}) • Filter kategori di kanan atas untuk melihat tugas praktikum.`}
+              {userRole === 'dosen' ? (
+                isCreatingTask ? `Form pembuatan tugas multi-step untuk indikator penunjang pembelajaran.` : 'Dr. Sari Dewi • Lihat daftar kelas, nilai praktikum mahasiswa, dan kelola tugas.'
+              ) : selectedAssessmentId && currentAssessment ? (
+                `${studentName} (${studentNim}) • Hasil Analisis Detail & Evaluasi AI.`
+              ) : (
+                `${studentName} (${studentNim}) • Filter kategori di kanan atas untuk melihat tugas praktikum.`
+              )}
             </p>
           </div>
 
-          {selectedAssessmentId && currentAssessment ? (
-            <button 
-              onClick={() => setSelectedAssessmentId(null)}
-              className="px-3.5 py-1.5 bg-slate-900 hover:bg-slate-800 text-white text-[10px] uppercase font-black tracking-wider rounded-sm flex items-center gap-1.5 cursor-pointer transition-all shrink-0"
-            >
-              ← Kembali ke Daftar Tugas
-            </button>
-          ) : (
-            <div className="relative shrink-0">
+          <div className="flex flex-wrap items-center gap-3 self-stretch md:self-auto justify-end shrink-0">
+            {/* Elegant Role Switcher Toggle */}
+            <div className="flex bg-slate-100 p-0.5 rounded-sm border border-slate-200 shadow-xs">
               <button
-                onClick={() => setFilterDropdownOpen(!filterDropdownOpen)}
-                className="px-4 py-2 bg-white hover:bg-slate-50 border border-slate-200 rounded-sm text-[11px] font-black uppercase tracking-wider flex items-center gap-2.5 transition-all cursor-pointer shadow-sm text-slate-800"
+                onClick={() => {
+                  setUserRole('mahasiswa');
+                  setSelectedAssessmentId(null);
+                  setIsCreatingTask(false);
+                }}
+                className={`px-3 py-1 text-[10px] uppercase font-black tracking-wider rounded-sm transition-all cursor-pointer ${
+                  userRole === 'mahasiswa'
+                    ? 'bg-white text-slate-800 shadow-xs font-black'
+                    : 'text-slate-500 hover:text-slate-800'
+                }`}
               >
-                <span className="text-slate-400 font-bold">Filter:</span>
-                <span className="text-slate-900 font-extrabold flex items-center gap-1.5">
-                  {activeModule === 'all' && (
-                    <>
-                      <Activity size={12} className="text-indigo-500" />
-                      <span>Semua Tugas</span>
-                    </>
-                  )}
-                  {activeModule === 'fgd' && (
-                    <>
-                      <Users size={12} className="text-blue-500" />
-                      <span>FGD</span>
-                    </>
-                  )}
-                  {activeModule === 'presentation' && (
-                    <>
-                      <Video size={12} className="text-emerald-500" />
-                      <span>Presentation</span>
-                    </>
-                  )}
-                  {activeModule === 'writing' && (
-                    <>
-                      <FileText size={12} className="text-purple-500" />
-                      <span>Written Comm</span>
-                    </>
-                  )}
-                  {activeModule === 'simulation' && (
-                    <>
-                      <Brain size={12} className="text-amber-500" />
-                      <span>Simulation</span>
-                    </>
-                  )}
-                </span>
-                <ChevronRight size={13} className={`text-slate-400 transition-transform duration-200 ${filterDropdownOpen ? 'rotate-90' : ''}`} />
+                Mhs POV
               </button>
-
-              {filterDropdownOpen && (
-                <>
-                  {/* Dropdown Backdrop layer */}
-                  <div 
-                    className="fixed inset-0 z-20 cursor-default" 
-                    onClick={() => setFilterDropdownOpen(false)}
-                  />
-                  
-                  {/* Dropdown Menu block */}
-                  <div className="absolute right-0 mt-2 w-64 bg-white border border-slate-200/80 rounded-sm shadow-sm py-1.5 z-30 animate-in fade-in slide-in-from-top-2 duration-100">
-                    <div className="px-3 py-1.5 border-b border-slate-100">
-                      <span className="text-[9px] font-black uppercase text-slate-400 tracking-wider">Pilih Kategori Lab</span>
-                    </div>
-                    {[
-                      { id: 'all', title: 'Semua Kategori Lab', icon: Activity, color: 'text-indigo-500 bg-indigo-50', score: 'All' },
-                      { id: 'fgd', title: 'FGD (Group Diskusi)', icon: Users, color: 'text-blue-500 bg-blue-50', score: 87 },
-                      { id: 'presentation', title: 'Presentation (Lisan)', icon: Video, color: 'text-emerald-500 bg-emerald-50', score: 85 },
-                      { id: 'writing', title: 'Written Comm (Akademik)', icon: FileText, color: 'text-purple-500 bg-purple-50', score: 82 },
-                      { id: 'simulation', title: 'Simulation (Skenario PR)', icon: Brain, color: 'text-amber-500 bg-amber-50', score: 88 }
-                    ].map((item) => {
-                      const IconComponent = item.icon;
-                      const isSelected = activeModule === item.id;
-                      
-                      return (
-                        <button
-                          key={item.id}
-                          onClick={() => {
-                            setActiveModule(item.id as any);
-                            setActiveSubTab('overview');
-                            setFilterDropdownOpen(false);
-                          }}
-                          className={`w-full text-left px-3.5 py-2.5 text-xs font-bold flex items-center justify-between gap-2 hover:bg-slate-50 transition-colors cursor-pointer ${
-                            isSelected ? 'bg-slate-50/85 text-[#993633]' : 'text-slate-700'
-                          }`}
-                        >
-                          <div className="flex items-center gap-2 truncate">
-                            <span className={`p-1 rounded-sm ${item.color}`}>
-                              <IconComponent size={12} />
-                            </span>
-                            <span className={isSelected ? 'font-black' : 'font-semibold'}>{item.title}</span>
-                          </div>
-                          <span className={`text-[9px] font-black font-mono px-1.5 py-0.5 rounded ${
-                            isSelected ? 'bg-[#bf4440] text-white' : 'bg-slate-100 text-slate-500'
-                          }`}>
-                            {item.score}
-                          </span>
-                        </button>
-                      );
-                    })}
-                  </div>
-                </>
-              )}
+              <button
+                onClick={() => {
+                  setUserRole('dosen');
+                  setSelectedAssessmentId(null);
+                }}
+                className={`px-3 py-1 text-[10px] uppercase font-black tracking-wider rounded-sm transition-all cursor-pointer ${
+                  userRole === 'dosen'
+                    ? 'bg-[#993633] text-white shadow-xs font-black'
+                    : 'text-slate-500 hover:text-slate-800'
+                }`}
+              >
+                Dosen POV
+              </button>
             </div>
-          )}
+
+            {selectedAssessmentId && currentAssessment ? (
+              <button 
+                onClick={() => setSelectedAssessmentId(null)}
+                className="px-3.5 py-1.5 bg-slate-900 hover:bg-slate-800 text-white text-[10px] uppercase font-black tracking-wider rounded-sm flex items-center gap-1.5 cursor-pointer transition-all shrink-0 shadow-xs"
+              >
+                ← Kembali ke Daftar Tugas
+              </button>
+            ) : userRole === 'dosen' ? (
+              isCreatingTask ? (
+                <button 
+                  onClick={() => {
+                    if (confirm("Apakah Anda yakin ingin membatalkan pembuatan tugas?")) {
+                      setIsCreatingTask(false);
+                      setCreateStep(1);
+                    }
+                  }}
+                  className="px-3.5 py-1.5 bg-slate-200 hover:bg-slate-300 text-slate-700 text-[10px] uppercase font-black tracking-wider rounded-sm flex items-center gap-1.5 cursor-pointer transition-all shrink-0"
+                >
+                  Batal
+                </button>
+              ) : selectedDosenCourseId ? (
+                <button 
+                  onClick={() => setSelectedDosenCourseId(null)}
+                  className="px-3.5 py-1.5 bg-slate-900 hover:bg-slate-800 text-white text-[10px] uppercase font-black tracking-wider rounded-sm flex items-center gap-1.5 cursor-pointer transition-all shrink-0 shadow-xs"
+                >
+                  ← Kembali ke Kelas
+                </button>
+              ) : null
+            ) : (
+              <div className="flex flex-wrap items-center gap-2">
+                {/* Select Mata Kuliah */}
+                <div className="relative min-w-[150px]">
+                  <select
+                    value={selectedCourseFilter}
+                    onChange={(e) => setSelectedCourseFilter(e.target.value)}
+                    className="w-full bg-white border border-slate-200 rounded-sm pl-2.5 pr-7 py-1 text-[11px] font-bold text-slate-700 focus:outline-none focus:ring-1 focus:ring-[#bf4440] focus:border-[#bf4440] appearance-none cursor-pointer"
+                  >
+                    <option value="all">Semua Mata Kuliah</option>
+                    <option value="Strategic Communication">Strategic Communication</option>
+                    <option value="Manajemen Komunikasi">Manajemen Komunikasi</option>
+                    <option value="Jurnalisme Digital">Jurnalisme Digital</option>
+                    <option value="Teori Komunikasi">Teori Komunikasi</option>
+                  </select>
+                  <span className="absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">
+                    <ChevronDown size={11} />
+                  </span>
+                </div>
+
+                {/* Select Tipe Tugas */}
+                <div className="relative min-w-[150px]">
+                  <select
+                    value={activeModule}
+                    onChange={(e) => {
+                      setActiveModule(e.target.value as any);
+                      setActiveSubTab('overview');
+                    }}
+                    className="w-full bg-white border border-slate-200 rounded-sm pl-2.5 pr-7 py-1 text-[11px] font-bold text-slate-700 focus:outline-none focus:ring-1 focus:ring-[#bf4440] focus:border-[#bf4440] appearance-none cursor-pointer"
+                  >
+                    <option value="all">Semua Tipe Tugas</option>
+                    <option value="fgd">FGD (Group Diskusi)</option>
+                    <option value="presentation">Presentation</option>
+                    <option value="writing">Written Comm</option>
+                    <option value="simulation">Simulation</option>
+                  </select>
+                  <span className="absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">
+                    <ChevronDown size={11} />
+                  </span>
+                </div>
+
+                {/* Reset Button */}
+                {(selectedCourseFilter !== 'all' || activeModule !== 'all') && (
+                  <button
+                    onClick={() => {
+                      setSelectedCourseFilter('all');
+                      setActiveModule('all');
+                    }}
+                    className="p-1 text-slate-400 hover:text-slate-600 rounded-sm hover:bg-slate-100 transition-colors cursor-pointer"
+                    title="Reset Filter"
+                  >
+                    <RotateCcw size={14} />
+                  </button>
+                )}
+              </div>
+            )}
+          </div>
         </div>
 
         {/* LIST VIEW: When no specific assessment task is selected */}
-        {!selectedAssessmentId ? (
+        {userRole === 'dosen' && !selectedAssessmentId ? (
+          <div className="flex-1 overflow-y-auto p-6 bg-slate-50/40 space-y-6">
+            {isCreatingTask ? (
+              /* --- CREATE TASK MULTI-STEP FORM --- */
+              <div className="bg-white rounded-sm border border-slate-200 p-6 space-y-6 shadow-sm">
+                {/* Step Indicator Header */}
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between border-b border-slate-100 pb-4 gap-4">
+                  <div className="flex items-center gap-3">
+                    <span className="p-2 bg-[#993633]/10 text-[#993633] rounded-sm">
+                      <FileText size={18} />
+                    </span>
+                    <div>
+                      <h4 className="text-[10px] font-black uppercase text-slate-400 tracking-wider">Langkah {createStep} dari 3</h4>
+                      <h2 className="text-sm font-black text-slate-800">
+                        {createStep === 1 ? 'Detail Tugas Baru' : createStep === 2 ? 'Pengaturan Rubrik Penilaian' : 'Review & Publikasi'}
+                      </h2>
+                    </div>
+                  </div>
+                  
+                  {/* Step Progress Circles */}
+                  <div className="flex items-center gap-2">
+                    {[1, 2, 3].map((step) => (
+                      <div key={step} className="flex items-center">
+                        <div className={`w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-mono font-black ${
+                          createStep === step 
+                            ? 'bg-[#993633] text-white' 
+                            : createStep > step 
+                            ? 'bg-emerald-500 text-white' 
+                            : 'bg-slate-100 text-slate-400'
+                        }`}>
+                          {createStep > step ? <Check size={11} /> : step}
+                        </div>
+                        {step < 3 && <div className={`w-8 h-0.5 ${createStep > step ? 'bg-emerald-400' : 'bg-slate-200'}`} />}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* STEP 1: Detail Tugas */}
+                {createStep === 1 && (
+                  <div className="space-y-4 animate-in fade-in duration-200">
+                    <div>
+                      <label className="block text-[10px] font-black text-slate-500 uppercase tracking-wider mb-1">
+                        Nama Tugas / Judul Dokumen <span className="text-red-500">*</span>
+                      </label>
+                      <input 
+                        type="text" 
+                        value={newTaskName} 
+                        onChange={(e) => setNewTaskName(e.target.value)}
+                        placeholder="Contoh: Analisis Strategi Komunikasi Krisis"
+                        className="w-full bg-slate-50 border border-slate-200 rounded-sm px-3 py-2 text-xs font-bold text-slate-800 focus:outline-none focus:ring-1 focus:ring-[#993633] focus:border-[#993633] transition-all"
+                      />
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-[10px] font-black text-slate-500 uppercase tracking-wider mb-1">
+                          Mata Kuliah <span className="text-red-500">*</span>
+                        </label>
+                        <select 
+                          value={newTaskCourse} 
+                          onChange={(e) => setNewTaskCourse(e.target.value)}
+                          className="w-full bg-slate-50 border border-slate-200 rounded-sm px-3 py-2 text-xs font-bold text-slate-800 focus:outline-none focus:ring-1 focus:ring-[#993633] focus:border-[#993633] transition-all"
+                        >
+                          <option value="Jurnalisme Digital (KOM301)">Jurnalisme Digital (KOM301)</option>
+                          <option value="Riset Komunikasi (KOM321)">Riset Komunikasi (KOM321)</option>
+                          <option value="Komunikasi Massa (KOM312)">Komunikasi Massa (KOM312)</option>
+                          <option value="PR dan Branding (KOM305)">PR dan Branding (KOM305)</option>
+                          <option value="Strategic Communication (SK301)">Strategic Communication (SK301)</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <label className="block text-[10px] font-black text-slate-500 uppercase tracking-wider mb-1">
+                          Pilih Pertemuan <span className="text-red-500">*</span>
+                        </label>
+                        <select 
+                          value={newTaskMeeting} 
+                          onChange={(e) => setNewTaskMeeting(e.target.value)}
+                          className="w-full bg-slate-50 border border-slate-200 rounded-sm px-3 py-2 text-xs font-bold text-slate-800 focus:outline-none focus:ring-1 focus:ring-[#993633] focus:border-[#993633] transition-all"
+                        >
+                          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16].map(p => (
+                            <option key={p} value={`Pertemuan ${p}`}>Pertemuan {p}</option>
+                          ))}
+                        </select>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-[10px] font-black text-slate-500 uppercase tracking-wider mb-1">
+                          Tipe Tugas <span className="text-red-500">*</span>
+                        </label>
+                        <select 
+                          value={newTaskType} 
+                          onChange={(e) => setNewTaskType(e.target.value)}
+                          className="w-full bg-slate-50 border border-slate-200 rounded-sm px-3 py-2 text-xs font-bold text-slate-800 focus:outline-none focus:ring-1 focus:ring-[#993633] focus:border-[#993633] transition-all"
+                        >
+                          <option value="General">General</option>
+                          <option value="FGD (Group Diskusi)">FGD (Group Diskusi)</option>
+                          <option value="Presentation">Presentation</option>
+                          <option value="Written Comm">Written Comm</option>
+                          <option value="Simulation">Simulation</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <label className="block text-[10px] font-black text-slate-500 uppercase tracking-wider mb-1">
+                          Deadline Pengumpulan <span className="text-red-500">*</span>
+                        </label>
+                        <input 
+                          type="date" 
+                          value={newTaskDeadline} 
+                          onChange={(e) => setNewTaskDeadline(e.target.value)}
+                          className="w-full bg-slate-50 border border-slate-200 rounded-sm px-3 py-2 text-xs font-bold text-slate-800 focus:outline-none focus:ring-1 focus:ring-[#993633] focus:border-[#993633] transition-all"
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="block text-[10px] font-black text-slate-500 uppercase tracking-wider mb-1">
+                        Dosen Pengampu
+                      </label>
+                      <div className="relative">
+                        <input 
+                          type="text" 
+                          value="Dr. Sari Dewi" 
+                          disabled 
+                          className="w-full bg-slate-100 border border-slate-200 rounded-sm pl-3 pr-10 py-2 text-xs font-bold text-slate-500 cursor-not-allowed"
+                        />
+                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400">
+                          <Lock size={12} />
+                        </span>
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="block text-[10px] font-black text-slate-500 uppercase tracking-wider mb-1">
+                        Assignment Instructions
+                      </label>
+                      <div className="border border-slate-200 rounded-sm overflow-hidden">
+                        {/* Editor Toolbar Mockup */}
+                        <div className="bg-slate-50 border-b border-slate-200 p-2 flex items-center gap-1">
+                          <button type="button" className="p-1 text-slate-500 hover:text-slate-800 hover:bg-slate-100 rounded-sm transition-all" title="Bold">
+                            <Bold size={13} />
+                          </button>
+                          <button type="button" className="p-1 text-slate-500 hover:text-slate-800 hover:bg-slate-100 rounded-sm transition-all" title="Italic">
+                            <Italic size={13} />
+                          </button>
+                          <button type="button" className="p-1 text-slate-500 hover:text-slate-800 hover:bg-slate-100 rounded-sm transition-all" title="Bullet List">
+                            <List size={13} />
+                          </button>
+                          <button type="button" className="p-1 text-slate-500 hover:text-slate-800 hover:bg-slate-100 rounded-sm transition-all" title="Insert Link">
+                            <Link size={13} />
+                          </button>
+                        </div>
+                        <textarea 
+                          rows={6}
+                          value={newTaskInstructions}
+                          onChange={(e) => setNewTaskInstructions(e.target.value)}
+                          placeholder="Tuliskan instruksi tugas untuk mahasiswa..."
+                          className="w-full bg-white p-3 text-xs font-medium text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-0"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="flex justify-end pt-2 border-t border-slate-100">
+                      <button
+                        onClick={() => {
+                          if (!newTaskName.trim()) {
+                            alert("Nama Tugas wajib diisi!");
+                            return;
+                          }
+                          setCreateStep(2);
+                        }}
+                        className="px-5 py-2 bg-[#993633] hover:bg-[#822d2b] text-white text-[11px] font-black uppercase tracking-wider rounded-sm transition-all cursor-pointer shadow-sm flex items-center gap-1.5"
+                      >
+                        Lanjut ke Step 2 <ArrowRight size={13} />
+                      </button>
+                    </div>
+                  </div>
+                )}
+
+                {/* STEP 2: Rubrik Penilaian */}
+                {createStep === 2 && (
+                  <div className="space-y-4 animate-in fade-in duration-200">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-slate-50 p-4 rounded-sm border border-slate-100">
+                      <div>
+                        <h4 className="text-xs font-black uppercase text-slate-800 tracking-wide">RUBRIK PENILAIAN (AUTO-FILL INDIKATOR)</h4>
+                        <p className="text-[10px] text-slate-500 font-bold mt-0.5">
+                          {rubricIndicators.length} Indikator • total bobot{' '}
+                          <span className={`font-extrabold ${rubricIndicators.reduce((sum, item) => sum + item.weight, 0) === 100 ? 'text-emerald-600' : 'text-rose-600'}`}>
+                            {rubricIndicators.reduce((sum, item) => sum + item.weight, 0)}%
+                          </span>
+                        </p>
+                      </div>
+
+                      <div className="flex flex-wrap items-center gap-2 shrink-0">
+                        <button 
+                          onClick={() => {
+                            setRubricIndicators([
+                              { id: 1, title: 'Active Participation', weight: 25, description: 'Frekuensi & kualitas kontribusi diskusi', observable: '', characteristics: '', isExpanded: true },
+                              { id: 2, title: 'Collaboration & Listening', weight: 25, description: 'Membangun ide rekan, mendengarkan aktif', observable: '', characteristics: '', isExpanded: false },
+                              { id: 3, title: 'Argument Quality', weight: 25, description: 'Kekuatan argumen & relevansi topik', observable: '', characteristics: '', isExpanded: false },
+                              { id: 4, title: 'Group Leadership & Facilitation', weight: 25, description: 'Inisiasi memandu arah diskusi', observable: '', characteristics: '', isExpanded: false },
+                            ]);
+                          }}
+                          className="px-2.5 py-1.5 border border-slate-200 bg-white text-slate-600 text-[9px] font-black uppercase tracking-wider rounded-sm hover:bg-slate-50 transition-all flex items-center gap-1 cursor-pointer"
+                        >
+                          <RotateCcw size={10} /> Reset Ke Template
+                        </button>
+                        <button 
+                          onClick={() => {
+                            const newId = rubricIndicators.length > 0 ? Math.max(...rubricIndicators.map(i => i.id)) + 1 : 1;
+                            setRubricIndicators([
+                              ...rubricIndicators.map(i => ({ ...i, isExpanded: false })),
+                              { id: newId, title: 'Indikator Baru', weight: 0, description: 'Deskripsi indikator penilaian baru', observable: '', characteristics: '', isExpanded: true }
+                            ]);
+                          }}
+                          className="px-2.5 py-1.5 bg-[#993633] text-white text-[9px] font-black uppercase tracking-wider rounded-sm hover:bg-[#822d2b] transition-all flex items-center gap-1 cursor-pointer"
+                        >
+                          <Plus size={10} /> Tambah Indikator
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* Indicator Warning */}
+                    {rubricIndicators.reduce((sum, item) => sum + item.weight, 0) !== 100 && (
+                      <div className="p-3 bg-red-50 border border-red-100 text-rose-800 text-[10.5px] font-bold rounded-sm flex items-center gap-2 animate-pulse">
+                        <AlertTriangle size={14} className="text-[#993633]" />
+                        Peringatan: Total bobot semua indikator harus berjumlah 100% (saat ini: {rubricIndicators.reduce((sum, item) => sum + item.weight, 0)}%)
+                      </div>
+                    )}
+
+                    {/* Indicator Accordion / Panels */}
+                    <div className="space-y-3">
+                      {rubricIndicators.map((item, index) => (
+                        <div key={item.id} className="border border-slate-200 rounded-sm overflow-hidden bg-white shadow-xs flex">
+                          {/* Chevron Controls on left side */}
+                          <div className="bg-slate-50/50 border-r border-slate-100 p-2.5 flex flex-col items-center justify-center gap-2 select-none shrink-0">
+                            <button 
+                              type="button" 
+                              onClick={() => {
+                                setRubricIndicators(prev => prev.map(ind => ind.id === item.id ? { ...ind, isExpanded: !ind.isExpanded } : ind));
+                              }}
+                              className="p-1 text-slate-400 hover:text-slate-700 hover:bg-slate-100 rounded-sm transition-all cursor-pointer"
+                            >
+                              {item.isExpanded ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
+                            </button>
+                            <button
+                              type="button"
+                              onClick={() => {
+                                setRubricIndicators(prev => prev.filter(ind => ind.id !== item.id));
+                              }}
+                              className="p-1 text-slate-400 hover:text-red-500 hover:bg-red-50 rounded-sm transition-all cursor-pointer"
+                              title="Hapus Indikator"
+                            >
+                              <Trash2 size={12} />
+                            </button>
+                          </div>
+
+                          {/* Detail Form on Right Side */}
+                          <div className="flex-1 p-4 space-y-3">
+                            <div className="flex items-center justify-between gap-4">
+                              <input 
+                                type="text" 
+                                value={item.title}
+                                onChange={(e) => {
+                                  const val = e.target.value;
+                                  setRubricIndicators(prev => prev.map(ind => ind.id === item.id ? { ...ind, title: val } : ind));
+                                }}
+                                className="text-xs font-black text-slate-800 bg-transparent border-b border-transparent hover:border-slate-300 focus:border-[#993633] focus:outline-none pb-0.5 flex-1 font-sans"
+                                placeholder="Nama Indikator Penilaian"
+                              />
+                              
+                              {/* Weight Input */}
+                              <div className="flex items-center gap-1.5 shrink-0 bg-slate-50 border border-slate-200 rounded-sm px-2 py-1">
+                                <input 
+                                  type="number" 
+                                  value={item.weight || ''}
+                                  onChange={(e) => {
+                                    const val = parseInt(e.target.value) || 0;
+                                    setRubricIndicators(prev => prev.map(ind => ind.id === item.id ? { ...ind, weight: val } : ind));
+                                  }}
+                                  className="w-10 text-right bg-transparent text-xs font-black text-slate-800 focus:outline-none"
+                                  min="0"
+                                  max="100"
+                                />
+                                <span className="text-[10px] text-slate-400 font-bold">%</span>
+                              </div>
+                            </div>
+
+                            {item.isExpanded && (
+                              <div className="space-y-2 pt-2 border-t border-slate-100 animate-in fade-in duration-200">
+                                <div>
+                                  <input 
+                                    type="text"
+                                    value={item.description}
+                                    onChange={(e) => {
+                                      const val = e.target.value;
+                                      setRubricIndicators(prev => prev.map(ind => ind.id === item.id ? { ...ind, description: val } : ind));
+                                    }}
+                                    className="w-full bg-white border border-slate-200 rounded-sm px-2.5 py-1.5 text-[11px] font-medium text-slate-700 focus:outline-none focus:border-[#993633]"
+                                    placeholder="Deskripsi Bobot / Fokus Penilaian"
+                                  />
+                                </div>
+                                <div>
+                                  <input 
+                                    type="text"
+                                    value={item.observable}
+                                    onChange={(e) => {
+                                      const val = e.target.value;
+                                      setRubricIndicators(prev => prev.map(ind => ind.id === item.id ? { ...ind, observable: val } : ind));
+                                    }}
+                                    className="w-full bg-white border border-slate-200/60 rounded-sm px-2.5 py-1.5 text-[10px] font-medium text-slate-500 focus:outline-none focus:border-[#993633]"
+                                    placeholder="Observable indicators (opsional) — mis: 'Merespons pertanyaan peserta lain,'"
+                                  />
+                                </div>
+                                <div>
+                                  <input 
+                                    type="text"
+                                    value={item.characteristics}
+                                    onChange={(e) => {
+                                      const val = e.target.value;
+                                      setRubricIndicators(prev => prev.map(ind => ind.id === item.id ? { ...ind, characteristics: val } : ind));
+                                    }}
+                                    className="w-full bg-white border border-slate-200/60 rounded-sm px-2.5 py-1.5 text-[10px] font-medium text-slate-500 focus:outline-none focus:border-[#993633]"
+                                    placeholder="High performance characteristics (opsional) — mis: 'Mengintegrasikan perspektif'"
+                                  />
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Navigation buttons */}
+                    <div className="flex items-center justify-between pt-4 border-t border-slate-100">
+                      <button
+                        onClick={() => setCreateStep(1)}
+                        className="px-4 py-2 border border-slate-200 hover:bg-slate-50 text-slate-600 text-[11px] font-black uppercase tracking-wider rounded-sm transition-all cursor-pointer"
+                      >
+                        Kembali ke Step 1
+                      </button>
+                      <button
+                        onClick={() => {
+                          const total = rubricIndicators.reduce((sum, item) => sum + item.weight, 0);
+                          if (total !== 100) {
+                            if (!confirm(`Total bobot saat ini ${total}%. Dianjurkan bernilai 100%. Lanjutkan saja?`)) {
+                              return;
+                            }
+                          }
+                          setCreateStep(3);
+                        }}
+                        className="px-5 py-2 bg-[#993633] hover:bg-[#822d2b] text-white text-[11px] font-black uppercase tracking-wider rounded-sm transition-all cursor-pointer shadow-xs flex items-center gap-1.5"
+                      >
+                        Lanjut ke Step 3 <ArrowRight size={13} />
+                      </button>
+                    </div>
+                  </div>
+                )}
+
+                {/* STEP 3: Review & Publish */}
+                {createStep === 3 && (
+                  <div className="space-y-6 animate-in fade-in duration-200">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                      {/* Detail Tugas Card */}
+                      <div className="border border-slate-200 rounded-sm p-5 space-y-4 bg-white relative">
+                        <button 
+                          onClick={() => setCreateStep(1)}
+                          className="absolute right-4 top-4 text-xs font-black text-blue-600 hover:text-blue-800 uppercase tracking-wider cursor-pointer"
+                        >
+                          Ubah
+                        </button>
+                        <div className="flex items-center gap-2">
+                          <span className="p-1.5 bg-blue-50 text-blue-600 rounded-sm">
+                            <Info size={14} />
+                          </span>
+                          <h4 className="text-xs font-black uppercase text-slate-800 tracking-wide">Detail Tugas</h4>
+                        </div>
+                        
+                        <div className="space-y-3 pt-2 text-[11px]">
+                          <div>
+                            <span className="text-[9px] text-slate-400 font-black uppercase tracking-wider">JUDUL TUGAS</span>
+                            <p className="text-xs font-black text-slate-800 mt-0.5">{newTaskName}</p>
+                          </div>
+                          
+                          <div className="grid grid-cols-2 gap-3">
+                            <div>
+                              <span className="text-[9px] text-slate-400 font-black uppercase tracking-wider">MATA KULIAH</span>
+                              <p className="font-extrabold text-slate-700 mt-0.5">{newTaskCourse}</p>
+                            </div>
+                            <div>
+                              <span className="text-[9px] text-slate-400 font-black uppercase tracking-wider">PERTEMUAN</span>
+                              <p className="font-extrabold text-slate-700 mt-0.5">{newTaskMeeting}</p>
+                            </div>
+                          </div>
+
+                          <div className="grid grid-cols-2 gap-3">
+                            <div>
+                              <span className="text-[9px] text-slate-400 font-black uppercase tracking-wider">KATEGORI</span>
+                              <p className="font-extrabold text-slate-700 mt-0.5">{newTaskType}</p>
+                            </div>
+                            <div>
+                              <span className="text-[9px] text-slate-400 font-black uppercase tracking-wider">DEADLINE</span>
+                              <p className="font-extrabold text-slate-700 mt-0.5">{newTaskDeadline}</p>
+                            </div>
+                          </div>
+
+                          <div>
+                            <span className="text-[9px] text-slate-400 font-black uppercase tracking-wider">DOSEN PENGAMPU</span>
+                            <div className="flex items-center gap-1.5 mt-0.5 text-slate-700 font-extrabold">
+                              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=128&h=128" alt="Lecturer" className="w-5 h-5 rounded-full object-cover animate-pulse" />
+                              Dr. Sari Dewi
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Rubrik Penilaian Card */}
+                      <div className="border border-slate-200 rounded-sm p-5 space-y-4 bg-white relative">
+                        <button 
+                          onClick={() => setCreateStep(2)}
+                          className="absolute right-4 top-4 text-xs font-black text-blue-600 hover:text-blue-800 uppercase tracking-wider cursor-pointer"
+                        >
+                          Ubah
+                        </button>
+                        <div className="flex items-center gap-2">
+                          <span className="p-1.5 bg-purple-50 text-purple-600 rounded-sm">
+                            <SlidersHorizontal size={14} />
+                          </span>
+                          <h4 className="text-xs font-black uppercase text-slate-800 tracking-wide">Rubrik Penilaian</h4>
+                        </div>
+
+                        <div className="space-y-4 pt-2">
+                          {rubricIndicators.map((item) => (
+                            <div key={item.id} className="space-y-1.5">
+                              <div className="flex items-center justify-between text-[11px] font-bold text-slate-700">
+                                <span>{item.title}</span>
+                                <span className="font-black text-slate-900">{item.weight}%</span>
+                              </div>
+                              <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                                <div className="bg-blue-600 h-full rounded-full" style={{ width: `${item.weight}%` }} />
+                              </div>
+                              <p className="text-[9px] text-slate-400 font-bold">{item.description}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Instruksi Tugas Full Card */}
+                    <div className="border border-slate-200 rounded-sm p-5 space-y-3 bg-white relative">
+                      <button 
+                        onClick={() => setCreateStep(1)}
+                        className="absolute right-4 top-4 text-xs font-black text-blue-600 hover:text-blue-800 uppercase tracking-wider cursor-pointer"
+                      >
+                        Ubah
+                      </button>
+                      <div className="flex items-center gap-2">
+                        <span className="p-1.5 bg-emerald-50 text-emerald-600 rounded-sm">
+                          <FileText size={14} />
+                        </span>
+                        <h4 className="text-xs font-black uppercase text-slate-800 tracking-wide">Instruksi Tugas</h4>
+                      </div>
+
+                      <div className="text-xs text-slate-700 font-medium leading-relaxed whitespace-pre-wrap bg-slate-50 p-4 rounded-sm border border-slate-100">
+                        {newTaskInstructions}
+                      </div>
+                    </div>
+
+                    {/* Step 3 Footer buttons */}
+                    <div className="flex items-center justify-between pt-4 border-t border-slate-100">
+                      <button
+                        onClick={() => setCreateStep(2)}
+                        className="px-4 py-2 border border-slate-200 hover:bg-slate-50 text-slate-600 text-[11px] font-black uppercase tracking-wider rounded-sm transition-all cursor-pointer"
+                      >
+                        Kembali ke Step 2
+                      </button>
+                      <button
+                        onClick={() => {
+                          // Compile new task object to insert in assessments
+                          const generatedId = `task-gen-${Date.now()}`;
+                          const targetModuleMap: Record<string, 'fgd' | 'presentation' | 'writing' | 'simulation'> = {
+                            'FGD (Group Diskusi)': 'fgd',
+                            'Presentation': 'presentation',
+                            'Written Comm': 'writing',
+                            'Simulation': 'simulation',
+                            'General': 'writing'
+                          };
+                          const selectedModId = targetModuleMap[newTaskType] || 'writing';
+                          const selectedCourseNameClean = newTaskCourse.split(' (')[0];
+
+                          const createdTaskObj = {
+                            id: generatedId,
+                            moduleId: selectedModId,
+                            title: newTaskName,
+                            class: selectedCourseNameClean,
+                            lecturer: 'Dr. Sari Dewi, M.Kom',
+                            deadline: new Date(newTaskDeadline).toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' }) + ', 23:59',
+                            status: 'Belum Dikerjakan' as const,
+                            score: null,
+                            badgeText: `${newTaskType.toUpperCase()} / INDIVIDUAL`,
+                            instruction: newTaskInstructions,
+                            retake: 'Tidak ada retake tersisa',
+                            bottomStatus: 'Segera kerjakan',
+                            isGradesLocked: true,
+                            details: {
+                              overall: null,
+                              pacing: 'Belum diukur',
+                              turnsCount: '0 giliran',
+                              spokenWords: '0 kata',
+                              dimensions: rubricIndicators.map(r => ({
+                                key: r.title.toLowerCase().replace(/\s+/g, '_'),
+                                name: r.title,
+                                score: 0,
+                                weight: `${r.weight}%`,
+                                status: 'Menunggu',
+                                color: '#cbd5e1',
+                                bullets: [r.description],
+                                warnings: []
+                              })),
+                              timeline: [
+                                {
+                                  time: new Date().toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' }) + ', ' + new Date().toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' }),
+                                  title: 'Tugas Praktikum Dibuat',
+                                  desc: `Dibuat oleh Dr. Sari Dewi untuk kelas ${newTaskCourse}`,
+                                  meta: `Tipe: ${newTaskType} • Bobot 100%`,
+                                  icon: FileText,
+                                  iconColor: 'text-indigo-500 bg-indigo-50 border-indigo-200'
+                                }
+                              ],
+                              learningOutcomes: []
+                            }
+                          };
+
+                          // Append assessment
+                          setAssessments(prev => [createdTaskObj, ...prev]);
+
+                          // Update dosen course task count
+                          setDosenCourses(prev => prev.map(c => {
+                            if (newTaskCourse.includes(c.id)) {
+                              return { ...c, taskCount: c.taskCount + 1 };
+                            }
+                            return c;
+                          }));
+
+                          alert("Selamat! Tugas Praktikum Berhasil Dibuat dan Dipublikasikan.");
+                          
+                          // Reset form and return
+                          setIsCreatingTask(false);
+                          setCreateStep(1);
+                        }}
+                        className="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-[11px] font-black uppercase tracking-wider rounded-sm transition-all cursor-pointer shadow-md flex items-center gap-1.5"
+                      >
+                        Simpan & Publikasikan Tugas <Check size={14} />
+                      </button>
+                    </div>
+                  </div>
+                )}
+              </div>
+            ) : selectedDosenCourseId ? (
+              /* --- DOSEN COURSE DETAILS VIEW (Daftar Tugas per Course) --- */
+              <div className="space-y-6">
+                {/* Course Header Info */}
+                {(() => {
+                  const currentDosenCourse = dosenCourses.find(c => c.id === selectedDosenCourseId);
+                  if (!currentDosenCourse) return null;
+                  
+                  // Filter assessments for this specific class
+                  const classTasks = assessments.filter(t => t.class === currentDosenCourse.courseName);
+                  
+                  return (
+                    <div className="space-y-6 animate-in fade-in duration-200">
+                      <div className="bg-white border border-slate-200 rounded-sm p-6 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+                        <div className="space-y-1">
+                          <span className="text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full border bg-[#993633]/5 text-[#993633] border-[#993633]/20">
+                            {currentDosenCourse.code}
+                          </span>
+                          <h2 className="text-lg font-black text-slate-900">{currentDosenCourse.courseName}</h2>
+                          <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500 font-medium">
+                            <span>Jadwal: <strong>{currentDosenCourse.schedule}</strong></span>
+                            <span>Ruang: <strong>{currentDosenCourse.room}</strong></span>
+                            <span>Mahasiswa: <strong>{currentDosenCourse.studentsCount} orang</strong></span>
+                          </div>
+                        </div>
+
+                        <button 
+                          onClick={() => {
+                            // Set course and open creation form
+                            setNewTaskCourse(`${currentDosenCourse.courseName} (${currentDosenCourse.id})`);
+                            setIsCreatingTask(true);
+                            setCreateStep(1);
+                          }}
+                          className="px-4 py-2 bg-[#993633] hover:bg-[#822d2b] text-white text-[11px] font-black uppercase tracking-wider rounded-sm shadow-sm transition-all flex items-center gap-1.5 cursor-pointer"
+                        >
+                          <Plus size={13} /> Buat Tugas Baru
+                        </button>
+                      </div>
+
+                      {/* Tasks of this class */}
+                      <div className="space-y-4">
+                        <h3 className="text-xs font-black uppercase text-slate-500 tracking-wider">Daftar Tugas Praktikum ({classTasks.length})</h3>
+                        {classTasks.length === 0 ? (
+                          <div className="bg-white border border-slate-200 rounded-sm p-10 text-center text-slate-500 font-bold text-xs">
+                            Belum ada tugas praktikum di kelas ini. Silakan klik tombol buat tugas baru.
+                          </div>
+                        ) : (
+                          <div className="grid grid-cols-1 gap-4">
+                            {classTasks.map(task => (
+                              <div key={task.id} className="bg-white border border-slate-200 rounded-sm p-5 shadow-xs hover:border-slate-300 transition-all flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                                <div className="space-y-1">
+                                  <span className="text-[9px] font-mono font-black text-slate-400 uppercase tracking-widest">{task.badgeText}</span>
+                                  <h4 className="text-xs font-black text-slate-800">{task.title}</h4>
+                                  <div className="flex items-center gap-3 text-[10px] text-slate-400 font-bold">
+                                    <span>Deadline: {task.deadline}</span>
+                                    <span>Dosen: {task.lecturer}</span>
+                                  </div>
+                                </div>
+
+                                <div className="flex items-center gap-2">
+                                  <span className={`text-[10px] px-2.5 py-1 rounded-full border font-bold ${
+                                    task.status === 'Belum Dikerjakan' ? 'bg-slate-50 text-slate-500 border-slate-200' : 'bg-emerald-50 text-emerald-700 border-emerald-200'
+                                  }`}>
+                                    {task.status}
+                                  </span>
+                                  <button 
+                                    onClick={() => setSelectedAssessmentId(task.id)}
+                                    className="px-3 py-1.5 border border-slate-200 hover:bg-slate-50 text-slate-700 text-[10px] font-black uppercase tracking-wider rounded-sm cursor-pointer"
+                                  >
+                                    Detail Evaluasi
+                                  </button>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })()}
+              </div>
+            ) : (
+              /* --- DOSEN MAIN COURSE GRID (Image 1) --- */
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 animate-in fade-in duration-200">
+                {dosenCourses.map((course) => (
+                  <div 
+                    key={course.id}
+                    className="bg-white border border-slate-200 rounded-2xl p-6 shadow-xs hover:shadow-md hover:border-slate-300 transition-all flex flex-col gap-5 relative overflow-hidden"
+                  >
+                    {/* Badge KOM codes & Students count */}
+                    <div className="flex items-center justify-between">
+                      <span className="text-[10.5px] font-black text-slate-500 uppercase tracking-wider bg-slate-50 border border-slate-100 px-3 py-1 rounded-full">
+                        {course.code}
+                      </span>
+                      <span className="text-[11px] font-black text-[#993633] bg-[#993633]/5 px-3 py-1 rounded-full">
+                        {course.studentsCount} Mhs
+                      </span>
+                    </div>
+
+                    {/* Course Title */}
+                    <div>
+                      <h3 className="text-lg font-black text-slate-900 tracking-tight leading-snug">
+                        {course.courseName}
+                      </h3>
+                    </div>
+
+                    {/* Metadata Content Grid */}
+                    <div className="grid grid-cols-2 gap-4 border-t border-slate-100/70 pt-4">
+                      <div>
+                        <span className="text-[9px] text-slate-400 font-black uppercase tracking-wider">JADWAL KULIAH</span>
+                        <p className="text-[11px] font-black text-slate-800 mt-1">{course.schedule}</p>
+                      </div>
+                      <div>
+                        <span className="text-[9px] text-slate-400 font-black uppercase tracking-wider">RUANG KELAS</span>
+                        <p className="text-[11px] font-black text-slate-800 mt-1">{course.room}</p>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <span className="text-[9px] text-slate-400 font-black uppercase tracking-wider">PERTEMUAN SELESAI</span>
+                        <p className="text-[11px] font-black text-slate-800 mt-1">
+                          {course.sessionsCompleted} <span className="text-slate-400 font-extrabold">/ 16 Sesi</span>
+                        </p>
+                      </div>
+                      <div>
+                        <span className="text-[9px] text-slate-400 font-black uppercase tracking-wider">RATA-RATA PRESENSI</span>
+                        <p className="text-[11px] font-black text-emerald-600 mt-1">
+                          {course.attendanceRate}%
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Buttons Row */}
+                    <div className="grid grid-cols-2 gap-3 pt-2">
+                      <button 
+                        onClick={() => {
+                          alert(`Membuka Portal Rekap Nilai untuk ${course.courseName}`);
+                        }}
+                        className="py-2.5 bg-[#993633] hover:bg-[#822d2b] text-white font-black text-[10.5px] uppercase tracking-wider rounded-md text-center transition-all cursor-pointer shadow-xs"
+                      >
+                        LIHAT NILAI
+                      </button>
+                      
+                      <button 
+                        onClick={() => {
+                          setSelectedDosenCourseId(course.id);
+                        }}
+                        className="py-2.5 bg-[#fad9d7] hover:bg-[#f6c2be] text-[#993633] font-black text-[10.5px] uppercase tracking-wider rounded-md text-center transition-all cursor-pointer flex items-center justify-center gap-1.5"
+                      >
+                        DAFTAR TUGAS 
+                        <span className="w-4 h-4 rounded-full bg-[#993633] text-white text-[9px] font-black flex items-center justify-center">
+                          {course.taskCount}
+                        </span>
+                      </button>
+                    </div>
+
+                    {/* Outlined Create Task Button */}
+                    <button 
+                      onClick={() => {
+                        // Prefill course state
+                        setNewTaskCourse(`${course.courseName} (${course.id})`);
+                        setIsCreatingTask(true);
+                        setCreateStep(1);
+                      }}
+                      className="border-dashed border-2 border-slate-200 hover:border-[#993633] hover:text-[#993633] text-slate-500 font-black bg-white rounded-md py-2 w-full text-center tracking-wider text-[11px] flex items-center justify-center gap-1 cursor-pointer transition-colors"
+                    >
+                      + BUAT TUGAS
+                    </button>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        ) : !selectedAssessmentId ? (
           <div className="flex-1 overflow-y-auto p-5 bg-slate-50/30 space-y-6">
             
             {/* Quick summary numbers block */}
@@ -839,11 +1676,40 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
             </div>
 
             <div className="space-y-4">
-              <h4 className="text-xs font-black uppercase text-slate-500 tracking-wider">
-                Tugas Saya - semua tugas yang diberikan dosen
-              </h4>
+              <div className="flex items-center gap-3 pb-2">
+                <h4 className="text-xs font-black uppercase text-slate-500 tracking-wider">
+                  Daftar Tugas Saya ({filteredTasks.length})
+                </h4>
+                {(selectedCourseFilter !== 'all' || activeModule !== 'all') && (
+                  <span className="text-[9px] bg-red-50 text-[#bf4440] border border-red-100 px-2 py-0.5 rounded-sm font-black uppercase tracking-wider animate-pulse">
+                    Filter Aktif
+                  </span>
+                )}
+              </div>
 
-              {filteredTasks.map((task) => {
+              {filteredTasks.length === 0 ? (
+                <div className="bg-white border border-slate-200 rounded-sm p-12 text-center space-y-4 shadow-sm">
+                  <div className="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center mx-auto">
+                    <AlertCircle size={24} className="text-slate-400" />
+                  </div>
+                  <div className="space-y-1">
+                    <h3 className="text-sm font-black text-slate-800">Tidak Ada Tugas yang Cocok</h3>
+                    <p className="text-xs text-slate-500 max-w-md mx-auto leading-relaxed">
+                      Tidak ditemukan tugas praktikum untuk mata kuliah <span className="font-extrabold text-[#bf4440]">{selectedCourseFilter === 'all' ? 'Semua Mata Kuliah' : selectedCourseFilter}</span> dan tipe tugas <span className="font-extrabold text-[#bf4440]">{activeModule === 'all' ? 'Semua Tipe' : activeModule.toUpperCase()}</span>.
+                    </p>
+                  </div>
+                  <button 
+                    onClick={() => {
+                      setSelectedCourseFilter('all');
+                      setActiveModule('all');
+                    }}
+                    className="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white text-[10px] uppercase font-black tracking-wider rounded-sm cursor-pointer transition-all inline-block shadow-sm"
+                  >
+                    Reset Filter
+                  </button>
+                </div>
+              ) : (
+                filteredTasks.map((task) => {
                 const isCompleted = task.status !== 'Belum Dikerjakan';
                 const isGraded = task.status === 'Sudah Dinilai';
 
@@ -1055,7 +1921,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
 
                   </div>
                 );
-              })}
+              }))}
             </div>
 
           </div>
@@ -2863,7 +3729,7 @@ export function CommunicationLabs({ setView, loggedInUser }: CommunicationLabsPr
       </div>
 
       {/* Right Column: Calendar & Activity Logs (Only shown on list view) */}
-      {!selectedAssessmentId && (
+      {!selectedAssessmentId && userRole !== 'dosen' && (
         <div className="w-full lg:w-[30%] flex flex-col gap-5 shrink-0 min-h-0 overflow-y-auto pr-1">
           
           {/* Mini Calendar Card */}

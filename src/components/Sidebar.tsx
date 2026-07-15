@@ -225,49 +225,49 @@ export function Sidebar({
   if (userRole === 'mahasiswa') {
     const studentGroups = [
       {
-        title: 'Student Twin',
+        title: 'Profil Saya',
         items: [
-          { id: 'student_twin', subTab: 'overview', label: 'Overview', icon: Activity },
-          { id: 'student_twin', subTab: 'learning', label: 'Learning Profile', icon: BookOpen },
-          { id: 'career_aspirations', label: 'Career Planning', icon: Compass },
-          { id: 'student_twin', subTab: 'biodata', label: 'Student Profile', icon: User },
+          { id: 'student_twin', subTab: 'overview', label: 'Ringkasan Akademik', icon: Activity },
+          { id: 'student_twin', subTab: 'learning', label: 'Profil Gaya Belajar', icon: BookOpen },
+          { id: 'career_aspirations', label: 'Perencanaan Karier', icon: Compass },
+          { id: 'student_twin', subTab: 'biodata', label: 'Profil Mahasiswa', icon: User },
         ]
       },
       {
-        title: 'My Learning',
+        title: 'Ruang Belajar',
         items: [
-          { id: 'comm_labs', label: 'Comm. Labs', icon: Video },
-          { id: 'schedule', label: 'My Schedule', icon: CalendarRange },
-          { id: 'courses', label: 'Courses', icon: GraduationCap },
+          { id: 'comm_labs', label: 'Tugas & Latihan Praktikum', icon: Video },
+          { id: 'schedule', label: 'Jadwal Saya', icon: CalendarRange },
+          { id: 'courses', label: 'Mata Kuliah', icon: GraduationCap },
           { 
             id: 'upskilling', 
-            label: 'Upskilling', 
+            label: 'Pengembangan Diri', 
             icon: Sparkles,
             subItems: [
-              { id: 'upskilling_explore', label: 'Explore Content' },
-              { id: 'skill_space', label: 'Skill Space' }
+              { id: 'upskilling_explore', label: 'Eksplorasi Konten' },
+              { id: 'skill_space', label: 'Ruang Keterampilan' }
             ]
           },
         ]
       },
       {
-        title: 'Opportunity Hub',
+        title: 'Peluang',
         items: [
-          { id: 'competitions', label: 'Competitions & Challenges', icon: Trophy },
-          { id: 'internships', label: 'Find Internships', icon: Briefcase },
-          { id: 'scholarships', label: 'Scholarships', icon: Award },
+          { id: 'competitions', label: 'Kompetisi & Tantangan', icon: Trophy },
+          { id: 'internships', label: 'Cari Magang', icon: Briefcase },
+          { id: 'scholarships', label: 'Beasiswa', icon: Award },
         ]
       },
       {
-        title: 'Global Exchange',
+        title: 'Program Pertukaran',
         items: [
-          { id: 'katalog_mitra', label: 'Explore Partners', icon: Compass },
-          { id: 'kesiapan_saya', label: 'Academic Eligibility', icon: CheckSquare },
-          { id: 'exchange_summary', label: 'Exchange Summary', icon: FileText },
+          { id: 'katalog_mitra', label: 'Eksplorasi Mitra', icon: Compass },
+          { id: 'kesiapan_saya', label: 'Kelayakan Akademik', icon: CheckSquare },
+          { id: 'exchange_summary', label: 'Ringkasan Pertukaran', icon: FileText },
         ]
       },
       {
-        title: 'AI Chat',
+        title: 'Bantuan & Tanya Jawab',
         items: [
           { id: 'aksara_ai', label: 'Aksara AI', icon: Bot },
         ]
@@ -389,7 +389,7 @@ export function Sidebar({
         <div className="pt-4 border-t border-slate-200 px-2 shrink-0">
           <div className={`flex items-center gap-2 text-[10px] text-slate-500 font-bold uppercase tracking-wider ${isCollapsed ? 'justify-center' : ''}`}>
             <Sparkles size={12} className="text-amber-500 shrink-0" />
-            {!isCollapsed && <span>Aksara Twin v1.2</span>}
+            {!isCollapsed && <span>Aksara IQ v1.2</span>}
           </div>
         </div>
       </div>

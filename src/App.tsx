@@ -269,7 +269,7 @@ export default function App() {
     courses: { subtitle: "Course progress and materials", title: "Aksara IQ • Academic Course Hub" },
     course_class_details: { subtitle: "Jurnalisme Digital Class Portal", title: "Aksara IQ • Class Dashboard" },
     settings: { subtitle: "Configure account preferences", title: "Aksara IQ • Profile Settings" },
-    comm_labs: { subtitle: "Visualisasi & Evaluasi Praktikum Komunikasi", title: "Aksara IQ • Communication Labs" },
+    comm_labs: { subtitle: "Visualisasi & Evaluasi Tugas & Latihan Praktikum", title: "Aksara IQ • Tugas & Latihan Praktikum" },
     aksara_ai: { subtitle: "Personalized AI Academic Assistant", title: "Aksara AI Coach" },
     competitions: { subtitle: "Academic Competitions & Challenges Portal", title: "ScholarDash • Competitions" },
     internships: { subtitle: "AI-Powered Internships and Work Opportunities", title: "CareerFlow AI • Find Internships" },

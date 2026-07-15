@@ -25,8 +25,8 @@ export function AksaraAICoachPopup({ isOpen, onClose, setView }: AksaraAICoachPo
             <div className="absolute bottom-0 right-0 w-3 h-3 bg-emerald-500 border-2 border-slate-900 rounded-full"></div>
           </div>
           <div>
-            <h3 className="font-black text-sm tracking-wide">Aksara IQ Coach</h3>
-            <p className="text-[10px] text-slate-400 font-semibold">Personal AI Academic Advisor</p>
+            <h3 className="font-black text-sm tracking-wide">Asisten Pembelajaran Aksara IQ</h3>
+            <p className="text-[10px] text-slate-400 font-semibold">Asisten &amp; Tanya Jawab Akademik</p>
           </div>
         </div>
         <div className="flex items-center gap-2">
@@ -43,7 +43,7 @@ export function AksaraAICoachPopup({ isOpen, onClose, setView }: AksaraAICoachPo
       <div className="flex-1 overflow-y-auto p-4 bg-slate-50 relative">
         <div className="bg-white border border-slate-200 rounded-2xl rounded-tl-sm p-4 shadow-sm mb-2 max-w-[90%]">
           <p className="text-sm text-slate-700 leading-relaxed">
-            Halo, John Tosh! Saya <strong className="text-slate-900">Aksara IQ Coach</strong>, asisten akademik digital Anda. 🚀
+            Halo, John Tosh! Saya <strong className="text-slate-900">Asisten Pembelajaran Aksara IQ</strong>, asisten akademik digital Anda. 🚀
           </p>
           <p className="text-sm text-slate-700 leading-relaxed mt-3">
             Saya memantau seluruh performa Anda di kelas <strong className="text-slate-900">Manajemen Komunikasi</strong>. Ada yang ingin Anda tanyakan atau diskusikan hari ini?
@@ -56,13 +56,13 @@ export function AksaraAICoachPopup({ isOpen, onClose, setView }: AksaraAICoachPo
       <div className="bg-white border-t border-slate-200 p-3 shrink-0">
         <div className="flex gap-2 overflow-x-auto pb-3 scrollbar-none">
           <button className="flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-xs font-bold text-slate-600 hover:border-amber-300 hover:bg-amber-50 shrink-0 transition-all shadow-sm">
-            <span>💡</span> FGD Tips
+            <span>💡</span> Tips Diskusi
           </button>
           <button className="flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-xs font-bold text-slate-600 hover:border-blue-300 hover:bg-blushed-brick-50 shrink-0 transition-all shadow-sm">
-            <span>📈</span> Nilai & IPK
+            <span>📈</span> Nilai &amp; IPK
           </button>
           <button className="flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-xs font-bold text-slate-600 hover:border-emerald-300 hover:bg-emerald-50 shrink-0 transition-all shadow-sm">
-            <span>📚</span> Teori SCCT
+            <span>📚</span> Materi Kuliah
           </button>
           <button className="flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-xs font-bold text-slate-600 hover:border-purple-300 hover:bg-purple-50 shrink-0 transition-all shadow-sm">
             <span>📅</span> Jadwal
@@ -74,7 +74,7 @@ export function AksaraAICoachPopup({ isOpen, onClose, setView }: AksaraAICoachPo
             type="text" 
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder="Tanya AI Coach..." 
+            placeholder="Tanya asisten pembelajaran..." 
             className="flex-1 py-2.5 pl-4 pr-10 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-[#bf4440] focus:bg-white transition-all shadow-inner"
           />
           <button className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all shrink-0 ${input.trim() ? 'bg-[#bf4440] text-white shadow-md hover:bg-[#993633]' : 'bg-slate-100 text-slate-400'}`}>

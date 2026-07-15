@@ -1048,7 +1048,7 @@ export function StudentDnaProfiling({ loggedInUser }: StudentDnaProfilingProps =
               <div className="lg:col-span-8 bg-slate-50/40 border border-slate-100 rounded-2xl p-4 flex flex-col justify-between min-h-[160px]">
                 <div className="space-y-1">
                   <span className="text-[8px] font-black text-indigo-600 bg-indigo-50 border border-indigo-100 px-2 py-0.5 rounded uppercase tracking-wider font-mono">
-                    DNA Profiling Summary
+                    Ringkasan Profil Belajar
                   </span>
                   <h3 className="text-xs font-black text-slate-800">Analisis Holistik & Kecocokan Profil Karir</h3>
                   <p className="text-[10px] text-slate-600 font-semibold leading-relaxed mt-1">
@@ -1057,16 +1057,16 @@ export function StudentDnaProfiling({ loggedInUser }: StudentDnaProfilingProps =
                 </div>
                 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4 pt-4 border-t border-slate-200/50">
-                  <div className="space-y-1">
-                    <span className="text-[8.5px] font-extrabold text-slate-400 uppercase tracking-wider block">Best Career Profile Alignment</span>
+                   <div className="space-y-1">
+                    <span className="text-[8.5px] font-extrabold text-slate-400 uppercase tracking-wider block">Kesesuaian Profil Karir Terbaik</span>
                     <p className="text-[10.5px] font-black text-slate-800">
                       {learning.context.graduate_profiles[currentStudent.career_readiness.best_fit_profile as keyof typeof learning.context.graduate_profiles]}
                     </p>
                   </div>
                   <div className="space-y-1">
-                    <span className="text-[8.5px] font-extrabold text-slate-400 uppercase tracking-wider block">Engagement & Class Activeness</span>
+                    <span className="text-[8.5px] font-extrabold text-slate-400 uppercase tracking-wider block">Keaktifan &amp; Kehadiran di Kelas</span>
                     <p className="text-[10.5px] font-black text-slate-800 flex items-center gap-1 capitalize">
-                      ● {currentStudent.career_readiness.engagement.class_activeness} activeness ({currentStudent.career_readiness.engagement.attendance_pct}% attendance)
+                      ● keaktifan {currentStudent.career_readiness.engagement.class_activeness} ({currentStudent.career_readiness.engagement.attendance_pct}% kehadiran)
                     </p>
                   </div>
                 </div>
@@ -1076,7 +1076,7 @@ export function StudentDnaProfiling({ loggedInUser }: StudentDnaProfilingProps =
               <div className="lg:col-span-4 bg-slate-50/40 border border-slate-100 rounded-2xl p-4 flex flex-col justify-between min-h-[160px]">
                 <div className="space-y-1">
                   <span className="text-[8px] font-black text-slate-500 bg-slate-100 border border-slate-200 px-2 py-0.5 rounded uppercase tracking-wider font-mono">
-                    Match Indexes
+                    Indeks Kesesuaian
                   </span>
                   <h3 className="text-xs font-black text-slate-800">Kesesuaian Profil</h3>
                 </div>
@@ -1105,11 +1105,11 @@ export function StudentDnaProfiling({ loggedInUser }: StudentDnaProfilingProps =
               {/* FGD Highlights */}
               <div className="lg:col-span-6 bg-slate-50/30 border border-slate-100 rounded-2xl p-4 space-y-2">
                 <span className="text-[8.5px] font-black text-emerald-700 bg-emerald-50 border border-emerald-100 px-2 py-0.5 rounded uppercase tracking-wider font-mono">
-                  FGD Session Summary
+                  Ringkasan Diskusi Kelompok
                 </span>
                 <h3 className="text-xs font-black text-slate-800">Refleksi Kompetensi dalam FGD</h3>
                 <div className="flex items-center justify-between text-[11px] font-semibold py-1">
-                  <span className="text-slate-500">ID Sesi FGD:</span>
+                  <span className="text-slate-500">ID Sesi Diskusi:</span>
                   <span className="font-mono text-slate-700">{currentStudent.fgd_summary.session_id}</span>
                 </div>
                 <div className="flex items-center justify-between text-[11px] font-semibold py-1 border-t border-slate-100">
@@ -1130,7 +1130,7 @@ export function StudentDnaProfiling({ loggedInUser }: StudentDnaProfilingProps =
               <div className="lg:col-span-6 bg-indigo-50/30 border border-indigo-100/30 rounded-2xl p-4 flex flex-col justify-between">
                 <div className="space-y-1">
                   <span className="text-[8.5px] font-black text-indigo-700 bg-indigo-50 border border-indigo-100 px-2 py-0.5 rounded uppercase tracking-wider font-mono">
-                    Priority Focus
+                    Fokus Utama
                   </span>
                   <h3 className="text-xs font-black text-indigo-950">Prioritas Rencana Pengembangan</h3>
                   <p className="text-[10px] text-indigo-900 leading-relaxed font-semibold mt-1">

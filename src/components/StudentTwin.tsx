@@ -1085,11 +1085,11 @@ export function StudentTwin({
                 </a>
               </div>
 
-              {/* DNA Profiling Summary */}
+              {/* Ringkasan Profil Belajar */}
               <div className="flex flex-col gap-2 max-w-4xl mt-2">
                 <div className="flex items-center gap-2">
                   <Sparkles size={14} className="text-[#bf4440] shrink-0" />
-                  <h3 className="text-xs font-black text-slate-800 uppercase tracking-tight">DNA PROFILING SUMMARY</h3>
+                  <h3 className="text-xs font-black text-slate-800 uppercase tracking-tight">RINGKASAN PROFIL BELAJAR</h3>
                 </div>
                 <p className="text-[11px] text-slate-600 font-medium leading-relaxed">
                   {currentStudent.passion_competency_fit.summary} Berdasarkan analisis prediktif, profil ini mengindikasikan potensi kepemimpinan strategis yang sangat kuat di masa depan. Mahasiswa sangat disarankan untuk terus memperkuat aspek negosiasi lintas budaya guna memaksimalkan kesiapannya menghadapi dinamika industri komunikasi global.
@@ -1122,7 +1122,7 @@ export function StudentTwin({
                 <div className="space-y-2">
                   <div className="flex items-center justify-between">
                     <span className="text-[8px] font-black text-slate-500 bg-slate-100 border border-slate-200 px-2 py-0.5 rounded uppercase tracking-wider font-mono">
-                      Priority Focus
+                      Fokus Utama
                     </span>
                     <h3 className="text-xs font-black text-slate-800">Fokus Pengembangan</h3>
                   </div>
@@ -1162,7 +1162,7 @@ export function StudentTwin({
           {activeTwinSubMenu === 'overview' && (
             <div className="bg-white border border-slate-200 p-5 rounded-2xl shadow-sm">
               <div className="mb-4">
-                <h2 className="text-sm font-black text-slate-800 uppercase tracking-wider flex items-center gap-1.5"><Calendar size={14} className="text-blue-500" /> Today's Schedule</h2>
+                <h2 className="text-sm font-black text-slate-800 uppercase tracking-wider flex items-center gap-1.5"><Calendar size={14} className="text-blue-500" /> Jadwal Hari Ini</h2>
                 <p className="text-[10px] text-slate-400 font-bold mt-0.5">Tuesday, October 24, 2024</p>
               </div>
 
@@ -1246,20 +1246,20 @@ export function StudentTwin({
         {/* Left: Twin Academic DNA & Competencies Tab View */}
         <div id="academic-dna-primary-panel" className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm space-y-5 transition-all duration-300">
           {activeTwinSubMenu !== 'biodata' && (() => {
-            let headerTitle = "Twin Academic DNA & Competencies";
+            let headerTitle = "Profil & Perkembangan Saya";
             let headerSubtitle = "Analisis ketercapaian akademik, matriks CPL, dan bimbingan";
             let tabs: { id: string; label: string; icon: any }[] = [];
 
             if (activeTwinSubMenu === 'overview') {
-              headerTitle = "Overview Academic DNA";
+              headerTitle = "Ringkasan Akademik";
               headerSubtitle = "Analisis ringkasan ketercapaian akademik, matriks CPL, dan rekomendasi bimbingan";
-              tabs = [{ id: "overview", label: "Ringkasan DNA", icon: Sparkles }];
+              tabs = [{ id: "overview", label: "Ringkasan Profil Belajar", icon: Sparkles }];
             } else if (activeTwinSubMenu === 'learning') {
-              headerTitle = "Learning Profile";
+              headerTitle = "Profil Gaya Belajar";
               headerSubtitle = "Analisis perkembangan indeks prestasi kumulatif (IPK) dan radar peta kompetensi mahasiswa";
               tabs = [];
             } else if (activeTwinSubMenu === 'career') {
-              headerTitle = "Career & Passion";
+              headerTitle = "Perencanaan Karier";
               headerSubtitle = "Pencocokan aspirasi karir dengan minat personal serta peta rencana aksi pengembangan";
               tabs = [];
             }
